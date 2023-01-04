@@ -24,3 +24,4 @@
 
 1. kubectl --namespace default logs pod_name
 2. <https://kind.sigs.k8s.io/docs/user/quick-start/#exporting-cluster-logs>.
+3. kubectl rollout restart deployment deployment_name

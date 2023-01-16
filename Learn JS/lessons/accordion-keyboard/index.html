@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /accordion-keyboard/  Mon, 24 Jan 2022 10:05:12 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Accordion: Adding keyboard interaction | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Accordion: Adding keyboard interaction</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Accordion: Adding keyboard interaction</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/accordion/07.keyboard.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>You will learn how to handle keyboard interactions with the accordion in this lesson. Here are the things you’ll learn:</p>
+<ol>
+<li>How to open the accordion</li>
+<li>How to close the accordion</li>
+<li>How to switch accordions with arrow keys</li>
+<li>How to prevent people from tabbing into the accordion</li>
+</ol>
+<p>Let’s begin.</p>
+<h2 id="opening-the-accordion">Opening the accordion</h2>
+<p>Again, you don’t have to write any code to open the accordion. You can Tab into an accordion and open it with Space or Enter.</p>
+<figure role="figure"><img src="../../images/components/accordion/keyboard/open.gif" alt="Opening the accordion with Tab."></figure>
+<p>This works because:</p>
+<ol>
+<li>Space and Enter trigger a <code>click</code> event on <code>&lt;button&gt;</code></li>
+<li><code>&lt;button&gt;</code> is inside <code>.accordion__header</code></li>
+<li>We handled a <code>click</code> event if the <code>event.target</code> is a descendant of <code>.accordion__header</code></li>
+</ol>
+<p>When you open the accordion, you can Tab into the accordion’s content. There’s no need to mess around with focus this time :)</p>
+<figure role="figure"><img src="../../images/components/accordion/keyboard/open-tab.gif" alt="Tabbing into an accordion's content after opening the accordion."></figure>
+<h2 id="preventing-people-from-tabbing-into-a-closed-accordion">Preventing people from tabbing into a closed accordion</h2>
+<p>Users should not be able to Tab into a closed accordion. Right now, they can. In our case, each accordion contains a link. You can see the focus going into the link even though the accordion is closed.</p>
+<figure role="figure"><img src="../../images/components/accordion/keyboard/hidden-tab.gif" alt="Users can Tab into a hidden content."></figure>
+<p>To prevent this from happening, we add <code>visibility: hidden</code> when the accordion is closed. When the accordion is open, we switch <code>visibility</code> back to <code>visible</code>.</p>
+<pre><code class="language-css">.accordion__content {
+  visibility: hidden;
+}
+
+.accordion.is-open .accordion__content {
+  visibility: visible;
+}
+</code></pre>
+<p>Once you do this, you’ll notice animations begins to get weird. Opening the accordion is fine, but content disappears before you close the accordion.</p>
+<figure role="figure"><img src="../../images/components/accordion/keyboard/animation.gif" alt="Content disappears before you close the accordion."></figure>
+<p>This happens because <code>visibility</code> does not have a transition. It runs immediately. To fix the animation, you need to create a <code>transition-delay</code> for visibility when you close the accordion.</p>
+<pre><code class="language-css">/* Animation when closing */
+.accordion__content {
+  transition: height 0.3s ease-out, visibility 0s 0.3s;
+}
+
+/* Animation when opening */
+.accordion.is-open .accordion__content {
+  transition: height 0.3s ease-out, visibility 0s 0s;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/keyboard/animation-fixed.gif" alt="Fixed animation."></figure>
+<h2 id="closing-the-accordion">Closing the accordion</h2>
+<p>You don’t need to write any code to close the accordion. You can Tab to an accordion and press Space or Enter. This works because of the same reasons stated above in “Opening the accordion”.</p>
+<figure role="figure"><img src="../../images/components/accordion/keyboard/close.gif" alt="Closing the accordion."></figure>
+<h3 id="closing-the-accordion-with-the-escape-key">Closing the accordion with the Escape key</h3>
+<p>Users might want to close the accordion with the Escape key. You can choose whether you want to provide this functionality. For the purpose of learning, I’m going to show you how.</p>
+<p>Here’s what you need to do:</p>
+<ol>
+<li>Listen for a <code>keydown</code> event</li>
+<li>Check for the Escape key</li>
+<li>Check if the user is inside an accordion</li>
+<li>Check if the accordion is open</li>
+<li>Close the accordion if 2, 3, 4 are true</li>
+</ol>
+<p>When the user presses Escape, we want to close the accordion immediately. We don’t want to wait for them to lift their finger up. This is why we use a <code>keydown</code> event instead of <code>keyup</code>.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // Do something
+})
+</code></pre>
+<p>Next, we check if <code>event.key</code> is <code>Escape</code>. If the user presses something other than Escape, we do nothing.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  if (event.key !== 'Escape') return
+})
+</code></pre>
+<p>Third, we check if the user has a focus in an accordion. If the user does not have a focus in the accordion, we don’t know which accordion to close (so we don’t close anything).</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  const accordion = event.target.closest('.accordion')
+
+  if (event.key !== 'Escape') return
+  if (!accordion) return
+})
+</code></pre>
+<p>Fourth, we check if the accordion is opened. If the accordion is not opened, there’s nothing to close!</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  const key = event.key
+  const accordion = event.target.closest('.accordion')
+
+  if (key !== 'Escape') return
+  if (!accordion) return
+
+  if (accordion.classList.contains('is-open')) {
+    // Close accordion
+  }
+})
+</code></pre>
+<p>Finally, if we passed all our previous checks, we can proceed to close the accordion.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (accordion.classList.contains('is-open')) {
+    const accordionContent = accordion.querySelector('.accordion__content')
+
+    accordion.classList.remove('is-open')
+    accordionContent.style.height = 0
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/keyboard/escape.gif" alt="Escape key closes the accordion."></figure>
+<h3 id="directing-focus">Directing focus</h3>
+<p>When a user closes the accordion, it means they don’t want to read the contents of the accordion anymore. They want to move on. We should direct focus back to the accordion’s header so they can select another accordion.</p>
+<p>Although I say direct focus back to the accordion’s header, we cannot focus on <code>.accordion__header</code> directly. This is because <code>.accordion__header</code> is not a focusable element.</p>
+<p>In this case, there is a button inside <code>.accordion__header</code>. We will focus on that instead.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  const accordionHeaderButton = accordion.querySelector('.accordion__header').querySelector('button')
+  const accordionContent = accordion.querySelector('.accordion__content')
+
+  accordion.classList.remove('is-open')
+  accordionContent.style.height = 0
+  accordionHeaderButton.focus()
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/keyboard/close-focus.gif" alt="Focuses on accordion header"></figure>
+<h2 id="functions-for-opening-and-closing-the-accordion">Functions for opening and closing the accordion</h2>
+<p>We have two sets of code for closing the accordion:</p>
+<ol>
+<li><code>updateAccordion</code></li>
+<li>The set of code in the <code>keydown</code> event listener</li>
+</ol>
+<pre><code class="language-js">// From updateAccordion
+const updateAccordion = (accordion, height) =&gt; {
+  // ...
+  accordionContent.style.height = `${height}px`
+  accordion.classList.toggle('is-open')
+}
+</code></pre>
+<pre><code class="language-js">// From the keydown event listener
+document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (!accordion.classList.contains('is-open')) return
+  accordion.classList.remove('is-open')
+  accordionContent.style.height = 0
+  accordionHeaderButton.focus()
+})
+</code></pre>
+<p>It doesn’t make sense to have two sets of code to close the accordion. It makes more sense to have one function. Let’s make one. We’ll call it <code>closeAccordion</code>.</p>
+<pre><code class="language-js">const closeAccordion = accordion =&gt; {
+  const accordionHeaderButton = accordion.querySelector('.accordion__header').querySelector('button')
+  const accordionContent = accordion.querySelector('.accordion__content')
+
+  accordion.classList.remove('is-open')
+  accordionContent.style.height = 0
+  accordionHeaderButton.focus()
+}
+</code></pre>
+<p>Since we have <code>closeAccordion</code> we should have an <code>openAccordion</code> as well.</p>
+<pre><code class="language-js">const openAccordion = accordion =&gt; {
+  const accordionContent = accordion.querySelector('.accordion__content')
+  const height = getContentHeight(accordion)
+
+  accordionContent.style.height = `${height}px`
+  accordion.classList.add('is-open')
+}
+</code></pre>
+<p>Once we have <code>openAccordion</code> and <code>closeAccordion</code>, <code>getContentHeight</code> doesn’t need to depend on the accordion’s state anymore. We can always fetch the opened height (because we always set height to 0 when we close the accordion).</p>
+<pre><code class="language-js">const getContentHeight = accordion =&gt; {
+  const accordionInner = accordion.querySelector('.accordion__inner')
+  return accordionInner.getBoundingClientRect().height
+}
+</code></pre>
+<p>And we can simplify <code>openAccordion</code> slightly by removing a variable:</p>
+<pre><code class="language-js">const openAccordion = accordion =&gt; {
+  const accordionContent = accordion.querySelector('.accordion__content')
+
+  accordionContent.style.height = `${getContentHeight(accordion)}px`
+  accordion.classList.add('is-open')
+}
+</code></pre>
+<p>Finally, it makes sense to have an <code>isAccordionOpen</code> function that checks whether the accordion is opened.</p>
+<pre><code class="language-js">const isAccordionOpen = accordion =&gt; {
+  return accordion.classList.contains('is-open')
+}
+</code></pre>
+<p>Using <code>openAccordion</code> and <code>closeAccordion</code>:</p>
+<pre><code class="language-js">// In the click event
+accordionContainer.addEventListener('click', event =&gt; {
+  // ...
+
+  isAccordionOpen(accordion)
+    ? closeAccordion(accordion)
+    : openAccordion(accordion)
+})
+</code></pre>
+<pre><code class="language-js">// In the keydown event
+document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (isAccordionOpen(accordion)) {
+    closeAccordion(accordion)
+  }
+})
+</code></pre>
+<p>Note: Pay attention to how I changed each function’s comments.</p>
+<h2 id="switching-accordions">Switching accordions</h2>
+<p>Here’s what we’ll do:</p>
+<ul>
+<li>If the user presses Up on the header of an accordion: Focus on the previous accordion</li>
+<li>If the user presses Down on the header of an accordion: Focus on the next accordion</li>
+</ul>
+<p>Pay attention to the words I said. <strong>We only want to switch focus if users have their focus on the header of an accordion</strong>.</p>
+<p>Why?</p>
+<p><strong>If users have focus inside an accordion</strong>, they may be reading the contents of the accordion. If the contents are long and require scrolling, our users <strong>may use arrow keys to scroll</strong>. We <strong>should not break this default functionality.</strong></p>
+<p>To do this, you:</p>
+<ol>
+<li>Listen for a <code>keydown</code> event</li>
+<li>Check if focus on an accordion’s header</li>
+<li>Check if the user pressed down or up</li>
+<li>If the user pressed down, focus on the next accordion</li>
+<li>If the user pressed up, focus on the previous accordion</li>
+</ol>
+<p><strong>First: We listen for a <code>keydown</code> event.</strong></p>
+<p>Here, you need to decide whether to use the same <code>keydown</code> event for the Escape key. Code will be more complicated if you use the same <code>keydown</code> event, but speed will improve because you have one less event to listen to.</p>
+<p>In this case, the speed increase is negligible. We’ll use another <code>keydown</code> event to write cleaner code.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // Do something
+})
+</code></pre>
+<p><strong>Second: We check if focus is on an accordion’s header.</strong> If focus is on the accordion’s header, the <code>closest</code> element should be the accordion’s header.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  if (!event.target.closest('.accordion__header')) return
+})
+</code></pre>
+<p><strong>Third: We check if the user pressed down or up.</strong> We can tell with <code>event.key</code>.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  if (!event.target.closest('.accordion__header')) return
+  const key = event.key
+
+  if (key == 'ArrowDown') {
+    // Do something
+  }
+
+  if (key == 'ArrowUp') {
+    // Do something
+  }
+})
+</code></pre>
+<p><strong>Fourth &amp; Fifth: If the user pressed down, we focus on the next accordion. If the user pressed up, we focus on the previous accordion</strong>.</p>
+<p>Here, we need to know which accordion the user focused on. We can find the accordion with <code>closest</code>. We also need to know the position of the accordion in the list of accordions. We can get the position with <code>findIndex</code>.</p>
+<p>The next accordion is <code>index + 1</code>. The previous accordion is <code>index - 1</code>.</p>
+<p>When we focus, we need to focus on a focusable element. Here, we need to focus on <code>&lt;button&gt;</code> in the accordion header again.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  const accordion = event.target.closest('.accordion')
+  const accordions = [...accordionContainer.querySelectorAll('.accordion')]
+  const index = accordions.findIndex(element =&gt; element === accordion)
+
+  if (key == 'ArrowDown') {
+    accordions[index + 1].querySelector('button').focus()
+  }
+
+  if (key == 'ArrowUp') {
+    accordions[index - 1].querySelector('button').focus()
+  }
+})
+</code></pre>
+<p>But before we <code>focus</code> we need to make sure the accordion exists!</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  const accordion = event.target.closest('.accordion')
+  const accordions = [...accordionContainer.querySelectorAll('.accordion')]
+  const index = accordions.findIndex(element =&gt; element === accordion)
+
+  if (key == 'ArrowDown' &amp;&amp; accordions[index + 1]) {
+    accordions[index + 1].querySelector('button').focus()
+  }
+
+  if (key == 'ArrowUp' &amp;&amp; accordions[index - 1]) {
+    accordions[index - 1].querySelector('button').focus()
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/keyboard/select.gif" alt="Selecting accordions with arrow keys."></figure>
+<p>We can clean up the code slightly. Here, let’s create a variable called <code>targetAccordion</code>. We’ll use an <code>if/else</code> statement to find the target accordion before we focus on it.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  let targetAccordion
+
+  if (key === 'ArrowDown') {
+    targetAccordion = accordions[index + 1]
+  } else if (key === 'ArrowUp') {
+    targetAccordion = accordions[index - 1]
+  }
+
+  if (targetAccordion) {
+    targetAccordion.querySelector('button').focus()
+  }
+})
+</code></pre>
+<p>That’s it!</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../modal-keyboard/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Modal: Adding keyboard interaction</span>
+            </a>
+          <a href="../tabby-keyboard/index.html" data-link-to="next-lesson">
+              <span>🛠️ Tabby: Adding keyboard interaction</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /accordion-keyboard/  Mon, 24 Jan 2022 10:05:14 GMT -->
+</html>

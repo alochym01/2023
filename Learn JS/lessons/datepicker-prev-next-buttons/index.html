@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /datepicker-prev-next-buttons/  Mon, 24 Jan 2022 10:03:35 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Datepicker: Previous and Next buttons | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Datepicker: Previous and Next buttons</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Datepicker: Previous and Next buttons</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/datepicker/05.previous-next-buttons.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>You can create a Datepicker for any month of any year. The next thing is to allow users to switch between months with the previous and next buttons.</p>
+<p>For the buttons to work, we need to add an event listener to <code>.datepicker__buttons</code>.</p>
+<h2 id="adding-the-event-listener">Adding the event listener</h2>
+<p>If you recall from the previous lesson, we created the Datepicker this way:</p>
+<pre><code class="language-js">// Add the datepicker into the DOM
+form.appendChild(createDatepicker(date))
+</code></pre>
+<p>We don’t want to ask users to create the event listeners themselves. We want to create the listeners for them. To do this, we create event listeners inside <code>createDatepicker</code>.</p>
+<p>Event listeners can only be added to Nodes. This means we can only create an event listener after creating the datepicker’s innerHTML.</p>
+<pre><code class="language-js">const createDatepicker = date =&gt; {
+  // ...
+  datepicker.innerHTML = /*...*/
+
+  const previousNextButtons = datepicker.querySelector('datepicker__buttons')
+
+  previousNextButtons.addEventListener('click', event =&gt; {
+    // ...
+  })
+  // ...
+}
+</code></pre>
+<h2 id="next-button-functionality">Next button functionality</h2>
+<p>When a user clicks on the next button, we want to show next month’s calendar. This means we must:</p>
+<ol>
+<li>Change the <code>textContent</code> and datetime attribute of the year-month indicator</li>
+<li>Create a new date grid</li>
+</ol>
+<pre><code class="language-js">previousNextButtons.addEventListener('click', event =&gt; {
+  if (!event.target.matches('button')) return
+
+  if (event.target.matches('.datepicker__prev')) {
+    // Show previous month
+  }
+
+  if (event.target.matches('.datepicker__next')) {
+    // Show next month
+  }
+})
+</code></pre>
+<h3 id="changing-the-year-month-indicator">Changing the year-month indicator</h3>
+<p>We need to know what’s the current year-month on the Datepicker. We can get this information from the <code>datetime</code> attribute.</p>
+<pre><code class="language-js">if (event.target.matches('.datepicker__next')) {
+  const time = datepicker.querySelector('.datepicker__year-month').firstElementChild
+  const datetime = time.getAttribute('datetime')
+  console.log(datetime)
+}
+</code></pre>
+<figure><img src="../../images/components/datepicker/prev-next-month/datetime.png" alt="Logs the datetime. Shows 2019-02."></figure>
+<p>We need to create a <code>Date</code> from this <code>datetime</code> attribute. The simplest way is to use <code>new Date</code> with this <code>datetime</code> attribute value.</p>
+<pre><code class="language-js">if (event.target.matches('.datepicker__next')) {
+  const timeEl = datepicker.querySelector('.datepicker__year-month').firstElementChild
+  const datetime = timeEl.getAttribute('datetime')
+  const currentDate = new Date(datetime)
+  console.log(currentDate)
+}
+</code></pre>
+<figure><img src="../../images/components/datepicker/prev-next-month/date-obj.png" alt="Logs date created with new Date(datetime). Shows a date string in Chrome."></figure>
+<p>This works. But you should try not to create dates with date strings. Things will break if you make a small mistake. You should always create dates with the arguments method. I wrote about this back in “<a href="../../404/index.html">Setting a specific date</a>” lesson.</p>
+<p>To create a date with arguments, we can create a new function called <code>datetimeToDate</code>. This name of this function explains we’re converting a <code>datetime</code> attribute into a <code>Date</code> object.</p>
+<pre><code class="language-js">const datetimeToDate = datetime =&gt; {
+  // ...
+}
+</code></pre>
+<p>We know the datetime attribute has the format: <code>YYYY-MM</code> (like <code>2019-02</code>). If we split the <code>datetime</code> by <code>-</code>, we can get the <code>year</code> and <code>month</code> easily.</p>
+<pre><code class="language-js">const datetimeToDate = datetime =&gt; {
+  const [year, month] = datetime.split('-')
+  console.log(year) // 2019
+  console.log(month) // 02
+}
+
+datetimeToDate('2019-02')
+</code></pre>
+<p><code>year</code> and <code>month</code> values are strings. If we want to use the arguments approach to create a new Date, we need to convert these strings into numbers.</p>
+<p>We can convert them into numbers with <code>map</code> and <code>parseInt</code>.</p>
+<pre><code class="language-js">const datetimeToDate = datetime =&gt; {
+  const [year, month] = datetime.split('-')
+    .map(num =&gt; parseInt(num))
+
+  console.log(year) // 2019
+  console.log(month) // 02
+}
+
+datetimeToDate('2019-02')
+</code></pre>
+<p>To create a date from Datetime, we can pass the <code>year</code> and <code>month</code> arguments into <code>new Date</code>.</p>
+<pre><code class="language-js">const datetimeToDate = datetime =&gt; {
+  const [year, month] = datetime.split('-')
+    .map(num =&gt; parseInt(num))
+
+  // Remember, `month` needs to be zero-indexed
+  return new Date(year, month - 1)
+}
+</code></pre>
+<p>Using it:</p>
+<pre><code class="language-js">if (event.target.matches('.datepicker__next')) {
+  // ...
+  const currentDate = datetimeToDate(datetime)
+}
+</code></pre>
+<p>Once we know the current date, we can use its value to create a <code>Date</code> for the next month.</p>
+<pre><code class="language-js">if (event.target.matches('.datepicker__next')) {
+  // ...
+  const currentDate = datetimeToDate(datetime)
+  const year = currentDate.getFullYear()
+  const month = currentDate.getMonth()
+  const targetDate = new Date(year, month + 1)
+}
+</code></pre>
+<p>Once we know what’s the next month, we can change the year-month indicator’s <code>textContent</code> and <code>datetime</code> attributes.</p>
+<pre><code class="language-js">if (event.target.matches('.datepicker__next')) {
+  // ...
+  const targetDate = new Date(year, month + 1)
+  const targetMonth = targetDate.getMonth()
+  const monthName = monthsInAYear[targetMonth]
+  const datetimeMonth = (targetMonth + 1).toString().padStart(2, '0')
+
+  // Update Text Content and datetime attribute
+  time.textContent = `${monthName} ${year}`
+  time.setAttribute('datetime', `${year}-${datetimeMonth}&quot;`)
+}
+</code></pre>
+<figure><img src="../../images/components/datepicker/prev-next-month/change-year-month-indicator.gif" alt="Clicks next button. Changes text from February 2019 to March 2019. Changes datetime attribute from 2019-02 to 2019-03."></figure>
+<h3 id="change-the-date-grid">Change the date grid</h3>
+<p>It’s simple to update the date grid once you know what’s the next month. All we need to do is feed <code>targetDate</code> into <code>createDateGridHTML</code>.</p>
+<pre><code class="language-js">if (event.target.matches('.datepicker__next')) {
+  // ...
+  // ...
+  const dategrid = datepicker.querySelector('.datepicker__date-grid')
+  dategrid.innerHTML = createDateGridHTML(targetDate)
+}
+</code></pre>
+<figure><img src="../../images/components/datepicker/prev-next-month/change-calendar.gif" alt="Displayed calendar increases by one month when the user clicks on the next button"></figure>
+<h2 id="previous-button-functionality">Previous button functionality</h2>
+<p>You should be able to write the code for the previous button on your own. It uses the same concept.</p>
+<pre><code class="language-js">if (event.target.matches('.datepicker__previous')) {
+  // 1. Find out what's the currently selected month
+  const time = datepicker.querySelector('.datepicker__year-month').firstElementChild
+  const datetime = time.getAttribute('datetime')
+  const currentDate = datetimeToDate(datetime)
+
+  // 2. Figure out what's the previous month
+  const year = currentDate.getFullYear()
+  const month = currentDate.getMonth()
+  const targetDate = new Date(year, month - 1)
+
+  // 3. Update the year-month indicator
+  const targetMonth = targetDate.getMonth()
+  const monthName = monthsInAYear[targetMonth]
+  const datetimeMonth = (targetMonth + 1).toString().padStart(2, '0')
+  time.textContent = `${monthName} ${year}`
+  time.setAttribute('datetime', `${year}-${datetimeMonth}&quot;`)
+
+  // 4. Update the date-grid
+  const dategrid = datepicker.querySelector('.datepicker__date-grid')
+  dategrid.innerHTML = createDateGridHTML(targetDate)
+}
+</code></pre>
+<figure><img src="../../images/components/datepicker/prev-next-month/change-calendar-previous.gif" alt="Displayed calendar reduces by one month when the user clicks on the previous button"></figure>
+<h2 id="cleaning-up-the-code">Cleaning up the code</h2>
+<p>At this point, you’ll notice we do two things when a user clicks the previous or next button.</p>
+<ol>
+<li>Change the <code>&lt;time&gt;</code> element’s <code>textContent</code> and <code>datetime</code> attribute</li>
+<li>Change the date grid</li>
+</ol>
+<p>To change these two things, we need to find the target date. Once we have the target date, we can use functions to change the time element and date grid.</p>
+<h3 id="getting-the-current-date">Getting the current date</h3>
+<p>We used these get the current date in both <code>if</code> statements.</p>
+<pre><code class="language-js">const time = datepicker.querySelector('.datepicker__year-month').firstElementChild
+const datetime = time.getAttribute('datetime')
+const currentDate = datetimeToDate(datetime)
+</code></pre>
+<p>We can group them into a function.</p>
+<pre><code class="language-js">const getDateFromYearMonthIndicator = _ =&gt; {
+  const time = datepicker.querySelector('.datepicker__year-month').firstElementChild
+  const datetime = time.getAttribute('datetime')
+  return datetimeToDate(datetime)
+}
+</code></pre>
+<p>If we put <code>getDateFromYearMonthIndicator</code> inside the Datepicker, we don’t need to pass in the <code>datepicker</code> variable.</p>
+<pre><code class="language-js">const createDatepicker = date =&gt; {
+  // ...
+  const datepicker.innerHTML = // ...
+
+  // ...
+
+  const getDateFromYearMonthIndicator = _ =&gt; {
+    const time = datepicker.querySelector('.datepicker__year-month').firstElementChild
+    const datetime = time.getAttribute('datetime')
+    return datetimeToDate(datetime)
+  }
+}
+</code></pre>
+<p>Using it:</p>
+<pre><code class="language-js">previousNextButtons.addEventListener('click', event =&gt; {
+  const currentDate = getDateFromYearMonthIndicator()
+  // ...
+}
+</code></pre>
+<h3 id="getting-the-target-date">Getting the target date</h3>
+<p>We used these to get the target date</p>
+<pre><code class="language-js">previousNextButtons.addEventListener('click', event =&gt; {
+  const year = currentDate.getFullYear()
+  const month = currentDate.getMonth()
+
+  if (event.target.matches('.datepicker__previous')) {
+    const targetDate = new Date(year, month - 1)
+    // ...
+  }
+
+  if (event.target.matches('.datepicker__next')) {
+    const targetDate = new Date(year, month + 1)
+  }
+})
+</code></pre>
+<p>We can’t simplify this into a function that makes sense, so we’ll leave them. The best we can use a ternary operator instead of two if statements.</p>
+<pre><code class="language-js">previousNextButtons.addEventListener('click', event =&gt; {
+  // ...
+  const year = currentDate.getFullYear()
+  const month = currentDate.getMonth()
+
+  // Finds the previous or next month
+  const targetDate = event.target.matches('.datepicker__previous')
+    ? new Date(year, month - 1)
+    : new Date(year, month + 1)
+  // ...
+})
+</code></pre>
+<h3 id="updating-the-time-element">Updating the time element</h3>
+<p>We used these to update the time element’s <code>textContent</code> and <code>datetime</code> attribute.</p>
+<pre><code class="language-js">const year = date.getFullYear()
+const targetMonth = targetDate.getMonth()
+const monthName = monthsInAYear[targetMonth]
+const datetimeMonth = (targetMonth + 1).toString().padStart(2, '0')
+
+time.textContent = `${monthName} ${year}`
+time.setAttribute('datetime', `${year}-${datetimeMonth}&quot;`)
+</code></pre>
+<p>We can put this into a function</p>
+<pre><code class="language-js">const updateYearMonthIndicatorTimeElement = date =&gt; {
+  const time = datepicker.querySelector('.datepicker__year-month').firstElementChild
+
+  const year = date.getFullYear()
+  const targetMonth = date.getMonth()
+  const monthName = monthsInAYear[targetMonth]
+  const datetimeMonth = (targetMonth + 1).toString().padStart(2, '0')
+
+  time.textContent = `${monthName} ${year}`
+  time.setAttribute('datetime', `${year}-${datetimeMonth}&quot;`)
+}
+</code></pre>
+<p>Using it:</p>
+<pre><code class="language-js">previousNextButtons.addEventListener('click', event =&gt; {
+  // ...
+  updateYearMonthIndicatorTimeElement(targetDate)
+  // ...
+})
+</code></pre>
+<h3 id="updating-the-date-grid">Updating the date grid</h3>
+<p>We used these to update the date grid.</p>
+<pre><code class="language-js">previousNextButtons.addEventListener('click', event =&gt; {
+  // ...
+  if (event.target.matches('.datepicker__previous')) {
+    const dategrid = datepicker.querySelector('.datepicker__date-grid')
+    const targetDate = new Date(year, month - 1)
+    dategrid.innerHTML = createDateGridHTML(targetDate)
+  }
+
+  if (event.target.matches('.datepicker__next')) {
+    const dategrid = datepicker.querySelector('.datepicker__date-grid')
+    const targetDate = new Date(year, month + 1)
+    dategrid.innerHTML = createDateGridHTML(targetDate)
+  }
+})
+</code></pre>
+<p>Since <code>targetDate</code> is declared outside of the <code>if</code> statements, we can create the date grid outside of any <code>if</code> statements.</p>
+<pre><code class="language-js">previousNextButtons.addEventListener('click', event =&gt; {
+  // ...
+  const targetDate = event.target.matches('.datepicker__previous')
+      ? new Date(year, month - 1)
+      : new Date(year, month + 1)
+
+  // ...
+  const dategrid = datepicker.querySelector('.datepicker__date-grid')
+  dategrid.innerHTML = createDateGridHTML(targetDate)
+})
+</code></pre>
+<h2 id="more-clean-up">More clean up</h2>
+<p>There are a few more things we can do to clean up the code.</p>
+<h3 id="code-for-the-year-month-indicator">Code for the year-month indicator</h3>
+<p>The code for making the year-month indicator and the code for updating the year-month indicator were similar.</p>
+<p>In both cases, you need to set <code>year</code>, <code>month</code>, <code>monthName</code>, and <code>datetimeMonth</code> variables.</p>
+<pre><code class="language-js">// Making the time element
+const createDatepicker = date =&gt; {
+  const year = date.getFullYear()
+  const month = date.getMonth()
+  const monthName = monthsInAYear[month]
+  const datetimeMonth = (month + 1).toString().padStart(2, '0')
+
+  // ...
+  const calendar = `
+    &lt;div class=&quot;datepicker__calendar&quot;&gt;
+      &lt;div class=&quot;datepicker__year-month&quot;&gt;
+        &lt;time datetime=&quot;${year}-${datetimeMonth}&quot;&gt;${monthName} ${year}&lt;/time&gt;
+      &lt;/div&gt;
+      &lt;!-- ... --&gt;
+    &lt;/div&gt;
+  `
+}
+</code></pre>
+<pre><code class="language-js">// Updating the time element
+const updateYearMonthIndicatorTimeElement = date =&gt; {
+  const time = datepicker.querySelector('.datepicker__year-month').firstElementChild
+
+  const year = date.getFullYear()
+  const targetMonth = date.getMonth()
+  const monthName = monthsInAYear[targetMonth]
+  const datetimeMonth = (targetMonth + 1).toString().padStart(2, '0')
+
+  time.textContent = `${monthName} ${year}`
+  time.setAttribute('datetime', `${year}-${datetimeMonth}&quot;`)
+}
+</code></pre>
+<p>If we returned <code>&lt;time&gt;</code> element as a HTML string in the function, we can use it to create and update the year-month indicator.</p>
+<p>We’ll change the function’s name from <code>updateYearMonthIndicatorTimeElement</code> to <code>creaetYearMonthIndicatorTimeElement</code> to go with the <code>return</code> statement.</p>
+<pre><code class="language-js">const createYearMonthIndicatorTimeElement = date =&gt; {
+  const year = date.getFullYear()
+  const targetMonth = date.getMonth()
+  const monthName = monthsInAYear[targetMonth]
+  const datetimeMonth = (targetMonth + 1).toString().padStart(2, '0')
+
+  return `
+    &lt;time datetime=&quot;${year}-${datetimeMonth}&quot;&gt;${monthName} ${year}&lt;/time&gt;
+  `
+}
+</code></pre>
+<p>Also, did you notice we only used <code>monthsInAYear</code> inside <code>createYearMonthIndicatorTimeElement</code>? Let’s put <code>monthsInAYear</code> inside this function to make the code neater.</p>
+<pre><code class="language-js">const createYearMonthIndicatorTimeElement = date =&gt; {
+  const monthsInAYear = [
+    'January',
+    'February',
+    'March',
+    'April',
+    'May',
+    'June',
+    'July',
+    'August',
+    'September',
+    'October',
+    'November',
+    'December'
+  ]
+
+  const year = date.getFullYear()
+  const targetMonth = date.getMonth()
+  const monthName = monthsInAYear[targetMonth]
+  const datetimeMonth = toTwoDigitString(targetMonth + 1)
+
+  return `
+      &lt;time datetime=&quot;${year}-${datetimeMonth}&quot;&gt;${monthName} ${year}&lt;/time&gt;
+    `
+}
+</code></pre>
+<p>Using it:</p>
+<pre><code class="language-js">// Making the time element
+const createDatepicker = date =&gt; {
+  const year = date.getFullYear()
+  const month = date.getMonth()
+  const monthName = monthsInAYear[month]
+  const datetimeMonth = (month + 1).toString().padStart(2, '0')
+
+  // ...
+  const calendar = `
+    &lt;div class=&quot;datepicker__calendar&quot;&gt;
+      &lt;div class=&quot;datepicker__year-month&quot;&gt;
+        ${createYearMonthIndicatorTimeElement(date)}
+      &lt;/div&gt;
+      &lt;!-- ... --&gt;
+    &lt;/div&gt;
+  `
+}
+</code></pre>
+<pre><code class="language-js">// Updating the time element
+previousNextButtons.addEventListener('click', event =&gt; {
+  const targetDate = event.target.matches('.datepicker__previous')
+      ? new Date(year, month - 1)
+      : new Date(year, month + 1)
+  // ...
+  const yearMonthIndicator = datepicker.querySelector('.datepicker__year-month')
+  yearMonthIndicator.innerHTML = createYearMonthIndicatorTimeElement(date)
+})
+
+</code></pre>
+<h3 id="creating-a-two-digit-string">Creating a two-digit string</h3>
+<p>We used this line of code three times to create a two-digit string for the <code>datetime</code> attribute.</p>
+<pre><code class="language-js">// Used this twice
+const datetimeMonth = (month + 1).toString().padStart(2, '0')
+
+// Used this once
+const datetimeDay = day.toString().padStart(2, '0')
+</code></pre>
+<p>We can create a function called <code>toTwoDigitString</code> so we don’t have to write so much.</p>
+<pre><code class="language-js">const toTwoDigitString = number =&gt; {
+  return number.toString().padStart(2, '0')
+}
+</code></pre>
+<p>Using <code>toTwoDigitString</code>:</p>
+<pre><code class="language-js">const datetimeMonth = toTwoDigitString(month + 1)
+const datetimeDay = toTwoDigitString(day)
+</code></pre>
+<p>That’s it!</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../datepicker-build-with-javascript/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Datepicker: Building the datepicker with JavaScript</span>
+            </a>
+          <a href="../datepicker-select-date/index.html" data-link-to="next-lesson">
+              <span>🛠️ Datepicker: Selecting a date</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /datepicker-prev-next-buttons/  Mon, 24 Jan 2022 10:03:36 GMT -->
+</html>

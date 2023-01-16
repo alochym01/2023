@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /popover-keyboard/  Mon, 24 Jan 2022 10:05:23 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Popover: Keyboard | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Popover: Keyboard</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Popover: Keyboard</h1>
+
+
+
+      <div class="meta source-code">
+
+    <a href="../../download/components/popover/06.keyboard-starter.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Starter</span>
+    </a>
+
+    <a href="../../download/components/popover/07.keyboard.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>We can open a popover with <code>Enter</code> and <code>Space</code> keys since the trigger is a button.</p>
+<figure role="figure"><img src="../../images/components/popover/keyboard/open-close.gif" alt="Opens the popover with the space key and closes it with the enter key."></figure>
+<p>But this is not enough to consider popover as accessible.</p>
+<p>Why?</p>
+<p>A popover over can contain focusable elements. For the popover to be truly accessible, we need to allow users to <code>Tab</code> into (and out of) the popover.</p>
+<figure role="figure"><img src="../../images/components/popover/keyboard/into-out.gif" alt="Tabs into and out of a popover"></figure>
+<h2 id="preparations">Preparations</h2>
+<p>We will add a form to the right popover for this lesson. Here’s the HTML. You can find the styles in the starter files.</p>
+<pre><code class="language-html">&lt;div id=&quot;pop-3&quot; class=&quot;popover&quot; data-position=&quot;right&quot;&gt;
+  &lt;h2&gt;Heya, form!&lt;/h2&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
+    &lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot; /&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;label for=&quot;message&quot;&gt;Message&lt;/label&gt;
+    &lt;textarea name=&quot;message&quot; id=&quot;message&quot;&gt;&lt;/textarea&gt;
+  &lt;/div&gt;
+  &lt;div&gt;
+    &lt;button type=&quot;submit&quot;&gt;Send&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<h2 id="tabbing-into-the-popover">Tabbing into the popover</h2>
+<p>If the popover is open, we want to let users <code>Tab</code> into the first focusable element. This means we need to listen for a <code>keydown</code> event.</p>
+<p>Since the popover triggers can be placed anywhere in the DOM, we should listen to the <code>keydown</code> event on the document.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+})
+</code></pre>
+<p>We’re only interested if the user presses the <code>Tab</code> key. We can check if the user pressed the <code>Tab</code> key with <code>event.key</code>.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  const { key } = event
+  if (key !== 'Tab') return
+})
+</code></pre>
+<p>We don’t want to do anything if the user presses <code>Shift</code> + <code>Tab</code>.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (event.shiftKey) return
+})
+</code></pre>
+<p>Next, we want to check if the <code>Tab</code> key originates from a trigger. We’ll end the function with an early return if <code>Tab</code> doesn’t originate from a trigger.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  const popoverTrigger = event.target.closest('.popover-trigger')
+  if (!popoverTrigger) return
+})
+</code></pre>
+<p>Next, we need to find the popover to <code>Tab</code> into. We can find the popover with <code>getPopover</code>.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  const popover = getPopover(popoverTrigger)
+})
+</code></pre>
+<p>We only want to <code>Tab</code> into the popover if it is open. If the popover is open, it should not have the <code>hidden</code> attribute.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  const shouldTabIntoPopover = !popover.hasAttribute('hidden')
+
+  if (shouldTabIntoPopover) {
+    // Tabs into popover
+  }
+})
+</code></pre>
+<p>We want to Tab to the first focusable element in the popover. Possible focusable elements are:</p>
+<ol>
+<li>Links</li>
+<li>Buttons</li>
+<li>Form fields (like <code>input</code> and <code>textarea</code>)</li>
+<li>Elements with <code>tabindex</code> set to <code>0</code></li>
+<li>Elements with <code>tabindex</code> set to <code>1</code></li>
+</ol>
+<p>We’re only interested in elements a user can <code>Tab</code> into, so we don’t want elements from (5).</p>
+<p>We can use <code>querySelectorAll</code> with a set of selectors to find all possible focusable elements:</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (shouldTabIntoPopover) {
+    const focusables = [...popover.querySelectorAll(
+      'a, button, input, textarea, select, [tabindex]:not([tabindex=&quot;-1&quot;])'
+    )]
+  }
+})
+</code></pre>
+<p>The first focusable element is the first item in <code>focusables</code>. We can use the <code>focus</code> method to focus on the first focusable element.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (shouldTabIntoPopover) {
+    const focusables = [...popover.querySelectorAll(
+      'a, button, input, textarea, select, [tabindex]:not([tabindex=&quot;-1&quot;])'
+    )]
+    focusables[0].focus()
+  }
+})
+</code></pre>
+<p>The <code>Tab</code> key’s default behavior activates after the <code>focus</code> method. We need to prevent this default behavior so it doesn’t shift focus to the second focusable element.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (shouldTabIntoPopover) {
+    event.preventDefault()
+    // ...
+    focusables[0].focus()
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/popover/keyboard/popover-focus-first.gif" alt="Opens the popover with space. Then tabs into the first focusable element."></figure>
+<h3 id="what-if-there-are-no-focusable-elements-in-the-popover%3F">What if there are no focusable elements in the popover?</h3>
+<p>We can only <code>Tab</code> into the popover if there are focusable elements in the popover. We can adjust <code>shouldTabIntoPopover</code> to account for this.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  const popover = getPopover(popoverTrigger)
+  const focusables = [...popover.querySelectorAll(
+    'a, button, input, textarea, select, [tabindex]:not([tabindex=&quot;-1&quot;])'
+  )]
+  const shouldTabIntoPopover = !popover.hasAttribute('hidden') &amp;&amp; focusables.length !== 0
+
+  if (shouldTabIntoPopover) {
+    event.preventDefault()
+    focusables[0].focus()
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/popover/keyboard/tab-no-focusable.gif" alt="Tab does not focus on the popover if there are no focusable elements in the popover."></figure>
+<h2 id="tabbing-out-of-the-popover">Tabbing out of the popover</h2>
+<p>We need to let users <code>Tab</code> out of the popover as well.</p>
+<ol>
+<li><code>Shift</code> + <code>Tab</code> on first focusable element: Goes back to trigger</li>
+<li><code>Tab</code> on last focusable element: Go to next focusable element (from the trigger)</li>
+</ol>
+<h3 id="shift-%2B-tab-on-first-focusable-element">Shift + Tab on first focusable element</h3>
+<p>First, we’ll listen to all popovers with the event delegation pattern.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  const popover = event.target.closest('.popover')
+  if (!popover) return
+}
+</code></pre>
+<p>We will only do things if the user presses <code>Tab</code>.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (event.key !== 'Tab') return
+})
+</code></pre>
+<p>Next, we need to find the popover’s trigger. We can get the trigger by finding an element with a <code>data-target</code> attribute that matches the popover’s <code>id</code> attribute.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  const popoverTrigger = document.querySelector(`.popover-trigger[data-target=&quot;${popover.id}&quot;]`)
+})
+</code></pre>
+<p>If the user presses <code>Shift</code> + <code>Tab</code> on the first focusable element, we want to return the user back to the trigger.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  const focusables = [...popover.querySelectorAll(
+      'a, button, input, textarea, select, [tabindex]:not([tabindex=&quot;-1&quot;])'
+    )]
+
+  if (event.shiftKey &amp;&amp; event.target === focusables[0]) {
+	return popoverTrigger.focus()
+  }
+})
+</code></pre>
+<p>The default <code>Shift</code> + <code>Tab</code> behavior activates after the <code>focus</code> method. We need to prevent this behavior. Otherwise, we’ll go to the focusable element before the popover trigger.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+
+  if (event.shiftKey &amp;&amp; event.target === focusables[0]) {
+    event.preventDefault()
+	return popoverTrigger.focus()
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/popover/keyboard/shift-tab-out.gif" alt="Shift + Tab out of the popover."></figure>
+<h3 id="tab-on-last-focusable-element">Tab on last focusable element</h3>
+<p>If the user press <code>Tab</code> on the last focusable element (without the Shift key), we want to focus on the next focusable element after the trigger.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (!event.shiftKey &amp;&amp; event.target === focusables[focusables.length - 1]) {
+    // Focus on next element after trigger
+  }
+})
+</code></pre>
+<p>The easiest way to do this is to:</p>
+<ol>
+<li>Focus on the trigger with the <code>focus</code> method</li>
+<li>Let the default Tab behaviour do the trick</li>
+</ol>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (!event.shiftKey &amp;&amp; event.target === focusables[focusables.length - 1]) {
+    return popoverTrigger.focus()
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/popover/keyboard/tab-out.gif" alt="Tabs out of the popover."></figure>
+<h2 id="closing-the-popover">Closing the popover</h2>
+<p>It’s a common practice for keyboard users to close things with the Escape key. We want to let them use Escape to close the popover as well.</p>
+<p>First, we’ll listen to a <code>keydown</code> event on the <code>document</code>. This lets us manage all popovers at once.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+})
+</code></pre>
+<p>We only want to do something if:</p>
+<ol>
+<li>The user presses Escape</li>
+<li>The event originates from a popover</li>
+</ol>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  const { key } = event
+  if (key !== 'Escape') return
+
+  const popover = event.target.closest('.popover')
+  if (!popover) return
+})
+</code></pre>
+<p>If the user presses <code>Escape</code>, we want to close the popover.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  popover.setAttribute('hidden', true)
+})
+</code></pre>
+<p>We also want to focus on its trigger.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  popover.setAttribute('hidden', true)
+  const popoverTrigger = document.querySelector(`.popover-trigger[data-target=&quot;${popover.id}&quot;]`)
+  popoverTrigger.focus()
+})
+</code></pre>
+<figure role="figure"><img src="../../404/index.html" alt="Closes the popover with the Escape key."></figure>
+<p>That’s it!</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../calculator-keyboard/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Calculator: Adding keyboard interaction</span>
+            </a>
+          <a href="../popover-keyboard-refactor/index.html" data-link-to="next-lesson">
+              <span>🛠️ Popover: Refactor</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /popover-keyboard/  Mon, 24 Jan 2022 10:05:24 GMT -->
+</html>

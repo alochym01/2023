@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /dota-hero-page/  Mon, 24 Jan 2022 10:04:41 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Dota Heroes: Hero Page | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Dota Heroes: Hero Page</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Dota Heroes: Hero Page</h1>
+
+
+
+      <div class="meta source-code">
+
+    <a href="../../download/components/dota/05.hero-page-starter.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Starter</span>
+    </a>
+
+    <a href="../../download/components/dota/06.hero-page.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>We will build the Hero Page for the Dota application. Here’s an example of what it looks like:</p>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/hero-page.png" alt="Example of the hero page">
+</figure>
+<p>We’ll eventually combine this page with the Heroes List Page to make a full application. For now, let’s be patient and do one thing at a time.</p>
+<p>Please use the Starter file given to you in this lesson. We’ll write the HTML in a file called <code>hero.html</code> and the JavaScript in a file called <code>hero.js</code>.</p>
+<p>Please also navigate to <code>/hero.html</code> in your browser to view this page.</p>
+<h2 id="anatomy-of-the-hero-page">Anatomy of the Hero Page</h2>
+<p>The Hero Page contains 4 pieces of information:</p>
+<ul>
+<li>The hero’s name</li>
+<li>The hero’s image</li>
+<li>The hero’s description</li>
+<li>The hero’s abilities</li>
+</ul>
+<p>For now, let’s say we want to fetch information about the hero Axe. We’ll set <code>heroName</code> to be <code>axe</code>.</p>
+<pre><code class="language-javascript">const heroName = 'axe'
+</code></pre>
+<p>We can get the hero’s image via the <code>heroes</code> endpoint.</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/heroes`)
+  .then(response =&gt; {
+    const heroes = Object.values(response.body).map(hero =&gt; {
+      return {
+        name: hero.localized_name,
+        attackType: hero.attack_type.toLowerCase(),
+        primaryAttribute: hero.primary_attr,
+        roles: hero.roles.map(role =&gt; role.toLowerCase()),
+        image: `https://api.opendota.com${hero.img}`
+      }
+    })
+  })
+  .catch(console.log)
+</code></pre>
+<p>Getting the hero’s description and abilities are slightly tougher. After digging around the API, I realized we can also get them through the <a href="https://github.com/odota/dotaconstants/tree/master/build">constants repository</a>.</p>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/constants.png" alt="The constants endpoint">
+</figure>
+<h2 id="getting-the-hero%E2%80%99s-description">Getting the hero’s description</h2>
+<p>The hero’s description can be found in <code>hero_lore.json</code> .</p>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/hero-lore.png" alt="Hero lore file">
+</figure>
+<p>If you click on <code>hero_lore.json</code>, you should see an object. This object contains hero names as keys and the description of each hero as values.</p>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/hero-lore-contents.png" alt="Contents in hero_lore.json. ">
+</figure>
+<p>To access <code>hero_lore.json</code>, we can use the constants API.</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/hero_lore`).then(response =&gt; {
+  console.log(response.body)
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/hero-lore-response.png" alt="Response from the hero lore endpoint.">
+</figure>
+<p>To get the description for Axe, we simply need to find Axe’s entry from this data.</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/hero_lore`).then(response =&gt; {
+  const heroLore = response.body[heroName]
+  console.log(heroLore)
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/hero-lore-axe.png" alt="Axe's description">
+</figure>
+<h2 id="getting-the-hero%E2%80%99s-abilities">Getting the hero’s abilities</h2>
+<p>Each hero has 4-5 abilities. These abilities can be found in <code>hero_abilities.json</code>.</p>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/hero-abilities.png" alt="hero_abilities file.">
+</figure>
+<p>We can use the <code>hero_abilities</code> endpoint to fetch this data.</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/hero_abilities`).then(response =&gt; {
+  console.log(response.body)
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/hero-abilities-response.png" alt="Response from the hero_abilities endpoint.">
+</figure>
+<p>We can get Axe’s abilities by looking under <code>npc_dota_hero_axe</code>.</p>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/hero-abilities-axe.png" alt="Axe's abilities.">
+</figure>
+<p>Axe has 4 abilities:</p>
+<ul>
+<li>Beserker’s call</li>
+<li>Battle Hunger</li>
+<li>Counter Helix</li>
+<li>Culling blade</li>
+</ul>
+<p>Note: Ignore the <code>generic_hidden</code> portion. It’s not part of a hero’s abilities and I have no idea why it’s in the data. Since it’s in the data, we simply have to deal with it.</p>
+<p>We can get this list of abilities like this:</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/hero_abilities`).then(response =&gt; {
+  const heroAbilities = response.body[`npc_dota_hero_${heroName}`].abilities
+})
+</code></pre>
+<p>Since we don’t need <code>generic_hidden</code>, we can filter it out from the list of abilities.</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/hero_abilities`).then(response =&gt; {
+  const heroAbilities = response.body[
+    `npc_dota_hero_${heroName}`
+  ].abilities.filter(ability =&gt; ability !== 'generic_hidden')
+
+  console.log(heroAbilities)
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/hero-abilities-axe-filtered.png" alt="Axe's abilities.">
+</figure>
+<h2 id="getting-information-about-each-ability">Getting information about each ability</h2>
+<p>We need to know three things about each ability</p>
+<ol>
+<li>Name</li>
+<li>Image</li>
+<li>Description</li>
+</ol>
+<p>We can get this information from <code>abilities.json</code></p>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/abilities.png" alt="Abilities file">
+</figure>
+<p>If you click on <code>abilities.json</code> you’ll get to a page that “says we can’t show files that are this big right now”.</p>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/abilities-large.png" alt="Abilities file is too large to be shown in Github.">
+</figure>
+<p>Don’t worry about this. Click on view raw and you’ll see a list of all the abilities that exist in Dota.</p>
+<p>Each entry in this JSON file contains the name, image, and description of the ability. Here’s an example of Axe’s first ability, berserker’s call.</p>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/abilities-axe-bc.png" alt="Axe's first ability, Berserker's call. ">
+</figure>
+<p>We can fetch <code>abilities.json</code> like this:</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/abilities`).then(response =&gt; {
+  console.log(response.body)
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/abilities-response.png" alt="Response from the abilities endpoint.">
+</figure>
+<p>We can then loop through each of Axe’s abilities to find their description. We can make the loop using the <code>map</code> function in this case.</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/abilities`).then(response =&gt; {
+  const allAbilities = response.body
+
+  zlFetch(`${dotaApi}/constants/hero_abilities`).then(response =&gt; {
+    const heroAbilities = response.body[`npc_dota_hero_${heroName}`].abilities
+      .filter(ability =&gt; ability !== 'generic_hidden')
+      .map(ability =&gt; allAbilities[ability])
+
+    console.log(heroAbilities)
+  })
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/abilities-axe.png" alt="Axe's abilities">
+</figure>
+<p>Each item in this mapped list contains the three pieces of information we need. Here’s an example of what we have about Berserker’s Call.</p>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/abilities-axe-first.png" alt="Axe's first ability.">
+</figure>
+<p>This step is optional. I like to format othe data from the endpoint so I create a map that contains only the data I need. This makes my life slightly easier so I don’t have to remember the <code>dname</code> property when I search for the ability’s name.</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/abilities`).then(response =&gt; {
+  const allAbilities = response.body
+
+  zlFetch(`${dotaApi}/constants/hero_abilities`).then(response =&gt; {
+    const heroAbilities = response.body[`npc_dota_hero_${heroName}`]
+      /* ... */
+      .map(ability =&gt; {
+        return {
+          name: ability.dname,
+          description: ability.desc,
+          image: `https://api.opendota.com${ability.img}`
+        }
+      })
+
+    console.log(heroAbilities)
+  })
+})
+</code></pre>
+<h2 id="inserting-the-data-into-the-dom">Inserting the data into the DOM</h2>
+<p>Take a look at the <code>hero.html</code>. You’ll notice some data attributes in this file. These data attributes let us select the relevant elements easily.</p>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/elements.png" alt="Data attributes in the hero.html file">
+</figure>
+<pre><code class="language-javascript">const heroNameEl = document.querySelector('[data-hero-name]')
+const heroImageEl = document.querySelector('[data-hero-image]')
+const heroDescEl = document.querySelector('[data-hero-description]')
+const heroAbilitiesEl = document.querySelector('[data-hero-abilities]')
+</code></pre>
+<h3 id="inserting-the-hero%E2%80%99s-name">Inserting the hero’s name</h3>
+<p>We can insert the hero’s name by replacing the <code>heroNameEl.textContent</code>.</p>
+<pre><code class="language-javascript">// Inserting the hero's name
+heroNameEl.textContent = heroName
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/insert-name.png" alt="Inserted the hero's name.">
+</figure>
+<p>We can create a simple <code>capitalize</code> function to capitalize this name.</p>
+<pre><code class="language-javascript">function capitalize (word) {
+  return word.slice(0, 1).toUpperCase() + word.slice(1)
+}
+
+heroNameEl.textContent = capitalize(heroName)
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/insert-name-capitalized.png" alt="Capitalized the hero's name.">
+</figure>
+<h3 id="inserting-the-hero%E2%80%99s-image">Inserting the hero’s image</h3>
+<p>We can insert the hero’s image by changing the element’s <code>src</code> attribute. To do that, we need to find the hero’s image from the <code>/heroes</code> endpoint.</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/heroes`).then(response =&gt; {
+  const heroes = Object.values(response.body).map(hero =&gt; {
+    return {
+      name: hero.localized_name,
+      attackType: hero.attack_type.toLowerCase(),
+      primaryAttribute: hero.primary_attr,
+      roles: hero.roles.map(role =&gt; role.toLowerCase()),
+      image: `https://api.opendota.com${hero.img}`
+    }
+  })
+  const hero = heroes.find(h =&gt; h.name.toLowerCase() === heroName)
+  heroImageEl.src = `${hero.image}`
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/insert-image.png" alt="Insert hero's image.">
+</figure>
+<h3 id="inserting-the-hero%E2%80%99s-description">Inserting the hero’s description</h3>
+<p>We can insert the hero’s description by changing <code>heroDescEl.textContent</code>.</p>
+<pre><code class="language-javascript">// Inserting the hero's description
+zlFetch(`${dotaApi}/constants/hero_lore`).then(response =&gt; {
+  const heroLore = response.body[heroName]
+  heroDescEl.textContent = heroLore
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/insert-desc.png" alt="Inserted the hero's description">
+</figure>
+<h3 id="inserting-the-hero%E2%80%99s-abilities">Inserting the hero’s abilities</h3>
+<p>Before we can insert the hero’s abilities, we need to create a list of abilities. The required HTML for each ability is as follows:</p>
+<pre><code class="language-html">&lt;li class=&quot;ability&quot;&gt;
+  &lt;p class=&quot;ability__title&quot;&gt;ABILITY_NAME&lt;/p&gt;
+  &lt;img class=&quot;ability__img&quot; src=&quot;ABILITY_IMAGE&quot; alt=&quot;ABILITY_NAME&quot; /&gt;
+  &lt;p class=&quot;desc&quot;&gt;ABILITY_DESCRIPTION&lt;/p&gt;
+&lt;/li&gt;
+</code></pre>
+<p>We can create the HTML for the list of abilities by chaining another <code>map</code>, followed by a <code>join</code>.</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/abilities`).then(response =&gt; {
+  const allAbilities = response.body
+
+  zlFetch(`${dotaApi}/constants/hero_abilities`).then(response =&gt; {
+    const heroAbilities = response.body[`npc_dota_hero_${heroName}`]
+      /* ... */
+      .map(ability =&gt; {
+        return `&lt;li class=&quot;ability&quot;&gt;
+              &lt;p class=&quot;ability__title&quot;&gt;${ability.name}&lt;/p&gt;
+              &lt;img class=&quot;ability__img&quot; src=&quot;${ability.image}&quot; alt=&quot;${ability.name}&quot;&gt;
+              &lt;p class=&quot;desc&quot;&gt;${ability.description}&lt;/p&gt;
+            &lt;/li&gt;`
+      })
+      .join('')
+  })
+})
+</code></pre>
+<p>We can insert this HTML by adding it to the <code>&lt;ul&gt;</code> element.</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/abilities`).then(response =&gt; {
+  const allAbilities = response.body
+
+  zlFetch(`${dotaApi}/constants/hero_abilities`).then(response =&gt; {
+    const heroAbilities = response.body[`npc_dota_hero_${heroName}`]
+      /* ... */
+      .map(ability =&gt; {
+        return `&lt;li class=&quot;ability&quot;&gt;
+              &lt;p class=&quot;ability__title&quot;&gt;${ability.name}&lt;/p&gt;
+              &lt;img class=&quot;ability__img&quot; src=&quot;${ability.image}&quot; alt=&quot;${ability.name}&quot;&gt;
+              &lt;p class=&quot;desc&quot;&gt;${ability.description}&lt;/p&gt;
+            &lt;/li&gt;`
+      })
+      .join('')
+
+    heroAbilitiesEl.innerHTML = heroAbilities
+  })
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/insert-abilities.png" alt="Inserting the hero's abilities">
+</figure>
+<h2 id="hiding-the-ability%E2%80%99s-section-initially">Hiding the ability’s section initially</h2>
+<p>It can be quite weird to see the empty Abilities section when there’s no content. We can hide this by adding a <code>hidden</code> attribute to the section initially.</p>
+<pre><code class="language-html">&lt;section hidden&gt;
+  &lt;h2&gt;Abilities&lt;/h2&gt;
+  &lt;ul class=&quot;abilities flow&quot; data-hero-abilities&gt;&lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+<p>We’ll remove the <code>hidden</code> attribute after we inserted the hero’s abilities into the DOM.</p>
+<pre><code class="language-javascript">zlFetch(`${dotaApi}/constants/abilities`)
+  .then(response =&gt; {
+    const allAbilities = response.body
+
+    zlFetch(`${dotaApi}/constants/hero_abilities`)
+      .then(response =&gt; {
+        const heroAbilities = response.body[`npc_dota_hero_${heroName}`]
+          /* ... */
+	        .join('')
+
+        heroAbilitiesEl.innerHTML = heroAbilities        heroAbilitiesEl.closest('section').removeAttribute('hidden')
+      })
+  })
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/dota/hero-page/hide-section.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/dota/hero-page/hide-section.mp4"> here </a> instead.
+</video>
+<h2 id="getting-another-hero%E2%80%99s-information">Getting another hero’s information</h2>
+<p>You can change the <code>heroName</code> variable to get information about another hero.</p>
+<pre><code class="language-javascript">const heroName = 'abaddon'
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota/hero-page/abaddon.png" alt="Getting Abaddon's information">
+</figure>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../dota-refactor/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Dota Heroes: Refactoring</span>
+            </a>
+          <a href="../dota-hero-page-robust/index.html" data-link-to="next-lesson">
+              <span>🛠️ Dota Heroes: Making the hero page robust</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /dota-hero-page/  Mon, 24 Jan 2022 10:04:46 GMT -->
+</html>

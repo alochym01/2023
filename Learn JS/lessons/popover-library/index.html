@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /popover-library/  Mon, 24 Jan 2022 10:07:38 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Popover: Library | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Popover: Library</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Popover: Library</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/popover/09.library.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>Let’s start by copying everything from <code>main.js</code> into <code>popover.js</code>. As before, we will comment out everything and start anew. We will only uncomment the parts we need.</p>
+<pre><code class="language-js">// popover.js
+// Copy code here
+</code></pre>
+<p>We will link <code>popover.js</code> to <code>main.js</code></p>
+<pre><code class="language-js">// main.js
+import `./popover.js`
+</code></pre>
+<p>Make sure to set <code>main.js</code> as an ES6 modules file.</p>
+<pre><code class="language-html">&lt;script src=&quot;/js/main.js&quot; type=&quot;module&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>We’re ready to begin restructuring the Popover with OOP.</p>
+<h2 id="restructuring-with-object-oriented-programming">Restructuring with Object Oriented Programming</h2>
+<p>Object Oriented Programming is about creating instances from a blueprint. We begin our work by creating the blueprint. In this case, we’ll name the blueprint <code>Popover</code>.</p>
+<p>I’m going to use Factory functions in this lesson. You are welcome to follow along with any OOP flavour.</p>
+<pre><code class="language-js">export default function Popover () {
+  // ...
+}
+</code></pre>
+<p>We’ll jump straight into the execution part of the code and work backwards. This is the easiest way of figuring out how to refactor. Here’s what we begin with:</p>
+<pre><code class="language-js">// Positions popover
+popoverTriggers.forEach(popoverTrigger =&gt; {
+  const popover = getPopover(popoverTrigger) || createPopover(popoverTrigger)
+  const popoverPosition = calculatePopoverPosition(popoverTrigger, popover)
+
+  popover.style.top = `${popoverPosition.top}px`
+  popover.style.left = `${popoverPosition.left}px`
+  hidePopover(popover)
+})
+</code></pre>
+<p>Since we use <code>forEach</code> to loop through <code>popoverTriggers</code>, we know we need to pass each <code>popoverTrigger</code> into the <code>Popover</code> blueprint.</p>
+<pre><code class="language-js">export default function Popover(popoverTrigger) {
+  // ...
+}
+</code></pre>
+<p>We can use <code>Popover</code> like this:</p>
+<pre><code class="language-js">// main.js
+import Popover from './popover.js'
+
+const popoverTriggers = document.querySelectorAll('.popover-trigger')
+popoverTriggers.forEach(trigger =&gt; {
+  Popover(trigger)
+})
+</code></pre>
+<p>Let’s focus on <code>Popover</code> now.</p>
+<p>I’ll start changing the name of the <code>popoverTrigger</code> variable. In this case, I chose <code>triggerElement</code> because of two reasons:</p>
+<ol>
+<li>The “popover” is redundant since we’re obviously dealing with popovers. <code>trigger</code> alone would suffice.</li>
+<li>But <code>trigger</code> can be an action. We aren’t referring to an action in this case. We’re referring to a HTML element, so I added <code>Element</code> as a suffix to make the variable explicit.</li>
+</ol>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // ...
+}
+</code></pre>
+<p>For each <code>triggerElement</code>, we searched the DOM for the corresponding popover. If the popover is not found, we create one with JavaScript.</p>
+<pre><code class="language-js">// Old code
+popoverTriggers.forEach(popoverTrigger =&gt; {
+  const popover = getPopover(popoverTrigger) || createPopover(popoverTrigger)
+  // ...
+})
+</code></pre>
+<p>We can copy these two lines into the <code>Popover</code> blueprint.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  const popover = getPopover(popoverTrigger) || createPopover(popoverTrigger)
+}
+</code></pre>
+<p>We need to change <code>popoverTrigger</code> into <code>triggerElement</code>.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  const popover = getPopover(triggerElement) || createPopover(triggerElement)
+}
+</code></pre>
+<p>I also propose changing <code>popover</code> to <code>popoverElement</code> since we’re referring to the HTML Element.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  const popoverElement = getPopover(triggerElement) || createPopover(triggerElement)
+}
+</code></pre>
+<p>Next, we need to decide where to place <code>getPopover</code> and <code>createPopover</code>.</p>
+<h2 id="deciding-where-to-place-getpopover-and-createpopover">Deciding where to place <code>getPopover</code> and <code>createPopover</code></h2>
+<p>There are three solutions:</p>
+<ol>
+<li>Place them outside <code>Popover</code></li>
+<li>Placing them both in <code>Popover</code> as methods</li>
+<li>Placing them both in <code>Popover</code> as functions</li>
+</ol>
+<p>All three choices work. In this case, I’d recommend choosing #3: Placing them both in <code>Popover</code> as functions. We’ll examine all three solutions and I’ll explain why #3 feels like the best approach.</p>
+<h3 id="solution-1%3A-placing-them-outside-popover">Solution 1: Placing them outside <code>Popover</code></h3>
+<p>Here’s the code for <code>getPopover</code> and <code>createPopover</code>.</p>
+<pre><code class="language-js">function getPopover (popoverTrigger) {
+  return document.querySelector(`#${popoverTrigger.dataset.target}`)
+}
+
+function createPopover (popoverTrigger) {
+  const popover = document.createElement('div')
+  popover.classList.add('popover')
+  popover.dataset.position = popoverTrigger.dataset.popoverPosition
+
+  // Dynamic id
+  const id = generateUniqueString(5)
+  popover.id = id
+  popoverTrigger.dataset.target = id
+
+  const p = document.createElement('p')
+  p.textContent = popoverTrigger.dataset.content
+
+  popover.appendChild(p)
+  document.body.appendChild(popover)
+  return popover
+}
+</code></pre>
+<p>They already work if you place them outside <code>Popover</code>. Here’s how you’d use them:</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  const popoverElement = getPopover(triggerElement) || createPopover(triggerElement)
+}
+</code></pre>
+<p>This works, but I find it hard for my brain to wrap around the code.</p>
+<p>When I make a blueprint, I like to put all functions and methods related to that blueprint inside the blueprint itself. Functions outside the blueprint serve a different purpose.</p>
+<h3 id="solution-2%3A-placing-them-inside-popover-as-methods">Solution 2: Placing them inside <code>Popover</code> as methods</h3>
+<p>When placing functions inside blueprints, I normally use methods because it’s easier to find them at a glance.</p>
+<p>To save <code>getPopover</code> and <code>createPopover</code> as methods, we need to create a common object to store all methods. I’ll use the <code>popover</code> variable in this case.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // ...
+
+  const popover = {
+	  getPopover (popoverTrigger) {
+      // ...
+	  },
+
+	  createPopover (popoverTrigger) {
+      // ...
+	  }
+  }
+}
+</code></pre>
+<p>We should rename <code>popoverTrigger</code> to <code>triggerElement</code> since we used <code>triggerElement</code> in <code>Popover</code>.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // ...
+
+  const popover = {
+	  getPopover (triggerElement) {
+	    return document.querySelector(`#${triggerElement.dataset.target}`)
+	  },
+
+	  createPopover (triggerElement) {
+	    const popover = document.createElement('div')
+	    popover.classList.add('popover')
+	    popover.dataset.position = triggerElement.dataset.popoverPosition
+
+	    // Dynamic id
+	    const id = generateUniqueString(5)
+	    popover.id = id
+	    triggerElement.dataset.target = id
+
+	    const p = document.createElement('p')
+	    p.textContent = triggerElement.dataset.content
+
+	    popover.appendChild(p)
+	    document.body.appendChild(popover)
+	    return popover
+	  }
+  }
+}
+</code></pre>
+<p>We can omit the <code>triggerElement</code> parameter since <code>triggerElement</code> is already in the lexical scope.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // ...
+
+  const popover = {
+	  getPopover () {
+      // ...
+	  },
+
+	  createPopover () {
+      // ...
+	  }
+  }
+}
+</code></pre>
+<p>We’ll call <code>getPopover</code> and <code>createPopover</code> likes his:</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  const popoverElement = popover.getPopover() || popover.createPopover()
+
+  const popover = {/*...*/}
+}
+</code></pre>
+<p>It’s not a great experience. We had to write the “popover” word twice in each method call.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // Repeating popover twice makes this code tedious to read
+  const popoverElement = popover.getPopover() || popover.createPopover()
+
+  const popover = {/*...*/}
+}
+</code></pre>
+<p>We can shorten the name of these two methods by removing the “popover” keyword, but the methods don’t convert the same amount of meaning anymore.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // ... Doesn't convert the same amount of meaning
+  const popoverElement = popover.get() || popover.create()
+
+  const popover = {/*...*/}
+}
+</code></pre>
+<p>What is <code>popover.get</code> getting? Are we getting the <code>triggerElement</code>? Are we getting <code>popoverElement</code>? Or are we getting something else?</p>
+<p>It’s ambiguous.</p>
+<p>Likewise <code>popover.create</code> is ambiguous too.</p>
+<p>I try not to use ambiguous function/method names because they create unnecessary questions, and in turn, uses unnecessary brainpower.</p>
+<h3 id="solution-3%3A-placing-them-in-popover-as-functions">Solution 3: Placing them in Popover as functions</h3>
+<p>The cleanest solution I found is to keep the names <code>getPopover</code> and <code>createPopover</code>.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  const popoverElement = getPopover() || createPopover()
+
+  function getPopover () {
+    // ...
+  }
+
+  function createPopover () {
+    // ...
+  }
+
+  const popover = {/*...*/}
+}
+</code></pre>
+<p>This way: I get to tell my brain <code>getPopover</code> and <code>createPopover</code> are part of <code>Popover</code>. I also get the clarity that I’m getting/creating a popover with these methods.</p>
+<p>If I wanted to be super explicit, I can rename <code>getPopover</code> as <code>getPopoverElement</code>. But I think that adds too much friction.</p>
+<h3 id="where-to-put-generateuniquestring%3F">Where to put <code>generateUniqueString</code>?</h3>
+<p><code>createPopover</code> uses a <code>getUniqueString</code> function. Again, we can put <code>getUniqueString</code> in three places:</p>
+<ol>
+<li>Outside <code>Popover</code></li>
+<li>Inside <code>Popover</code> as a method</li>
+<li>Inside <code>Popover</code> as a function</li>
+</ol>
+<p><code>getUniqueString</code> feels more like a helper function. It is generic enough to use in many different components. I tend to keep these functions outside my blueprints, but you can do whatever you want.</p>
+<h2 id="initializing-the-popover">Initializing the Popover</h2>
+<p>Let’s continue inspecting the rest of the code that executes the Popover. Here’s what we’re left with:</p>
+<pre><code class="language-js">popoverTriggers.forEach(popoverTrigger =&gt; {
+  // ...
+  const popoverPosition = calculatePopoverPosition(popoverTrigger, popover)
+
+  popover.style.top = `${popoverPosition.top}px`
+  popover.style.left = `${popoverPosition.left}px`
+  hidePopover(popover)
+})
+</code></pre>
+<p>We need to calculate the popover’s position with <code>calculatePopoverPosition</code>. We can move this function into <code>Popover</code> as a method.</p>
+<pre><code class="language-js">export default function Popover () {
+  // Declare variables
+  // Functions
+
+  const popover = {
+    calculatePopoverPosition (popoverTrigger, popover) {
+      // ...
+    }
+  }
+}
+</code></pre>
+<p>We can change <code>popover</code> to <code>popoverElement</code> and <code>popoverTrigger</code> to <code>triggerElement</code>. This conforms with what we have above. (Remember to change the variables inside the function too. I’ll let you do this yourself).</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // Declare variables
+  // Functions
+
+  const popover = {
+    calculatePopoverPosition (triggerElement, popoverElement) {
+      // ...
+    }
+  }
+}
+</code></pre>
+<p>We don’t need to pass <code>triggerElement</code> and <code>popoverElement</code> into <code>calculatePopoverPosition</code> they can be found in the lexical scope.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // Declare variables
+  // Functions
+
+  const popover = {
+    calculatePopoverPosition () {
+      // ...
+    }
+  }
+}
+</code></pre>
+<p>To call <code>calculatePopoverPosition</code>, we need to write <code>popover.calculatePopoverPosition</code>.</p>
+<p>Let’s eliminate the extra “Popover” keyword. We’ll use change <code>calculatePopoverPosition</code> to <code>calculatePosition</code>.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // Declare variables
+  // Functions
+
+  const popover = {
+    calculatePosition () {
+      // ...
+    }
+  }
+}
+</code></pre>
+<p>We can then use <code>calculatePosition</code> like this:</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // Variables
+  // Functions
+
+  const popover = {/*...*/}
+
+  // Execution
+  const popoverPosition = popover.calculatePosition()
+}
+</code></pre>
+<p>Next, we want to position the popover with the positions we calculated. Here’s the previous code:</p>
+<pre><code class="language-js">popoverTriggers.forEach(popoverTrigger =&gt; {
+  // ...
+  popover.style.top = `${popoverPosition.top}px`
+  popover.style.left = `${popoverPosition.left}px`
+  // ...
+})
+</code></pre>
+<p>We can use these two lines directly:</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // ...
+  const popoverPosition = popover.calculatePosition()
+  popoverElement.style.top = `${popoverPosition.top}px`
+  popoverElement.style.left = `${popoverPosition.left}px`
+}
+</code></pre>
+<p>Finally, we hide the popover with <code>hidePopover</code>.</p>
+<h3 id="hiding-the-popover">Hiding the Popover</h3>
+<p>Here’s the previous code:</p>
+<pre><code class="language-js">popoverTriggers.forEach(popoverTrigger =&gt; {
+  // ...
+  hidePopover(popover)
+})
+</code></pre>
+<p>We can add <code>hidePopover</code> to <code>Popover</code> as a method.</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // Variables
+  // Functions
+
+  const popover = {
+    hidePopover (popover) {
+      // ...
+    }
+  }
+
+  // Execution
+}
+</code></pre>
+<p>As before:</p>
+<ol>
+<li>We’ll change <code>popover</code> to <code>popoverElement</code>.</li>
+<li>We don’t need to pass <code>popoverElement</code> since its already in the lexical scope.</li>
+<li>We’ll remove the extra “Popover” keyword from the method’s name.</li>
+</ol>
+<p>Here’s the optimised version:</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // Variables
+  // Functions
+
+  const popover = {
+    hide () {
+      // ...
+    }
+  }
+
+  // Execution
+}
+</code></pre>
+<p>We can use <code>hide</code> like this:</p>
+<pre><code class="language-js">export default function Popover (triggerElement) {
+  // Variables
+  // Functions
+
+  const popover = {
+    hide () {
+      // ...
+    }
+  }
+
+  // Execution
+  // ...
+  popover.hide()
+}
+</code></pre>
+<h3 id="an-aside-on-hide">An aside on <code>hide</code></h3>
+<p><code>popover.hide</code> isn’t very explicit – it suffers from the same problem as <code>popover.get</code> and <code>popover.create</code>.</p>
+<p>If we want to be super explicit, we can do something like <code>popoverElement.hide</code>. To do this, we need to add a method to  <code>popoverElement</code>.</p>
+<pre><code class="language-js">export default function Popover () {
+  popoverElement.hide = function () {
+    // ...
+  }
+}
+</code></pre>
+<p>Be careful of doing this because you’ll create a non-standard HTML element. When you work in teams, you may mislead people into thinking HTML Elements have the <code>hide</code> method. (Which is not good).</p>
+<p>If you insist on standardisation and consistency, you can create a function called <code>hidePopover</code> inside <code>Popover</code> instead.</p>
+<pre><code class="language-js">export default function Popover () {
+  // ...
+
+  function hidePopover() {
+    // ...
+  }
+
+  // ...
+}
+</code></pre>
+<p>I don’t like this because the extra function tells me there’s another exception I need to watch out for – which uses brain energy – and it’s something I’m reluctant to do.</p>
+<p>So <code>popover.hide</code> is a happy-enough medium for me right now, and I don’t bother to refactor more.</p>
+<p>(Protip: Good enough solutions are good enough. Move on when you think it’s good enough! If you come back to it and it irritates you, you still have the chance to refactor).</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../calculator-state/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Calculator: State</span>
+            </a>
+          <a href="../popover-library-event-listeners/index.html" data-link-to="next-lesson">
+              <span>🛠️ Popover: Adding event listeners</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /popover-library/  Mon, 24 Jan 2022 10:07:38 GMT -->
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /getters-setters/  Mon, 24 Jan 2022 10:07:16 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Getters and Setters | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>Getters and Setters</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>Getters and Setters</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>When you access an object’s property, you get the value it contains.</p>
+<pre><code class="language-js">const object = {
+  property: 'value'
+}
+
+console.log(object.property) // value
+</code></pre>
+<p><strong>Getters let you run a function when accessing a property</strong>. They begin with a <code>get</code> keyword, followed by a normal function. Here’s what it looks like:</p>
+<pre><code class="language-js">const object = {
+  get property () {/* ... */}
+}
+</code></pre>
+<p>The value you obtain will be the value the getter returns.</p>
+<pre><code class="language-js">const object = {
+  get property () { return 'Hello World!' }
+}
+
+console.log(object.property) // Hello World!
+</code></pre>
+<p>When used in an Object Oriented Programming context, <strong>getters can be privileged methods that return a private variable.</strong> We’ll use the Car example to illustrate this point.</p>
+<p>First, we’ll create a getter function. We’ll call this function <code>fuel</code>. In this <code>fuel</code> getter, we will return the private variable, <code>fuel</code>.</p>
+<pre><code class="language-js">function Car () {
+  const fuel = 50
+
+  return {
+    get fuel () { return fuel }
+  }
+}
+</code></pre>
+<p>Car instances should now be able to get <code>fuel</code> (the private variable) with the <code>fuel</code> getter.</p>
+<pre><code class="language-js">const car = new Car()
+console.log(car.fuel) // 50
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/getter-setter/getter-noupdate.png" alt="Getting `fuel` with a getter function.">
+</figure>
+<p>If you <code>console.log</code> a <code>Car</code> instance, you should see a <code>fuel</code> property. But the value of this <code>fuel</code> property is hidden behind <code>(...)</code> in Chrome Devtools. If you’re using Firefox, you’ll see <code>&gt;&gt;</code> instead of <code>(...)</code>.</p>
+<figure role="figure" aria-label="fuel property on Chrome">
+  <img src="../../images/oop/getter-setter/getter-property.png" alt="">
+  <figcaption>fuel property on Chrome</figcaption>
+</figure>
+<p>If you hover over the <code>(...)</code> or <code>&gt;&gt;</code> symbol, you’ll see “invoke getter”.</p>
+<figure role="figure" aria-label="Invoke Getter on Firefox">
+  <img src="../../images/oop/getter-setter/getter-property-invoke.png" alt="">
+  <figcaption>Invoke Getter on Firefox</figcaption>
+</figure>
+<p>Although users can get <code>fuel</code> (the private variable) with <code>fuel</code> (the getter function), they cannot change <code>fuel</code> (the private variable) and break our Car implementation.</p>
+<pre><code class="language-js">const car = new Car()
+car.fuel = 5000 // This line does nothing
+console.log(car.fuel) // fuel remains at 50
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/getter-setter/getter-noupdate.png" alt="Value remains at 50">
+</figure>
+<p>We can prove that <code>fuel</code> (the getter) was called if we create a <code>console.log</code> statement.</p>
+<pre><code class="language-js">function Car () {
+  const fuel = 50
+
+  return {
+    get fuel () {
+      console.log('Getting amount of fuel')
+      return fuel
+    }
+  }
+}
+
+const car = new Car()
+car.fuel = 5000 // This line does nothing
+console.log(car.fuel) // fuel remains at 50
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/getter-setter/getter-proof.png" alt="Shows the log statement. `fuel` remains at 50.">
+</figure>
+<p>If we want to let users change <code>fuel</code> with <code>car.fuel</code>, we need a Setter function. (More on this later).</p>
+<h3 id="why-use-getters%3F">Why use Getters?</h3>
+<p>Two reasons: Convenience and memorability.</p>
+<p>Which would you rather use? <code>car.fuel</code> or <code>car.getFuel()</code>? Most likely, you’d choose <code>car.fuel</code> because it’s shorter and easier to remember.</p>
+<p>It’s also easier to use <code>car.fuel</code> because we’re used to getting values from objects this way.</p>
+<h2 id="setters">Setters</h2>
+<p>Setters are like getters. Except they let you <em>set</em> values. To use setters, you write a <code>set</code> keyword, followed by a function. The <code>set</code> function takes in one variable.</p>
+<pre><code class="language-js">let string = 'Hello World!'
+const object = {
+  set property (newValue) { string = newValue }
+}
+
+object.property = 'Good Morning!'
+console.log(string) // Good Morning!
+</code></pre>
+<p>When used in an Object Oriented Programming context, <strong>setters can be used as privileged methods to modify private variables</strong>. Again, we’ll use the Car example to illustrate this point.</p>
+<p>First, we’ll create a <code>fuel</code> setter function.</p>
+<pre><code class="language-js">function Car () {
+  let fuel = 50
+
+  return {
+    get fuel () {/* ... */}
+    set fuel (amount) {/* ... */}
+  }
+}
+</code></pre>
+<p>This <code>fuel</code> (the setter) should modify <code>fuel</code> (the private variable).</p>
+<pre><code class="language-js">function Car () {
+  let fuel = 50
+
+  return {
+    // ...
+    set fuel (amount) {
+      fuel = amount
+    }
+  }
+}
+</code></pre>
+<p>The fuel’s tank maximum capacity is 100 litres. If the user pours in an excessive amount, we reset the tank back to 100 litres.</p>
+<pre><code class="language-js">function Car () {
+  let fuel = 50
+
+  return {
+    // ...
+    set fuel (amount) {
+      fuel = amount
+      if (fuel &gt; 100) {
+        console.log('Fuel Tank Capacity is 100 litres. Pouring away excess fuel')
+        fuel = 100
+      }
+    }
+  }
+}
+</code></pre>
+<p>We can now set the <code>fuel</code> (the private variable) using the <code>fuel</code> property.  Any excess fuel will be poured away.</p>
+<pre><code class="language-js">const car = new Car()
+car.fuel = 5000
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/getter-setter/setter-extra-fuel.png" alt="Pouring away extra fuel.">
+</figure>
+<p>We should also be able to check the amount of <code>fuel</code> with the <code>fuel</code> getter.</p>
+<pre><code class="language-js">const car = new Car()
+car.fuel = 5000
+console.log(car.fuel)
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/getter-setter/setter-fuel-amount.png" alt="Logs the amount of fuel. Shows 100.">
+</figure>
+<h3 id="the-addfuel-method">The <code>addFuel</code> method</h3>
+<p>We still want an <code>addFuel</code> method because it lets users add fuel into the car.</p>
+<pre><code class="language-js">function Car () {
+  let fuel = 50
+
+  return {
+    // ...
+    addFuel (amount) {/* ... */}
+  }
+}
+</code></pre>
+<p><code>addFuel</code> is much easier to write now. We can delegate the task to the <code>fuel</code> setter method.</p>
+<pre><code class="language-js">function Car () {
+  let fuel = 50
+
+  return {
+    // ...
+    // this.fuel uses the fuel setter method
+    addFuel (amount) { this.fuel = fuel + amount }
+  }
+}
+</code></pre>
+<p>We can now add fuel into the car.</p>
+<pre><code class="language-js">const car = new Car()
+car.addFuel(30)
+console.log(car.fuel) // 80
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/getter-setter/addfuel.png" alt="Adds fuel into the car.">
+</figure>
+<h2 id="getters-and-setters-in-other-flavours">Getters and Setters in other flavours</h2>
+<h3 id="constructor-syntax">Constructor Syntax</h3>
+<p><strong>Getters and Setters must be written inside an object.</strong> You can add Getters and Setters to a constructor via <code>Object.assign</code></p>
+<pre><code class="language-js">function Car () {
+  let fuel = 50
+
+  Object.assign(this, {
+    get fuel () {/* ... */}
+    set fuel (amount) {/* ... */}
+  })
+}
+</code></pre>
+<p>You can also use getters and setters in the prototype.</p>
+<pre><code class="language-js">function Car () {
+  // ...
+}
+
+Object.assign(Car.prototype, {
+  get property () {/* ... */}
+  set property (value) {/* ... */}
+})
+</code></pre>
+<h3 id="class-syntax">Class Syntax</h3>
+<p>You can write Getters and Setters as normal methods inside a class syntax. Getters and Setters defined this way will automatically be added to the Prototype.</p>
+<pre><code class="language-js">class Car {
+  #fuel = 50
+  get fuel () { /* ... */ }
+  set fuel (amount) { /* ... */ }
+}
+</code></pre>
+<h3 id="oloo">OLOO</h3>
+<p>You can write Getters and Setters as normal methods inside OLOO.</p>
+<pre><code class="language-js">const Car = {
+  init () {
+    let fuel = 50
+    return {
+      get fuel () {/* ... */}
+      set fuel (amount) {/* ... */}
+    }
+  }
+}
+</code></pre>
+<p>That’s it!</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../encapsulation-oop/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Encapsulation in Object Oriented Programming</span>
+            </a>
+          <a href="../what-oop-flavour/index.html" data-link-to="next-lesson">
+              <span>What OOP flavour to use</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /getters-setters/  Mon, 24 Jan 2022 10:07:17 GMT -->
+</html>

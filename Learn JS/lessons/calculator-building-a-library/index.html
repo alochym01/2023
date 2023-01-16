@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /calculator-building-a-library/  Mon, 24 Jan 2022 10:07:34 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Calculator: Library | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Calculator: Library</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Calculator: Library</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/calculator/09.library.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>The calculator code contains two parts:</p>
+<ol>
+<li>Code for the calculator itself</li>
+<li>Code for testing the calculator</li>
+</ol>
+<p>We want to keep tests separate from the actual component’s code. Users shouldn’t need to include our tests when they use the component.</p>
+<p>So we’ll create two files:</p>
+<ol>
+<li><code>calculator.js</code>: For storing the calculator’s code</li>
+<li><code>calculator.test.js</code>: For testing the calculator</li>
+</ol>
+<p>We will start by importing <code>calculator.js</code> into <code>main.js</code>.</p>
+<pre><code class="language-html">&lt;script type=&quot;module&quot; src=&quot;js/main.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<pre><code class="language-js">import './calculator.js'
+</code></pre>
+<h2 id="creating-the-calculator">Creating the Calculator</h2>
+<p>When we test UI, we need to make sure the test uses the same HTML as the actual calculator. The easiest way to do this is to create the HTML with JavaScript.</p>
+<p>We’ll use a function called <code>createCalculator</code> to create the HTML.</p>
+<pre><code class="language-js">function createCalculator () {
+  // ...
+}
+</code></pre>
+<p>Here’s the code that goes into <code>createCalculator</code>. You should be able to create this code by yourself at this point. (See your <code>index.html</code> file for the required HTML).</p>
+<pre><code class="language-js">function createCalculator () {
+  const calculator = document.createElement('div')
+  calculator.classList.add('calculator')
+  calculator.tabIndex = 0
+  calculator.innerHTML = `
+    &lt;div class=&quot;calculator__display&quot;&gt;0&lt;/div&gt;
+    &lt;div class=&quot;calculator__keys&quot;&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;plus&quot; data-button-type=&quot;operator&quot;&gt; + &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;minus&quot; data-button-type=&quot;operator&quot;&gt; &amp;minus; &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;times&quot; data-button-type=&quot;operator&quot;&gt; &amp;times; &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;divide&quot; data-button-type=&quot;operator&quot;&gt; ÷ &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;1&quot; data-button-type=&quot;number&quot;&gt; 1 &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;2&quot; data-button-type=&quot;number&quot;&gt; 2 &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;3&quot; data-button-type=&quot;number&quot;&gt; 3 &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;4&quot; data-button-type=&quot;number&quot;&gt; 4 &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;5&quot; data-button-type=&quot;number&quot;&gt; 5 &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;6&quot; data-button-type=&quot;number&quot;&gt; 6 &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;7&quot; data-button-type=&quot;number&quot;&gt; 7 &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;8&quot; data-button-type=&quot;number&quot;&gt; 8 &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;9&quot; data-button-type=&quot;number&quot;&gt; 9 &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;0&quot; data-button-type=&quot;number&quot;&gt; 0 &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;decimal&quot; data-button-type=&quot;decimal&quot;&gt; . &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;clear&quot; data-button-type=&quot;clear&quot;&gt; AC &lt;/button&gt;
+      &lt;button tabindex=&quot;-1&quot; data-key=&quot;equal&quot; data-button-type=&quot;equal&quot;&gt; = &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  `
+  return calculator
+}
+</code></pre>
+<p>We will create this HTML inside a <code>Calculator</code> Factory Function.</p>
+<pre><code class="language-js">export default function Calculator () {
+  const calculatorElement = createCalculator()
+
+  // ...
+}
+</code></pre>
+<p>We will export it so both users and tests can use this HTML:</p>
+<pre><code class="language-js">function Calculator () {
+  const calculatorElement = createCalculator()
+
+  const calculator = {
+    element: calculatorElement
+  }
+
+  return calculator
+}
+</code></pre>
+<p>We can put the calculator in the DOM like this:</p>
+<pre><code class="language-js">// main.js
+import Calculator from './calculator.js'
+
+// Create calculator
+const calculator = Calculator().element
+
+// Add calculator to DOM
+const container = document.querySelector('.container')
+container.appendChild(calculator)
+</code></pre>
+<p>You should see the Calculator in the DOM at this point:</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/library/calculator.png" alt="Shows calculator in the DOM.">
+</figure>
+<h2 id="making-the-calculator-work">Making the calculator work</h2>
+<p>We need an event listener to make the calculator work. Here’s the one we wrote previously:</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  if (!event.target.closest('button')) return
+  const button = event.target
+  const { buttonType } = button.dataset
+
+  // Release operator pressed state
+  const operatorKeys = [...calculatorButtonsDiv.children]
+    .filter(button =&gt; button.dataset.buttonType === 'operator')
+  operatorKeys.forEach(button =&gt; button.classList.remove('is-pressed'))
+
+  if (buttonType !== 'clear') {
+    const clearButton = calculator.querySelector('[data-button-type=clear]')
+    clearButton.textContent = 'CE'
+  }
+
+  switch (buttonType) {
+    case 'clear': handleClearKey(calculator, button); break
+    case 'number': handleNumberKeys(calculator, button); break
+    case 'decimal': handleDecimalKey(calculator); break
+    case 'operator': handleOperatorKeys(calculator, button); break
+    case 'equal': handleEqualKey(calculator); break
+  }
+
+  calculator.dataset.previousButtonType = buttonType
+})
+</code></pre>
+<p>We will create the same event listener inside <code>Calculator</code>.</p>
+<pre><code class="language-js">function Calculator () {
+  const calculatorElement = createCalculator()
+  const calculatorButtonsDiv = calculatorElement.querySelector('.calculator__keys')
+
+  // ...
+
+  calculatorButtonsDiv.addEventListener('click', event =&gt; {/* ... */})
+
+  return calculator
+}
+</code></pre>
+<p>We can create a method for this callback. We’ll call this method <code>handleClick</code>.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare Variables
+
+  const calculator = {
+    // ...
+    handleClick(event) {/* ... */}
+  }
+
+  calculatorButtonsDiv.addEventListener('click', calculator.handleClick)
+
+  return calculator
+}
+</code></pre>
+<p>We will copy the code we wrote into <code>handleClick</code>.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare Variables
+
+  const calculator = {
+    // ...
+    handleClick(event) {
+      if (!event.target.closest('button')) return
+      const button = event.target
+      const { buttonType } = button.dataset
+
+      // Release operator pressed state
+      const operatorKeys = [...calculatorButtonsDiv.children]
+        .filter(button =&gt; button.dataset.buttonType === 'operator')
+      operatorKeys.forEach(button =&gt; button.classList.remove('is-pressed'))
+
+      if (buttonType !== 'clear') {
+        const clearButton = calculator.querySelector('[data-button-type=clear]')
+        clearButton.textContent = 'CE'
+      }
+
+      switch (buttonType) {
+        case 'clear': handleClearKey(calculator, button); break
+        case 'number': handleNumberKeys(calculator, button); break
+        case 'decimal': handleDecimalKey(calculator); break
+        case 'operator': handleOperatorKeys(calculator, button); break
+        case 'equal': handleEqualKey(calculator); break
+      }
+
+      calculator.dataset.previousButtonType = buttonType
+    }
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>Next, we need to change all instances of <code>calculator</code> in <code>handleClick</code> to <code>calculatorElement</code>. We do this because <code>calculatorElement</code> points to the HTML element.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare Variables
+
+  const calculator = {
+    // ...
+    handleClick(event) {
+      if (!event.target.closest('button')) return
+      const button = event.target
+      const { buttonType } = button.dataset
+
+      // Release operator pressed state
+      const operatorKeys = [...calculatorButtonsDiv.children]
+        .filter(button =&gt; button.dataset.buttonType === 'operator')
+      operatorKeys.forEach(button =&gt; button.classList.remove('is-pressed'))
+
+      if (buttonType !== 'clear') {
+        const clearButton = calculatorElement.querySelector('[data-button-type=clear]')
+        clearButton.textContent = 'CE'
+      }
+
+      switch (buttonType) {
+        case 'clear': handleClearKey(calculatorElement, button); break
+        case 'number': handleNumberKeys(calculatorElement, button); break
+        case 'decimal': handleDecimalKey(calculatorElement); break
+        case 'operator': handleOperatorKeys(calculatorElement, button); break
+        case 'equal': handleEqualKey(calculatorElement); break
+      }
+
+      calculatorElement.dataset.previousButtonType = buttonType
+    }
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>We can declare <code>operatorKeys</code> and <code>clearButton</code> upfront in <code>Calculator</code>. When we do this, we simplify <code>handleClick</code> a bit.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare Variables
+  // ...
+  const operatorKeys = [...calculatorButtonsDiv.children]
+    .filter(button =&gt; button.dataset.buttonType === 'operator')
+  const clearButton = calculatorElement.querySelector('[data-button-type=clear]')
+
+  const calculator = {
+    // ...
+    handleClick(event) {
+      if (!event.target.closest('button')) return
+      const button = event.target
+      const { buttonType } = button.dataset
+
+      operatorKeys.forEach(button =&gt; button.classList.remove('is-pressed'))
+
+      if (buttonType !== 'clear') {
+        clearButton.textContent = 'CE'
+      }
+      // ...
+    }
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>Next, we need to work on handling keys. We will handle number keys first, so comment out the rest.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare Variables
+
+  const calculator = {
+    // ...
+    handleClick(event) {
+      // ...
+      switch (buttonType) {
+        // case 'clear': handleClearKey(calculatorElement, button); break
+        case 'number': handleNumberKeys(calculatorElement, button); break
+        // case 'decimal': handleDecimalKey(calculatorElement); break
+        // case 'operator': handleOperatorKeys(calculatorElement, button); break
+        // case 'equal': handleEqualKey(calculatorElement); break
+      }
+
+      // ...
+    }
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<h2 id="handling-number-keys">Handling Number Keys</h2>
+<p>We used the <code>handleNumberKeys</code> function to handle number keys previously. Here’s what it looks like:</p>
+<pre><code class="language-js">function handleNumberKeys (calculator, button) {
+  const displayValue = getDisplayValue()
+  const { previousButtonType } = calculator.dataset
+  const { key } = button.dataset
+
+  if (displayValue === '0') {
+    display.textContent = key
+  } else {
+    display.textContent = displayValue + key
+  }
+
+  if (previousButtonType === 'operator') {
+    display.textContent = key
+  }
+
+  if (previousButtonType === 'equal') {
+    resetCalculator()
+    display.textContent = key
+  }
+}
+</code></pre>
+<p>We can copy this function into <code>Calculator</code> as a method.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare Variables
+
+  const calculator = {
+    // ...
+    handleNumberKeys (calculatorElement, button) {
+      const displayValue = getDisplayValue()
+      const { previousButtonType } = calculator.dataset
+      const { key } = button.dataset
+
+      if (displayValue === '0') {
+        display.textContent = key
+      } else {
+        display.textContent = displayValue + key
+      }
+
+      if (previousButtonType === 'operator') {
+        display.textContent = key
+      }
+
+      if (previousButtonType === 'equal') {
+        resetCalculator()
+        display.textContent = key
+      }
+    },
+
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>Next, we need to change <code>calculator</code> to <code>calculatorElement</code>. You should know the reason why.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare Variables
+
+  const calculator = {
+    // ...
+    handleNumberKeys (calculatorElement, button) {
+      const displayValue = getDisplayValue()
+      const { previousButtonType } = calculatorElement.dataset
+      const { key } = button.dataset
+      // ...
+    },
+
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>We don’t need to pass <code>calculatorElement</code> into <code>handleNumberKeys</code>  since it is already in the lexical scope. We can omit this parameter.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare Variables
+
+  const calculator = {
+    // ...
+    handleNumberKeys (button) { /*...*/ },
+
+    handleClick () {
+      switch(buttonType) {
+        case 'number': calculator.handleNumberKeys(button)
+      }
+    }
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<h3 id="getting-display-value">Getting display value</h3>
+<p><code>handleNumberKeys</code> needs a <code>getDisplayValue</code> function to work. Again, we can copy <code>getDisplayValue</code> from our old code into <code>Calculator</code>.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare Variables
+
+  const calculator = {
+    // ...
+    getDisplayValue () {
+      return calculatorElement.querySelector('.calculator__display').textContent
+    },
+
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>We can make <code>getDisplayValue</code> easier to read by declaring the <code>display</code> upfront in <code>Calculator</code>.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare Variables
+  const display = calculatorElement.querySelector('.calculator__display')
+
+  const calculator = {
+    // ...
+    getDisplayValue () {
+      return display.textContent
+    },
+
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>We can change <code>getDisplayValue</code> into a getter function to make it easier to use.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare variables
+
+  const calculator = {
+    // ...
+    get displayValue () {
+      return display.textContent
+    },
+
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>We’ll use <code>displayValue</code> like this:</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare variables
+
+  const calculator = {
+    // ...
+
+    handleNumberKeys (button) {
+      const displayValue = calculator.displayValue
+      // ...
+    }
+
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<h3 id="setting-display-value">Setting display value</h3>
+<p>In <code>handleNumberKeys</code>, we changed the display’s value by setting the <code>textContent</code> property:</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare variables
+
+  const calculator = {
+    // ...
+    handleNumberKeys (button) {
+      // ...
+      if (displayValue === '0') {
+        display.textContent = key
+      } else {
+        display.textContent = displayValue + key
+      }
+
+      if (previousButtonType === 'operator') {
+        display.textContent = key
+      }
+
+      if (previousButtonType === 'equal') {
+        resetCalculator()
+        display.textContent = key
+      }
+    }
+
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>We can create a setter function to make this more intuitive:</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare variables
+  const calculator = {
+    // ...
+    set displayValue () {
+       display.textContent = value
+    },
+
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>We’ll use the <code>displayValue</code> setter function like this:</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare variables
+  const calculator = {
+    // ...
+    handleNumberKeys (button) {
+      // ...
+      if (displayValue === '0') {
+        calculator.displayValue = key
+      } else {
+        calculator.displayValue = displayValue + key
+      }
+
+      if (previousButtonType === 'operator') {
+        calculator.displayValue = key
+      }
+
+      if (previousButtonType === 'equal') {
+        resetCalculator()
+        calculator.displayValue = key
+      }
+    }
+
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<h3 id="resetting-the-calculator">Resetting the calculator</h3>
+<p><code>handleNumberKeys</code> also need a <code>resetCalculator</code> function to work. We’ll create a method for this too.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare variables
+  const calculator = {
+    // ...
+    resetCalculator() {
+      // ...
+    },
+
+    handleNumberKeys (button) {
+      // ...
+      if (previousButtonType === 'equal') {
+        calculator.resetCalculator()
+        calculator.displayValue = key
+      }
+    }
+
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>Here’s what we wrote for <code>resetCalculator</code> previously:</p>
+<pre><code class="language-js">const resetCalculator = _ =&gt; {
+  pressKeys('clear', 'clear')
+  console.assert(getDisplayValue() === '0', 'Clear calculator')
+  console.assert(!calculator.dataset.firstValue, 'No first value')
+  console.assert(!calculator.dataset.operator, 'No operator value')
+  console.assert(!calculator.dataset.modifierValue, 'No operator value')
+}
+</code></pre>
+<p>The four <code>console.assert</code> lines are for testing the calculator. We don’t want to have test code inside the actual Calculator, so we’ll only copy the first line.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare variables
+
+  const calculator = {
+    // ...
+    resetCalculator() {
+      pressKeys('clear', 'clear')
+    }
+
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>We know <code>resetCalculator</code> needs <code>pressKeys</code> to work. We’ll copy <code>pressKeys</code> into Calculator.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare variables
+  const calculator = {
+    // ...
+    pressKeys (keys) {
+      keys.forEach(pressKey)
+    },
+
+    resetCalculator() {
+      calculator.pressKeys('clear', 'clear')
+    }
+
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>From here, we know <code>pressKeys</code> needs a <code>pressKey</code> function to work. We’ll copy it in as well.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare variables
+  const calculator = {
+    // ...
+    pressKey (key) {
+      document.querySelector(`[data-key=&quot;${key}&quot;]`).click()
+    },
+
+    pressKeys (keys) {
+      keys.forEach(calculator.pressKey)
+    },
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>Let’s make the <code>querySelector</code> statement more precise by searching within <code>calculatorElement</code> instead of <code>document</code>.</p>
+<pre><code class="language-js">function Calculator () {
+  // Declare variables
+
+  const calculator = {
+    // ...
+    pressKey (key) {
+      calculatorElement.querySelector(`[data-key=&quot;${key}&quot;]`).click()
+    },
+
+    // Other methods
+    // Listener Callbacks
+  }
+
+  // Add Event Listeners
+  // Return the calculator
+}
+</code></pre>
+<p>The calculator should now work with number keys now.</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/library/two.png" alt="Pressed 2 into the Calculator.">
+</figure>
+<h2 id="testing-number-keys">Testing Number keys</h2>
+<p>We need to make sure the test uses the same HTML as the actual calculator. We made this possible by creating and exporting the HTML in <code>Calculator</code>. What’s next is to create another <code>Calculator</code> instance inside <code>calculator.test.js</code>.</p>
+<pre><code class="language-js">// calculator.test.js
+import Calculator from './calculator.js'
+
+const calculator = Calculator()
+</code></pre>
+<p>Normally, we run tests with a test runner. But setting up a test running is out of scope of this course. To make things simple, we will run the test file by importing it into <code>main.js</code>.</p>
+<pre><code class="language-js">// main.js
+import './calculator.test.js`
+</code></pre>
+<p>Next, we want to test a Number key. Here, we want to:</p>
+<ol>
+<li>Press a number key</li>
+<li>Check the display</li>
+<li>Make sure the display value is what we expect</li>
+</ol>
+<p>We already have a <code>runTest</code> function that lets us do this. Here’s the code we wrote previously:</p>
+<pre><code class="language-js">function runTest (test) {
+  pressKeys(...test.keys)
+  console.assert(getDisplayValue() === test.result, test.message)
+  resetCalculator()
+}
+</code></pre>
+<p><code>runTest</code> needs two functions — <code>pressKeys</code> and <code>resetCalculator</code> — to work. These functions are already built into the Calculator as methods.</p>
+<pre><code class="language-js">function runTest (test) {
+  calculator.pressKeys(...test.keys)
+  console.assert(getDisplayValue() === test.result, test.message)
+  calculator.resetCalculator()
+}
+</code></pre>
+<p><code>runTest</code> also needs <code>getDisplayValue</code> to work. We exposed this display value via a getter function in Calculator. We can use this getter function in <code>runTest</code>:</p>
+<pre><code class="language-js">function runTest (test) {
+  calculator.pressKeys(...test.keys)
+  console.assert(calculator.displayValue === test.result, test.message)
+  calculator.resetCalculator()
+}
+</code></pre>
+<p>We can then copy our Number key test cases into <code>calculator.test.js</code>.</p>
+<pre><code class="language-js">const tests = [
+  // Test Number Keys
+  {
+    message: 'Number key',
+    keys: ['2'],
+    result: '2'
+  }
+]
+</code></pre>
+<p>And we’ll run the tests like this:</p>
+<pre><code class="language-js">tests.forEach(runTest)
+</code></pre>
+<p>This should work. There aren’t any errors. But you’ll get an error if you add the second test into the mix:</p>
+<pre><code class="language-js">const tests = [
+  // Test Number Keys
+  {
+    message: 'Number key',
+    keys: ['2'],
+    result: '2'
+  }, {
+    message: 'Number Number',
+    keys: ['3', '5'],
+    result: '35'
+  }
+]
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/calculator/library/test-fail.png" alt="Number Number test failed.">
+</figure>
+<p>But why?</p>
+<p>If you <code>console.log</code> the display value, you’ll see <code>235</code> instead of <code>35</code>. The <code>2</code> comes from the previous test, which means <code>resetCalculator</code> isn’t working.</p>
+<pre><code class="language-js">function runTest (test) {
+  calculator.pressKeys(...test.keys)
+  console.log(calculator.displayValue)
+  console.assert(calculator.displayValue === test.result, test.message)
+  calculator.resetCalculator()
+}
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/calculator/library/test-log.png" alt="Logs display value.">
+</figure>
+<p><code>resetCalculator</code> doesn’t work for a good reason… It uses the <code>clear</code> key, but we haven’t implemented the <code>clear</code> key for this refactored version yet!</p>
+<p>We’ll implement the <code>clear</code> key in the next lesson.</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../carousel-building-a-library/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Carousel: Building a library</span>
+            </a>
+          <a href="../calculator-building-a-library-2/index.html" data-link-to="next-lesson">
+              <span>🛠️ Calculator: Fixing the Clear Key</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /calculator-building-a-library/  Mon, 24 Jan 2022 10:07:35 GMT -->
+</html>

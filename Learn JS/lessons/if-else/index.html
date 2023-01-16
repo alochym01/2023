@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /if-else/  Mon, 24 Jan 2022 10:00:58 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>If/else statements | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="welcome"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>If/else statements</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>If/else statements</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>Let’s say you’re walking on a busy street in the middle of town. You’re about to cross the road when you notice the traffic light for pedestrians turns red. What do you do?</p>
+<p>You stop, don’t you?</p>
+<p>And what happens when the light turns green again? You start walking.</p>
+<p>We can put this analogy into code too. It sounds something like: “If the light turns red, stop walking. Otherwise, continue walking”.</p>
+<p>That’s the foundation of an <code>if/else</code> statement.</p>
+<h2 id="the-if%2Felse-statement">The if/else statement</h2>
+<p>The <code>if/else</code> statement helps to control what your program does in specified situations. Since it controls how your program runs, it is also called a control flow statement. It looks like this:</p>
+<pre><code class="language-js">if (condition) {
+  // Do something
+} else {
+  // Do some other thing
+}
+</code></pre>
+<p>The <code>condition</code> tells JavaScript what to check for before continuing. If the condition evaluates to <code>true</code>, JavaScript executes the code from the <code>if</code> block; if the condition evaluates to <code>false</code>, JavaScript executes code from the <code>else</code> block.</p>
+<p>In the traffic light example, we check whether the light is red:</p>
+<pre><code class="language-js">// Note: This example doesn't contain valid code yet
+if (light is red) {
+  stop walking
+} else {
+  continue walking
+}
+</code></pre>
+<p>If you need to check for more than one condition, you can use <code>else if</code>, which goes between <code>if</code> and <code>else</code>.</p>
+<p>When would you need such a second condition?</p>
+<p>Well, let’s say you want to cross a small road. If there aren’t any cars around, would you wait for the traffic light to turn green? You still cross, don’t you?</p>
+<p>In code, this would look like:</p>
+<pre><code class="language-js">if (light is red) {
+  // Stop walking
+} else if (cars around) {
+  // Stop walking
+} else if (yet another condition) {
+  // Do yet another thing
+} else {
+  // Do the final thing
+}
+</code></pre>
+<p>In this case, if the first condition evaluates to <code>true</code>, JavaScript executes the code in the <code>if</code> block.</p>
+<p>If the first condition evaluates to <code>false</code>, JavaScript checks the condition in the next <code>else if</code> block and see whether it evaluates to <code>true</code>. It goes on and on until all <code>else if</code> blocks are exhausted.</p>
+<p>To check whether a condition evaluates to <code>true</code> or <code>false</code>, JavaScript relies on two things:</p>
+<ol>
+<li>Comparison operators</li>
+<li>Truthy and falsey values</li>
+</ol>
+<p>Let’s talk about comparison operators first.</p>
+<h2 id="comparison-operators">Comparison operators</h2>
+<p>There are four main types of comparison operators:</p>
+<ol>
+<li>Greater than (<code>&gt;</code>) or greater or equals to (<code>&gt;=</code>)</li>
+<li>Smaller than (<code>&lt;</code>) or smaller or equals to (<code>&lt;=</code>)</li>
+<li>Strictly equal (<code>===</code>) or equal (<code>==</code>)</li>
+<li>Strictly unequal (<code>!==</code>) or unequal (<code>!=</code>)</li>
+</ol>
+<p><strong>The first two types of comparison operators</strong> are straightforward. You use them to <strong>compare numbers.</strong></p>
+<pre><code class="language-js">24 &gt; 23 // True
+24 &gt; 24 // False
+24 &gt;= 24 // True
+
+24 &lt; 25 // True
+24 &lt; 24 // False
+24 &lt;= 24 // True
+</code></pre>
+<p><strong>The next two types of comparison operators</strong> are quite straightforward as well. You use them to <strong>check whether things are equal or unequal to each other</strong>.</p>
+<pre><code class="language-js">24 === 24 // True
+24 !== 24 // False
+</code></pre>
+<p>However, there’s a difference between strictly equal (<code>===</code>) vs equal (<code>==</code>), and strictly unequal (<code>!==</code>) vs unequal (<code>!=</code>):</p>
+<pre><code class="language-js">'24' === 24 // False
+'24' == 24 // True
+
+'24' !== 24 // True
+'24' != 24 // False
+</code></pre>
+<p>As you can see from the example above, when you compare a string of <code>24</code> vs the number 24, <code>===</code> evaluates to <code>false</code> while <code>==</code> evaluates to <code>true</code>.</p>
+<p>Why is this so? Let’s look at the difference between strictly equal and equal.</p>
+<h3 id="%3D%3D%3D-vs-%3D%3D-(or-!%3D%3D-vs-!%3D)">=== vs == (or !== vs !=)</h3>
+<p>JavaScript is a loosely-typed language. What this means is that, when we declare variables, we don’t care what type of value goes into the variable.</p>
+<p>You can declare any primitive or object, and JavaScript does the rest for you automatically:</p>
+<pre><code class="language-js">const aString = 'Some string'
+const aNumber = 123
+const aBoolean = true
+</code></pre>
+<p>When comparing things with strictly equal (<code>===</code>) or strictly unequal (<code>!==</code>), JavaScript checks two things:</p>
+<ol>
+<li>The type of the variable</li>
+<li>The value of the variable</li>
+</ol>
+<p>This is why a <em>string</em> of <code>24</code> and a <em>number</em> <code>24</code> do not equate.</p>
+<pre><code class="language-js">'24' === 24 // False
+'24' !== 24 // True
+</code></pre>
+<p>When comparing things with equal (<code>==</code>) or unequal (<code>!=</code>), JavaScript converts (or casts) the types so they match each other.</p>
+<p>Generally, JavaScript tries to convert all types to numbers when you use a comparison operator. In the example below, the <em>string</em> <code>24</code> is converted into the <em>number</em> 24 before the comparison.</p>
+<p>That’s why a string of <code>24</code> equates to a number of 24 when you use <code>==</code>.</p>
+<pre><code class="language-js">'24' == 24 // True
+'24' != 24 // False
+</code></pre>
+<p>Booleans can also be converted into numbers. When JavaScript converts Booleans into numbers, <code>true</code> becomes 1 and <code>false</code> becomes 0.</p>
+<pre><code class="language-js">0 == false // True
+1 == true // True
+2 == true // False
+</code></pre>
+<p>Automatic type conversion (when using comparison operators) is one of the common causes of hard-to-find bugs. <strong>Whenever you compare for equality, always use the strict versions</strong> (<code>===</code> or <code>!==</code>).</p>
+<h3 id="comparing-objects">Comparing objects</h3>
+<p>Try comparing objects with <code>===</code> or <code>==</code>. You’ll be very surprised.</p>
+<pre><code class="language-js">const zell = { isHavingFun: true }
+const vincy = { isHavingFun: true }
+
+console.log(zell === vincy) // false
+console.log(zell == vincy) // false
+</code></pre>
+<p>In the example above, both <code>zell</code> and <code>vincy</code> <em>look</em> exactly the same. They are both objects, they have the same values. The strange thing is, <code>zell === vincy</code> is always going to be false. Why?</p>
+<p>Let’s say you have an identical twin brother/sister. You look exactly the same as your twin. Same hair color, same face, same clothes, same everything. How can people differentiate the two of you? It’ll be hard.</p>
+<p>In JavaScript, each object has a “identity card”. This identity card is called the reference to the object. When you compare objects with equality operators, you’re asking JavaScript to check if the two objects have the same reference (same identity card).</p>
+<p>Is it a surprise that <code>zell === vincy</code> is always going to be false now? No two humans are the same!</p>
+<p>Let’s tweak it a little and assign <code>zell</code> to <code>vincy</code>.</p>
+<pre><code class="language-js">const zell = { isHavingFun: true }
+const vincy = zell
+</code></pre>
+<p>In this case, <code>zell === vincy</code> evaluates to true because <code>vincy</code> now points to the same reference as <code>zell</code>.</p>
+<pre><code class="language-js">console.log(zell === vincy) // true
+</code></pre>
+<h3 id="checking-if-two-objects-have-the-same-value">Checking if two objects have the same value</h3>
+<p>To check if two objects have the same property-value pairs, you need to compare every property-value pairs between the two objects. We’ll look at this in a later lesson.</p>
+<h2 id="truthy-and-falsey">Truthy and Falsey</h2>
+<p>If you write a single variable (like <code>numApples</code> in the example below) as the condition of an <code>if/else</code> statement, JavaScript checks for a truthy or a falsey value.</p>
+<pre><code class="language-js">const numApples = 135
+
+if (numApples) {
+  // Eat an apple
+} else {
+  // Buy an apples
+}
+</code></pre>
+<p>A <strong>falsey</strong> value is a value that <strong>evaluates to</strong> <code>false</code> <strong>when converted into a boolean</strong>. There are six possible falsey values in JavaScript:</p>
+<ol>
+<li><code>false</code></li>
+<li><code>undefined</code></li>
+<li><code>null</code></li>
+<li><code>0</code> (numeric zero)</li>
+<li><code>&quot;&quot;</code> (empty string)</li>
+<li><code>NaN</code> (Not A Number)</li>
+</ol>
+<p>A <strong>truthy</strong> value, on the other hand, is a <strong>value that evaluates to</strong> <code>true</code> <strong>when converted into a Boolean</strong>. In the case of numbers, anything that’s not <code>0</code> converts to <code>true</code>.</p>
+<p><strong>Automatic type conversion to truthy and falsey values are highly encouraged in JavaScript</strong>, because they make code shorter and easier to comprehend.</p>
+<p>For example, if you want to check if a string is empty, you can use the string in the condition straightaway.</p>
+<pre><code class="language-js">const str = ''
+
+if (str) {
+  // Do something if string is not empty
+} else {
+  // Do something if string is empty
+}
+</code></pre>
+<h2 id="exercise">Exercise</h2>
+<p>Controlling the flow of a program with <code>if/else</code> statements is incredibly important. Try the following exercises:</p>
+<pre><code class="language-js">const james = 22
+const valerie = 25
+const kenneth = 27
+</code></pre>
+<p>James is 22 years old, Valerie is 25 years old, Kenneth is 27 years old. Answer the following questions with the above code:</p>
+<ol>
+<li>Make an <code>if/else</code> statement to check if you are younger than James.</li>
+<li>Make an <code>else if</code> statement within your <code>if/else</code> to check if you are older than Valerie.</li>
+<li>Make another <code>else if</code> statement to check if you’re as old as Kenneth.</li>
+</ol>
+<p>When you do the above exercise, try comparing values with:</p>
+<ol>
+<li><code>&gt;</code> and <code>&gt;=</code></li>
+<li><code>&lt;</code> and <code>&lt;=</code></li>
+<li><code>===</code></li>
+<li><code>!==</code></li>
+</ol>
+<p>Answer the rest of the questions below with reference to the following code:</p>
+<pre><code class="language-js">const someValue = 22
+
+if (someValue) {
+  // Executes if true
+} else {
+  // Executes if false
+}
+</code></pre>
+<p>Would the <code>if</code> statement above execute:</p>
+<ol>
+<li>If <code>someValue</code> is <code>false</code>?</li>
+<li>If <code>someValue</code> is <code>true</code>?</li>
+<li>If <code>someValue</code> is <code>null</code>?</li>
+<li>If <code>someValue</code> is <code>undefined</code>?</li>
+<li>If <code>someValue</code> is <code>0</code>?</li>
+<li>If <code>someValue</code> is <code>-1</code>?</li>
+<li>If <code>someValue</code> is <code>''</code>?</li>
+<li>If <code>someValue</code> is <code>'has a value!'</code>?</li>
+<li>If <code>someValue</code> is <code>{}</code>?</li>
+<li>If <code>someValue</code> is <code>{ isHavingFun: true }</code>?</li>
+<li>If <code>someValue</code> is <code>[]</code>?</li>
+<li>If <code>someValue</code> is <code>['one', 'two', 'three']</code>?</li>
+</ol>
+</article>
+  </div>
+
+
+    <section class="longform" data-js="answers">
+      <p></p>
+      <button data-type="primary">Show answers</button>
+      <div>
+        <h2 id="answers">Answers</h2>
+<pre><code class="language-javascript">if (someValue) {
+  // Executes if true
+} else {
+  // Executes if false
+}
+</code></pre>
+<p>Would the <code>if</code> statement execute:</p>
+<ol>
+<li>If <code>someValue</code> is <code>false</code>? <em>No</em></li>
+<li>If <code>someValue</code> is <code>true</code>? <em>Yes</em></li>
+<li>If <code>someValue</code> is <code>null</code>? <em>No</em></li>
+<li>If <code>someValue</code> is <code>undefined</code>? <em>No</em></li>
+<li>If <code>someValue</code> is <code>0</code>? <em>No</em></li>
+<li>If <code>someValue</code> is <code>-1</code>? <em>Yes</em></li>
+<li>If <code>someValue</code> is <code>''</code>? <em>No</em></li>
+<li>If <code>someValue</code> is <code>'has a value!'</code>? <em>Yes</em></li>
+<li>If <code>someValue</code> is <code>{}</code>? <em>Yes</em></li>
+<li>If <code>someValue</code> is <code>{ isHavingFun: true }</code>? <em>Yes</em></li>
+<li>If <code>someValue</code> is <code>[]</code>? <em>Yes</em></li>
+<li>If <code>someValue</code> is <code>['one', 'two', 'three']</code>? <em>Yes</em></li>
+</ol>
+
+      </div>
+    </section>
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../objects-intro/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Intro to objects</span>
+            </a>
+          <a href="../not-operator/index.html" data-link-to="next-lesson">
+              <span>The NOT operator</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /if-else/  Mon, 24 Jan 2022 10:00:59 GMT -->
+</html>

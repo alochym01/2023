@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /dota-spa-filtering-heroes/  Mon, 24 Jan 2022 10:08:06 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Dota SPA: Filtering heroes | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Dota SPA: Filtering heroes</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Dota SPA: Filtering heroes</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/dota-spa/04.filtering-heroes.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>Before we can filter heroes, we need to pass the <code>heroes</code> down into <code>Filters</code> as <code>props</code>. We can do this by adding <code>tiny-props</code> to the Filter component.</p>
+<pre><code class="language-javascript">//main.js
+Tiny({
+  template () {
+    return `
+      &lt;!-- Header --&gt;
+
+      &lt;main&gt;
+        &lt;div class=&quot;wrap&quot;&gt;
+          &lt;!-- Site title --&gt;
+
+          &lt;div class=&quot;sidebar-content&quot;&gt;
+            &lt;div class=&quot;sidebar flow&quot;&gt;
+              &lt;div tiny-component=&quot;Filters&quot; tiny-props=&quot;[heroes, state.heroes]&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;content&quot;&gt;
+              &lt;!-- Heroes list --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+      &lt;/main&gt;
+    `
+  }
+})
+</code></pre>
+<p>We can now get heroes inside the filter component via the <code>props</code> property.</p>
+<pre><code class="language-javascript">// Filters.js
+export default Tiny({
+  template () {
+    console.log(this.props.heroes)
+    // ...
+  }
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota-spa/filtering/heroes.png" alt="" loading="lazy">
+</figure>
+<p>Again, <code>this.props.heroes</code> begins as an empty array because we haven’t fetched heroes from endpoint yet.</p>
+<h2 id="filtering-heroes">Filtering Heroes</h2>
+<p>To filter heroes, we need to listen to a change in any of the checkboxes. The easiest way to do this is to add an event listener to an ancestor of all the checkboxes.</p>
+<p>In this case, I chose to add the event listener to the <code>&lt;section&gt;</code> element with the <code>filter</code> class.</p>
+<pre><code class="language-javascript">export default Tiny({
+  template () {
+    return `
+      &lt;!-- SVG for checkbox --&gt;
+
+      &lt;section class=&quot;filters&quot; tiny-listener=&quot;[change, filterHeroes]&quot;&gt;
+        &lt;!-- ... --&gt;
+      &lt;/section&gt;
+    `
+  }
+})
+</code></pre>
+<p>In the code above, I listened for the <code>change</code> event. When the <code>change</code> event fires, we call the <code>filterHeroes</code> function. So let’s go ahead and add <code>filterHeroes</code> function.</p>
+<pre><code class="language-javascript">export default Tiny({
+  filterHeroes (event) {}
+  // ...
+})
+</code></pre>
+<p>We want to filter heroes by the three categories in <code>filterHeroes</code>. We can use the code we wrote in the previous version of Dota Heroes, which is this:</p>
+<pre><code class="language-javascript">function filterHeroesByCategories (heroes) {
+  const selectedAttackTypes = [
+    ...document.querySelectorAll('attack-type input:checked')
+  ].map(checkbox =&gt; checkbox.id)
+  const selectedPrimaryAttributes = [
+    ...document.querySelectorAll('primary-attribute input:checked')
+  ].map(checkbox =&gt; checkbox.id)
+  const selectedRoles = [
+    ...document.querySelectorAll('role input:checked')
+  ].map(checkbox =&gt; checkbox.id)
+
+  return (
+    heroes
+      // Filter by attack type
+      .filter(hero =&gt; {
+        if (selectedAttackTypes.length === 0) return true
+        return selectedAttackTypes.includes(hero.attackType)
+      })
+      // Filter by primary attribute
+      .filter(hero =&gt; {
+        if (selectedPrimaryAttributes.length === 0) return true
+        return selectedPrimaryAttributes.includes(hero.primaryAttribute)
+      })
+      // Filter by role
+      .filter(hero =&gt; {
+        if (selectedRoles.length === 0) return true
+        return selectedRoles.some(role =&gt; {
+          return hero.roles.includes(role)
+        })
+      })
+  )
+}
+</code></pre>
+<p>What this code does is:</p>
+<ol>
+<li>Search the DOM for checkboxes of each category</li>
+<li>Filters heroes based on all three categories</li>
+<li>Returns the filtered list of heroes</li>
+</ol>
+<p>First we copy the entire chunk into <code>filterHeroes</code></p>
+<pre><code class="language-javascript">export default Tiny({
+  filterHeroes (event) {
+    // Copy everything in here
+  }
+  // ...
+})
+</code></pre>
+<p>We don’t need to search inside <code>document</code> anymore since we know filters are within the Filter component. We can use <code>this.element</code> which refers to the Filter component.</p>
+<pre><code class="language-javascript">export default Tiny({
+  filterHeroes (event) {
+    const selectedAttackTypes = [
+      ...this.element.querySelectorAll('attack-type input:checked')
+    ].map(checkbox =&gt; checkbox.id)
+    const selectedPrimaryAttributes = [
+      ...this.element.querySelectorAll('primary-attribute input:checked')
+    ].map(checkbox =&gt; checkbox.id)
+    const selectedRoles = [
+      ...this.element.querySelectorAll('role input:checked')
+    ].map(checkbox =&gt; checkbox.id)
+  }
+  // ...
+})
+</code></pre>
+<p><code>filterHeroes</code> needs a list of heroes which can be found via <code>this.props.heroes</code></p>
+<pre><code class="language-javascript">export default Tiny({
+  filterHeroes (event) {
+    // ...
+    const filteredHeroes = this.props.heroes
+      // Filter by attack type
+      .filter(/* Filter by attack type */)
+      .filter(/* Filter by primary attribute */)
+      .filter(/* Filter by role */)
+  }
+  // ...
+})
+</code></pre>
+<p>After filtering heroes, the Filter component needs to inform the parent component — so we can update the list of heroes. We do this by <code>emit</code>ing the filtered list of heroes upwards.</p>
+<pre><code class="language-javascript">export default Tiny({
+  filterHeroes (event) {
+    // ...
+    this.emit('filter-heroes', { filteredHeroes })
+  }
+  // ...
+})
+</code></pre>
+<p>The parent component can listen to <code>filter-heroes</code> event to get the list of filtered heroes. Again, we can listen to <code>filter-heroes</code> anywhere above the Filters component. In this case, I chose to listen via <code>main</code> because it’s more visible for me.</p>
+<pre><code class="language-javascript">// main.js
+Tiny({
+  // ...
+  template () {
+    return `
+      &lt;!-- Header --&gt;
+      &lt;main tiny-listener=&quot;[filter-heroes, filterHeroes]&quot;&gt;
+        &lt;div class=&quot;wrap&quot;&gt;
+          &lt;!-- Site Title --&gt;
+
+          &lt;div class=&quot;sidebar-content&quot;&gt;
+            &lt;div class=&quot;sidebar flow&quot;&gt;
+              &lt;div tiny-component=&quot;Filters&quot; tiny-props=&quot;[heroes, state.heroes]&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;content&quot;&gt;
+              &lt;!-- Heroes List --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+      &lt;/main&gt;
+    `
+  }
+})
+</code></pre>
+<p>When the <code>filter-heroes</code> event fires, we run a <code>filterHeroes</code> method. So let’s go ahead and create this <code>filterHeroes</code> method.</p>
+<p>We can also check whether heroes are actually filtered with a <code>console.log</code> statement.</p>
+<pre><code class="language-javascript">Tiny({
+  // ...
+  filterHeroes (event) {
+    console.log(event.detail.filteredHeroes)
+  }
+  // ...
+})
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/dota-spa/filtering/filter-check.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/dota-spa/filtering/filter-check.mp4"> here </a> instead.
+</video>
+<p>Here, we see the filters are working correctly for attack-type and roles, but it doesn’t work correctly for primary-attribute. (The number of heroes returned from our current algorithm should not be zero).</p>
+<h2 id="fixing-primary-attribute-filter">Fixing Primary Attribute Filter</h2>
+<p>There are two possible areas where the problem could have happened:</p>
+<ol>
+<li>Did we detect selected primary attributes correctly?</li>
+<li>Was there anything wrong with the filter algorithm?</li>
+</ol>
+<figure role="figure">
+  <img src="../../images/components/dota-spa/filtering/debug.png" alt="" loading="lazy">
+</figure>
+<p>Let’s do a quick debug to check what’s wrong.</p>
+<h3 id="debugging-problem-area-1">Debugging problem area 1</h3>
+<p>We will log <code>selectedPrimaryAttribute</code> to detect whether there are any problems in the first problem area.</p>
+<pre><code class="language-javascript">export default Tiny({
+  filterHeroes (event) {
+    const selectedAttackTypes = [
+      ...this.element.querySelectorAll('attack-type input:checked')
+    ].map(checkbox =&gt; checkbox.id)
+    const selectedPrimaryAttributes = [
+      ...this.element.querySelectorAll('primary-attribute input:checked')
+    ].map(checkbox =&gt; checkbox.id)
+    const selectedRoles = [
+      ...this.element.querySelectorAll('role input:checked')
+    ].map(checkbox =&gt; checkbox.id)
+
+    console.log(selectedPrimaryAttributes)
+
+    // ...
+  }
+  // ...
+})
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/dota-spa/filtering/filter-debug.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/dota-spa/filtering/filter-debug.mp4"> here </a> instead.
+</video>
+<p>We can see all three options — <code>strength</code>, <code>agility</code>, and <code>intelligence</code> — getting checked here, so the problem doesn’t occur at area 1.</p>
+<h3 id="debugging-problem-area-2">Debugging problem area 2</h3>
+<p>The <code>filter</code> algorithm suggests we’re checking whether <code>selectedPrimaryAttributes</code> includes a value from <code>hero.primaryAttribute</code>.</p>
+<p>We can check the <code>hero.primaryAttribute</code> value to ensure it matches the values inside <code>selectedPrimaryAttribute</code>.</p>
+<pre><code class="language-javascript">export default Tiny({
+  filterHeroes (event) {
+    // ...
+    const filteredHeroes = this.props.heroes
+      .filter(/* ... */)
+      .filter(hero =&gt; {
+        if (selectedPrimaryAttributes.length === 0) return true
+        console.log(hero.primaryAttribute)
+        return selectedPrimaryAttributes.includes(hero.primaryAttribute)
+      })
+      .filter(/* ... */)
+    // ...
+  }
+})
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/dota-spa/filtering/filter-debug-2.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/dota-spa/filtering/filter-debug-2.mp4"> here </a> instead.
+</video>
+<p>We can clearly see that hero.primaryAttribute shows the abbreviated value:</p>
+<ul>
+<li><code>str</code> instead of <code>strength</code></li>
+<li><code>agi</code> instead of <code>agility</code></li>
+<li><code>int</code> instead of <code>intelligence</code></li>
+</ul>
+<p>Knowing this, how can we fix the filters?</p>
+<h3 id="fixing-the-primary-attribute-filter">Fixing the primary attribute filter</h3>
+<p>There are multiple ways to fix the filter once we know where the problem lies. One way is to create the HTML with the abbreviated version.</p>
+<p>We can do this by creating a function called <code>abbreviate</code>.</p>
+<p>Since we only want to abbreviate <code>strength</code>, <code>agility</code>, and <code>intelligence</code>, we can return everything else as they are</p>
+<pre><code class="language-javascript">function abbreviate (value) {
+  if (value !== 'strength' &amp;&amp; value !== 'agility' &amp;&amp; value !== 'intelligence')
+    return value
+}
+</code></pre>
+<p>If the value is <code>strength</code>, <code>agility</code>, or <code>intelligence</code>, we can return the first three characters as the value.</p>
+<pre><code class="language-javascript">function abbreviate (value) {
+  if (value !== 'strength' &amp;&amp; value !== 'agility' &amp;&amp; value !== 'intelligence')
+    return value
+  return value.slice(0, 3)
+}
+</code></pre>
+<p>We can use <code>abbreviate</code> like this:</p>
+<pre><code class="language-javascript">export default Tiny({
+  // ...
+  template () {
+    return `
+      &lt;!-- SVG for checkbox --&gt;
+      &lt;section class=&quot;filters&quot; tiny-listener=&quot;[change, filterHeroes]&quot;&gt;
+        &lt;!-- ... --&gt;
+
+        &lt;fieldset class=&quot;flow&quot;&gt;
+          &lt;!-- ... --&gt;
+          ${filters
+            .map(filterType =&gt; {
+              return `
+              &lt;div class=&quot;box filter-group&quot; id=&quot;${filterType.name}&quot;&gt;
+                &lt;p class=&quot;box__title&quot;&gt;${filterType.name.replace('-', ' ')}&lt;/p&gt;
+
+                ${filterType.values
+                  .map(value =&gt; {
+                    // Runs through an `abbreviate` function for the `id`, `name` and `for` values
+                    return `
+                    &lt;div class=&quot;checkbox&quot;&gt;
+                      &lt;input
+                        type=&quot;checkbox&quot;
+                        id=&quot;${abbreviate(value)}&quot;
+                        name=&quot;${abbreviate(value)}&quot;
+                      &gt;
+                      &lt;label for=&quot;${abbreviate(value)}&quot;&gt;
+                        &lt;span class=&quot;checkbox__fakebox&quot;&gt;&lt;/span&gt;
+                        &lt;svg height=&quot;1em&quot; viewBox=&quot;0 0 20 15&quot;&gt;
+                          &lt;use xlink:href=&quot;checkmark&quot;&gt;&lt;/use&gt;
+                        &lt;/svg&gt;
+                        &lt;span&gt;${value.slice(0, 1).toUpperCase() +
+                          value.slice(1)}&lt;/span&gt;
+                      &lt;/label&gt;
+                    &lt;/div&gt;
+                  `
+                  })
+                  .join('')}
+              &lt;/div&gt;
+            `
+            })
+            .join('')}
+        &lt;/fieldset&gt;
+      &lt;/section&gt;
+    `
+  }
+})
+</code></pre>
+<p>This fixes the strength, agility, and intelligence filter.</p>
+<video autoplay loop>
+  <source src="../../images/components/dota-spa/filtering/filter-fixed.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/dota-spa/filtering/filter-fixed.mp4"> here </a> instead.
+</video>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../dota-spa-filters/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Dota SPA: Building the filters</span>
+            </a>
+          <a href="../dota-spa-display-filtered-heroes/index.html" data-link-to="next-lesson">
+              <span>🛠️ Dota SPA: Displaying filtered heroes</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /dota-spa-filtering-heroes/  Mon, 24 Jan 2022 10:08:08 GMT -->
+</html>

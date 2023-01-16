@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /callbacks/  Mon, 24 Jan 2022 10:01:04 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Callbacks | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="welcome"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>Callbacks</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>Callbacks</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>A callback is a function that is passed into another function as an argument to be executed later.</p>
+<p>That sounds complex, but it’s really simple. You’ve already seen callbacks before.</p>
+<h2 id="example-of-a-callback">Example of a callback</h2>
+<p>An example of a callback in use is the event listener.</p>
+<pre><code class="language-js">button.addEventListener('click', function () {
+  // do something
+})
+</code></pre>
+<p>The event listener can be re-written as follows.</p>
+<pre><code class="language-js">function callback () {
+  // do something
+}
+
+button.addEventListener('click', callback)
+</code></pre>
+<p>See what a callback is now? <strong>It’s just a function that is used as an argument</strong> in another function call.</p>
+<h2 id="why-use-callbacks%3F">Why use callbacks?</h2>
+<p>Callbacks are useful for two situations:</p>
+<ol>
+<li>They allow code to be swapped easily</li>
+<li>They prevent blocking operations in asynchronous code</li>
+</ol>
+<h2 id="allowing-code-to-be-swapped-easily">Allowing code to be swapped easily</h2>
+<p>Let’s say you have written an event listener for a button. This event listener accepts a callback, as you know by now. In the callback, you wrote code to add a <code>red</code> class to the button.</p>
+<pre><code class="language-js">button.addEventListener('click', function () {
+  button.classList.add('red')
+})
+</code></pre>
+<p>What if you wanted to create another event listener on the same button element, but this time, logs <code>hello world</code> into the console?</p>
+<p>Well, you can do it easily by writing another event listener.</p>
+<pre><code class="language-js">button.addEventListener('click', function () {
+  console.log('Hello world! *shouts at the top of my lungs*')
+})
+</code></pre>
+<p>See how callback functions let you swap code easily? Same element, same function (okay, method), but you can execute any code you want.</p>
+<h2 id="preventing-blocking-operations-in-asynchronous-code">Preventing blocking operations in asynchronous code</h2>
+<p><strong>Synchronous code is code that executes in a top to bottom, left to right manner</strong>, sequentially, waiting until one code has finished before the next line begins. So far, you’ve written synchronous code for every lesson prior to this one.</p>
+<p><strong>Asynchronous code is code that doesn’t follow the top to bottom, left to right manner.</strong> An example of asynchronous code is an event listener.</p>
+<pre><code class="language-js">button.addEventListener('click', function () {
+  // do something
+})
+</code></pre>
+<p>Consider this click event. Why is it asynchronous? Because the callback doesn’t get executed until a user clicks on a button!</p>
+<h3 id="asynchronous-code-is-critical-in-javascript">Asynchronous code is critical in JavaScript</h3>
+<p>Imagine you have a robot helper, Mr. Robot, that can only do one thing at a time. If you tell Mr. Robot to order pizza, it picks up, dials the pizza hotline, orders pizza, and waits at the front door until the pizza arrives.</p>
+<p>“Sweep the floor! Clean up the dishes in the kitchen sink! Wash the toilet!”, you shout at Mr. Robot. But Mr. Robot doesn’t respond. It continues to sit quietly at the front door.</p>
+<p>When the pizza arrives, Mr. Robot passes you the pizza and continue with the rest of the chores—sweep floor, clean dishes and wash toilet, in the order you mentioned.</p>
+<p>JavaScript is like Mr. Robot. It can only do one thing at a time. It cannot do anything else in the meantime, until the one thing gets completed. This behavior is called <strong>single threading</strong>.</p>
+<p>If you ask JavaScript to do something else in the meantime, it doesn’t respond. This behavior is called <strong>blocking</strong>. To see blocking operations in action, run the following JavaScript:</p>
+<pre><code class="language-js">while (true) {
+  console.log('stuck')
+}
+
+console.log('This log never happens')
+</code></pre>
+<p>If you try this, your browser will hang. You’ll have to delete the code and restart the browser to fix it.</p>
+<figure>
+  <img src="../../images/js-basics/callbacks/stuck.png" alt="The browser hangs and console.log('stuck') executed 24,000 times">
+  <figcaption aria-hidden>The browser hangs and console.log('stuck') executed 24,000 times</figcaption>
+</figure>
+<p>Let me explain what happened.</p>
+<p>The code above uses a <code>while</code> block (you’ll rarely use a <code>while</code> block when you code for real, so don’t bother about remembering it. I use it here because it’s perfect for explaining a blocking operation).</p>
+<p>A <code>while</code> block executes code in curly braces if a condition remains true (kind of like an <code>if/else</code> statement). In this example, the condition always remains <code>true</code>, so the <code>while</code> block keeps logging <code>stuck</code> in the console.</p>
+<p>In this case, JavaScript is like Mr. Robot. It hasn’t finished waiting for the pizza to arrive. The unfortunate thing is, the pizza will never arrive…</p>
+<p>Imagine this.</p>
+<p>Let’s say you have a event listener that blocks operations, and you used this listener to listen for click on the button. If you do this, JavaScript stares and waits till a user clicks on the button—that may never happen—before doing anything else… You can imagine the horror, so I’d leave you with the details.</p>
+<p>See where it goes? That’s why asynchronous programming is such a big thing in JavaScript. That’s why we use callbacks.</p>
+<p>Asynchronous operations is a really important concept to understand in JavaScript. To make it clearer, let’s take some time to dig deeper into the underlying mechanics—the event loop.</p>
+<h2 id="the-event-loop">The event loop</h2>
+<p>To envision the event loop, imagine JavaScript is a butler that carries around a <strong>todo-list</strong>. This list contains everything you tell JavaScript to do.</p>
+<p>Upon receiving this todo-list, JavaScript executes the tasks one by one, in the order you’ve listed.</p>
+<p>Let’s say you give JavaScript six commands as follows:</p>
+<pre><code class="language-js">function addOne (n) {
+  return n + 1
+}
+
+addOne(1) // 2
+addOne(2) // 3
+addOne(3) // 4
+addOne(4) // 5
+addOne(5) // 6
+addOne(6) // 7
+</code></pre>
+<p>This is what appears on JavaScript’s todo-list.</p>
+<figure>
+  <img src="../../images/js-basics/callbacks/todo.png" alt="Commands appear synchronously on JavaScript's todo list">
+  <figcaption>Commands appear synchronously on JavaScript's todo list</figcaption>
+</figure>
+<p>In addition to a todo-list, JavaScript also keeps a <strong>waiting-list</strong> where it tracks things it needs to wait for. If you tell JavaScript to order a pizza, it will call the pizza shop and adds “wait for pizza to arrive” in the waiting list. Meanwhile, it does other things that are already on the todo-list.</p>
+<p>So, imagine you have this code:</p>
+<pre><code class="language-js">function orderPizza (flavor, callback) {
+  callPizzaShop(`I want a ${flavor} pizza`)
+
+  // Note: these three lines are pseudo code, not actual JavaScript
+  whenPizzaComesBack {
+    callback()
+  }
+}
+
+function layTheTable () {
+  console.log('The pizza is set for your consumption, master. Please stop playing and start eating.')
+}
+
+orderPizza('Hawaiian', layTheTable)
+mopFloor()
+ironClothes()
+</code></pre>
+<p>JavaScript’s initial todo-list would be:</p>
+<figure>
+  <img src="../../images/js-basics/callbacks/todo2.png" alt="JavaScript's todo list">
+  <figcaption>Order pizza, mop floor and iron clothes! 😄</figcaption>
+</figure>
+<p>While executing <code>orderPizza</code>, JavaScript knows it needs to wait for the pizza to arrive. So, it adds “waiting for pizza to arrive” to its waiting list while it tackles the rest of its jobs.</p>
+<figure>
+  <img src="../../images/js-basics/callbacks/waiting.png" alt="JavaScript waits for pizza to arrive">
+  <figcaption>JavaScript waits for pizza to arrive</figcaption>
+</figure>
+<p>When the pizza arrives, JavaScript gets notified by the doorbell and it makes a <strong>mental note</strong> to execute <code>layTheTable</code> when it’s done with the other chores.</p>
+<figure>
+  <img src="../../images/js-basics/callbacks/mental-note.png" alt="JavaScript knows it needs to execute layTheTable by adding the command to its mental note">
+  <figcaption>JavaScript knows it needs to execute layTheTable by adding the command to its mental note</figcaption>
+</figure>
+<p>Then, once it’s done with the other chores, JavaScript executes the callback function, <code>layTheTable</code>.</p>
+<figure>
+  <img src="../../images/js-basics/callbacks/lay-table.png" alt="JavaScript lays the table when everything else is completed">
+  <figcaption>JavaScript lays the table when everything else is completed</figcaption>
+</figure>
+<p>This system is called the Event Loop. You can substitute our butler analogy with actual keywords in the Event loop to understand everything:</p>
+<ul>
+<li><strong>Todo-list</strong> -&gt; Call stack</li>
+<li><strong>Waiting-list</strong> -&gt; Web apis</li>
+<li><strong>Mental note</strong> -&gt; Event queue</li>
+</ul>
+<figure>
+  <img src="../../images/js-basics/callbacks/event-loop.png" alt="JavaScript's event loop">
+  <figcaption>JavaScript's event loop</figcaption>
+</figure>
+<p>I highly recommend you watch <a href="https://twitter.com/philip_roberts">Philip Roberts</a> JSConf talk about event loops if you got 20 mins to spare. It’ll help you understand the nitty gritty of event loops.</p>
+<p><a href="https://www.youtube.com/watch?v=8aGhZQkoFbQ"><img src="../../../img.youtube.com/vi/8aGhZQkoFbQ/0.jpg" alt="Philip Roberts: What the heck is the event loop anyway? | JSConf EU 2014"></a></p>
+<h2 id="let%E2%80%99s-get-back-to-callbacks-and-asynchronous-code">Let’s get back to callbacks and asynchronous code</h2>
+<p>With callbacks, we can <strong>give JavaScript instructions in advance without stopping the entire operation</strong>.</p>
+<p>When you ask JavaScript to watch a button for a click, it puts the “watch button” into the waiting-list and goes on its other chores. When the button finally gets a click, JavaScript activates the callback, then goes on with life.</p>
+<p>That’s all you need to know about using callbacks. Now, let’s talk a little about creating your own callbacks.</p>
+<h2 id="creating-your-own-callbacks">Creating your own callbacks</h2>
+<p>To create your callback, you need two things: a <em>callback-accepting function</em> and a <em>callback</em>.</p>
+<pre><code class="language-js">function callbackAcceptingFunction (callback) {
+  // Execute callback here
+}
+
+function callback () {
+  // Do something here
+}
+</code></pre>
+<p>The <code>callbackAcceptingFunction</code> needs to activate the callback, like this:</p>
+<pre><code class="language-js">function callbackAcceptingFunction (callback) {
+  callback()
+}
+
+function callback () {
+  console.log('callback activated!')
+}
+
+callbackAcceptingFunction(callback) // callback activated!
+</code></pre>
+<p>The <code>callback</code> can accept any number of arguments. The number, type and value of the arguments passed into <code>callback</code> is determined by the <code>callbackAcceptingFunction</code>:</p>
+<pre><code class="language-js">function callbackAcceptingFunction (callback) {
+  callback('Hello', 'baby brother')
+}
+
+function callback (arg1, arg2) {
+  console.log(arg1) // Hello
+  console.log(arg2) // baby brother
+}
+
+callbackAcceptingFunction(callback)
+</code></pre>
+<p>When you pass a <code>callback</code> as a parameter into a <code>callbackAcceptingFunction</code>, you pass only the reference to the <code>callback</code>. You don’t execute it. The <code>callbackAcceptingFunction</code> will help you execute the callback.</p>
+<pre><code class="language-js">// Notice you don't execute the callback with `callback()`
+callbackAcceptingFunction(callback)
+</code></pre>
+<p>That’s how you write a callback-accepting function in a nutshell.</p>
+<p>(Note: you won’t write callback-accepting functions right now since you’re starting out. Focus on learning to use callbacks for now).</p>
+<h2 id="exercise">Exercise</h2>
+<p>No exercise required for this lesson. There’s only one thing to know: <strong>a callback is a function that is passed into another function as an argument to be executed later</strong>.</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../listening-events/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Listening to events</span>
+            </a>
+          <a href="../think-like-developer/index.html" data-link-to="next-lesson">
+              <span>How to think like a developer</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /callbacks/  Mon, 24 Jan 2022 10:01:07 GMT -->
+</html>

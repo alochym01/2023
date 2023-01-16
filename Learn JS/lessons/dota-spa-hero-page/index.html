@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /dota-spa-hero-page/  Mon, 24 Jan 2022 10:08:10 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Dota SPA: Building the hero page | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Dota SPA: Building the hero page</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Dota SPA: Building the hero page</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/dota-spa/07.hero-page.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>When a user clicks on a hero in Heroes List, we want to direct the user to the hero’s page. This is what we want:</p>
+<video autoplay loop>
+  <source src="../../images/components/dota-spa/hero-page/show-hero-page-complete.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/dota-spa/hero-page/show-hero-page-complete.mp4"> here </a> instead.
+</video>
+<p>We do this by adding a <code>href</code> that links to the hero’s name, like this:</p>
+<pre><code class="language-javascript">// HeroesList.js
+export default Tiny({
+  // ...
+  template () {
+    return `
+      &lt;!-- Header --&gt;
+
+      &lt;main tiny-listener=&quot;[filter-heroes, filterHeroes]&quot;&gt;
+        &lt;div class=&quot;wrap&quot;&gt;
+          &lt;!-- Title --&gt;
+
+          &lt;div class=&quot;sidebar-content&quot;&gt;
+            &lt;!-- Filters --&gt;
+
+            &lt;div class=&quot;content&quot;&gt;
+              &lt;ul class=&quot;heroes-list&quot;&gt;
+                ${heroes
+                  .map(hero =&gt; {
+                    return `
+                    &lt;li&gt;
+                      &lt;!-- Links to each hero here --&gt;
+                      &lt;a href=&quot;/heroes/${hero.npcHeroName}&quot;&gt;
+                        &lt;span class=&quot;hero__name&quot;&gt; ${hero.name} &lt;/span&gt;
+                        &lt;img src=&quot;${hero.image}&quot; alt=&quot;${hero.name} image&quot;&gt;
+                      &lt;/a&gt;
+                    &lt;/li&gt;
+                  `
+                  })
+                  .join('')}
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/main&gt;
+    `
+  }
+})
+</code></pre>
+<p>Pay attention to the URL in the <code>href</code> property. We need this URL for the hero’s page to work.</p>
+<h3 id="quick-note-about-the-url">Quick Note about the URL</h3>
+<p>For the URL, notice we used a url like <code>/heroes/axe</code> instead of <code>/hero/axe</code>? We used a plural form, not a singular form.</p>
+<p>We do this because the API convention works this way. It’s usually a plural verb, followed by a singlular verb. Examples include:</p>
+<ul>
+<li><code>/users/:username</code></li>
+<li><code>/posts/:postid</code></li>
+</ul>
+<p>This is why we’re using <code>/heroes/:heroname</code> instead of the singular version. Just highlighting this cause I thought it’s something important you should know.</p>
+<h2 id="detecting-and-displaying-the-hero-page">Detecting and displaying the Hero Page</h2>
+<p>If the URL is <code>/</code>, we know we should display the Heroes List. If the URL contains <code>/heroes</code>, we know we should display the Hero Page.</p>
+<p>We can do this with a simple <code>if</code> statement.</p>
+<pre><code class="language-javascript">// main.js
+Tiny({
+  // ...
+  template () {
+    const path = location.pathname
+    if (path === '/') {
+      return '&lt;div tiny-component=&quot;HeroesList&quot;&gt;&lt;/div&gt;'
+    }
+    if (path.includes('/heroes/')) {
+      return 'Hero Page!'
+    }
+  }
+})
+</code></pre>
+<p>When you click on a hero, you should see the hero page content now.</p>
+<video autoplay loop>
+  <source src="../../images/components/dota-spa/hero-page/show-hero-page.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/dota-spa/hero-page/show-hero-page.mp4"> here </a> instead.
+</video>
+<p>We’re ready to make the Hero Page Component now.</p>
+<h2 id="making-the-hero-page-component">Making the Hero Page component</h2>
+<p>The Hero Page Component can be pretty complex, so we’l start by creating a <code>HeroPage</code> folder. We’ll create a <code>HeroPage.js</code> file and put it inside this folder.</p>
+<figure role="figure">
+  <img src="../../images/components/dota-spa/hero-page/folders.png" alt="" loading="lazy">
+</figure>
+<p>We have to do the usual stuff at this point:</p>
+<ul>
+<li>Import Tiny into <code>HeroPage.js</code></li>
+<li>Export <code>HeroPage</code>so we can use it in <code>main.js</code></li>
+<li>Import <code>HeroPage</code> into <code>main.js</code></li>
+</ul>
+<pre><code class="language-javascript">// HeroPage.js
+import Tiny from '../Tiny/tiny.js'
+
+export default Tiny({
+  template () {
+    return 'Hero Page!'
+  }
+})
+</code></pre>
+<pre><code class="language-javascript">// main.js
+import HeroPage from './HeroPage/HeroPage.js'
+Tiny({
+  // ...
+  components: {
+    HeroesList,
+    HeroPage
+  },
+
+  template () {
+    const path = location.pathname
+    // ...
+    if (path.includes('/heroes/')) {
+      return '&lt;div tiny-component=&quot;HeroPage&quot;&gt;&lt;/div&gt;'
+    }
+  }
+})
+</code></pre>
+<h3 id="creating-structure">Creating Structure</h3>
+<p>We already have the HTML for the hero page, so the next step is to put the entire HTML into <code>HeroPage.js</code>.</p>
+<p>While doing so, the first thing I noticed is the <code>&lt;body&gt;</code> element has the <code>hero-page</code> class.</p>
+<pre><code class="language-html">&lt;body class=&quot;hero-page&quot;&gt;
+  ...
+&lt;/body&gt;
+</code></pre>
+<p>We cannot change the <code>&lt;body&gt;</code> class easily with <code>Tiny</code>, so we will wrap the entire component with a <code>&lt;div&gt;</code> with the same class.</p>
+<pre><code class="language-javascript">// HeroPage.js
+export default Tiny({
+  template () {
+    return `
+      &lt;div class=&quot;hero-page&quot;&gt;&lt;/div&gt;
+    `
+  }
+})
+</code></pre>
+<p>We can now add the header. Make sure to change the image to an absolute URL by adding a <code>/</code> in front of the <code>images/logo.png</code>.</p>
+<pre><code class="language-javascript">// HeroPage.js
+export default Tiny({
+  template () {
+    return `
+      &lt;div class=&quot;hero-page&quot;&gt;
+        &lt;header class=&quot;site-header&quot;&gt;
+          &lt;div class=&quot;wrap&quot;&gt;
+            &lt;div class=&quot;single-column&quot;&gt;
+              &lt;a href=&quot;/&quot;&gt;
+                &lt;img src=&quot;/images/logo.png&quot; alt=&quot;Dota 2 Logo&quot; /&gt;
+              &lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/header&gt;
+      &lt;/div&gt;
+    `
+  }
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota-spa/hero-page/logo.png" alt="" loading="lazy">
+</figure>
+<p>We can also add the main content which looks like this.</p>
+<pre><code class="language-javascript">// HeroPage.js
+export default Tiny({
+  template () {
+    return `
+      &lt;div class=&quot;hero-page&quot;&gt;
+        &lt;!-- Header --&gt;
+
+        &lt;main&gt;
+          &lt;div class=&quot;wrap&quot;&gt;
+            &lt;div class=&quot;single-column flow-2&quot;&gt;
+              &lt;div class=&quot;clear site-title&quot;&gt;
+                &lt;h1 data-hero-name&gt;&lt;/h1&gt;
+                &lt;img
+                  class=&quot;hero__img&quot;
+                  data-hero-image
+                  src=&quot;/images/transparent.png&quot;
+                /&gt;
+                &lt;p data-hero-description&gt;&lt;/p&gt;
+              &lt;/div&gt;
+
+              &lt;section hidden&gt;
+                &lt;h2&gt;Abilities&lt;/h2&gt;
+                &lt;ul class=&quot;abilities flow&quot; data-hero-abilities&gt;&lt;/ul&gt;
+              &lt;/section&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/main&gt;
+      &lt;/div&gt;
+    `
+  }
+})
+</code></pre>
+<p>Nothing will show up for the content because we haven’t added data into it yet. We need to fetch the required data.</p>
+<h2 id="fetching-the-required-data">Fetching the required data</h2>
+<p>The Hero Page needs four kinds of data:</p>
+<ol>
+<li>Heroes</li>
+<li>Hero lore</li>
+<li>Abilities</li>
+<li>Hero abilities</li>
+</ol>
+<p>We already retrieved the first data (heroes) in HeroesList. It makes sense to share this data with HeroPage. An ideal way is to fetch heroes data upfront in <code>main.js</code>, then pass this data into both HeroPage and HeroesList.</p>
+<h3 id="passing-hero-data-to-heroeslist">Passing Hero Data to HeroesList</h3>
+<p>We can shift the fetch request from <code>HeroesList.js</code> into <code>main.js</code>.</p>
+<pre><code class="language-javascript">// Remove this from HeroesList.js.
+// Paste this in main.js
+async afterMount () {
+  const dotaApi = 'https://api.opendota.com/api'
+  const response = await zlFetch(`${dotaApi}/constants/heroes`)
+  const heroes = Object.values(response.body).map(hero =&gt; {
+    return {
+      name: hero.localized_name,
+      npcHeroName: hero.name.replace('npc_dota_hero_', ''),
+      attackType: hero.attack_type.toLowerCase(),
+      primaryAttribute: hero.primary_attr,
+      roles: hero.roles.map(role =&gt; role.toLowerCase()),
+      image: `https://api.opendota.com${hero.img}`
+    }
+  })
+
+  this.setState({
+    heroes,
+    displayedHeroes: heroes
+  })
+}
+</code></pre>
+<p>We’ll remove <code>displayedHeroes</code> since the parent component in <code>main.js</code> doesn’t need it.</p>
+<pre><code class="language-javascript">// main.js
+Tiny({
+  // ...
+  async afterMount () {
+    // ...
+    this.setState({
+      heroes,
+      // Remove this line
+      displayedHeroes: heroes
+    })
+  }
+})
+</code></pre>
+<p>We can pass the <code>state.heroes</code> into HeroesList like this:</p>
+<pre><code class="language-javascript">// main.js
+Tiny ({
+  // ...
+  template () {
+    const path = location.pathname
+    if (path === '/') {
+      return '&lt;div tiny-component=&quot;HeroesList&quot; tiny-props=&quot;[heroes, state.heroes]&quot;&gt;&lt;/div&gt;'
+    }
+    // ...
+})
+</code></pre>
+<p>We can now get heroes inside HeroesList with <code>prop</code>.</p>
+<pre><code class="language-javascript">// HeroesList.js
+export default Tiny({
+  // ...
+  template () {
+    console.log(this.props.heroes)
+    // ...
+  }
+}
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota-spa/hero-page/undefined.png" alt="" loading="lazy">
+</figure>
+<p>The <code>undefined</code> log shows up because we did not initialize <code>state.heroes</code> inside <code>main.js</code>. Let’s initialize it to an empty array as before.</p>
+<pre><code class="language-javascript">// main.js
+Tiny({
+  // ...
+  state: {
+    heroes: []
+  }
+  // ...
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota-spa/hero-page/empty-array.png" alt="" loading="lazy">
+</figure>
+<p>We need to show the list of heroes in <code>HeroesList</code> now. We can show the initial list using <code>this.props.heroes</code>.</p>
+<pre><code class="language-javascript">export default Tiny({
+  // ...
+  template () {
+    return `
+      &lt;!-- Header --&gt;
+
+      &lt;main tiny-listener=&quot;[filter-heroes, filterHeroes]&quot;&gt;
+        &lt;div class=&quot;wrap&quot;&gt;
+          &lt;!-- Site Title --&gt;
+
+          &lt;div class=&quot;sidebar-content&quot;&gt;
+            &lt;!-- Filters --&gt;
+
+            &lt;div class=&quot;content&quot;&gt;
+              &lt;ul class=&quot;heroes-list&quot;&gt;
+                ${this.props.heroes
+                  .map(hero =&gt; {
+                    // ...
+                  })
+                  .join('')}
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/main&gt;
+    `
+  }
+})
+</code></pre>
+<h3 id="filtering-heroes">Filtering heroes</h3>
+<p>To filter heroes, we need to pass <code>props.heroes</code> instead of <code>state.heroes</code> downwards into the Filter component.</p>
+<pre><code class="language-javascript">// HeroesList.js
+export default Tiny({
+  // ...
+  template () {
+    return `
+      &lt;!-- Header --&gt;
+
+      &lt;main tiny-listener=&quot;[filter-heroes, filterHeroes]&quot;&gt;
+        &lt;div class=&quot;wrap&quot;&gt;
+          &lt;!-- Site Title --&gt;
+
+          &lt;div class=&quot;sidebar-content&quot;&gt;
+            &lt;div class=&quot;sidebar flow&quot;&gt;
+              &lt;div tiny-component=&quot;Filters&quot; tiny-props=&quot;[heroes, props.heroes]&quot;&gt;&lt;/div&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;content&quot;&gt;
+              &lt;!-- Heroes List --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/main&gt;
+    `
+  }
+})
+</code></pre>
+<p>After filtering, we want to display the filtered heroes. We currently store these inside a <code>state.displayedHeroes</code>.</p>
+<p>We know <code>state.displayedHeroes</code> can have one following:</p>
+<ul>
+<li>0 heroes — before heroes are fetched</li>
+<li>Max heroes — if no filters are checked</li>
+<li>A number between 0 to max heroes — if some filters are checked.</li>
+</ul>
+<p>This tell us we can use <code>state.displayedHeroes</code> over <code>props.heroes</code>. But we need to make sure we display all heroes when <code>state.displayedHeroes</code> is 0.</p>
+<p>One simple way to do this is create a new variable to store the correct array of heroes we want to display:</p>
+<pre><code class="language-javascript">export default Tiny({
+  // ...
+  template () {
+    const heroes =
+      this.state.displayedHeroes.length &gt; 0
+        ? this.state.displayedHeroes
+        : this.props.heroes
+    // ...
+  }
+})
+</code></pre>
+<p>We can then use this <code>heroes</code> variable to display heroes.</p>
+<pre><code class="language-javascript">export default Tiny({
+  // ...
+  template () {
+    // ...
+    return `
+      &lt;!-- Header --&gt;
+
+      &lt;main tiny-listener=&quot;[filter-heroes, filterHeroes]&quot;&gt;
+        &lt;div class=&quot;wrap&quot;&gt;
+          &lt;!-- Site Title --&gt;
+
+          &lt;div class=&quot;sidebar-content&quot;&gt;
+            &lt;!-- Filters --&gt;
+
+            &lt;div class=&quot;content&quot;&gt;
+              &lt;ul class=&quot;heroes-list&quot;&gt;
+                ${heroes
+                  .map(hero =&gt; {
+                    // ...
+                  })
+                  .join('')}
+              &lt;/ul&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/main&gt;
+    `
+  }
+})
+</code></pre>
+<p>Phew! That’s a lot of refactoring! At this point, the filters should work properly again.</p>
+<h3 id="passing-heroes-data-into-hero-page">Passing heroes data into Hero Page</h3>
+<p>We can pass heroes data into Hero Page with <code>tiny-props</code>. This step should be easy for you:</p>
+<pre><code class="language-javascript">// main.js
+Tiny({
+  // ...
+  template () {
+    // ...
+    if (path.includes('/heroes/')) {
+      return '&lt;div tiny-component=&quot;HeroPage&quot; tiny-props=&quot;[heroes, state.heroes]&quot;&gt;&lt;/div&gt;'
+    }
+  }
+})
+</code></pre>
+<p>We can finally render the hero’s name and image into the Hero Page!</p>
+<h2 id="rendering-the-hero%E2%80%99s-name-and-image">Rendering the hero’s name and image</h2>
+<p>To render the hero’s name and image, we need to know which hero page we’re on. We can get this information from the URL.</p>
+<p>The URL has the following format:</p>
+<pre><code class="language-javascript">/heroes/:npcHeroName
+</code></pre>
+<p>We need the <code>npcHeroName</code> part from the URL. We can pass <code>/heroes/</code> into <code>split</code> to split this URL into two. The second portion is what we want.</p>
+<pre><code class="language-javascript">// HeroPage.js
+export default Tiny({
+  template () {
+    const npcName = location.pathname.split('/heroes/')[1]
+    // ...
+  }
+})
+</code></pre>
+<p>Once we have <code>npcName</code>, we can find the hero’s information from <code>this.props.heroes</code>.</p>
+<p>Now that we have the hero data, we can finally render the hero’s name and image. We do this by extracting the correct data from <code>this.props.heroes</code></p>
+<pre><code class="language-javascript">export default Tiny({
+  template () {
+    const npcName = location.pathname.split('/heroes/')[1]
+    const hero = this.props.heroes.find(h =&gt; h.npcHeroName === npcName)
+    console.log(hero)
+    // ...
+  }
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/dota-spa/hero-page/hero.png" alt="" loading="lazy">
+</figure>
+<p>Once we have <code>hero</code>, we can render the hero’s name and image.</p>
+<pre><code class="language-javascript">export default Tiny({
+  template () {
+    const npcName = location.pathname.split('/heroes/')[1]
+    const hero = this.props.heroes.find(h =&gt; h.npcHeroName === npcName)
+
+    return `
+      &lt;div class=&quot;hero-page&quot;&gt;
+        &lt;!-- Header --&gt;
+
+        &lt;main&gt;
+          &lt;div class=&quot;wrap&quot;&gt;
+            &lt;div class=&quot;single-column flow-2&quot;&gt;
+              &lt;div class=&quot;clear site-title&quot;&gt;
+                &lt;h1 data-hero-name&gt;${hero.name}&lt;/h1&gt;
+                &lt;img
+                  class=&quot;hero__img&quot;
+                  data-hero-image
+                  src=&quot;${hero.image}&quot;
+                /&gt;
+                &lt;!-- Description --&gt;
+              &lt;/div&gt;
+
+              &lt;!-- Abilities --&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/main&gt;
+      &lt;/div&gt;
+    `
+  }
+})
+</code></pre>
+<p>If you refresh the browser now you’ll get an error:</p>
+<figure role="figure">
+  <img src="../../images/components/dota-spa/hero-page/error.png" alt="" loading="lazy">
+</figure>
+<p>This error happens because <code>hero</code> is undefined. We cannot get a property of an undefined object. The easiest way to circumvent this error is render nothing if ‘hero’ is not found.</p>
+<pre><code class="language-javascript">export default Tiny({
+  template () {
+    const npcName = location.pathname.split('/heroes/')[1]
+    const hero = this.props.heroes.find(h =&gt; h.npcHeroName === npcName)
+    if (!hero) return ''
+    // ...
+  }
+})
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/dota-spa/hero-page/hero-name-image.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/dota-spa/hero-page/hero-name-image.mp4"> here </a> instead.
+</video>
+<h2 id="improving-load-performance">Improving load performance</h2>
+<p>The Hero Page is empty when we can’t find a <code>hero</code> right now. On a real site, we should still show information (like the logo) even when there is nothing to show.</p>
+<p>What we can do is create a function that handles the creation of hero data. This function returns a string that can be used in <code>template</code>. We’ll call it <code>heroHTML</code></p>
+<pre><code class="language-javascript">export default Tiny({
+  heroHTML (hero) {
+    return `&lt;div class=&quot;single-column flow-2&quot;&gt;
+      &lt;div class=&quot;clear site-title&quot;&gt;
+        &lt;h1 data-hero-name&gt;${hero.name}&lt;/h1&gt;
+        &lt;img
+          class=&quot;hero__img&quot;
+          data-hero-image
+          src=&quot;${hero.image}&quot;
+        /&gt;
+        &lt;p data-hero-description&gt;&lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;section hidden&gt;
+        &lt;h2&gt;Abilities&lt;/h2&gt;
+        &lt;ul class=&quot;abilities flow&quot; data-hero-abilities&gt;&lt;/ul&gt;
+      &lt;/section&gt;
+    &lt;/div&gt;`
+  }
+  // ...
+})
+</code></pre>
+<p>If no heroes are found, we simply return an empty string from <code>heroHTML</code></p>
+<pre><code class="language-javascript">export default Tiny({
+  heroHTML (hero) {
+    if (!hero) return ''
+    // ...
+  }
+  // ...
+})
+</code></pre>
+<p>We can use <code>heroHTML</code> like this:</p>
+<pre><code class="language-javascript">export default Tiny({
+  template () {
+    // ...
+    return `
+      &lt;div class=&quot;hero-page&quot;&gt;
+        &lt;!-- Header --&gt;
+
+        &lt;main&gt;
+          &lt;div class=&quot;wrap&quot;&gt; ${this.heroHTML(hero)} &lt;/div&gt;
+        &lt;/main&gt;
+      &lt;/div&gt;
+    `
+  }
+})
+</code></pre>
+<h3 id="further-improvements">Further improvements</h3>
+<p>We don’t use <code>hero</code> in <code>template</code> at this point — only in <code>heroHTML</code> — so it’s okay to create <code>hero</code> inside <code>heroHTML</code>. If we do this, we don’t have to pass the <code>hero</code> variable into <code>heroHTML</code>.</p>
+<pre><code class="language-javascript">export default Tiny({
+  heroHTML () {
+    const npcName = location.pathname.split('/heroes/')[1]
+    const hero = this.props.heroes.find(h =&gt; h.npcHeroName === npcName)
+    // ...
+  },
+
+  template () {
+    return `
+      &lt;div class=&quot;hero-page&quot;&gt;
+        &lt;!-- Header --&gt;
+
+        &lt;main&gt;
+          &lt;div class=&quot;wrap&quot;&gt; ${this.heroHTML()} &lt;/div&gt;
+        &lt;/main&gt;
+      &lt;/div&gt;
+    `
+  }
+})
+</code></pre>
+<p>That’s it for this lesson!</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../dota-spa-get-ready-to-build-hero-page/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Dota SPA: Getting Ready to build the Hero Page</span>
+            </a>
+          <a href="../dota-spa-lore-and-abilities/index.html" data-link-to="next-lesson">
+              <span>🛠️ Dota SPA: Lore and abilities</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /dota-spa-hero-page/  Mon, 24 Jan 2022 10:08:12 GMT -->
+</html>

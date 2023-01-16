@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /datepicker-tab-in-out/  Mon, 24 Jan 2022 10:05:32 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Datepicker: Tabbing in and out | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Datepicker: Tabbing in and out</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Datepicker: Tabbing in and out</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/datepicker/09.tab-in-out.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>We need to take care of many things to make the Datepicker keyboard accessible. They are:</p>
+<ol>
+<li>Showing the Datepicker</li>
+<li>Tabbing into/out of the Datepicker</li>
+<li>Keyboard shortcuts inside the Datepicker</li>
+</ol>
+<p>We’ll work on the first two things in this lesson.</p>
+<h2 id="showing-the-datepicker">Showing the Datepicker</h2>
+<p>We showed the Datepicker when a user clicks on the <code>&lt;input&gt;</code>. But we also want to show the Datepicker when the user Tabs into the <code>&lt;input&gt;</code>. We can do this by changing the <code>click</code> event to <code>focus</code>.</p>
+<p>This is okay because a click creates focus on the <code>&lt;input&gt;</code>.</p>
+<pre><code class="language-js">input.addEventListener('focus', event =&gt; {
+  datepicker.removeAttribute('hidden')
+})
+</code></pre>
+<video muted controls autoplay loop playsinline>
+  <source src="../../images/components/datepicker/keyboard/datepicker-focus-in.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/datepicker/keyboard/datepicker-focus-in.mp4"> here </a> instead.
+</video>
+<h2 id="tabbing-into%2Fout-of-the-datepicker">Tabbing into/out of the Datepicker</h2>
+<p>We want to allow users to Tab into the Datepicker. It shouldn’t matter if there are any focusable elements between the <code>&lt;input&gt;</code> and the Datepicker.</p>
+<p>Before we do this, let’s put a link between the <code>&lt;input&gt;</code> and the Datepicker. This will allow us to test the shifting of focus properly.</p>
+<pre><code class="language-html">&lt;form action=&quot;#&quot; autocomplete=&quot;off&quot;&gt;
+  &lt;div class=&quot;input&quot;&gt;
+    &lt;label for=&quot;date&quot;&gt;Select Date:&lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;date&quot; placeholder=&quot;DD/MM/YYYY&quot; /&gt;
+    &lt;a href=&quot;#&quot;&gt;Here's a link!&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+<p>We want to intercept the browser’s default behaviour when the user presses the Tab key. But we don’t want to do anything if they press Shift + Tab.</p>
+<pre><code class="language-js">input.addEventListener('keydown', event =&gt; {
+  const { key } = event
+  if (key !== 'Tab') return
+  if (event.shiftKey) return
+  event.preventDefault()
+})
+</code></pre>
+<p>If they press Tab, we want to focus on the first focusable element in the Datepicker. This would be the previous month’s button.</p>
+<pre><code class="language-js">input.addEventListener('keydown', event =&gt; {
+  // ...
+  const focusablesInDatepicker = datepicker.querySelectorAll('button')
+  const firstFocusableElement = focusablesInDatepicker[0]
+  firstFocusableElement.focus()
+})
+</code></pre>
+<video muted controls autoplay loop playsinline>
+  <source src="../../images/components/datepicker/keyboard/datepicker-focus-previous-month.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/datepicker/keyboard/datepicker-focus-previous-month.mp4"> here </a> instead.
+</video>
+<h3 id="retaining-%E2%80%9Cfocus%E2%80%9D-on-the-input">Retaining “focus” on the input</h3>
+<p>Notice the input becomes blueish-grey when you Tab into the Datepicker? This signifies the focus on the input was lost. (Which is true, because focus is now on the previous month’s button).</p>
+<p>But the user is using the Datepicker (which is linked to the input). They expect the Datepicker to be part of the input. So the input should still be “focused”.</p>
+<p>We can retain the focused state (the white background) by adding a custom attribute called <code>data-state</code>. We’ll set <code>data-state</code> to <code>focus</code>. (You can use a class if you prefer).</p>
+<pre><code class="language-js">// Shows the Datepicker
+input.addEventListener('focus', event =&gt; {
+  datepicker.removeAttribute('hidden')
+  input.dataset.state = 'focus'
+})
+</code></pre>
+<p>The necessary CSS to activate this state has already been done for you.</p>
+<video muted controls autoplay loop playsinline>
+  <source src="../../images/components/datepicker/keyboard/datepicker-focus-input-bg.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/datepicker/keyboard/datepicker-focus-input-bg.mp4"> here </a> instead.
+</video>
+<p>If the user closes the Datepicker, we want to remove “focus” from the input. To do this, we can delete the <code>data-state</code> attribute.</p>
+<pre><code class="language-js">// Hides the Datepicker
+document.addEventListener('click', event =&gt; {
+  if (event.target.closest('.datepicker')) return
+  if (event.target.closest('input') === input) return
+  datepicker.setAttribute('hidden', true)
+  delete input.dataset.state
+})
+</code></pre>
+<h3 id="tabbing-out-of-the-datepicker">Tabbing out of the Datepicker</h3>
+<p>It would be a chore for users to Tab through all date buttons before getting out of the Datepicker.</p>
+<video muted controls autoplay loop playsinline>
+  <source src="../../images/components/datepicker/keyboard/datepicker-many-tabs.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/datepicker/keyboard/datepicker-many-tabs.mp4"> here </a> instead.
+</video>
+<p>A better way is to let users Tab into ONE date button. Then, their next Tab takes them out of the Datepicker. (We can let them navigate through the rest of the dates with arrow keys later).</p>
+<p>To do this, we need to set all button’s (except the first) <code>tabindex</code> to <code>-1</code>.</p>
+<pre><code class="language-js">const createDateGridHTML = date =&gt; {
+  // ...
+  for (let day = 1; day &lt;= daysInMonth; day++) {
+    if (day === 1) button.style.setProperty('--firstDayOfMonth', firstDayOfMonth + 1)
+    if (day !== 1) button.setAttribute('tabindex', '-1')
+    // ...
+  }
+}
+</code></pre>
+<video muted controls autoplay loop playsinline>
+  <source src="../../images/components/datepicker/keyboard/datepicker-less-tabs.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/datepicker/keyboard/datepicker-less-tabs.mp4"> here </a> instead.
+</video>
+<p>When a user clicks on a button, we want to allow users to Tab back into the button. We can do this by changing up the tabindex attributes.</p>
+<pre><code class="language-js">dategrid.addEventListener('click', event =&gt; {
+  // ...
+  // Highlights the selected button (and corrects tabindex)
+  buttons.forEach(button =&gt; {
+    button.classList.remove('is-selected')
+    button.setAttribute('tabindex', '-1')
+  })
+  button.classList.add('is-selected')
+  button.removeAttribute('tabindex')
+  // ...
+})
+</code></pre>
+<p>When a user Tabs out of the Datepicker, we want to direct the user to the next focusable element (after the input). In this case, the focusable element is the link we placed in the HTML.</p>
+<p>To do this, we need to listen to a <code>keydown</code> event.</p>
+<pre><code class="language-js">datepicker.addEventListener('keydown', event =&gt; {
+  const { key } = event
+  // ...
+})
+</code></pre>
+<p>To focus on the link, we need to:</p>
+<ol>
+<li>Get all keyboard focusable elements from the DOM</li>
+<li>Find the <code>index</code> of the <code>&lt;input&gt;</code></li>
+<li>Focus on the next element after the input</li>
+</ol>
+<p>We can get all keyboard focusable elements from the DOM with <code>getFocusableElements</code> from the popover’s code. (This is how you reuse code! 😃).</p>
+<pre><code class="language-js">const getFocusableElements = (element = document) =&gt; {
+  return [...element.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex=&quot;-1&quot;])')]
+}
+
+datepicker.addEventListener('keydown', event =&gt; {
+  // ...
+  const focusableElements = getFocusableElements()
+})
+</code></pre>
+<p>Next, we find the <code>index</code> of the input.</p>
+<pre><code class="language-js">datepicker.addEventListener('keydown', event =&gt; {
+  // ...
+  const focusableElements = getFocusableElements()
+  const index = focusableElements.findIndex(element =&gt; element === input)
+})
+</code></pre>
+<p>And we focus on the next element after the input. Remember to prevent the default Tab behaviour here. Otherwise you’ll focus on the 2nd element after the input.</p>
+<pre><code class="language-js">datepicker.addEventListener('keydown', event =&gt; {
+  // ...
+  event.preventDefault()
+  focusableElements[index + 1].focus()
+})
+</code></pre>
+<video muted controls autoplay loop playsinline>
+  <source src="../../images/components/datepicker/keyboard/datepicker-focus-out-link.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/datepicker/keyboard/datepicker-focus-out-link.mp4"> here </a> instead.
+</video>
+<p>After the user Tabs out of the Datepicker, we want to close the Datepicker. We can do it by setting the <code>hidden</code> attribute. We also need to remove the <code>data-state</code> custom attribute from the <code>&lt;input&gt;</code></p>
+<pre><code class="language-js">datepicker.addEventListener('keydown', event =&gt; {
+  // ...
+  datepicker.setAttribute('hidden', true)
+  delete input.dataset.state
+})
+</code></pre>
+<video muted controls autoplay loop playsinline>
+  <source src="../../images/components/datepicker/keyboard/datepicker-close.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/datepicker/keyboard/datepicker-close.mp4"> here </a> instead.
+</video>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../dota-keyboard/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Dota Heroes: Keyboard</span>
+            </a>
+          <a href="../datepicker-keyboard-shortcuts/index.html" data-link-to="next-lesson">
+              <span>🛠️ Datepicker: Keyboard shortcuts</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /datepicker-tab-in-out/  Mon, 24 Jan 2022 10:05:34 GMT -->
+</html>

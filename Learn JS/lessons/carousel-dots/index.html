@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /carousel-dots/  Mon, 24 Jan 2022 10:01:43 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠 Carousel: Working the dots | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="starter"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠 Carousel: Working the dots</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠 Carousel: Working the dots</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/carousel/04.dots.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>When a user clicks on a dot, the carousel shows the slide that corresponds to the clicked dot.</p>
+<ul>
+<li>Click first dot: Show first slide</li>
+<li>Click second dot: Show second slide</li>
+<li>Click third dot: Show third slide</li>
+</ul>
+<figure role="figure"><img src="../../images/components/carousel/dots/dots-complete.gif" alt="Completed dot interaction."></figure>
+<p>First, we need to get the dots in JavaScript.</p>
+<pre><code class="language-js">const dots = Array.from(carousel.querySelectorAll('.carousel__dot'))
+</code></pre>
+<p>We want to know when a dot gets clicked. To do this, we need to add an event listener to each dot.</p>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    console.log(dot)
+  })
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/dots/dots.gif" alt="Listening to the clicked dot."></figure>
+<p>When a dot gets clicked, we want to find the corresponding slide.</p>
+<ul>
+<li>First dot: First slide</li>
+<li>Second dot: Second slide</li>
+<li>Third dot: Third slide</li>
+</ul>
+<p>To do this we need to know the position of the dot that was clicked. (Did the user clicked the first dot, second dot, or third dot?)</p>
+<p>If the user clicks the first dot, <code>dots[0]</code> and <code>dot</code> should be the same thing. We can compare them with the strictly equal operator <code>===</code>.</p>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    if (dots[0] === dot) {
+      console.log('Clicked first dot')
+    } else {
+      console.log('Clicked another dot')
+    }
+  })
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/dots/clicked-dots.gif" alt=""></figure>
+<p>The same applies for other dots:</p>
+<ol>
+<li>If user clicks second dot, <code>dots[1] === dot</code></li>
+<li>If user clicks third dot, <code>dots[2] === dot</code></li>
+</ol>
+<p>We can loop through <code>dots</code> and check which dot was clicked.</p>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    let clickedDotIndex
+
+    for (let index = 0; index &lt; dots.length; index++) {
+      if (dots[index] === dot) {
+        clickedDotIndex = index
+      }
+    }
+
+    console.log(clickedDotIndex)
+  })
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/dots/clicked-dot-index.gif" alt="Getting position of the dot that was clicked."></figure>
+<p>Once we know <code>clickedDotIndex</code>, we can use it to find the slide to show.</p>
+<pre><code class="language-js">const slides = Array.from(carousel.querySelectorAll('.carousel__slide'))
+
+dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    let clickedDotIndex
+
+    for (let index = 0; index &lt; dots.length; index++) {
+      if (dots[index] === dot) {
+        clickedDotIndex = index
+      }
+    }
+
+    const slideToShow = slides[clickedDotIndex]
+    console.log(slideToShow)
+  })
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/dots/slide-to-show.gif" alt="Getting the slide to show."></figure>
+<p>Once we know the slide to show, we can get its <code>left</code> position with <code>getComputedStyle</code>.</p>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    // ...
+    const slideToShow = slides[clickedDotIndex]
+    const destination = getComputedStyle(slideToShow).left
+    console.log(destination)
+  })
+})
+</code></pre>
+<p>And we can show the slide by changing <code>.carousel__content</code>'s <code>left</code> position.</p>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    // ...
+    const slideToShow = slides[clickedDotIndex]
+    const destination = getComputedStyle(slideToShow).left
+
+    contents.style.left = '-' + destination
+  })
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/dots/show-with-dots.gif" alt="Showing slides with dots"></figure>
+<p>After changing the selected slide, we need to update the location of the <code>is-selected</code> class. (Without this, our previous and next buttons will not work).</p>
+<p>To do this, we need to remove the <code>is-selected</code> class from the current slide. We can find the selected slide with <code>querySelector</code></p>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    // ...
+    const currentSlide = contents.querySelector('.is-selected')
+    currentSlide.classList.remove('is-selected')
+  })
+})
+</code></pre>
+<p>An alternate way is to loop through all slides and remove the <code>is-selected</code> class from them all.</p>
+<pre><code class="language-js">const slides = Array.from(carousel.querySelectorAll('.carousel__slide'))
+
+dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    // ...
+    // Either use this code or the one above. Pick one!
+    slides.forEach(slide =&gt; {
+      slide.classList.remove('is-selected')
+    })
+  })
+})
+</code></pre>
+<p>Then, we add <code>is-selected</code> to the newly displayed slide.</p>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    // ...
+    slides.forEach(slide =&gt; {
+      slide.classList.remove('is-selected')
+    })
+    slideToShow.classList.add('is-selected')
+  })
+})
+</code></pre>
+<h2 id="updating-dot-state">Updating dot state</h2>
+<p>Dots on a carousel help to indicate the selected slide. The selected dot should be styled differently from the rest of the dots. We can style the selected dot with an <code>is-selected</code> class.</p>
+<pre><code class="language-html">&lt;div class=&quot;carousel__dots&quot;&gt;
+  &lt;button class=&quot;carousel__dot is-selected&quot;&gt;&lt;/button&gt;
+  &lt;button class=&quot;carousel__dot&quot;&gt;&lt;/button&gt;
+  &lt;button class=&quot;carousel__dot&quot;&gt;&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/dots/selected-dot-style.png" alt="Styled the first dot."></figure>
+<p>To update the styled dot, we remove the <code>is-selected</code> class from all other dots. And we add <code>is-selected</code> back to the clicked dot.</p>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    // ...
+    dots.forEach(d =&gt; {
+      d.classList.remove('is-selected')
+    })
+    dot.classList.add('is-selected')
+  })
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/dots/style-clicked-dot.gif" alt="Styles the dot that was clicked."></figure>
+<h2 id="updating-dot-state-when-clicking-buttons">Updating dot state when clicking buttons</h2>
+<p>Dots should also get updated when a user clicks the previous and next buttons.</p>
+<p>When the user clicks the next button, we need to find the selected dot with <code>querySelector</code>. Then, we find the next dot with <code>nextElementSibling</code>. Then, we remove and add the <code>is-selected</code> class accordingly.</p>
+<pre><code class="language-js">const dotsContainer = carousel.querySelector('.carousel__dots')
+
+nextButton.addEventListener('click', event =&gt; {
+  // ...
+  // Highlight dot
+  const currentDot = dotsContainer.querySelector('.is-selected')
+  const nextDot = currentDot.nextElementSibling
+  currentDot.classList.remove('is-selected')
+  nextDot.classList.add('is-selected')
+})
+</code></pre>
+<p>We can repeat the same steps for the previous button listener.</p>
+<pre><code class="language-js">previousButton.addEventListener('click', event =&gt; {
+  // ...
+  // Highlight dot
+  const currentDot = dotsContainer.querySelector('.is-selected')
+  const previousDot = currentDot.previousElementSibling
+  currentDot.classList.remove('is-selected')
+  previousDot.classList.add('is-selected')
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/dots/update-dot-when-click-buttons.gif" alt="Highlights the correct dot when clicking on the previous or next button."></figure>
+<h2 id="showing%2Fhiding-previous-and-next-buttons">Showing/hiding previous and next buttons</h2>
+<p>There’s one more thing we need to do:</p>
+<ul>
+<li>If the user clicks on the first dot, we need to hide the previous button, but show the next button.</li>
+<li>If the user clicks the second dot, we need to show both the previous and next buttons.</li>
+<li>If the user clicks the third dot, we need to show the previous button, but hide the next button.</li>
+</ul>
+<p>Let’s work it out step by step.</p>
+<h3 id="clicking-the-first-dot">Clicking the first dot</h3>
+<p>When a user clicks the first dot, we want to show the next button, but hide the previous button. We can use <code>clickedDotIndex</code> to check if they’re clicking on the first dot.</p>
+<p>We know these to be true:</p>
+<ol>
+<li>If <code>clickedDotIndex</code> is 0, they click the first dot</li>
+<li>If <code>clickedDotIndex</code> is 1, they click the second dot</li>
+<li>If <code>clickedDotIndex</code> is 2, they click the third dot</li>
+</ol>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    // ...
+
+    // Show / hide buttons
+    if (clickedDotIndex === 0) {
+      previousButton.setAttribute('hidden', true)
+      nextButton.removeAttribute('hidden')
+    }
+  })
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/dots/click-first-dot.gif" alt="Clicks first dot. Hides previous button, shows next button."></figure>
+<h3 id="clicking-the-last-dot">Clicking the last dot</h3>
+<p>If the user clicks on the last dot, we want to show the previous button, but hide the next button. We know they clicked on the last dot if <code>clickedDotIndex</code> is 2.</p>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    // ...
+
+    // Show / hide buttons
+    if (clickedDotIndex === 0) {
+      previousButton.setAttribute('hidden', true)
+      nextButton.removeAttribute('hidden')
+    } else if (clickedDotIndex === 2) {
+      previousButton.removeAttribute('hidden')
+      nextButton.setAttribute('hidden', true)
+    }
+  })
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/dots/click-last-dot.gif" alt="Clicks last dot. Shows previous button, hides next button."></figure>
+<p>This code works if there are three dots. We need to make the code work for 2 dots, 4 dots, and any other number of dots.</p>
+<p>Here, we know this:</p>
+<ol>
+<li>If last dot is 2, there are 3 dots in total</li>
+<li>If last dot is 3, there are 4 dots in total</li>
+<li>If last dot is 4, there are 5 dots in total</li>
+</ol>
+<p>We can get the index of the last dot once we know the total number of dots. We can get the total number of dots with the <code>length</code> property.</p>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    // ...
+
+    // Show / hide buttons
+    if (clickedDotIndex === 0) {
+      previousButton.setAttribute('hidden', true)
+      nextButton.removeAttribute('hidden')
+    } else if (clickedDotIndex === dots.length - 1) {
+      previousButton.removeAttribute('hidden')
+      nextButton.setAttribute('hidden', true)
+    }
+  })
+})
+</code></pre>
+<h3 id="clicking-the-second-dot">Clicking the second dot</h3>
+<p>If the user clicks the second dot (or any dots between the first and last dot), we want to show both arrows. We can do this with an <code>else</code> statement.</p>
+<pre><code class="language-js">dots.forEach(dot =&gt; {
+  dot.addEventListener('click', event =&gt; {
+    // ...
+
+    // Show / hide buttons
+    if (clickedDotIndex === 0) {
+      previousButton.setAttribute('hidden', true)
+      nextButton.removeAttribute('hidden')
+    } else if (clickedDotIndex === dots.length - 1) {
+      previousButton.removeAttribute('hidden')
+      nextButton.setAttribute('hidden', true)
+    } else {
+      previousButton.removeAttribute('hidden')
+      nextButton.removeAttribute('hidden')
+    }
+  })
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/dots/click-middle-dot.gif" alt="Clicks the middle dot. Shows both previous and next buttons."></figure>
+<p>That’s it!</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../carousel-switch-slides/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠 Carousel: Switching slides with JavaScript</span>
+            </a>
+          <a href="../carousel-position-slides/index.html" data-link-to="next-lesson">
+              <span>🛠 Carousel: Positioning slides with JavaScript</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /carousel-dots/  Mon, 24 Jan 2022 10:01:46 GMT -->
+</html>

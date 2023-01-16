@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /console/  Mon, 24 Jan 2022 10:00:47 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>The Console | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="welcome"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>The Console</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>The Console</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>The console is a place that lets you write commands to find out what’s happening with your JavaScript code. It’s a useful tool you’ll keep using to check and eliminate errors (a process known as debugging).</p>
+<h2 id="browsers-have-their-own-console%3A">Browsers have their own console:</h2>
+<p>Browsers have their own console. The consoles between browsers are largely similar to each other, with minor differences in style and capabilities. The best browsers for debugging are Firefox and Chrome.</p>
+<p>When I code, I use <a href="https://www.google.com/chrome/browser/canary.html">Google Chrome Canary</a> and <a href="https://www.mozilla.org/en-US/firefox/channel/desktop/">Firefox Nightly</a>. This is because their consoles are superior compared to the normal versions. I highly recommend you use one of these browsers.</p>
+<p>This is how a console looks like.</p>
+<figure>
+  <img src="../../images/js-basics/console/console.png" alt="The JavaScript console looks like a blank screen with an area you can type in">
+  <figcaption>The JavaScript console looks like a blank screen with an area you can type in</figcaption>
+</figure>
+<h2 id="bringing-up-the-console">Bringing up the console</h2>
+<p>You can open the console through the keyboard shortcut <code>cmd + opt + i</code> on a Mac and <code>ctrl + shift + i</code> on Windows. I highly recommend using the shortcut because you’ll bring up the console a lot.</p>
+<p>Alternatively, you can open up the console in Chrome and Firefox through the following ways:</p>
+<ol>
+<li>Chrome: <code>view &gt; developer &gt; developer tools</code></li>
+<li>Firefox: <code>tools &gt; web developer &gt; web console</code></li>
+</ol>
+<h2 id="typing-in-the-console">Typing in the console</h2>
+<p>You can type in the console. If you typed valid JavaScript into the console, it will be evaluated and the results would be shown to you, like this:</p>
+<figure>
+  <img src="../../images/js-basics/console/console-valid.png" alt="The console returns the results of whatever you typed in">
+  <figcaption>The console returns the results of whatever you typed in</figcaption>
+</figure>
+<p>If you typed invalid JavaScript into the console, you would get an error, like this:</p>
+<figure>
+  <img src="../../images/js-basics/console/console-invalid.png" alt="The console shows you an error if you typed in invalid code">
+  <figcaption>The console shows you an error if you typed in invalid code</figcaption>
+</figure>
+<p>Every error the console throws at you has a meaning. You can use it to debug and make things right, and you’ll learn how to do so in later chapters.</p>
+<p>For now, just know that you can type JavaScript into the console.</p>
+<h2 id="printing-to-the-console">Printing to the console</h2>
+<p>Code you type into your JavaScript file does not appear automatically in the console. This behavior is ideal because you can have hundreds of lines of JavaScript when you make something. It would be hard to debug if you were forced to look at hundreds of lines of logs every time!</p>
+<p>To get things from your JavaScript file to the console, you need to use <code>console.log</code>. It looks like this:</p>
+<pre><code class="language-js">console.log(`Hello, I'm Zell!`)
+</code></pre>
+<figure>
+  <img src="../../images/js-basics/console/console-log.png" alt="Console.log allows you to write things from your JavaScript file to the console">
+  <figcaption>Console.log allows you to write things from your JavaScript file to the console</figcaption>
+</figure>
+<p>Note: whenever I mention “log into the console” in this course, I mean for you to write a <code>console.log</code> statement, just like you did above.</p>
+<h2 id="file-not-found-error">File not found error</h2>
+<p>Sometimes, when you open up your console, you’ll see an error that says <code>ERR_FILE_NOT_FOUND</code>.</p>
+<figure>
+  <img src="../../images/js-basics/console/not-found.png" alt="File not found error">
+  <figcaption>File not found error</figcaption>
+</figure>
+<p>If you see this error, it means the URL you wrote in your HTML cannot be found. Sometimes, it can be due to a typo error. In this example, you can see that in line #9 of <code>index.html</code>, I have misspelled the word <code>main</code> as <code>maain</code>.</p>
+<h2 id="saving-and-refreshing">Saving and refreshing</h2>
+<p>When you change your JavaScript file, you need to save it. After saving it, you need to refresh your browser window for the changes to take effect.</p>
+<p>This is one of the most common errors that people face when they find their JavaScript didn’t work—they either forget to save, forget to reload, or both.</p>
+<p>Next time, when your code doesn’t update, try saving and refreshing.</p>
+<p>When you work through the real components in the course, you will need to have the console open for the changes to take effect. Make sure you check “disable HTTP Cache” in your console’s settings.</p>
+<figure>
+  <img src="../../images/js-basics/console/cache-firefox.png" alt="Check 'dispable HTTP cache' under advanced settings">
+  <figcaption>Disable HTTP cache in Firefox Nightly</figcaption>
+</figure>
+<figure>
+  <img src="../../images/js-basics/console/cache-chrome.png" alt="Check 'dispable cache' under network settings">
+  <figcaption>Disable HTTP cache in Chrome Canary</figcaption>
+</figure>
+<h2 id="exercise">Exercise</h2>
+<p>You’ll use the console a lot as you go through the next few lessons. Try the following tasks:</p>
+<ol>
+<li>Bring up the console with the keyboard shortcut</li>
+<li>Close the console again with the same shortcut</li>
+<li>Type 1 + 1 in the console and see what you get</li>
+<li>Type 1 + 1 in your JavaScript file and see what you get in your console</li>
+<li>Type <code>console.log('I am writing JavaScript!')</code> into your JavaScript file and see what you get in your console</li>
+</ol>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../preparing-text-editor/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Preparing your text editor</span>
+            </a>
+          <a href="../comments/index.html" data-link-to="next-lesson">
+              <span>Comments</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /console/  Mon, 24 Jan 2022 10:00:50 GMT -->
+</html>

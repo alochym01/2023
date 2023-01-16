@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /get-formatted-date/  Mon, 24 Jan 2022 10:03:29 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Getting a formatted date | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>Getting a formatted date</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>Getting a formatted date</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>If I ask you what’s the date today, I don’t expect a full-blown reply that says <code>Tue Jan 23 2019 17:21:13 GMT+0800 (Singapore Standard Time)</code>. I’ll expect something along the lines of <code>23 Jan, 2019</code>.</p>
+<p>How do you get <code>23 Jan, 2019</code> from the <code>Date</code> object?</p>
+<h2 id="built-in-formats">Built-in formats</h2>
+<p><code>Date</code> comes with seven methods that lets you convert a <code>Date</code> object into a string. Here’s what each of them do:</p>
+<ol>
+<li><code>toString</code> returns: <code>Wed Jan 23 2019 17:23:42 GMT+0800 (Singapore Standard Time)</code></li>
+<li><code>toDateString</code> returns: <code>Wed Jan 23 2019</code></li>
+<li><code>toLocaleString</code> returns: <code>23/01/2019, 17:23:42</code></li>
+<li><code>toLocaleDateString</code> returns: <code>23/01/2019</code></li>
+<li><code>toGMTString</code> returns: <code>Wed, 23 Jan 2019 09:23:42 GMT</code></li>
+<li><code>toUTCString</code> returns: <code>Wed, 23 Jan 2019 09:23:42 GMT</code></li>
+<li><code>toISOString</code> returns:<code>2019-01-23T09:23:42.079Z</code></li>
+</ol>
+<p>Each method gives a specific date/time string. Unfortunately, none of them gives us the format (<code>23 Jan, 2019</code>) we wanted.</p>
+<p>We need to create the format ourselves with some Date methods.</p>
+<h2 id="date-methods">Date methods</h2>
+<p>Here’s a list of methods that helps you format a date.</p>
+<ol>
+<li><code>getFullYear</code>: Gets 4-digit year according to local time.</li>
+<li><code>getMonth</code>: Gets month of the year (0-11) according to local time. Month is zero-indexed (which means <code>January === 0</code> and <code>December === 11</code>).</li>
+<li><code>getDate</code>: Gets day of the month (1-31) according to local time.</li>
+<li><code>getDay</code>: Gets day of the week (0-6) according to local time. Day of the week begins with Sunday (0) and ends with Saturday (6).</li>
+</ol>
+<p>So, what should you write to get <code>23 January, 2019</code>?</p>
+<p>Let’s work it through.</p>
+<h2 id="creating-a-custom-format">Creating a custom format</h2>
+<p>First, we need to create a date object.</p>
+<pre><code class="language-js">const today = new Date()
+</code></pre>
+<p>From this point onwards, we’re going to assume the <code>today</code> is <code>23 January 2019</code>. Substitute the values for <code>today</code> with the actual date when you work through this lesson.</p>
+<p>Getting the day of the month (<code>23</code>) is simple. We can use <code>getDate</code>.</p>
+<pre><code class="language-js">const day = today.getDate()
+console.log(day) // 23
+</code></pre>
+<p>Getting the full year (<code>2019</code>) is simple too. We can use <code>getFullYear</code>.</p>
+<pre><code class="language-js">const year = today.getFullYear()
+console.log(year) // 2019
+</code></pre>
+<p>Getting <code>January</code> is harder.</p>
+<p>We only have access to <code>getMonth</code>, and <code>getMonth</code> returns a number from 0 to 11. This means we must convert the month number (0-11) into a month string (January-December) ourselves.</p>
+<p>First, we need to create an object that tells us 0 is January, 1 is February, 2 is March… and 11 is December.</p>
+<pre><code class="language-js">const monthsInAYear = {
+  0: 'January',
+  1: 'February',
+  2: 'March',
+  3: 'April',
+  4: 'May',
+  5: 'June',
+  6: 'July',
+  7: 'August',
+  8: 'September',
+  9: 'October',
+  10: 'November',
+  11: 'December'
+}
+</code></pre>
+<p>Notice this is a zero-indexed object? This object has the same structure as an Array. We can use an Array instead.</p>
+<pre><code class="language-js">const monthsInAYear = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+]
+</code></pre>
+<p>To get <code>January</code>, we use <code>getMonth</code> to get <code>monthNumber</code> from the <code>Date</code> object. Then, we pass <code>monthNumber</code> into <code>monthsInAYear</code> to get <code>January</code>.</p>
+<pre><code class="language-js">const monthIndex = today.getMonth()
+const monthName = monthsInAYear[monthIndex]
+console.log(monthName) // January
+</code></pre>
+<p>The condensed version:</p>
+<pre><code class="language-js">const month = monthsInAYear[today.getMonth()]
+console.log(month) // January
+</code></pre>
+<p>To get <code>23 January, 2019</code>, we put the values we retrieved together in a template literal:</p>
+<pre><code class="language-js">const dateString = `${day} ${month}, ${year}`
+console.log(dateString) // 23 January, 2019
+</code></pre>
+<h3 id="what-if-you-want-jan-instead-of-january%3F">What if you want Jan instead of January?</h3>
+<p>If you want <code>Jan</code> (shortname) instead of <code>January</code> (longname), you have to modify <code>monthsInAYear</code> to include both shortnames and longnames.</p>
+<pre><code class="language-js">const monthsInAYear = [
+  { shortname: 'Jan', longname: 'January' },
+  { shortname: 'Feb', longname: 'February' },
+  { shortname: 'Mar', longname: 'March' },
+  { shortname: 'Apr', longname: 'April' },
+  { shortname: 'May', longname: 'May' },
+  { shortname: 'Jun', longname: 'June' },
+  { shortname: 'Jul', longname: 'July' },
+  { shortname: 'Aug', longname: 'August' },
+  { shortname: 'Sep', longname: 'September' },
+  { shortname: 'Oct', longname: 'October' },
+  { shortname: 'Nov', longname: 'November' },
+  { shortname: 'Dec', longname: 'December' }
+]
+</code></pre>
+<p>With the new <code>monthsInAYear</code> array, you get <code>January</code> with this:</p>
+<pre><code class="language-js">const longMonth = monthsInAYear[today.getMonth()].longname
+console.log(longMonth) // January
+</code></pre>
+<p>And <code>Jan</code> this way:</p>
+<pre><code class="language-js">const shortMonth = monthsInAYear[today.getMonth()].shortname
+console.log(shortMonth) // Jan
+</code></pre>
+<h2 id="getting-day-of-the-week">Getting day of the week</h2>
+<p>What if you wanted <code>Wednesday, 23 January</code> instead?</p>
+<p>The <code>Date</code> object has a <code>getDay</code> method that tells us the day of the week. It returns a number from 0 to 6. The values goes like this:</p>
+<ol>
+<li><code>0</code>: Sunday</li>
+<li><code>1</code>: Monday</li>
+<li><code>2</code>: Tuesday</li>
+<li><code>3</code>: Wednesday</li>
+<li><code>4</code>: Thursday</li>
+<li><code>5</code>: Friday</li>
+<li><code>6</code>: Saturday</li>
+</ol>
+<p>If we want to get <code>Wednesday</code> from <code>Date</code> we need to create a <code>daysInAWeek</code> array that converts numbers into strings.</p>
+<pre><code class="language-js">const daysInAWeek = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday'
+]
+</code></pre>
+<p>To get <code>Wednesday</code> we use the following:</p>
+<pre><code class="language-js">const dayString = daysInAWeek[today.getDay()]
+console.log(dayString) // Wednesday
+</code></pre>
+<p>If you want <code>Wed</code> you know what to do:</p>
+<pre><code class="language-js">const daysInAWeek = [
+  { shortname: 'Sun', longname: 'Sunday' },
+  { shortname: 'Mon', longname: 'Monday' },
+  { shortname: 'Tue', longname: 'Tuesday' },
+  { shortname: 'Wed', longname: 'Wednesday' },
+  { shortname: 'Thu', longname: 'Thursday' },
+  { shortname: 'Fri', longname: 'Friday' },
+  { shortname: 'Sat', longname: 'Saturday' }
+]
+
+const dayShortString = daysInAWeek[today.getDay()].shortname // Wed
+const dayLongString = daysInAWeek[today.getDay()].longname // Wednesday
+</code></pre>
+<h2 id="exercise">Exercise</h2>
+<p>Assuming today is <code>23 January 2019</code>, get the following date strings:</p>
+<ol>
+<li><code>23/01/2019</code></li>
+<li><code>01/23/2019</code></li>
+<li><code>23 Jan, 2019</code></li>
+<li><code>23 Jan, Wed</code></li>
+<li><code>Wednesday, 23 January, 2019</code></li>
+<li><code>23rd January, 2019</code></li>
+</ol>
+<h2 id="answers">Answers</h2>
+<p>Answer for <code>23/01/2019</code>:</p>
+<pre><code class="language-js">const today = new Date()
+const dateString = `${today.getDate()}/${today.getMonth() + 1}/${today.getFullYear()}`
+</code></pre>
+<p>Answer for <code>01/23/2019</code>:</p>
+<pre><code class="language-js">const today = new Date()
+const dateString = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear()}`
+</code></pre>
+<p>Answer for <code>23 Jan, 2019</code>:</p>
+<pre><code class="language-js">const monthsInAYear = [
+  { shortname: 'Jan', longname: 'January' },
+  { shortname: 'Feb', longname: 'February' },
+  { shortname: 'Mar', longname: 'March' },
+  { shortname: 'Apr', longname: 'April' },
+  { shortname: 'May', longname: 'May' },
+  { shortname: 'Jun', longname: 'June' },
+  { shortname: 'Jul', longname: 'July' },
+  { shortname: 'Aug', longname: 'August' },
+  { shortname: 'Sep', longname: 'September' },
+  { shortname: 'Oct', longname: 'October' },
+  { shortname: 'Nov', longname: 'November' },
+  { shortname: 'Dec', longname: 'December' }
+]
+
+const today = new Date()
+const day = today.getDate()
+const month = monthsInAYear[today.getMonth()].shortname
+const year = today.getFullYear()
+const dateString = `${day} ${month}, ${year}`
+</code></pre>
+<p>Answer for <code>23 Jan, Wed</code>:</p>
+<pre><code class="language-js">const monthsInAYear = [
+  { shortname: 'Jan', longname: 'January' },
+  { shortname: 'Feb', longname: 'February' },
+  { shortname: 'Mar', longname: 'March' },
+  { shortname: 'Apr', longname: 'April' },
+  { shortname: 'May', longname: 'May' },
+  { shortname: 'Jun', longname: 'June' },
+  { shortname: 'Jul', longname: 'July' },
+  { shortname: 'Aug', longname: 'August' },
+  { shortname: 'Sep', longname: 'September' },
+  { shortname: 'Oct', longname: 'October' },
+  { shortname: 'Nov', longname: 'November' },
+  { shortname: 'Dec', longname: 'December' }
+]
+
+const daysInAWeek = [
+  { shortname: 'Sun', longname: 'Sunday' },
+  { shortname: 'Mon', longname: 'Monday' },
+  { shortname: 'Tue', longname: 'Tuesday' },
+  { shortname: 'Wed', longname: 'Wednesday' },
+  { shortname: 'Thu', longname: 'Thursday' },
+  { shortname: 'Fri', longname: 'Friday' },
+  { shortname: 'Sat', longname: 'Saturday' }
+]
+
+const today = new Date()
+const day = today.getDate()
+const month = monthsInAYear[today.getMonth()].shortname
+const dayString = daysInAWeek[today.getDay()].shortname
+const dateString = `${day} ${month}, ${dayString}`
+</code></pre>
+<p>Answer for <code>Wednesday, 23 January, 2019</code>:</p>
+<pre><code class="language-js">const monthsInAYear = [
+  { shortname: 'Jan', longname: 'January' },
+  { shortname: 'Feb', longname: 'February' },
+  { shortname: 'Mar', longname: 'March' },
+  { shortname: 'Apr', longname: 'April' },
+  { shortname: 'May', longname: 'May' },
+  { shortname: 'Jun', longname: 'June' },
+  { shortname: 'Jul', longname: 'July' },
+  { shortname: 'Aug', longname: 'August' },
+  { shortname: 'Sep', longname: 'September' },
+  { shortname: 'Oct', longname: 'October' },
+  { shortname: 'Nov', longname: 'November' },
+  { shortname: 'Dec', longname: 'December' }
+]
+
+const daysInAWeek = [
+  { shortname: 'Sun', longname: 'Sunday' },
+  { shortname: 'Mon', longname: 'Monday' },
+  { shortname: 'Tue', longname: 'Tuesday' },
+  { shortname: 'Wed', longname: 'Wednesday' },
+  { shortname: 'Thu', longname: 'Thursday' },
+  { shortname: 'Fri', longname: 'Friday' },
+  { shortname: 'Sat', longname: 'Saturday' }
+]
+
+const today = new Date()
+const day = today.getDate()
+const month = monthsInAYear[today.getMonth()].longname
+const dayString = daysInAWeek[today.getDay()].longname
+const year = today.getFullYear()
+const dateString = `${dayString}, ${day} ${month}, ${year}`
+</code></pre>
+<p>Answer for <code>23rd January, 2019</code>:</p>
+<p>This one is trickier. You need to create the day suffix for <code>rd</code> too. Here’s the code:</p>
+<pre><code class="language-js">const monthsInAYear = [
+  { shortname: 'Jan', longname: 'January' },
+  { shortname: 'Feb', longname: 'February' },
+  { shortname: 'Mar', longname: 'March' },
+  { shortname: 'Apr', longname: 'April' },
+  { shortname: 'May', longname: 'May' },
+  { shortname: 'Jun', longname: 'June' },
+  { shortname: 'Jul', longname: 'July' },
+  { shortname: 'Aug', longname: 'August' },
+  { shortname: 'Sep', longname: 'September' },
+  { shortname: 'Oct', longname: 'October' },
+  { shortname: 'Nov', longname: 'November' },
+  { shortname: 'Dec', longname: 'December' }
+]
+
+const dateSuffix = {
+  1: 'st',
+  2: 'nd',
+  3: 'rd',
+  4: 'th',
+  5: 'th',
+  6: 'th',
+  7: 'th',
+  8: 'th',
+  9: 'th',
+  10: 'th',
+  11: 'th',
+  12: 'th',
+  13: 'th',
+  14: 'th',
+  15: 'th',
+  16: 'th',
+  17: 'th',
+  18: 'th',
+  19: 'th',
+  20: 'th',
+  21: 'st',
+  22: 'nd',
+  23: 'rd',
+  24: 'th',
+  25: 'th',
+  26: 'th',
+  27: 'th',
+  28: 'th',
+  29: 'th',
+  30: 'th',
+  31: `st`
+}
+
+const today = new Date()
+const day = today.getDate()
+const daySuffix = dateSuffix[day]
+const month = monthsInAYear[today.getMonth()].longname
+const year = today.getFullYear()
+const dateString = `${day}${daySuffix} ${month}, ${year}`
+</code></pre>
+<p>Why do we use an object for <code>dateSuffix</code>? Simple, well, you can use an array too. But can you keep track of the correct number of <code>th</code>s without the numeric key?</p>
+<p>Use what makes sense! :)</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../date-object/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>The Date object</span>
+            </a>
+          <a href="../get-time/index.html" data-link-to="next-lesson">
+              <span>Getting the time</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /get-formatted-date/  Mon, 24 Jan 2022 10:03:29 GMT -->
+</html>

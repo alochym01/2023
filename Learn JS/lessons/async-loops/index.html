@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /async-loops/  Mon, 24 Jan 2022 10:04:32 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Asynchronous loops | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>Asynchronous loops</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>Asynchronous loops</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>Basic <code>async</code> and <code>await</code> is simple. Things get a bit more complicated when you try to use <code>await</code> in loops.</p>
+<h2 id="preparing-an-example">Preparing an example</h2>
+<p>For this lesson, let’s say you want to get the number of fruits from a fruit basket.</p>
+<pre><code class="language-js">const fruitBasket = {
+  apple: 27,
+  grape: 0,
+  pear: 14
+}
+</code></pre>
+<p>You want to get the number of each fruit from the fruitBasket. To get the number of a fruit, you can use a <code>getNumFruit</code> function.</p>
+<pre><code class="language-js">const getNumFruit = fruit =&gt; {
+  return fruitBasket[fruit]
+}
+
+const numApples = getNumFruit('apple')
+console.log(numApples) // 27
+</code></pre>
+<p>Now, let’s say <code>fruitBasket</code> lives on a remote server. Accessing it takes one second. We can mock this one-second delay with a timeout.
+x</p>
+<pre><code class="language-js">const sleep = ms =&gt; {
+  return new Promise(resolve =&gt; setTimeout(resolve, ms))
+}
+
+const getNumFruit = fruit =&gt; {
+  return sleep(1000).then(v =&gt; fruitBasket[fruit])
+}
+
+getNumFruit('apple')
+  .then(num =&gt; console.log(num)) // 27
+</code></pre>
+<p>Finally, let’s say you want to use <code>await</code> and <code>getNumFruit</code> to get the number of each fruit in asynchronous function.</p>
+<pre><code class="language-js">const control = async _ =&gt; {
+  console.log('Start')
+
+  const numApples = await getNumFruit('apple')
+  console.log(numApples)
+
+  const numGrapes = await getNumFruit('grape')
+  console.log(numGrapes)
+
+  const numPears = await getNumFruit('pear')
+  console.log(numPears)
+
+  console.log('End')
+}
+</code></pre>
+<figure><img src="../../images/ajax/loop/control.gif" alt="Console shows 'Start'. One second later, it logs 27. Another second later, it logs 0. One more second later, it logs 14, and 'End'"></figure>
+<p>With this, we can begin looking at <code>await</code> in loops.</p>
+<h2 id="await-in-a-for-loop">Await in a for loop</h2>
+<p>Let’s say we have an array of fruits we want to get from the fruit basket.</p>
+<pre><code class="language-js">const fruitsToGet = ['apple', 'grape', 'pear']
+</code></pre>
+<p>We are going to loop through this array.</p>
+<pre><code class="language-js">const forLoop = async _ =&gt; {
+  console.log('Start')
+
+  for (let index = 0; index &lt; fruitsToGet.length; index++) {
+    // Get num of each fruit
+  }
+
+  console.log('End')
+}
+</code></pre>
+<p>In the for-loop, we will use <code>getNumFruit</code> to get the number of each fruit. We’ll also log the number into the console.</p>
+<p>Since <code>getNumFruit</code> returns a promise, we can <code>await</code> the resolved value before logging it.</p>
+<pre><code class="language-js">const forLoop = async _ =&gt; {
+  console.log('Start')
+
+  for (let index = 0; index &lt; fruitsToGet.length; index++) {
+    const fruit = fruitsToGet[index]
+    const numFruit = await getNumFruit(fruit)
+    console.log(numFruit)
+  }
+
+  console.log('End')
+}
+</code></pre>
+<p>When you use <code>await</code>, you expect JavaScript to pause execution until the awaited promise gets resolved. This means <code>await</code>s in a for-loop should get executed in series.</p>
+<p>The result is what you’d expect.</p>
+<pre><code class="language-js">'Start'
+'Apple: 27'
+'Grape: 0'
+'Pear: 14'
+'End'
+</code></pre>
+<figure><img src="../../images/ajax/loop/control.gif" alt="Console shows 'Start'. One second later, it logs 27. Another second later, it logs 0. One more second later, it logs 14, and 'End'"></figure>
+<p>This behaviour works with most loops (like <code>while</code> and <code>for-of</code> loops)…</p>
+<p>But it won’t work with loops that require a callback. Examples of such loops that require a fallback include <code>forEach</code>, <code>map</code>, <code>filter</code>, and <code>reduce</code>. We’ll look at how <code>await</code> affects <code>forEach</code>, <code>map</code>, and <code>filter</code> in the next few sections.</p>
+<h2 id="await-in-a-foreach-loop">Await in a forEach loop</h2>
+<p>We’ll do the same thing as we did in the for-loop example. First, let’s loop through the array of fruits.</p>
+<pre><code class="language-js">const forEachLoop = _ =&gt; {
+  console.log('Start')
+
+  fruitsToGet.forEach(fruit =&gt; {
+    // Send a promise for each fruit
+  })
+
+  console.log('End')
+}
+</code></pre>
+<p>Next, we’ll try to get the number of fruits with <code>getNumFruit</code>. (Notice the <code>async</code> keyword in the callback function. We need this <code>async</code> keyword because <code>await</code> is in the callback function).</p>
+<pre><code class="language-js">const forEachLoop = _ =&gt; {
+  console.log('Start')
+
+  fruitsToGet.forEach(async fruit =&gt; {
+    const numFruit = await getNumFruit(fruit)
+    console.log(numFruit)
+  })
+
+  console.log('End')
+}
+</code></pre>
+<p>You might expect the console to look like this:</p>
+<pre><code class="language-js">'Start'
+'27'
+'0'
+'14'
+'End'
+</code></pre>
+<p>But the actual result is different. JavaScript proceeds to call <code>console.log('End')</code> before the promises in the forEach loop gets resolved.</p>
+<p>The console logs in this order:</p>
+<pre><code>'Start'
+'End'
+'27'
+'0'
+'14'
+</code></pre>
+<figure><img src="../../images/ajax/loop/foreach-1.gif" alt="Console logs 'Start' and 'End' immediately. One second later, it logs 27, 0, and 14."></figure>
+<p>JavaScript does this because <code>forEach</code> is not promise-aware. It cannot support <code>async</code> and <code>await</code>. <strong>You cannot use <code>await</code> in <code>forEach</code></strong>.</p>
+<h2 id="await-with-map">Await with map</h2>
+<p>If you use <code>await</code> in a <code>map</code>, <code>map</code> will always return an array of promises. This is because asynchronous functions always return promises.</p>
+<pre><code class="language-js">const mapLoop = async _ =&gt; {
+  console.log('Start')
+
+  const numFruits = await fruitsToGet.map(async fruit =&gt; {
+    return getNumFruit(fruit)
+  })
+
+  console.log(numFruits)
+
+  console.log('End')
+}
+</code></pre>
+<pre><code class="language-js">'Start'
+'[Promise, Promise, Promise]'
+'End'
+</code></pre>
+<figure><img src="../../images/ajax/loop/map.png" alt="Console loggs 'Start', '[Promise, Promise, Promise]', and 'End' immediately"></figure>
+<p>Since <code>map</code> always return promises (if you use <code>await</code>), you have to wait for the array of promises to get resolved. You can do this with <code>await Promise.all(arrayOfPromises)</code>.</p>
+<pre><code class="language-js">const mapLoop = async _ =&gt; {
+  console.log('Start')
+
+  const promises = fruitsToGet.map(async fruit =&gt; {
+    return getNumFruit(fruit)
+
+   })
+
+  const numFruits = await Promise.all(promises)
+  console.log(numFruits)
+
+  console.log('End')
+}
+</code></pre>
+<p>Here’s what you get:</p>
+<pre><code class="language-js">'Start'
+'[27, 0, 14]'
+'End'
+</code></pre>
+<figure><img src="../../images/ajax/loop/map-2.gif" alt="Console logs 'Start'. One second later, it logs '[27, 0, 14] and 'End'"></figure>
+<p>You can manipulate the value you return in your promises if you wish to. The resolved values will be the values you return.</p>
+<pre><code class="language-js">const mapLoop = async _ =&gt; {
+  // ...
+  const promises = fruitsToGet.map(async fruit =&gt; {
+    const numFruit = await getNumFruit(fruit)
+    // Adds fruits before returning
+    return numFruit + 100
+  })
+  // ...
+}
+</code></pre>
+<pre><code class="language-js">'Start'
+'[127, 100, 114]'
+'End'
+</code></pre>
+<h2 id="await-with-filter">Await with filter</h2>
+<p>When you use <code>filter</code>, you want to filter the array with a specific criteria. Let’s say we want to create an array with more than 20 fruits.</p>
+<p>If we use <code>filter</code> normally (without await), we’ll use it like this:</p>
+<pre><code class="language-js">// Filter if there's no await
+const filterLoop = _ =&gt; {
+  console.log('Start')
+
+  const moreThan20 = fruitsToGet.filter(fruit =&gt; {
+    const numFruit = fruitBasket[fruit]
+    return numFruit &gt; 20
+  })
+
+  console.log(moreThan20)
+  console.log('End')
+}
+</code></pre>
+<p>We’d expect <code>moreThan20</code> to contain only apples since there are 27 apples.</p>
+<pre><code class="language-js">'Start'
+['apple']
+'End'
+</code></pre>
+<p><code>await</code> in <code>filter</code> doesn’t work the same way. In fact, it doesn’t work at all. You get the unfiltered array back…</p>
+<pre><code class="language-js">const filterLoop = async _ =&gt; {
+  console.log('Start')
+
+  const moreThan20 = await fruitsToGet.filter(async fruit =&gt; {
+    const numFruit = await getNumFruit(fruit)
+    return numFruit &gt; 20
+  })
+
+  console.log(moreThan20)
+  console.log('End')
+}
+</code></pre>
+<pre><code class="language-js">'Start'
+['apple', 'grape', 'pear']
+'End'
+</code></pre>
+<figure><img src="../../images/ajax/loop/filter.png" alt="Console logs 'Start', '['apple', 'grape', 'pear']', and 'End' immediately"></figure>
+<p>Here’s why it happens.</p>
+<p>When you use <code>await</code> in a <code>filter</code> callback, the callback always returns a promise. Since promises are always truthy, everything item in the array passes the filter. Writing <code>await</code> in a <code>filter</code> is like writing this code:</p>
+<pre><code class="language-js">// Everything passes the filter...
+const filtered = array.filter(() =&gt; true)
+</code></pre>
+<p>There are three steps to use <code>await</code> and <code>filter</code> properly:</p>
+<ol>
+<li>Use <code>map</code> to return an array promises</li>
+<li><code>await</code> the array of promises</li>
+<li><code>filter</code> the resolved values</li>
+</ol>
+<pre><code class="language-js">const filterLoop = async _ =&gt; {
+  console.log('Start')
+
+  const promises = await fruitsToGet.map(fruit =&gt; getNumFruit(fruit))
+  const numFruits = await Promise.all(promises)
+
+  const moreThan20 = fruitsToGet.filter((fruit, index) =&gt; {
+    const numFruit = numFruits[index]
+    return numFruit &gt; 20
+  })
+
+  console.log(moreThan20)
+  console.log('End')
+}
+</code></pre>
+<pre><code class="language-js">Start
+[ 'apple' ]
+End
+</code></pre>
+<figure><img src="../../images/ajax/loop/filter-2.gif" alt="Console shows 'Start'. One second later, console logs '['apple']' and 'End'"></figure>
+<h2 id="await-with-reduce">Await with reduce</h2>
+<p>For this case, let’s say you want to find out the total number of fruits in the fruitBasket. Normally, you can use <code>reduce</code> to loop through an array and sum the number up.</p>
+<pre><code class="language-js">// Reduce if there's no await
+const reduceLoop = _ =&gt; {
+  console.log('Start')
+
+  const sum = fruitsToGet.reduce((sum, fruit) =&gt; {
+    const numFruit = fruitBasket[fruit]
+    return sum + numFruit
+  }, 0)
+
+  console.log(sum)
+  console.log('End')
+}
+</code></pre>
+<p>You’ll get a total of 41 fruits. (27 + 0 + 14 = 41).</p>
+<pre><code class="language-js">'Start'
+'41'
+'End'
+</code></pre>
+<figure><img src="../../images/ajax/loop/reduce.png" alt="Console logs 'Start', '41', and 'End' immediately"></figure>
+<p>When you use <code>await</code> with reduce, the results get extremely messy.</p>
+<pre><code class="language-js">// Reduce if we await getNumFruit
+const reduceLoop = async _ =&gt; {
+  console.log('Start')
+
+  const sum = await fruitsToGet.reduce(async (sum, fruit) =&gt; {
+    const numFruit = await getNumFruit(fruit)
+    return sum + numFruit
+  }, 0)
+
+  console.log(sum)
+  console.log('End')
+}
+</code></pre>
+<pre><code class="language-js">'Start'
+'[object Promise]14'
+'End'
+</code></pre>
+<figure><img src="../../images/ajax/loop/reduce-2.gif" alt="Console logs 'Start'. One second later, it logs '[object Promise]14' and 'End'"></figure>
+<p>What?! <code>[object Promise]14</code>?!</p>
+<p>Dissecting this is interesting.</p>
+<ul>
+<li>In the first iteration, <code>sum</code> is <code>0</code>. <code>numFruit</code> is 27 (the resolved value from <code>getNumFruit('apple')</code>). <code>0 + 27</code> is 27.</li>
+<li>In the second iteration, <code>sum</code> is a promise. (Why? Because asynchronous functions always return promises!) <code>numFruit</code> is 0. A promise cannot be added to an object normally, so the JavaScript converts it to <code>[object Promise]</code> string. <code>[object Promise] + 0</code> is <code>[object Promise]0</code></li>
+<li>In the third iteration, <code>sum</code> is also a promise. <code>numFruit</code> is <code>14</code>. <code>[object Promise] + 14</code> is <code>[object Promise]14</code>.</li>
+</ul>
+<p>Mystery solved!</p>
+<p>This means, you can use <code>await</code> in a <code>reduce</code> callback, but you have to remember to <code>await</code> the accumulator first!</p>
+<pre><code class="language-js">const reduceLoop = async _ =&gt; {
+  console.log('Start')
+
+  const sum = await fruitsToGet.reduce(async (promisedSum, fruit) =&gt; {
+    const sum = await promisedSum
+    const numFruit = await getNumFruit(fruit)
+    return sum + numFruit
+  }, 0)
+
+  console.log(sum)
+  console.log('End')
+}
+</code></pre>
+<pre><code class="language-js">'Start'
+'41'
+'End'
+</code></pre>
+<figure><img src="../../images/ajax/loop/reduce-3.gif" alt="Console logs 'Start'. Three seconds later, it logs '41' and 'End'"></figure>
+<p>But… as you can see from the gif, it takes pretty long to <code>await</code> everything. This happens because <code>reduceLoop</code> needs to wait for the <code>promisedSum</code> to be completed for each iteration.</p>
+<p>There’s a way to speed up the reduce loop. If you <code>await getNumFruits()</code> first before <code>await promisedSum</code>, the <code>reduceLoop</code> takes only one second to complete:</p>
+<pre><code class="language-js">const reduceLoop = async _ =&gt; {
+  console.log('Start')
+
+  const sum = await fruitsToGet.reduce(async (promisedSum, fruit) =&gt; {
+    // Heavy-lifting comes first.
+    // This triggers all three `getNumFruit` promises before waiting for the next interation of the loop.
+    const numFruit = await getNumFruit(fruit)
+    const sum = await promisedSum
+    return sum + numFruit
+  }, 0)
+
+  console.log(sum)
+  console.log('End')
+}
+</code></pre>
+<figure><img src="../../images/ajax/loop/reduce-4.gif" alt="Console logs 'Start'. One second later, it logs '41' and 'End'"></figure>
+<p>This works because <code>reduce</code> can fire all three <code>getNumFruit</code> promises before waiting for the next iteration of the loop. However, this method is slightly confusing since you have to be careful of the order you <code>await</code> things.</p>
+<p>The simplest (and most efficient way) to use <code>await</code> in reduce is to:</p>
+<ol>
+<li>Use <code>map</code> to return an array promises</li>
+<li><code>await</code> the array of promises</li>
+<li><code>reduce</code> the resolved values</li>
+</ol>
+<pre><code class="language-js">const reduceLoop = async _ =&gt; {
+  console.log('Start')
+
+  const promises = fruitsToGet.map(getNumFruit)
+  const numFruits = await Promise.all(promises)
+  const sum = numFruits.reduce((sum, fruit) =&gt; sum + fruit)
+
+  console.log(sum)
+  console.log('End')
+}
+</code></pre>
+<p>This version is simple to read and understand, and takes one second to calculate the total number of fruits.</p>
+<figure><img src="../../images/ajax/loop/reduce-4.gif" alt="Console logs 'Start'. One second later, it logs '41' and 'End'"></figure>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ol>
+<li>If you want to execute <code>await</code> calls in series, use a for-loop (or any loop without a callback).</li>
+<li>Don’t ever use <code>await</code> with <code>forEach</code>. Use a for-loop (or any loop without a callback) instead.</li>
+<li>Don’t <code>await</code> inside <code>filter</code> and <code>reduce</code>. Always <code>await</code> an array of promises with <code>map</code>, then <code>filter</code> or <code>reduce</code> accordingly.</li>
+</ol>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../multiple-await/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Handling multiple awaits</span>
+            </a>
+          <a href="../dota-list-heroes/index.html" data-link-to="next-lesson">
+              <span>🛠️ Dota Heroes: Listing heroes</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /async-loops/  Mon, 24 Jan 2022 10:04:34 GMT -->
+</html>

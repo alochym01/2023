@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /modal-library-opening-modal/  Mon, 24 Jan 2022 10:07:23 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Modal: Opening the Modal | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Modal: Opening the Modal</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Modal: Opening the Modal</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/modal/10.open-modal.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>When the user clicks on a button, we need to know which modal to open. We can pass this button and its corresponding modal into <code>Modal</code>.</p>
+<pre><code class="language-js">// Main.js
+Modal({
+  modal: document.querySelector('#user-triggered-modal'),
+  button: document.querySelector('#user-triggered-modal-button')
+})
+</code></pre>
+<p>We can accept these properties via a settings object.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  const { button, modal } = settings
+}
+</code></pre>
+<h2 id="writing-openmodal">Writing <code>openModal</code></h2>
+<p>To open the modal, we need to add <code>is-open</code> to the modal’s overlay. We can find the overlay from the <code>modal</code> element. (The overlay is the modal’s parent element).</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  const { button, modal } = settings
+  const overlay = modal.parentElement
+  console.log(overlay)
+}
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/modal/library/open/modal-overlay.png" alt="Logs the modal overlay into the console.">
+</figure>
+<p>We need to create an <code>openModal</code> function inside <code>modal.js</code>. There are several ways to create this function:</p>
+<ol>
+<li>Creating it outside <code>Modal</code></li>
+<li>Creating it inside <code>Modal</code></li>
+<li>Creating it as a method</li>
+</ol>
+<p>There are pros and cons to each approach.</p>
+<p>If we create <code>openModal</code> outside <code>Modal</code>, the code will look something like this:</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // ...
+}
+
+function openModal () {
+  // ...
+}
+</code></pre>
+<p>The downside to this approach is you cannot take advantage of the lexical scope. You have to pass in variables from <code>Modal</code> into <code>openModal</code>.</p>
+<p>Example:</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // ...
+  openModal(overlay)
+}
+
+function openModal (overlay) {
+  overlay.classList.add('is-open')
+}
+</code></pre>
+<p>If we declare <code>openModal</code> in <code>Modal</code>, we don’t have to pass in any variables. We can rely on the lexical scope.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // ...
+
+  function openModal () {
+    overlay.classList.add('is-open')
+  }
+
+  // Opening the modal
+  openModal()
+}
+</code></pre>
+<p>Although this works, I find it messy to have lots of functions scattered inside another function. I find it easier to read the code when all my functions are placed together in an object, which brings us to the third way: Creating <code>openModal</code> as a method.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // ...
+
+  const object = {
+    openModal () {
+      overlay.classList.add('is-open')
+    }
+  }
+
+  // Opening the modal
+  object.openModal()
+}
+</code></pre>
+<p>I prefer to use the component’s name as this object since it’s easier to understand. In this case, it’ll be <code>modal</code>.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // ...
+
+  const modal = {
+    openModal () {
+      overlay.classList.add('is-open')
+    }
+  }
+
+  // Opening the modal
+  modal.openModal()
+}
+</code></pre>
+<p>When I do this, I don’t have to write the function as <code>openModal</code> anymore. It’s obvious that I’m opening the modal when I write <code>modal.open</code>. So I can rename <code>openModal</code> to <code>open</code>.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // ...
+
+  const modal = {
+    open () {
+      overlay.classList.add('is-open')
+    }
+  }
+
+  // Opening the modal
+  modal.open()
+}
+</code></pre>
+<p>For this to work, I need to rename the <code>modal</code> variable passed via the settings. I like to add <code>Element</code> as a suffix so I know I’m dealing with an element.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  const modalElement = settings.modal
+  // ...
+
+  const modal = { /* ... */ }
+}
+</code></pre>
+<p>We can ask the user to pass in <code>modalElement</code> instead of <code>modal</code> to make this process simpler.</p>
+<pre><code class="language-js">// main.js
+Modal({
+  modalElement: document.querySelector('#user-triggered-modal'),
+  buttonElement: document.querySelector('#user-triggered-modal-button')
+})
+</code></pre>
+<pre><code class="language-js">export default function Modal (settings) {
+  const { modalElement, buttonElement } = settings
+  // ...
+
+  const modal = { /* ... */ }
+}
+</code></pre>
+<p>We should also rename <code>overlay</code> to <code>overlayElement</code> to follow the naming convention.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  const { modalElement, buttonElement } = settings
+  const overlayElement = modalElement.parentElement
+
+  const modal = { /* ... */ }
+}
+</code></pre>
+<p>We’re done with the setup now. And we can focus on the mechanics of opening the modal.</p>
+<h2 id="opening-the-modal">Opening the Modal</h2>
+<p>We need to open the modal when a user clicks on the button. This means we need an event listener. We can place this event listener inside <code>Modal</code> to make things simple.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // Declare variables
+  // Declare methods
+
+  buttonElement.addEventListener('click', _ =&gt; {
+    modal.open()
+  })
+}
+</code></pre>
+<p>We can ensure <code>open</code> gets called by checking with a <code>console.log</code> statement.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // Declare variables
+
+  const modal = {
+    open () {
+      console.log('Opening modal')
+    }
+  }
+
+  // Add event listeners
+  buttonElement.addEventListener('click', _ =&gt; {
+    modal.open()
+  })
+}
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/modal/library/open/open.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/modal/library/open/open.mp4"> here </a> instead.
+</video>
+<p>There are six steps to opening the modal:</p>
+<ol>
+<li>Adding an opening class</li>
+<li>Waving the hand</li>
+<li>Focusing on the first element</li>
+<li>Trapping focus</li>
+<li>Setting <code>aria-expanded</code> to <code>true</code></li>
+<li>Preventing screen readers from reading other elements with <code>aria-hidden</code>.</li>
+</ol>
+<p>We can see these six steps clearly from the code we wrote previously.</p>
+<pre><code class="language-js">// Previous code
+const openModal = _ =&gt; {
+  document.body.classList.add('modal-is-open')
+
+  wave()
+
+  const input = modal.querySelector('input')
+  input.focus()
+
+  document.addEventListener('keydown', trapFocus)
+
+  modalButton.setAttribute('aria-expanded', true)
+
+  main.setAttribute('aria-hidden', 'true')
+}
+</code></pre>
+<h2 id="adding-the-opening-class">Adding the opening class</h2>
+<p>In the previous lesson, we agreed to use this HTML pattern:</p>
+<pre><code class="language-html">&lt;div class=&quot;modal-overlay&quot;&gt;
+  &lt;div class=&quot;modal&quot;&gt; ... &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;modal-overlay&quot;&gt;
+  &lt;div class=&quot;modal&quot;&gt; ... &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>This means we need to add <code>is-open</code> to the overlay to open the modal.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // Declare variables
+
+  const modal = {
+    open () {
+      overlayElement.classList.add('is-open')
+    }
+  }
+
+  // Add event listeners
+}
+</code></pre>
+<p>The modal should appear when you click the button.</p>
+<figure role="figure">
+  <img src="../../images/components/modal/library/open-modal/modal-appears.png" alt="Modal Appears.">
+</figure>
+<h2 id="waving-the-hand">Waving the hand</h2>
+<p>We called a <code>wave</code> function inside <code>openModal</code> previously. This <code>wave</code> function makes the hand wave.</p>
+<pre><code class="language-js">// Previous version of openModal
+const openModal = _ =&gt; {
+  wave()
+  // ...
+}
+</code></pre>
+<p>When we build libraries, we need to be careful about what we put into the library. In this case, it doesn’t make sense to write <code>wave</code> inside <code>modal.js</code> because most modals don’t have a waving hand animation.</p>
+<p>We can provide a callback for users to inject <code>wave</code> into the Modal library. Since the <code>wave</code> animation runs after the modal opens, we call this callback <code>afterOpen</code>.</p>
+<p>Users can pass in the <code>wave</code> animation like this:</p>
+<pre><code class="language-js">// main.js
+Modal({
+  // ...
+  afterOpen: wave
+})
+</code></pre>
+<p>We’ll run the wave animation like this:</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // Declare variables
+
+  const modal = {
+    open () {
+      overlayElement.classList.add('is-open')
+      settings.afterOpen()
+    }
+  }
+
+  // Add event listeners
+}
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/modal/library/open/wave.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/modal/library/open-modal/wave.mp4"> here </a> instead.
+</video>
+<p>We’ll get an error if the user doesn’t pass in an <code>afterOpen</code> setting. There are two ways to handle this:</p>
+<ol>
+<li>Check with a condition</li>
+<li>Use a fallback function</li>
+</ol>
+<p>Option 1 (Check with a condition) looks like this:</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // Declare variables
+
+  const modal = {
+    open () {
+      overlayElement.classList.add('is-open')
+      if (settings.afterOpen) {
+        settings.afterOpen()
+      }
+    }
+  }
+
+  // Add event listeners
+}
+</code></pre>
+<p>Option 2 is neater. We can provide an empty function as the fallback to run.</p>
+<p>It’s often easier to do this with a default settings object. When we create the component, we need to overwrite this default setting object with the options the user passed in.</p>
+<pre><code class="language-js">// Default settings object
+const defaults = {
+  buttonElement: '',
+  modalElement: '',
+  afterOpen () {} // Empty function used as a fallback
+}
+
+export default function Modal (settings) {
+  // Overwrite default settings with user settings
+  settings = Object.assign({}, defaults, settings)
+
+  // ...
+}
+</code></pre>
+<p>We can now write <code>afterOpen</code> without checking for conditions.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // Overwrite settings
+  // Declare variables
+
+  const modal = {
+    open () {
+      overlayElement.classList.add('is-open')
+      settings.afterOpen()
+    }
+  }
+
+  // Add event listeners
+}
+</code></pre>
+<h3 id="importing-gsap">Importing GSAP</h3>
+<p>The <code>wave</code> function depends on GSAP. We included GSAP with a <code>&lt;script&gt;</code> tag previously:</p>
+<pre><code class="language-html">&lt;script src=&quot;https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<p>Since we converted into ES6 modules, we can include <code>GSAP</code> directly inside <code>main.js</code>. There’s no need to use an extra script tag. This makes it clear what libraries we included in our projects.</p>
+<pre><code class="language-js">// main.js
+import 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js'
+</code></pre>
+<h2 id="focusing-on-the-first-element">Focusing on the first element</h2>
+<p>When the modal opens, we choose to focus on the first element. Here’s the code we wrote previously:</p>
+<pre><code class="language-js">const openModal = _ =&gt; {
+  const input = modal.querySelector('input')
+  input.focus()
+  // ...
+}
+</code></pre>
+<p>Since we don’t know what users will put into their modals, we cannot ensure the first element is always <code>input</code>. We need to check for other keyboard focusable elements as well.</p>
+<p>The easiest way is to use a function I explained in <a href="https://zellwk.com/blog/keyboard-focusable-elements/" title="Get keyboard focusable elements">this article</a>.</p>
+<pre><code class="language-js">function getKeyboardFocusableElements (element = document) {
+  return [...element.querySelectorAll(
+    'a, button, input, textarea, select, details, [tabindex]'
+  )]
+    .filter(el =&gt; !el.hasAttribute('disabled'))
+    .filter(el =&gt; !el.hasAttribute('tabindex') || el.getAttribute('tabindex') &gt;= 0)
+}
+</code></pre>
+<p>We can get all keyboard focusable elements by passing <code>.modal__content</code> into <code>getKeyboardFocusableElements</code>.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // Overwrite settings
+  // Declare variables
+  const contentElement = modalElement.querySelector('.modal__content')
+
+  const modal = {
+    open () {
+      overlayElement.classList.add('is-open')
+      settings.afterOpen()
+
+      const focusableEls = getKeyboardFocusableElements(contentElement)
+    }
+  }
+
+  // Add event listeners
+}
+</code></pre>
+<p>We then focus on the first focusable element (if there are any).</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // Overwrite settings
+  // Declare variables
+  const contentElement = modalElement.querySelector('.modal__content')
+
+  const modal = {
+    open () {
+      overlayElement.classList.add('is-open')
+      settings.afterOpen()
+
+      const focusableEls = getKeyboardFocusableElements(contentElement)
+      if (focusableEls[0]) focusableEls[0].focus()
+    }
+  }
+
+  // Add event listeners
+}
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/modal/library/open/open-modal-focus.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/modal/library/open-modal/open-modal-focus.mp4"> here </a> instead.
+</video>
+<h2 id="trapping-focus">Trapping focus</h2>
+<p>Next, we want to trap focus inside the modal. Here’s what we wrote previously:</p>
+<pre><code class="language-js">const openModal = _ =&gt; {
+  document.addEventListener('keydown', trapFocus)
+  // ...
+}
+</code></pre>
+<p><code>trapFocus</code> looks like this right now:</p>
+<pre><code class="language-js">const trapFocus = event =&gt; {
+  const focusables = modal.querySelectorAll('input, button')
+  const firstFocusable = focusables[0]
+  const lastFocusable = focusables[focusables.length - 1]
+
+  // Directs to first focusable
+  if (document.activeElement === lastFocusable &amp;&amp; event.key === 'Tab' &amp;&amp; !event.shiftKey) {
+    event.preventDefault()
+    firstFocusable.focus()
+  }
+
+  // Directs to last focusable
+  if (document.activeElement === firstFocusable &amp;&amp; event.key === 'Tab' &amp;&amp; event.shiftKey) {
+    event.preventDefault()
+    lastFocusable.focus()
+  }
+}
+</code></pre>
+<p>We know we check for all possible keyboard focusable elements, not just buttons and input fields. So we need to use <code>getKeyboardFocusableElements</code> in <code>trapFocus</code>.</p>
+<p>This time, we’re going to pass the modal into <code>getKeyboardFocusableElements</code> because we want to include the close button (which is <code>contentElement</code>'s sibling).</p>
+<pre><code class="language-js">const trapFocus = event =&gt; {
+  const focusables = getKeyboardFocusableElements(modalElement)
+  const firstFocusable = focusables[0]
+  const lastFocusable = focusables[focusables.length - 1]
+
+  // ...
+}
+</code></pre>
+<p>Here’s the question: How do you get <code>modalElement</code> into <code>trapFocus</code>?</p>
+<p>There are two methods:</p>
+<ol>
+<li>Declare <code>trapFocus</code> inside <code>Modal</code></li>
+<li>Use <code>bind</code> to add <code>modal</code> to <code>trapFocus</code></li>
+</ol>
+<p>The first method is easier. We can declare <code>trapFocus</code> inside <code>Modal</code>. If we do this, <code>trapFocus</code> has access to all variables declared in the lexical scope.</p>
+<pre><code class="language-js">// Method 1
+export default function Modal (settings) {
+  // Overwrite settings
+  // Declare variables
+
+  function trapFocus (event) {
+    // ...
+  }
+
+  const modal = {
+    open () {
+      // ...
+      document.addEventListener('keydown', trapFocus)
+    }
+  }
+
+  // Add event listeners
+}
+</code></pre>
+<p>The second method is more advanced. We declare <code>trapFocus</code> outside <code>Modal</code>. Then, we create a new function inside <code>Modal</code> with <code>bind</code>.</p>
+<pre><code class="language-js">// Method 2
+export default function Modal (settings) {
+  // ...
+
+  // Step 2: Pass `modal` into `trapFocus` with `bind`.
+  const trapFocusInModal = trapFocus.bind(null, modalElement)
+
+  const modal = {
+    open () {
+      // ...
+      // Step 3: Use `trapFocusInModal`
+      document.addEventListener('keydown', trapFocusInModal)
+    }
+  }
+
+  // ...
+}
+
+// Step 1: Create a trapFocus function.
+function trapFocus (element, event) {
+  const focusables = getKeyboardFocusableElements(element)
+  // ...
+}
+</code></pre>
+<p>Which method is better? It depends on your circumstances.</p>
+<p>Method 1 is simpler. We simply create a <code>trapFocus</code> method meant for each instance.</p>
+<p>Method 2 is more customizable because it lets you change the element you want to trap focus in. It works better if your <code>trapFocus</code> is a library.</p>
+<p>We’ll go with method 1 here since it’s easier to grasp.</p>
+<video autoplay loop>
+  <source src="../../images/components/modal/library/open/trap-focus.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/modal/library/open-modal/trap-focus.mp4"> here </a> instead.
+</video>
+<h2 id="setting-aria-expanded-to-true">Setting <code>aria-expanded</code> to <code>true</code></h2>
+<p>Next, we want to set the button’s <code>aria-expanded</code> property to true when the modal is open.</p>
+<p>Here’s the code we wrote previously.</p>
+<pre><code class="language-js">const openModal = _ =&gt; {
+  modalButton.setAttribute('aria-expanded', true)
+}
+</code></pre>
+<p>In <code>Modal</code>, we declared the button as <code>buttonElement</code>. This step is as simple as copying the code (with adjustments) into <code>open</code>.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // Overwrite settings
+  // Declare variables
+
+  const modal = {
+    open () {
+      // ...
+      buttonElement.setAttribute('aria-expanded', true)
+    }
+  }
+
+  // Add event listeners
+}
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/modal/library/open/openmodal-button.png" alt="Changed button's aria-expanded attribute to true.">
+</figure>
+<h2 id="preventing-screen-readers-from-reading-sibling-elements">Preventing screen readers from reading sibling elements</h2>
+<p>When the modal is open, we want to prevent screen readers from reading other elements. We do this by setting <code>aria-hidden</code> on all sibling elements.</p>
+<p>In the previous version, the only sibling element is <code>main</code>. So our code is easy:</p>
+<pre><code class="language-js">const openModal = _ =&gt; {
+  main.setAttribute('aria-hidden', true)
+}
+</code></pre>
+<p>This time, we cannot be sure that <code>main</code> is the only other sibling element. We need to add <code>aria-hidden</code> to all possible sibling elements.</p>
+<p>The easiest way is to find all sibling elements, loop through them, and add <code>aria-hidden</code> to them.</p>
+<pre><code class="language-js">export default function Modal (settings) {
+  // Overwrite settings
+  // Declare variables
+
+  const modal = {
+    open () {
+      // ...
+      const overlaySiblingEls = [...overlayElement.parentElement.children]
+        .filter(el =&gt; el !== overlayElement)
+
+      overlaySiblingEls.forEach(element =&gt; {
+        element.setAttribute('aria-hidden', true)
+      })
+    }
+  }
+
+  // Add event listeners
+}
+</code></pre>
+<p>Root elements in the DOM should have an <code>aria-hidden</code> attribute after you open the modal.</p>
+<figure role="figure">
+  <img src="../../images/components/modal/library/open/aria-hidden-true.png" alt="Aria-hidden set to true.">
+</figure>
+<p>That’s it! We’ll work on closing the modal next.</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../modal-library-setup/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Modal: Library setup</span>
+            </a>
+          <a href="../modal-library-closing-modal/index.html" data-link-to="next-lesson">
+              <span>🛠️ Modal: Closing the modal</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /modal-library-opening-modal/  Mon, 24 Jan 2022 10:07:26 GMT -->
+</html>

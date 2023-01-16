@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /directing-focus/  Mon, 24 Jan 2022 10:05:02 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Directing focus | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>Directing focus</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>Directing focus</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>Let’s say a user clicks on a button. If the button directs the user’s attention to something, you want to direct keyboard focus to that thing as well.</p>
+<p>For example, let’s say we have an off-canvas menu. When a user clicks on the button, a menu pops out. We direct attention to the menu with an animation.</p>
+<p>You want to direct focus to the menu for keyboard users. If the user presses Tab, you want to focus on the first item in the menu.</p>
+<figure role="figure"><img src="../../images/components/off-canvas/keyboard/focus-done.gif" alt="Removed focus from offsiteContainer."></figure>
+<p>You can direct focus with <code>Element.focus</code></p>
+<pre><code class="language-js">Element.focus()
+</code></pre>
+<h2 id="element.focus">Element.focus</h2>
+<p><code>Element.focus</code> lets you direct focus to focusable elements. By default, this means:</p>
+<ol>
+<li>Links</li>
+<li>Buttons</li>
+<li>Form elements</li>
+</ol>
+<p>In the example below, if you click on the second button, the focus gets directed to the first button.</p>
+<pre><code class="language-html">&lt;button&gt;Button&lt;/button&gt;
+&lt;button&gt;Go to previous button&lt;/button&gt;
+</code></pre>
+<pre><code class="language-js">const buttons = document.querySelectorAll('button')
+const firstButton = buttons[0]
+const secondButton = buttons[1]
+
+secondButton.addEventListener('click', event =&gt; {
+  firstButton.focus()
+})
+</code></pre>
+<figure role="figure"><img src="../../images/keyboard/directing-focus/focus.gif" alt="Focus directed to first button when user clicks on the second button."></figure>
+<p>Note: Focus also gets directed if the user interacts with the button with Space or Enter. This is because Space and Enter keys trigger a click event when they’re used on buttons.</p>
+<figure role="figure"><img src="../../images/keyboard/directing-focus/focus-keyboard.gif" alt="Directs focus to first button when second button gets clicked."></figure>
+<h2 id="directing-focus-to-non-focusable-elements">Directing focus to non-focusable elements</h2>
+<p><code>Element.focus</code> can only direct focus to focusable elements. It cannot direct focus to non-focusable elements. The code below does nothing. Focus remains on <code>&lt;button&gt;</code>.</p>
+<pre><code class="language-html">&lt;p&gt;The quick brown fox jumps over the lazy dog&lt;/p&gt;
+&lt;button&gt;Go to paragraph&lt;/button&gt;
+</code></pre>
+<pre><code class="language-js">const button = document.querySelector('button')
+const paragraph = document.querySelector('p')
+
+button.addEventListener('click', event =&gt; {
+  paragraph.focus()
+})
+</code></pre>
+<figure role="figure"><img src="../../images/keyboard/directing-focus/non-focusable.gif" alt="Focus remains on button. It does not get directed to the paragraph."></figure>
+<p>If you want to direct focus to a non-focusable element, you need to add <code>tabindex</code> to the element. In the example below, the paragraph gets focus when users click on the button.</p>
+<pre><code class="language-html">&lt;p tabindex=&quot;-1&quot;&gt;The quick brown fox jumps over the lazy dog&lt;/p&gt;
+&lt;button&gt;Go to paragraph&lt;/button&gt;
+</code></pre>
+<figure role="figure"><img src="../../images/keyboard/directing-focus/non-focusable-direct.gif" alt="Focus directed to paragraph when user clicks on button."></figure>
+<h2 id="directing-focus-with-links">Directing focus with links</h2>
+<p>Links let you direct focus when:</p>
+<ol>
+<li>Its <code>href</code> begins with a <code>#</code>.</li>
+<li>Its <code>href</code> points to an <code>id</code> of an element on the same page.</li>
+</ol>
+<p>You can direct focus to focusable elements.</p>
+<pre><code class="language-html">&lt;a href=&quot;#button&quot;&gt;Jump to button&lt;/a&gt;
+&lt;button id=&quot;button&quot;&gt;Button&lt;/button&gt;
+</code></pre>
+<figure role="figure"><img src="../../images/keyboard/directing-focus/link.gif" alt="Focuses on button when user clicks the link."></figure>
+<p>You can also direct focus to non-focusable elements. This feature is unique to links. These four things happen when you direct the focus to a non-focusable element.</p>
+<ol>
+<li>Focus goes to body.</li>
+<li>Further keypresses originate from the <code>&lt;body&gt;</code>.</li>
+<li>But you can tab to the next focusable element.</li>
+<li>You can also shift-tab to the previous focusable element.</li>
+</ol>
+<p>It’s best to show you with an example. Let’s say you have the following HTML:</p>
+<pre><code class="language-html">&lt;button&gt;First Button&lt;/button&gt;
+&lt;article id=&quot;article&quot;&gt;
+  &lt;h1&gt;The quick brown fox jumps over the lazy dog&lt;/h1&gt;
+  &lt;p&gt;But the lazy dog refuses to move. It continues sleeping.&lt;/p&gt;
+  &lt;button&gt;Second Button&lt;/button&gt;
+  &lt;button&gt;Third Button&lt;/button&gt;
+&lt;/article&gt;
+
+&lt;a href=&quot;#article&quot;&gt;Jump to article&lt;/a&gt;
+</code></pre>
+<p>Here, the link points to <code>#article</code>, but <code>#article</code> is not focusable.</p>
+<p>If you click the link, the focus goes to <code>&lt;body&gt;</code>. We know this because <code>document.activeElement</code> is <code>&lt;body&gt;</code>. In the GIF below, I tabbed to the button before clicking on the link. This shows you that focus goes to <code>&lt;body&gt;</code>.</p>
+<figure role="figure"><img src="../../images/keyboard/directing-focus/link-non-focusable.gif" alt="Focus goes to body."></figure>
+<p>Any keypress after clicking on the link originates from <code>&lt;body&gt;</code>. We can test this with an event listener.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  console.log(event.target)
+})
+</code></pre>
+<figure role="figure"><img src="../../images/keyboard/directing-focus/link-non-focusable-2.gif" alt="Further keypresses originate from the body element."></figure>
+<p>You can still tab to the next focusable element (in this case, it’s Second Button).</p>
+<figure role="figure"><img src="../../images/keyboard/directing-focus/link-non-focusable-3.gif" alt="Tab to the next focusable element."></figure>
+<p>You can also shift-tab to the previous focusable element (in this case, it’s First Button).</p>
+<figure role="figure"><img src="../../images/keyboard/directing-focus/link-non-focusable-4.gif" alt="Shift-tab to the previous focusable element."></figure>
+<p>We use this feature to let users jump around a page. Here’s <a href="../../images/keyboard/directing-focus/link-jump.gif">an example</a> where I let users jump to a section they’re interested in.</p>
+<figure role="figure"><img src="../../images/keyboard/directing-focus/link-jump.gif" alt="Jumping to a section of the content."></figure>
+<h2 id="focus-and-scroll">Focus and scroll</h2>
+<p>If you focus on an element, the browser will jump to the element. This is true with both <code>Element.focus</code> and links.</p>
+<figure role="figure"><img src="../../images/keyboard/directing-focus/jump.gif" alt="Browers jump to the focused element."></figure>
+<p>If you want to disable the auto-scrolling behavior, you can pass <code>preventScroll: true</code> to <code>Element.focus</code>.</p>
+<pre><code class="language-js">Element.focus({preventScroll: true})
+</code></pre>
+<p>If you want to disable the auto-scrolling behavior on links, you need to use preventDefault. This prevents all default behavior present on links.</p>
+<pre><code class="language-js">const a = document.querySelector('a')
+
+// Don't do this unless necessary
+a.addEventListener('click', event =&gt; {
+  event.preventDefault()
+})
+</code></pre>
+<p>In my opinion, you should allow browsers to scroll to the focused element. It doesn’t make sense to focus on an element that’s outside of the viewport.</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../focused-element/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Detecting the focused element</span>
+            </a>
+          <a href="../prevent-tabbing/index.html" data-link-to="next-lesson">
+              <span>Preventing people from tabbing into elements</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /directing-focus/  Mon, 24 Jan 2022 10:05:05 GMT -->
+</html>

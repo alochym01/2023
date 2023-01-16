@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /calculator-difficult-edge-cases/  Mon, 24 Jan 2022 10:02:54 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Calculator: Difficult Edge Cases | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Calculator: Difficult Edge Cases</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Calculator: Difficult Edge Cases</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/calculator/06.difficult-edge-cases.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>The difficult edge cases involve follow-up calculations. Don’t get what I mean? Don’t worry. Let’s dive in and you’ll see.</p>
+<h2 id="calculating-with-operators">Calculating with operators</h2>
+<p>Try whipping out a calculator. Press keys in these sequence: <em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Number</em> <code>-&gt;</code> <em>Operator</em>. What happens? The calculator should have made a calculation.</p>
+<p>For example:</p>
+<ul>
+<li>Press <code>9 - 5 -</code>. Calculator should show <code>4</code>.</li>
+</ul>
+<p>But why?</p>
+<p>If the user press <code>9 - 5 -</code>, we can assume they want to press another number to continue their calculation. We want to show them an intermediate result so they can keep track of their results.</p>
+<p>Right now, our calculator doesn’t perform a calculation. It seems doesn’t do anything when you press the second operator.</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/operator-calculation-fail.gif" alt="Punch 9 - 5 - into the calculator. Calculator shows 5.">
+</figure>
+<p>Let’s add a test case before we continue. It should fail.</p>
+<pre><code class="language-js">const tests = [
+  // ...
+  {
+    message: 'Operator calculation',
+    keys: ['9', 'minus', '5', 'minus'],
+    result: '4'
+  }
+]
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/operator-calculation-fail.png" alt="Assertion fail.">
+</figure>
+<p>The easiest way to make a calculation is to copy-paste code from the <em>equal</em> section into the <em>operator</em> section.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'operator') {
+    button.classList.add('is-pressed')
+
+    const firstValue = parseFloat(calculator.dataset.firstValue)
+    const operator = calculator.dataset.operator
+    const secondValue = parseFloat(result)
+
+    // Makes a calculation
+    if (firstValue &amp;&amp; operator) {
+      let newResult
+      if (operator === 'plus') newResult = firstValue + secondValue
+      if (operator === 'minus') newResult = firstValue - secondValue
+      if (operator === 'times') newResult = firstValue * secondValue
+      if (operator === 'divide') newResult = firstValue / secondValue
+
+      display.textContent = newResult
+    }
+
+    calculator.dataset.firstValue = result
+    calculator.dataset.operator = button.dataset.key
+  }
+  // ...
+})
+</code></pre>
+<p>The test passes!</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/edge-cases/num-operator-num-operator.gif" alt="Clicks 9 - 5 -. Calculator shows 4.">
+</figure>
+<p>Unfortunately, this new code screws up a <em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Operator</em> combination (which we did not test before).</p>
+<h3 id="number--%3E-operator--%3E-operator">Number <code>-&gt;</code> Operator <code>-&gt;</code> Operator</h3>
+<p>If the user presses an <em>operator</em> after another <em>operator</em>, we assume they pressed the wrong <em>operator</em> the first time round. They simply wanted to switch operators, so we should not perform calculations.</p>
+<p>Right now, our calculator performs a calculation.</p>
+<figure role="figure"><img src="../../images/components/calculator/edge-cases/operator-operator-wrong.gif" alt="Clicks 9 * -. Caluclator shows 81."></figure>
+<p>Let’s write a new test case to ensure <em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Operator</em> works.</p>
+<pre><code class="language-js">const tests = [
+  // ...
+  {
+    message: 'Number Operator Operator',
+    keys: ['9', 'times', 'divide'],
+    result: '9'
+  }
+]
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/number-operator-operator-fail.png" alt="Assertion failed.">
+</figure>
+<p>We know how to fix this. If the previous button is an <em>operator</em>, we want to skip the calculation entirely.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'operator') {
+    // ...
+
+    if (previousButtonType === 'operator') {
+      // Do nothing
+    } else {
+      const firstValue = parseFloat(calculator.dataset.firstValue)
+      const operator = calculator.dataset.operator
+      const secondValue = parseFloat(result)
+
+      // Makes a calculation
+      if (firstValue &amp;&amp; operator) {
+        let newResult
+        if (operator === 'plus') newResult = firstValue + secondValue
+        if (operator === 'minus') newResult = firstValue - secondValue
+        if (operator === 'times') newResult = firstValue * secondValue
+        if (operator === 'divide') newResult = firstValue / secondValue
+
+        display.textContent = newResult
+      }
+    }
+
+    // ...
+  }
+  // ...
+})
+</code></pre>
+<p>This works. All our tests passed!</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/number-operator-operator.gif" alt="Punch 9 times minus into the calculator. Calculator shows 9.">
+</figure>
+<p>But it’s weird to have a <code>do nothing</code> comment in an <code>if</code> statement. We can reverse the <code>if</code> to make the code cleaner.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'operator') {
+    // ...
+
+    // Reverses the if condition
+    if (previousButtonType !== 'operator') {
+      const firstValue = parseFloat(calculator.dataset.firstValue)
+      const operator = calculator.dataset.operator
+      const secondValue = parseFloat(result)
+
+      // Makes a calculation
+      if (firstValue &amp;&amp; operator) {
+        let newResult
+        if (operator === 'plus') newResult = firstValue + secondValue
+        if (operator === 'minus') newResult = firstValue - secondValue
+        if (operator === 'times') newResult = firstValue * secondValue
+        if (operator === 'divide') newResult = firstValue / secondValue
+
+        display.textContent = newResult
+      }
+    }
+
+    // ...
+  }
+  // ...
+})
+</code></pre>
+<p>Since we will only calculate if <code>previousButtonType !== 'operator'</code>, and if there’s a <code>firstValue</code> and <code>operator</code> value, we can combine the two <code>if</code> statements into one. This cleans up the code a bit.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'operator') {
+    // ...
+    const firstValue = parseFloat(calculator.dataset.firstValue)
+    const operator = calculator.dataset.operator
+    const secondValue = parseFloat(result)
+
+    // Combines two if statements into one
+    if (
+      previousButtonType !== 'operator' &amp;&amp;
+      firstValue &amp;&amp;
+      operator
+    ) {
+      let newResult
+      if (operator === 'plus') newResult = firstValue + secondValue
+      if (operator === 'minus') newResult = firstValue - secondValue
+      if (operator === 'times') newResult = firstValue * secondValue
+      if (operator === 'divide') newResult = firstValue / secondValue
+
+      display.textContent = newResult
+    }
+
+    // ...
+  }
+  // ...
+})
+</code></pre>
+<h2 id="follow-up-calculations">Follow up calculations</h2>
+<p>Once users press an <em>operator</em> key, they can perform follow up calculations with BOTH the <em>operator</em> and <em>equal</em> keys. This gets complicated.</p>
+<p>Here are the possible combinations:</p>
+<ol>
+<li><em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Equal</em> <code>-&gt;</code> <em>Equal</em></li>
+<li><em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Number</em> <code>-&gt;</code> <em>Equal</em> <code>-&gt;</code> <em>Equal</em></li>
+<li><em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code></li>
+</ol>
+<h2 id="follow-up-calculations-with-equal">Follow up calculations with equal</h2>
+<p>These two follow up calculations uses the equal key:</p>
+<ol>
+<li><em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Equal</em> <code>-&gt;</code> <em>Equal</em></li>
+<li><em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Number</em> <code>-&gt;</code> <em>Equal</em> <code>-&gt;</code> <em>Equal</em></li>
+</ol>
+<p>Example:</p>
+<ol>
+<li>Tim presses <code>9 - =</code>. We take it as <code>9 - 9</code>. Calculator shows <code>0</code>. Tim presses <code>=</code> again. We do <code>0 - 9</code>, so calculator shows <code>- 9</code>.</li>
+<li>Tim presses <code>8 - 5 =</code>. We show <code>3</code>. Tim presses <code>=</code> again. We do <code>3 - 5</code>, so calculator shows <code>-2</code>.</li>
+</ol>
+<p>Let’s add test cases before we continue.</p>
+<pre><code class="language-js">const tests = [
+  // ...
+  {
+    message: 'Number Operator Equal Equal',
+    keys: ['9', 'minus', 'equal', 'equal'],
+    result: '-9'
+  }, {
+    message: 'Number Operator Number Equal Equal',
+    keys: ['8', 'minus', '5', 'equal', 'equal'],
+    result: '-2'
+  }
+]
+</code></pre>
+<p>Both tests should fail.</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/equal-followup-calculations-fail.png" alt="Assertions fail.">
+</figure>
+<p>We’ll tackle them together. This part is tricky; follow closely!</p>
+<p>Let’s look at the first case. Here’s what our calculator does when we press <code>9 - = = </code>.</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/edge-cases/consec-equal-twice.gif" alt="Clicks 9 - =. Shows 0. Clicks = again. Shows 9.">
+</figure>
+<p>Why does the calculator show <code>9</code>, <code>0</code>, then <code>9</code>? We can log <code>firstValue</code>, <code>operator</code>, <code>secondValue</code> and <code>newResult</code> into the console to figure out why.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+if (buttonType === 'equal') {
+    // ...
+    if (firstValue &amp;&amp; operator) {
+      let newResult
+      if (operator === 'plus') newResult = firstValue + secondValue
+      if (operator === 'minus') newResult = firstValue - secondValue
+      if (operator === 'times') newResult = firstValue * secondValue
+      if (operator === 'divide') newResult = firstValue / secondValue
+      display.textContent = newResult
+
+      // console.log values.
+      console.log(firstValue, operator, secondValue, '=', newResult)
+    } else {
+      display.textContent = parseFloat(result) * 1
+    }
+  }
+  // ...
+})
+</code></pre>
+<p>Note: You will see lots of logs when you refresh the page. These logs were created by our test cases. If they bother you, you can comment out the tests for now.</p>
+<p>(Another way is to clear the console before clicking the calculator).</p>
+<p>Click the calculator according to the <em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Equal</em> <code>-&gt;</code> <em>Equal</em> test case. Pay attention to the values for <code>firstValue</code>, <code>operator</code>, and <code>secondValue</code></p>
+<figure role="figure">
+  <img src="../../images/components/calculator/edge-cases/consec-equal-twice-debug.gif" alt="Logs firstValue, operator, secondValue, and newResult for each calculation.">
+</figure>
+<p>It’s hard to understand what’s happening from logs. Let’s put down these values down on paper so we can search for clues. (I actually wrote them down on paper).</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/edge-cases/consec-equal-twice-debug-2.png" alt="Putting the logs down on paper.">
+</figure>
+<p>For the first calculation:</p>
+<ul>
+<li><code>firstValue</code> is <code>9</code> (which is correct)</li>
+<li><code>secondValue</code> is also <code>9</code> (also correct).</li>
+</ul>
+<p>For the second calculation:</p>
+<ul>
+<li><code>firstValue</code> is <code>9</code> (which is wrong).</li>
+<li><code>secondValue</code> is <code>0</code> (also wrong)</li>
+</ul>
+<p>Why? Here’s the reason.</p>
+<ol>
+<li>We used <code>data-first-value</code> as <code>firstValue</code> for the second calculation.</li>
+<li>We used the displayed value (which is the result) as the <code>secondValue</code> for the second calculation.</li>
+</ol>
+<figure role="figure">
+  <img src="../../images/components/calculator/edge-cases/consec-equal-twice-debug-3.png" alt="Same image as above, but with arrows to link where the logic went wrong.">
+</figure>
+<p>Here’s the correct version:</p>
+<ol>
+<li>We should assign the result of the calculation to <code>firstValue</code>.</li>
+<li>We should reuse <code>9</code> as <code>secondValue</code>.</li>
+</ol>
+<figure role="figure">
+  <img src="../../images/components/calculator/edge-cases/consec-equal-correct-debug.png" alt="The correct flow of calculations.">
+</figure>
+<p>It’s easy to assign the result to <code>firstValue</code>. We can assign it after the calculation.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'equal') {
+    const firstValue = parseFloat(calculator.dataset.firstValue)
+    const operator = calculator.dataset.operator
+    const secondValue = parseFloat(result)
+
+    if (firstValue &amp;&amp; operator) {
+      let newResult
+      if (operator === 'plus') newResult = firstValue + secondValue
+      if (operator === 'minus') newResult = firstValue - secondValue
+      if (operator === 'times') newResult = firstValue * secondValue
+      if (operator === 'divide') newResult = firstValue / secondValue
+      display.textContent = newResult
+
+      // Assigns results to `firstValue`
+      calculator.dataset.firstValue = newResult
+    } else {
+      display.textContent = parseFloat(result) * 1
+    }
+  }
+  // ...
+})
+</code></pre>
+<p>Setting <code>9</code> to <code>secondValue</code> is tricky because the number <code>9</code> disappears from the display. We need to save <code>9</code> as a custom attribute. Let’s call this custom attribute <code>data-modifier-value</code>.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'equal') {
+    const firstValue = parseFloat(calculator.dataset.firstValue)
+    const operator = calculator.dataset.operator
+    const secondValue = parseFloat(result)
+
+    if (firstValue &amp;&amp; operator) {
+      let newResult
+      if (operator === 'plus') newResult = firstValue + secondValue
+      if (operator === 'minus') newResult = firstValue - secondValue
+      if (operator === 'times') newResult = firstValue * secondValue
+      if (operator === 'divide') newResult = firstValue / secondValue
+
+      display.textContent = newResult
+      calculator.dataset.firstValue = newResult
+
+      // Stores secondValue as modifier for followup calculations.
+      calculator.dataset.modifierValue = secondValue
+    } else {
+      display.textContent = parseFloat(result) * 1
+    }
+  }
+  // ...
+})
+</code></pre>
+<p>Before the next calculation, we need to check if <code>modifierValue</code> is present. If it is present, we use <code>modifierValue</code> as <code>secondValue</code>. Otherwise, we use the displayed result as the <code>secondValue</code>.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'equal') {
+    const firstValue = parseFloat(calculator.dataset.firstValue)
+    const operator = calculator.dataset.operator
+    // Finds modifier value
+    // Use modifier value as secondValue (if possible)
+    const modifierValue = parseFloat(calculator.dataset.modifierValue)
+    const secondValue = modifierValue || parseFloat(result)
+
+    if (firstValue &amp;&amp; operator) {
+      let newResult
+      if (operator === 'plus') newResult = firstValue + secondValue
+      if (operator === 'minus') newResult = firstValue - secondValue
+      if (operator === 'times') newResult = firstValue * secondValue
+      if (operator === 'divide') newResult = firstValue / secondValue
+
+      display.textContent = newResult
+      calculator.dataset.firstValue = newResult
+      calculator.dataset.modifierValue = secondValue
+    } else {
+      display.textContent = parseFloat(result) * 1
+    }
+  }
+  // ...
+})
+</code></pre>
+<p>When we make this change, we break A TON of tests! 😱 😱 😱!</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/tests-break.png" alt="Many tests fail.">
+</figure>
+<p>Don’t panic!</p>
+<p>It’s normal to break tests when you add features. In this case, we started using <code>modifierValue</code> in our calculations, but we did not reset <code>modifierValue</code> when we reset the calculator. This is why our tests broke.</p>
+<p>Here’s a simple fix:</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'clear') {
+    if (button.textContent === 'AC') {
+      delete calculator.dataset.firstValue
+      delete calculator.dataset.operator
+      // Clearing the modifier value
+      delete calculator.dataset.modifierValue
+    }
+
+    display.textContent = '0'
+    button.textContent = 'AC'
+  }
+  // ...
+})
+</code></pre>
+<p>We’ll also updated <code>resetCalculator</code> to ensure <code>modifierValue</code> gets reset.</p>
+<p>The previous tests should now pass. You’ll also notice this:</p>
+<ol>
+<li>Test for <em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Equal</em> <code>-&gt;</code> <em>Equal</em> failed</li>
+<li>Test for <em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Number</em> <code>-&gt;</code> <em>Equal</em> <code>-&gt;</code> <em>Equal</em> passed</li>
+</ol>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/operator-number-equal-equal-fail.png" alt="Only Number Operator Equal Equal follow up calculations fail.">
+</figure>
+<p>Why?</p>
+<p>Once again, we can log <code>firstValue</code>, <code>operator</code>, <code>secondValue</code>, and <code>newResult</code> to figure out the reason.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'equal') {
+    // ...
+
+    if (firstValue &amp;&amp; operator) {
+      // ...
+      // Console.log values.
+      console.log(firstValue, operator, secondValue, '=', newResult)
+    } else {
+      display.textContent = parseFloat(result) * 1
+    }
+  }
+  // ...
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/calculator/edge-cases/consec-equal-zero-problem-debug.gif" alt="Debugs the above picture.">
+</figure>
+<p>We can see the calculator made the first calculation. But it doesn’t make the second calculation no matter how many times we press <em>equal</em>.</p>
+<p>Why?</p>
+<p>Because <code>firstValue</code> became <code>0</code>, which is falsey. So this condition became false 😰.</p>
+<pre><code class="language-js">if (firstValue &amp;&amp; operator) {
+  // ...
+}
+</code></pre>
+<p>This is a good lesson for us: <strong>don’t use truthiness to check numbers</strong>. If we want to check if a number exists, we can use <code>typeof</code>.</p>
+<pre><code class="language-js">// Examples of how typeof works
+console.log(typeof 42) // number
+console.log(typeof 42 === 'number') // true
+</code></pre>
+<p>Usage:</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'equal') {
+    // ...
+
+    if (typeof firstValue === 'number' &amp;&amp; operator) {
+      // Make calculation
+    } else {
+      // ...
+    }
+  }
+  // ...
+})
+</code></pre>
+<p>All tests should pass. The calculator can perform followup calculations with equal now.</p>
+<ol>
+<li>Number <code>-&gt;</code> Operator <code>-&gt;</code> Equal <code>-&gt;</code> Equal</li>
+<li>Number <code>-&gt;</code> Operator <code>-&gt;</code> Number <code>-&gt;</code> Equal <code>-&gt;</code> Equal</li>
+</ol>
+<figure role="figure" aria-label="Number -> Operator -> Equal -> Equal -> ...">
+  <img src="../../images/components/calculator/edge-cases/consec-equal-case-1.gif" alt="">
+  <figcaption>Number <code>-></code> Operator <code>-></code> Equal <code>-></code> Equal
+  </figcaption>
+</figure>
+<figure role="figure" aria-label="Number -> Operator -> Number -> Equal -> Equal -> ...">
+  <img src="../../images/components/calculator/edge-cases/consec-equal-case-2.gif" alt="">
+  <figcaption>Number <code>-></code> Operator <code>-></code> Number <code>-></code> Equal <code>-></code> Equal
+  </figcaption>
+</figure>
+<h2 id="follow-up-calculations-with-operators">Follow up calculations with operators</h2>
+<p>Users can perform a calculation with <em>operator</em> keys if they use the following sequence:</p>
+<ul>
+<li><em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Number</em> <code>-&gt;</code> <em>Operator</em></li>
+</ul>
+<p>We should also let them perform additional calculations if they press more of this sequence:</p>
+<ul>
+<li><em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>Number</em> <code>-&gt;</code> <em>Operator</em> <code>-&gt;</code> <em>And so on</em>.</li>
+</ul>
+<p>For example, let’s say Tim presses keys in this order: <code>1 + 2 + 3 + 4 + 5 +</code>.</p>
+<p>This should happen:</p>
+<ol>
+<li><code>1 + 2 +</code>. Calculator shows 3.</li>
+<li><code>3 +</code>. Calculator shows 6.</li>
+<li><code>4 +</code>. Calculator shows 10.</li>
+<li><code>5 +</code>. Calculator shows 15.</li>
+</ol>
+<p>Let’s create a test case before we continue.</p>
+<pre><code class="language-js">const test = [
+  // ...
+  {
+    message: 'Operator follow-up calculation',
+    keys: ['1', 'plus', '2', 'plus', '3', 'plus', '4', 'plus', '5', 'plus'],
+    result: '15'
+  }
+]
+</code></pre>
+<p>This should fail (as expected).</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/operator-followup-fail.png" alt="Assertion failed.">
+</figure>
+<p>Let’s see what our calculator does when we make followup calculations right now.</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/operator-followup-fail.gif" alt="Punched 1 + 2 + 3 + 4 + 5 + into the calculator.">
+</figure>
+<p>We know the test failed. It’s not a surprise our calculator made the wrong calculations.</p>
+<p>We need to follow this format to correct the calculations:</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/edge-cases/operator-consec.png" alt="How to create follow-up operator calculations">
+</figure>
+<p>This says:</p>
+<ol>
+<li>We should replace <code>firstValue</code> with the calculated result.</li>
+<li>We should get <code>secondValue</code> from the display.</li>
+</ol>
+<p>We already get <code>secondValue</code> from the display, so there’s nothing to do for point 2. For point 1, here’s how you can replace <code>firstValue</code> with the calculated result.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'operator') {
+    // ...
+
+    if (
+      previousButtonType !== 'operator' &amp;&amp;
+      firstValue &amp;&amp;
+      operator
+    ) {
+      // ...
+
+      display.textContent = newResult
+
+      // If there's a calculation, we change firstValue
+      calculator.dataset.firstValue = newResult
+    } else {
+      // Otherwise, we set displayed result to firstValue
+      calculator.dataset.firstValue = result
+    }
+
+    calculator.dataset.operator = button.dataset.key
+  }
+  // ...
+})
+</code></pre>
+<p>Like the equal section, we need to check whether <code>firstValue</code> is a Number. We should use <code>typeof</code> for this check.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'operator') {
+    // ...
+    if (
+      previousButtonType !== 'operator' &amp;&amp;
+      typeof firstValue === 'number' &amp;&amp;
+      operator
+    ) {
+      // ...
+    } else {
+      // ...
+    }
+
+    calculator.dataset.operator = button.dataset.key
+  }
+  // ...
+})
+</code></pre>
+<p>We should be able to perform follow-up calculations with <em>operator</em> keys now.</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/edge-cases/consec-operator.gif" alt="Clicks 1 + 2 + 3 + 4 + 5. Shows 15 at the end.">
+</figure>
+<p>Unfortunately, this new code breaks the <code>Calculation + Operator</code> test.</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/operator-calculation-fail-again.png" alt="Assertion failed.">
+</figure>
+<p>It’s not fun to see our tests break. But it’s even more un-fun to get an error yourself much later without even knowing what went wrong. Let’s fix this.</p>
+<h2 id="fixing-the-calculation-%2B-operator-test">Fixing the Calculation + Operator test</h2>
+<p>So, what’s wrong? Let’s take a quick look at our tests again. Here’s the <code>Calculation + operator test</code></p>
+<pre><code class="language-js">const test = [
+  // ...
+  {
+    message: 'Calculation + Operator',
+    keys: ['1', 'plus', '1', 'equal', 'plus', '1', 'equal'],
+    result: '3'
+  },
+]
+</code></pre>
+<p>Let’s punch in this sequence and see what’s up.</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/operator-calculation-fail-again.gif" alt="Punching in 1 + 1 = + 1 =.">
+</figure>
+<p>Oh, looks like the calculator made a calculation when you click <em>Equal</em> <code>-&gt;</code> <em>Operator</em>. This should not happen. We can fix this easily by checking if the previous button is <em>equal</em>.</p>
+<pre><code class="language-js">calculatorButtonsDiv.addEventListener('click', event =&gt; {
+  // ...
+  if (buttonType === 'operator') {
+    // ...
+
+    if (
+      previousButtonType !== 'operator' &amp;&amp;
+      // Checks if previous button is equal key
+      previousButtonType !== 'equal' &amp;&amp;
+      typeof firstValue === 'number' &amp;&amp;
+      operator
+    ) {
+      // ...
+    } else {
+      // ...
+    }
+    calculator.dataset.operator = button.dataset.key
+  }
+  // ...
+})
+</code></pre>
+<p>BAM! The test should now be fixed 😃.</p>
+<figure role="figure">
+  <img src="../../images/components/calculator/difficult-edge-cases/operator-calculation-again.gif" alt="Punch in 1 + 1 = + 1 =. Calculator shows 3.">
+</figure>
+<h2 id="wrapping-up">Wrapping up</h2>
+<p>That’s it!</p>
+<p>Building a calculator is hard! It was never easy. Pat yourself on the back for following this through. You are MUCH better than many developers out there now. Try challenging them to build a calculator and watch them suffer… 😈.</p>
+<p>(I know how bad they’ll suffer because I made the calculator without tests TWICE. It was 🤮. But with tests, this is easy-peasy. We just have to fix things one after another. ).</p>
+<h2 id="homework">Homework</h2>
+<ol>
+<li>Write down all the cases I mentioned on a piece of paper.</li>
+<li>Build the calculator again from scratch</li>
+<li>See if you can find any cases I missed :)</li>
+</ol>
+<p>Take your time, clear away your bugs one by one and you’ll get your calculator up eventually. Happy coding!</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../calculator-easy-edge-cases/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Calculator: Easy Edge Cases</span>
+            </a>
+          <a href="../calculator-refactor/index.html" data-link-to="next-lesson">
+              <span>🛠️ Calculator: Refactoring</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /calculator-difficult-edge-cases/  Mon, 24 Jan 2022 10:03:00 GMT -->
+</html>

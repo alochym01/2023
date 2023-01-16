@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /prevent-objects-mutation/  Mon, 24 Jan 2022 10:02:38 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Preventing Objects from mutating | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>Preventing Objects from mutating</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>Preventing Objects from mutating</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>You can prevent objects from mutating through two methods:</p>
+<ol>
+<li><code>Object.assign</code></li>
+<li><code>assignment</code></li>
+</ol>
+<h2 id="object.assign">Object.assign</h2>
+<p><code>Object.assign</code> lets you combine two (or more) objects into a single one. It has the following syntax:</p>
+<pre><code class="language-js">const newObject = Object.assign(object1, object2, object3, object4)
+</code></pre>
+<p><code>newObject</code> will contain properties from every object you pass into <code>Object.assign</code>.</p>
+<pre><code class="language-js">const papayaBlender = { canBlendPapaya: true }
+const mangoBlender = { canBlendMango: true }
+
+const fruitBlender = Object.assign(papayaBlender, mangoBlender)
+
+console.log(fruitBlender)
+// {
+//   canBlendPapaya: true,
+//   canBlendMango: true
+// }
+</code></pre>
+<p>If two conflicting properties are found, the property in a later object overwrites the property in an earlier object.</p>
+<pre><code class="language-js">const smallCupWithEar = {
+  volume: 300,
+  hasEar: true
+}
+
+const largeCup = { volume: 500 }
+
+// In this case, volume gets overwritten from 300 to 500
+const myIdealCup = Object.assign(smallCupWithEar, largeCup)
+
+console.log(myIdealCup)
+// {
+//   volume, 500,
+//   hasEar: true
+// }
+</code></pre>
+<p><strong>But beware! When you combine two objects with <code>Object.assign</code>, the first object gets mutated. Other objects don’t get mutated.</strong></p>
+<pre><code class="language-js">console.log(smallCupWithEar)
+// {
+//   volume, 500,
+//   hasEar: true
+// }
+
+console.log(largeCup)
+// {
+//   volume, 500
+// }
+</code></pre>
+<h3 id="preventing-object.assign-from-mutating-objects">Preventing Object.assign from mutating objects</h3>
+<p>You can pass a new object as your first object to prevent existing objects from mutating. You’ll still mutate the first object (which is empty), but that’s OK since this mutation doesn’t affect other objects—it won’t change external state.</p>
+<pre><code class="language-js">const myIdealCup = Object.assign({}, smallCupWithEar, largeCup)
+</code></pre>
+<h2 id="but-object.assign-copies-references-to-nested-objects">But Object.assign copies references to nested objects</h2>
+<p>The problem with <code>Object.assign</code> is that it performs a <strong>shallow merge</strong>—it copies properties directly from one object to another. When it does so, it also copies references to any objects.</p>
+<p>Let’s explain this statement with an example.</p>
+<p>Suppose you buy a new sound system. The system lets you change three settings:</p>
+<ol>
+<li>Power (turned on or off)</li>
+<li>Volume (through a number)</li>
+<li>Loudness (through a number)</li>
+</ol>
+<pre><code class="language-js">const defaultSettings = {
+  power: true,
+  soundSettings: {
+    volume: 50,
+    bass: 20,
+  }
+}
+</code></pre>
+<p>You want to invite your friends to a party. You know some of them love loud music, so you create a preset that’s guaranteed to wake your neighbors.</p>
+<pre><code class="language-js">const loudPreset = {
+  soundSettings: {
+    volume: 100
+  }
+}
+</code></pre>
+<p>When you invite your friends over to the party, you want to preserve your existing presets (so you can switch back quickly). You choose to combine <code>loudPreset</code> with the default settings.</p>
+<pre><code class="language-js">const partyPreset = Object.assign({}, defaultSettings, loudPreset)
+</code></pre>
+<p>But <code>partyPreset</code> sounds weird. The volume is loud enough, but the bass is non-existent. When you inspect <code>partyPreset</code>, you’re surprised to find that there’s no bass in it!</p>
+<pre><code class="language-js">console.log(partyPreset)
+// {
+//   power: true,
+//   soundSettings: {
+//     volume: 100
+//   }
+// }
+</code></pre>
+<p>This happens because JavaScript copies the reference to the <code>soundSettings</code> object. Since both <code>defaultSettings</code> and <code>loudPreset</code> have a <code>soundSettings</code> object, the one that comes later gets copied into the new object.</p>
+<p>If you change <code>partyPreset</code>, <code>loudPreset</code> will mutate accordingly—evidence that <code>partyPreset</code> links to loud preset’s <code>soundSettings</code> object.</p>
+<pre><code class="language-js">partyPreset.soundSettings.bass = 50
+
+console.log(loudPreset)
+// {
+//   soundSettings: {
+//     volume: 100,
+//     bass: 50
+//   }
+// }
+</code></pre>
+<p>You need another method to ensure nested objects (objects in objects) don’t get passed over to <code>partyPreset</code>. Enter assignment.</p>
+<h2 id="assignment">Assignment</h2>
+<p><code>assignment</code> is a <a href="../../../github.com/bevacqua/assignment/blob/master/assignment.html">library</a> made by <a href="https://twitter.com/nzgb">Nicolás Bevacqua</a> from <a href="https://ponyfoo.com/">Ponyfoo</a>, which is a great source for JavaScript knowledge. It helps you perform a deep merge without having to worry about mutation. Aside from the method name, the syntax is the same as <code>Object.assign</code>.</p>
+<pre><code class="language-js">// Perform a deep merge with assignment
+const partyPreset = assignment({}, defaultSettings, loudPreset)
+
+console.log(partyPreset)
+// {
+//   power: true,
+//   soundSettings: {
+//     volume: 100,
+//     bass: 20
+//   }
+// }
+//
+</code></pre>
+<p><code>assignment</code> copies over values of all nested objects, which prevents your existing objects from getting mutated.</p>
+<p>If you try to change any property in <code>partyPreset.soundSettings</code> now, you’ll see that <code>loudPreset</code> remains as it was.</p>
+<pre><code class="language-js">partyPreset.soundSettings.bass = 50
+
+// loudPreset doesn't get mutated
+console.log(loudPreset)
+// {
+//   soundSettings {
+//     volume: 100
+//   }
+// }
+</code></pre>
+<p>Note: <code>assignment</code> is just one of many libraries that help you perform a deep merge. Other libraries, including <a href="https://lodash.com/docs#mereg">lodash.mereg</a> and <a href="https://www.npmjs.com/package/merge-options">merge-options</a>), can help you do it too. Feel free to choose from any of these libraries.</p>
+<h2 id="should-you-always-use-assignment-over-object.assign%3F">Should you always use assignment over Object.assign?</h2>
+<p>You can use <code>Object.assign</code> if you’re not merging objects with nested objects. There’s no harm in using it as long as you know what you’re doing.</p>
+<p>If you need to assign objects with nested properties, always use <code>assignment</code> over <code>Object.assign</code>.</p>
+<h2 id="wrapping-up">Wrapping up</h2>
+<p><code>Object.assign</code> can be used to prevent objects from mutating.</p>
+<p>Take note that <code>Object.assign</code> can only prevent direct properties from mutating. If you need to merge objects with nested properties, use <code>assignment</code> (or other libraries that do the same thing) instead of <code>Object.assign</code>.</p>
+<h2 id="exercise">Exercise</h2>
+<ol>
+<li>Combine two objects with <code>Object.assign</code>.</li>
+<li>Combine two objects with <code>assignment</code>.</li>
+</ol>
+</article>
+  </div>
+
+
+    <section class="longform" data-js="answers">
+      <p></p>
+      <button data-type="primary">Show answers</button>
+      <div>
+        <h2 id="answers">Answers</h2>
+<ul>
+<li>Combine two objects with <code>Object.assign</code>.</li>
+</ul>
+<pre><code class="language-javascript">const object1 = { wheels: 4 }
+const object2 = { type: 'car' }
+
+const merged = Object.assign({}, object1, object2)
+</code></pre>
+<ul>
+<li>Combine two objects with <code>assignment</code>.</li>
+</ul>
+<pre><code class="language-javascript">// From https://github.com/bevacqua/assignment/blob/master/assignment.js
+function assignment (result) {
+  var stack = Array.prototype.slice.call(arguments, 1);
+  var item;
+  var key;
+  while (stack.length) {
+    item = stack.shift();
+    for (key in item) {
+      if (item.hasOwnProperty(key)) {
+        if (typeof result[key] === 'object' &amp;&amp; result[key] &amp;&amp; Object.prototype.toString.call(result[key]) !== '[object Array]') {
+          if (typeof item[key] === 'object' &amp;&amp; item[key] !== null) {
+            result[key] = assignment({}, result[key], item[key]);
+          } else {
+            result[key] = item[key];
+          }
+        } else {
+          result[key] = item[key];
+        }
+      }
+    }
+  }
+  return result;
+}
+
+const object1 = { wheels: 4 }
+const object2 = { type: 'car' }
+
+const merged = assignment(object1, object2)
+</code></pre>
+
+      </div>
+    </section>
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../dont-mutate/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Don&#39;t mutate</span>
+            </a>
+          <a href="../prevent-arrays-mutation/index.html" data-link-to="next-lesson">
+              <span>Preventing Arrays from mutating</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /prevent-objects-mutation/  Mon, 24 Jan 2022 10:02:39 GMT -->
+</html>

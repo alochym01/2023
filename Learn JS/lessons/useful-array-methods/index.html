@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /useful-array-methods/  Mon, 24 Jan 2022 10:02:29 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Useful array methods | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>Useful array methods</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>Useful array methods</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>JavaScript contains useful methods that can help you manipulate arrays. You’ll learn four of them in this lesson. They are:</p>
+<ol>
+<li><code>findIndex</code></li>
+<li><code>find</code></li>
+<li><code>filter</code></li>
+<li><code>map</code></li>
+</ol>
+<h2 id="findindex">findIndex</h2>
+<p><code>findIndex</code> lets you <strong>find the index of an item</strong> in an array. It loops through every item in the array and <strong>returns the first</strong> truthy expression.</p>
+<p>The syntax looks like this:</p>
+<pre><code class="language-js">const index = array.findIndex((currentItem, index) =&gt; {
+  // return a truthy expression here
+})
+</code></pre>
+<p>Its much easier to explain Array.findIndex with an example, so let’s do that. Let’s say you have an array of objects. Each object is a person, and each person has a name.</p>
+<pre><code class="language-js">const people = [
+  {name: 'Zell'},
+  {name: 'Vincy'},
+  {name: 'Casper'}
+]
+</code></pre>
+<p>You want to know the position of the person named <code>Casper</code> in the <code>people</code> array. To do so, you can use <code>Array.findIndex</code> and check if the <code>name</code> property in each object matches <code>Casper</code>.</p>
+<pre><code class="language-js">const casperIndex = people.findIndex(person =&gt; person.name === 'Casper')
+console.log(casperIndex) // 2
+</code></pre>
+<h2 id="find">find</h2>
+<p><code>find</code> works the same way as <code>findIndex</code>, but <code>find</code> returns the item instead of the index.</p>
+<pre><code class="language-js">const casper = people.find(person =&gt; person.name === 'Casper')
+console.log(casper) // {name: 'Casper'}
+</code></pre>
+<h2 id="filter">filter</h2>
+<p><code>array.filter</code> returns a new array that contains a <strong>subset of the original array</strong>. Items will be added to the new array if you return a truthy expression.</p>
+<pre><code class="language-js">const filteredItems = array.filter((currentItem, index) =&gt; {
+  // return a truthy expression to include in filteredItems
+})
+</code></pre>
+<p>Once again, its easier to explain <code>filter</code> with an example, so let’s do that.</p>
+<p>Let’s say you have a list of numbers. You want to make another list of numbers that are bigger than ten. You can do this easily with <code>filter</code>.</p>
+<pre><code class="language-js">const numbers = [1, 12, 4, 18, 9, 7, 11, 3, 50, 5, 6]
+const biggerThan10 = numbers.filter(num =&gt; {
+  if (num &gt; 10) return true
+})
+
+console.log(biggerThan10) // [12, 18, 11, 50]
+</code></pre>
+<p>To shorten the code slightly, you can return the <code>if</code> condition because a truthy expression evaluates to <code>true</code>.</p>
+<pre><code class="language-js">const numbers = [1, 12, 4, 18, 9, 7, 11, 3, 50, 5, 6]
+const biggerThan10 = numbers.filter(num =&gt; num &gt; 10)
+</code></pre>
+<h2 id="map">map</h2>
+<p><code>map</code> returns a new array that contains the <strong>same number of items</strong> in the original array. Each item in the new array item is the value you return in the callback.</p>
+<pre><code class="language-js">const newArray = Array.map((currentItem, index) =&gt; {
+  // return the transformed value
+})
+</code></pre>
+<p>Once again, its easier to explain <code>Array.map</code> with an example, so let’s do that.</p>
+<p>Let’s say you have a list of numbers. You want to create a new array that contains another list of numbers, but each item is multiplied by five.</p>
+<pre><code class="language-js">const numbers = [1, 12, 4, 18, 9, 7, 11, 3, 50, 5, 6]
+const multipliedBy5 = numbers.map(num =&gt; {
+  return num * 5
+})
+
+console.log(multipliedBy5) // [5, 60, 20, 90, 45, 35, 55, 15, 250, 25, 30]
+</code></pre>
+<p>Since there’s only one line of code, you can use an implicit return:</p>
+<pre><code class="language-js">const numbers = [1, 12, 4, 18, 9, 7, 11, 3, 50, 5, 6]
+const multipliedBy5 = numbers.map(num =&gt; num * 5)
+</code></pre>
+<p><code>map</code> is super versatile. It can be used to simplify arrays or even modify other types of values.</p>
+<h3 id="modifying-an-array-value">Modifying an array value</h3>
+<p>Let’s say you have an array of todos. You want to add the string <code>I need to</code> in front of each todo item.</p>
+<pre><code class="language-js">const todos = ['buy eggs', 'feed my cat', 'water plants']
+
+// What you want:
+// [
+//   'I need to buy eggs',
+//   'I need to feed my cat',
+//   'I need to water plants',
+// ]
+</code></pre>
+<pre><code class="language-js">const todoStrings = todos.map(todo =&gt; `I need to ${todo}`)
+
+console.log(todoStrings)
+// [
+//   'I need to buy eggs',
+//   'I need to feed my cat',
+//   'I need to water plants',
+// ]
+</code></pre>
+<h3 id="simplifying-arrays-with-map">Simplifying arrays with map</h3>
+<p>Let’s say you have an array of objects. Each object contains a person’s first and last name.</p>
+<pre><code class="language-js">const people = [{
+  firstName: 'Zell',
+  lastName: 'Liew'
+}, {
+  firstName: 'Vincy',
+  lastName: 'Zhang'
+}]
+</code></pre>
+<p>From this list of people, you need to get an array of firstNames. To get this array, you can use <code>map</code> to loop through the array and return <code>person.firstName</code>.</p>
+<pre><code class="language-js">const firstNames = people.map(person =&gt; person.firstName)
+console.log(firstNames) // ['Zell', 'Vincy']
+</code></pre>
+<h3 id="map-vs-foreach">map vs forEach</h3>
+<p>Many people get confused between <code>map</code> and <code>forEach</code>. Here’s a quick way to remember what does what:</p>
+<ol>
+<li>Use <code>map</code> when you want to return a new array</li>
+<li>Use <code>forEach</code> when you want to do stuff</li>
+</ol>
+<h2 id="chaining-array-methods">Chaining array methods</h2>
+<p>Since <code>map</code> and <code>filter</code> return arrays, you can perform another <code>map</code> or <code>filter</code> method immediately if you wish to.</p>
+<p>For example, let’s say you want have a list of numbers. You want to multiply each number by five. After the multiplication, you want to get a list of numbers that are between 30 and 40.</p>
+<p>Here’s how you might do it now.</p>
+<pre><code class="language-js">const numbers = [1, 12, 4, 18, 9, 7, 11, 3, 50, 5, 6]
+const multipliedBy5 = numbers.map(num =&gt; num * 5)
+const between30And40 = multipliedBy5.filter(num =&gt; num &gt;= 30 &amp;&amp; num &lt;= 40)
+</code></pre>
+<p>If you chain array methods, you can do this:</p>
+<pre><code class="language-js">const result = numbers.map(num =&gt; num * 5)
+  .filter(num =&gt; num &gt;= 30 &amp;&amp; num &lt;= 40)
+</code></pre>
+<h2 id="exercise">Exercise</h2>
+<p>Complete these exercises with the following data:</p>
+<ol>
+<li>Find the index of <code>Thomas Edison</code>.</li>
+<li>Find the object that contains <code>Winston Churchill</code>.</li>
+<li>Create an array that contains people that died before 1940.</li>
+<li>Create an array that contains people that were alive between 1850 and 1970.</li>
+<li>Create an array that contains the <code>firstName</code>, <code>lastName</code> and <code>yearsLived</code> for each person (where <code>yearsLived</code> is the number of years the person lived).</li>
+<li>Get the total number of <code>yearsLived</code> of the people who were alive between 1750 and 1900.</li>
+</ol>
+<pre><code class="language-js">const people = [
+  { firstName: 'Benjamin', lastName: 'Franklin', yearBorn: 1706, yearOfDeath: 1790 },
+  { firstName: 'Thomas', lastName: 'Edison', yearBorn: 1847, yearOfDeath: 1931 },
+  { firstName: 'Franklin', lastName: 'Roosevelt', yearBorn: 1882, yearOfDeath: 1945 },
+  { firstName: 'Napoleon', lastName: 'Bonaparte', yearBorn: 1769, yearOfDeath: 1821 },
+  { firstName: 'Abraham', lastName: 'Lincoln', yearBorn: 1809, yearOfDeath: 1865 },
+  { firstName: 'Mahatma', lastName: 'Gandhi', yearBorn: 1869, yearOfDeath: 1948 },
+  { firstName: 'Winston', lastName: 'Churchill', yearBorn: 1874, yearOfDeath: 1965 },
+  { firstName: 'Charles', lastName: 'Darwin', yearBorn: 1809, yearOfDeath: 1882 },
+  { firstName: 'Albert', lastName: 'Einstein', yearBorn: 1879, yearOfDeath: 1955 },
+  { firstName: 'Pablo', lastName: 'Picasso', yearBorn: 1881, yearOfDeath: 1973 },
+  { firstName: 'Ludwig', lastName: 'Beethoven', yearBorn: 1770, yearOfDeath: 1827 },
+  { firstName: 'Walt', lastName: 'Disney', yearBorn: 1901, yearOfDeath: 1966 },
+  { firstName: 'Henry', lastName: 'Ford', yearBorn: 1863, yearOfDeath: 1947 },
+  { firstName: 'Steve', lastName: 'Jobs', yearBorn: 1955, yearOfDeath: 2012 }
+]
+</code></pre>
+</article>
+  </div>
+
+
+    <section class="longform" data-js="answers">
+      <p></p>
+      <button data-type="primary">Show answers</button>
+      <div>
+        <h2 id="answers">Answers</h2>
+<ul>
+<li>Find the index of <code>Thomas Edison</code>.</li>
+</ul>
+<pre><code class="language-javascript">const index = people.findIndex(person =&gt; {
+  const { firstName, lastName } = person
+  return firstName === 'Thomas' &amp;&amp; lastName === 'Edison'
+})
+</code></pre>
+<ul>
+<li>Find the object that contains <code>Winston Churchill</code>.</li>
+</ul>
+<pre><code class="language-javascript">const churchill = people.find(person =&gt; {
+  const { firstName, lastName } = person
+  return firstName === 'Winston' &amp;&amp; lastName === 'Churchill'
+})
+</code></pre>
+<ul>
+<li>Create an array that contains people that died before 1940.</li>
+</ul>
+<pre><code class="language-javascript">const diedBefore1940 = people.filter(person =&gt; person.yearOfDeath &lt; 1940)
+</code></pre>
+<ul>
+<li>Create an array that contains people that are alive between 1850 and 1970.</li>
+</ul>
+<pre><code class="language-javascript">const aliveBetween1850And1970 = people.filter(person =&gt; {
+  const { yearBorn, yearOfDeath } = person
+  return yearBorn &lt; 1970 &amp;&amp; yearOfDeath &gt; 1850
+})
+</code></pre>
+<ul>
+<li>Create an array that contains the <code>firstName</code>, <code>lastName</code> and <code>yearsLived</code> for each person (where <code>yearsLived</code> is the number of years the person lived).</li>
+</ul>
+<pre><code class="language-javascript">const peeps = people.map(person =&gt; {
+  const yearsLived = person.yearOfDeath - person.yearBorn
+  return {
+    firstName: person.firstName,
+    lastName: person.lastName,
+    yearsLived
+  }
+})
+</code></pre>
+<ul>
+<li>Get the total number of <code>yearsLived</code> of the people who were alive between 1750 and 1900.</li>
+</ul>
+<pre><code class="language-javascript">const aliveBetween1750And1900 = people.filter(person =&gt; {
+  const { yearBorn, yearOfDeath } = person
+  return yearBorn &lt; 1900 &amp;&amp; yearOfDeath &gt; 1750
+})
+
+let totalYearsLived = 0
+aliveBetween1750And1900.forEach(person =&gt; {
+  const { yearBorn, yearOfDeath } = person
+  const yearsLived = yearOfDeath - yearBorn
+  totalYearsLived = totalYearsLived + yearsLived
+})
+
+console.log(totalYearsLived) // 891
+</code></pre>
+
+      </div>
+    </section>
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../rest-and-spread/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Rest and Spread</span>
+            </a>
+          <a href="../reduce/index.html" data-link-to="next-lesson">
+              <span>Reduce</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /useful-array-methods/  Mon, 24 Jan 2022 10:02:29 GMT -->
+</html>

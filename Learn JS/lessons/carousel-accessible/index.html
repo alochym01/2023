@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /carousel-accessible/  Mon, 24 Jan 2022 10:06:06 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Carousel: Screen reader accessibility | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Carousel: Screen reader accessibility</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Carousel: Screen reader accessibility</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/carousel/16.accessible.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>A carousel is a prominent section of a page. It <strong>holds content important enough to warrant a landmark role</strong>. Of the 8 landmark roles, the only one a carousel can use is <code>region</code>.</p>
+<p>This is why we marked up the carousel with a <code>&lt;section&gt;</code> element. (The <code>&lt;section&gt;</code> element has an implicit <code>region</code> role).</p>
+<pre><code class="language-html">&lt;section class=&quot;carousel&quot;&gt;...&lt;/section&gt;
+</code></pre>
+<p>Each landmark should have an accessible name. In this case, let’s use “Carousel” as the accessible name.</p>
+<p>We’ll set the accessible name with <code>aria-label</code> since the words “Carousel” cannot be found on the page.</p>
+<pre><code class="language-html">&lt;section class=&quot;carousel&quot; aria-label=&quot;Carousel&quot;&gt;...&lt;/section&gt;
+</code></pre>
+<video controls>
+  <source src="../../images/components/carousel/accessible/aria-label.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/aria-label.mp4"> here </a> instead.
+</video>
+<h2 id="navigating-through-the-carousel">Navigating through the carousel</h2>
+<p>Users can change carousel slides by using the <code>←</code> and <code>→</code> keys. This method works perfectly for Voiceover users.</p>
+<video controls>
+  <source src="../../images/components/carousel/accessible/right.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/right.mp4"> here </a> instead.
+</video>
+<p>Unfortunately, this method won’t work for NVDA users. It doesn’t work for NVDA because NVDA uses <code>→</code> to speak the next character and <code>←</code> to speak the previous character.</p>
+<video controls>
+  <source src="../../images/components/carousel/accessible/nvda-right.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/nvda-right.mp4"> here </a> instead.
+</video>
+<p>We need to create another method for NVDA users.</p>
+<p>You might beat yourself up at this point. You might think you’ve wasted time and energy, and you have to throw away the <code>←</code> and <code>→</code> functionality.</p>
+<p>Don’t beat yourself up. Our work is not wasted. Voiceover users and non-screen reader users can still use <code>←</code> and <code>→</code> keys. Think of it as an enhancement for them.</p>
+<p>We simply have to create a fallback for NVDA users.</p>
+<h3 id="allowing-nvda-users-to-switch-slides">Allowing NVDA users to switch slides</h3>
+<p>We know we cannot use arrow keys for NVDA users. But we also cannot use <code>control</code>, <code>alt</code>, or <code>shift</code> modifiers with arrow keys. They’re all used for other commands.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Left</td>
+<td>Say previous character</td>
+</tr>
+<tr>
+<td>Right</td>
+<td>Say next character</td>
+</tr>
+<tr>
+<td><code>Control</code> + Left</td>
+<td>Say previous word</td>
+</tr>
+<tr>
+<td><code>Control</code> + Right</td>
+<td>Say next word</td>
+</tr>
+<tr>
+<td><code>Alt</code> + Left</td>
+<td>Previous page (browser shortcut)</td>
+</tr>
+<tr>
+<td><code>Alt</code> + Right</td>
+<td>Next page (browser shortcut)</td>
+</tr>
+<tr>
+<td><code>Shift</code> + Left</td>
+<td>Selects previous character (system shortcut)</td>
+</tr>
+<tr>
+<td><code>Shift</code> + Right</td>
+<td>Select next character (system shortcut)</td>
+</tr>
+</tbody>
+</table>
+<p>We need a simple way a user can understand and use the interface. The simplest way is <strong>let them use the previous and next buttons</strong>.</p>
+<h2 id="using-previous-and-next-buttons">Using previous and next buttons</h2>
+<p>First, we need to remove the <code>tabindex</code> attribute on the previous and next button elements so users can access them.</p>
+<pre><code class="language-html">&lt;!-- Removed tabindex=&quot;-1&quot; from both buttons --&gt;
+&lt;section class=&quot;carousel&quot; aria-label=&quot;Carousel&quot;&gt;
+  &lt;button class=&quot;carousel__button previous-button&quot; hidden&gt; ... &lt;/button&gt;
+  &lt;!-- ... --&gt;
+  &lt;button class=&quot;carousel__button next-button&quot;&gt; ... &lt;/button&gt;
+&lt;/section&gt;
+</code></pre>
+<p>We also need to give each button an accessible name. We’ll use “Previous slide” and “Next slide”.</p>
+<pre><code class="language-html">&lt;section class=&quot;carousel&quot; aria-label=&quot;Carousel&quot;&gt;
+  &lt;button class=&quot;carousel__button previous-button&quot; aria-label=&quot;Previous slide&quot; hidden&gt; ... &lt;/button&gt;
+  &lt;!-- ... --&gt;
+  &lt;button class=&quot;carousel__button next-button&quot; aria-label=&quot;Next slide&quot; &gt; ... &lt;/button&gt;
+&lt;/section&gt;
+</code></pre>
+<video controls>
+  <source src="../../images/components/carousel/accessible/labelled-buttons.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/labelled-buttons.mp4"> here </a> instead.
+</video>
+<h3 id="keeping-focus-on-buttons">Keeping focus on buttons</h3>
+<p>When a user hits the next button, they expect their focus to remain on the next button. We shouldn’t move their focus into the slide.</p>
+<p>Right now, focus moves into the slide because we used the <code>focus</code> method in <code>switchSlide</code>. We need to remove it.</p>
+<pre><code class="language-js">const switchSlide = (currentSlideIndex, targetSlideIndex) =&gt; {
+  // ...
+  // Remove these
+  targetLink.focus({ preventScroll: true })
+
+  // Fallback for preventScroll
+  setTimeout(() =&gt; {
+    contents.parentElement.scrollLeft = 0
+  }, 0)
+  // ...
+}
+</code></pre>
+<video controls>
+  <source src="../../images/components/carousel/accessible/undo-focus.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/undo-focus.mp4"> here </a> instead.
+</video>
+<p>This is much better!</p>
+<h3 id="shifting-focus-for-arrow-key-users">Shifting focus for arrow key users</h3>
+<p>We still need to shift focus to the correct slide if a people who use <code>←</code> and <code>→</code> to switch slides.</p>
+<p>First, let’s remove the code we have for the arrow key event listeners.</p>
+<pre><code class="language-js">contents.addEventListener('keydown', event =&gt; {
+  // ...
+  // Remove these
+  if (key === 'ArrowLeft') previousButton.click()
+  if (key === 'ArrowRight') nextButton.click()
+})
+</code></pre>
+<p>We only want to switch slides if the user presses the left or right arrow keys. We’ll use an early return statement to make the function simpler.</p>
+<pre><code class="language-js">contents.addEventListener('keydown', event =&gt; {
+  const { key } = event
+  if (key !== 'ArrowLeft' &amp;&amp; key !== 'ArrowRight') return
+})
+</code></pre>
+<p>When a user presses <code>→</code>, we want to switch to the next slide. We can get the next slide once we find the current slide.</p>
+<pre><code class="language-js">contents.addEventListener('keydown', event =&gt; {
+  // ...
+  const currentSlideIndex = getCurrentSlideIndex()
+  let targetSlideIndex
+
+  if (key === 'ArrowRight') targetSlideIndex = currentSlideIndex + 1
+
+  switchSlides(currentSlideIndex, targetSlideIndex)
+})
+</code></pre>
+<p>The maximum value for <code>targetSlideIndex</code> is the index of the last slide. We need to make sure <code>targetSlideIndex</code> doesn’t exceed this value.</p>
+<pre><code class="language-js">contents.addEventListener('keydown', event =&gt; {
+  // ...
+  if (key === 'ArrowRight') targetSlideIndex = currentSlideIndex + 1
+  if (targetSlideIndex &gt; slides.length -1) targetSlideIndex = slides.length - 1
+
+  switchSlides(currentSlideIndex, targetSlideIndex)
+})
+</code></pre>
+<p>When a user presses <code>←</code>, we want to switch to the previous slide. We know the previous slide is <code>currentSlideIndex - 1</code>.</p>
+<pre><code class="language-js">contents.addEventListener('keydown', event =&gt; {
+  // ...
+  if (key === 'ArrowLeft') targetSlideIndex = currentSlideIndex - 1
+  switchSlides(currentSlideIndex, targetSlideIndex)
+})
+</code></pre>
+<p>The minimum value for <code>targetSlideIndex</code> is the index of the first slide (which is <code>0</code>). We need to make sure <code>targetSlideIndex</code> doesn’t exceed <code>0</code>.</p>
+<pre><code class="language-js">contents.addEventListener('keydown', event =&gt; {
+  // ...
+  if (key === 'ArrowLeft') targetSlideIndex = currentSlideIndex - 1
+  if (targetSlideIndex &lt; 0) targetSlideIndex = 0
+  switchSlides(currentSlideIndex, targetSlideIndex)
+})
+</code></pre>
+<p>After switching slides, we need to use the <code>focus</code> method to shift focus.</p>
+<pre><code class="language-js">contents.addEventListener('keydown', event =&gt; {
+  // ...
+  // Focus on the correct slide
+  const targetLink = slides[targetSlideIndex].querySelector('a')
+  targetLink.focus({ preventScroll: true })
+
+  // Fallback for preventScroll
+  setTimeout(() =&gt; {
+    contents.parentElement.scrollLeft = 0
+  }, 0)
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/accessible/arrow-focus.gif" alt="Users can still arrows to change slides. Focus still goes to the correct slide."></figure>
+<h3 id="announcing-slide-changes">Announcing slide changes</h3>
+<p>Sighted users can see a change happening when they click (or hit <code>Enter</code> on) a button. They can see the carousel move. But blind users can’t. We need to inform them of the change with a live region.</p>
+<p>Let’s start by creating a live region within the carousel.</p>
+<p>We’ll use an <code>alert</code> role because the information is important and time-sensitive. Users need feedback that something has changed.</p>
+<pre><code class="language-html">&lt;section class=&quot;carousel&quot; aria-label=&quot;Carousel&quot;&gt;
+  &lt;div role=&quot;alert&quot;&gt;&lt;/div&gt;
+  &lt;!-- ... --&gt;
+&lt;/section&gt;
+</code></pre>
+<p>This live region is only for screen readers. We’ll add an <code>sr-only</code> class to hide it from sighted users.</p>
+<pre><code class="language-html">&lt;section class=&quot;carousel&quot; aria-label=&quot;Carousel&quot;&gt;
+  &lt;div role=&quot;alert&quot; class=&quot;sr-only&quot;&gt;&lt;/div&gt;
+  &lt;!-- ... --&gt;
+&lt;/section&gt;
+</code></pre>
+<pre><code class="language-css">.sr-only {
+  position: absolute;
+  width: 1px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+}
+</code></pre>
+<p>For this carousel, let’s announce the selected slide when the user presses the previous or next button.</p>
+<pre><code class="language-js">const liveregion = carousel.querySelector('[role=&quot;alert&quot;]')
+
+const switchSlide = (currentSlideIndex, targetSlideIndex) =&gt; {
+
+  // Announce selected slide for screen reader users
+  liveregion.textContent = `Slide ${targetSlideIndex + 1} of ${slides.length} selected`
+}
+</code></pre>
+<p>Voiceover users would hear the slide live region perfectly:</p>
+<video controls>
+  <source src="../../images/components/carousel/accessible/liveregion.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/liveregion.mp4"> here </a> instead.
+</video>
+<p>Unfortunately, NVDA says “alert” if we use the <code>alert</code> role.</p>
+<video controls>
+  <source src="../../images/components/carousel/accessible/liveregion-nvda.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../404/index.html"> here </a> instead.
+</video>
+<p>This is more of a status change than an “alert”. The “alert” may throw users off. So we’ll switch to a <code>status</code> role with <code>aria-live</code> set to <code>assertive</code> instead.</p>
+<pre><code class="language-html">&lt;div role=&quot;status&quot; aria-live=&quot;assertive&quot; class=&quot;sr-only&quot;&gt;&lt;/div&gt;
+</code></pre>
+<pre><code class="language-js">const liveregion = carousel.querySelector('[role=&quot;status&quot;]')
+</code></pre>
+<video controls>
+  <source src="../../images/components/carousel/accessible/liveregion-nvda-assertive.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../404/index.html"> here </a> instead.
+</video>
+<h3 id="removing-visual-instructions">Removing visual instructions</h3>
+<p>If a sighted NVDA user uses our carousel, they may try to use <code>←</code> and <code>→</code> keys to switch slides. They’ll do this because we added instructions for them to do so.</p>
+<figure role="figure"><img src="../../images/components/carousel/accessible/instructions.png" alt="Instructions to use ← and → keys."></figure>
+<p>But we know NVDA users cannot use <code>←</code> and <code>→</code> keys to switch slides. We need to remove this set of instructions for NVDA users.</p>
+<p>Unfortunately, there’s no way to detect whether a user is using a screen reader, much less which screen reader they’re using. So we need to remove this set of instructions completely.</p>
+<pre><code class="language-html">&lt;!-- Remove this --&gt;
+&lt;div class=&quot;carousel__overlay&quot;&gt;
+  Use &amp;larr; and &amp;rarr; to switch slides.
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-css">/* Remove this */
+.carousel__overlay { /* ... */ }
+</code></pre>
+<figure role="figure"><img src="../../images/components/carousel/accessible/removed-instructions.png" alt="Removed overlay instructions."></figure>
+<p>Normal users and Voiceover users won’t know about <code>←</code> and <code>→</code> keys. They’ll have to discover the <code>←</code> and <code>→</code> shortcuts by themselves.</p>
+<p>This is okay because the <code>←</code> and <code>→</code> shortcuts are enhancements. It’s not critical for users to know about them.</p>
+<h2 id="navigating-with-%E2%80%9Cnext-item%E2%80%9D">Navigating with “Next Item”</h2>
+<p>Try navigating through a carousel with a screen reader’s “Next Item” command. The dots and slides will go out of sync.</p>
+<video controls>
+  <source src="../../images/components/carousel/accessible/next-item-outofsync.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/next-item-outofsync.mp4"> here </a> instead.
+</video>
+<p>This is normal.</p>
+<p>It happens because screen readers don’t send browsers any events when they use “Next Item”. As a result, browsers can’t send us events too.</p>
+<p>We can solve this sync issue by preventing screen readers from “hidden” slides. We can do by:</p>
+<ol>
+<li>Setting <code>aria-hidden=&quot;true&quot;</code> to other slides</li>
+<li>Setting <code>visibility: hidden</code> to other slides</li>
+</ol>
+<h3 id="setting-aria-hidden-to-other-slides">Setting aria-hidden to other slides</h3>
+<p>The first method is to set <code>aria-hidden=&quot;true&quot;</code> true to other slides. When slides change, we switch the <code>aria-hidden=&quot;true&quot;</code> property (like roving <code>tabindex</code>).</p>
+<p>This works on NVDA.</p>
+<video controls>
+  <source src="../../images/components/carousel/accessible/nvda-aria-hidden.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/nvda-aria-hidden.mp4"> here </a> instead.
+</video>
+<p>But there’s a bug on Safari. It shows the last slide.</p>
+<video controls>
+  <source src="../../images/components/carousel/accessible/aria-hidden.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/aria-hidden.mp4"> here </a> instead.
+</video>
+<p>Since <code>aria-hidden</code> doesn’t solve the problem completely, we’ll use the <code>visibility: hidden</code> method instead.</p>
+<h3 id="setting-visibility-hidden-to-other-slides">Setting visibility hidden to other slides</h3>
+<p>We can hide slides by adding <code>visibility: hidden</code> to them. We’ll only show the selected slide by changing <code>visibility</code> back to <code>visible</code>.</p>
+<pre><code class="language-css">.carousel__slide {
+  /* ... */
+  visibility: hidden;
+}
+
+.carousel__slide.is-selected {
+  /* ... */
+  visibility: visible;
+}
+</code></pre>
+<p>This works on NVDA and Voiceover.</p>
+<video controls>
+  <source src="../../images/components/carousel/accessible/visibility-hidden.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/visibility-hidden.mp4"> here </a> instead.
+</video>
+<p>However, it breaks the carousel’s transition animation slightly. It causes the outgoing slide to disappear before the animation is complete.</p>
+<video controls>
+  <source src="../../images/components/carousel/accessible/visibility-hidden-transition-1.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/visibility-hidden-transition-1.mp4"> here </a> instead.
+</video>
+<p>We can fix this by delaying the <code>visibility</code> transition.</p>
+<pre><code class="language-css">.carousel__slide {
+  /* ... */
+  visibility: hidden;
+  transition: visibility 0s 0.3s linear;
+}
+
+.carousel__slide.is-selected {
+  /* ... */
+  visibility: visible;
+  transition: visibility 0s 0s linear;
+}
+</code></pre>
+<video controls>
+  <source src="../../images/components/carousel/accessible/visibility-hidden-transition-2.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/visibility-hidden-transition-2.mp4"> here </a> instead.
+</video>
+<h3 id="removing-list-semantics">Removing list semantics</h3>
+<p>If you pay attention to NVDA’s message, you’ll notice NVDA says: “List with one item”. But when we switch slides, it says “Slide X of 3”.</p>
+<video controls>
+  <source src="../../images/components/carousel/accessible/nvda-list-semantics.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/nvda-list-semantics.mp4"> here </a> instead.
+</video>
+<p>This is confusing. What does the carousel contain? List items or slides?</p>
+<p>The best way to resolve this problem is to remove list semantics by setting <code>role</code> of the list to <code>presentation</code> or <code>none</code>. NVDA won’t say “List with one item” once we do this.</p>
+<pre><code class="language-html">&lt;ul role=&quot;presentation&quot; class=&quot;carousel__contents&quot;&gt; ... &lt;/ul&gt;
+</code></pre>
+<video controls>
+  <source src="../../images/components/carousel/accessible/nvda-list-semantics-removed.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/nvda-list-semantics-removed.mp4"> here </a> instead.
+</video>
+<h2 id="hiding-dots-from-screen-readers">Hiding dots from screen readers</h2>
+<p>Screen reader users can move through the slides with the Left and Right buttons. They don’t need to access dots at all.</p>
+<p>We can hide dots from screen readers by setting <code>aria-hidden</code> to <code>true</code>.</p>
+<pre><code class="language-js">function createDots (slides) {
+  const dotsContainer = document.createElement('div')
+  dotsContainer.classList.add('carousel__dots')
+  dotsContainer.setAttribute('aria-hidden', true)
+  // ...
+}
+</code></pre>
+<video controls>
+  <source src="../../images/components/carousel/accessible/hide-dots.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/hide-dots.mp4"> here </a> instead.
+</video>
+<h2 id="links-and-images">Links and images</h2>
+<p>There are two things in each slide:</p>
+<ol>
+<li>Links</li>
+<li>Images</li>
+</ol>
+<h3 id="links">Links</h3>
+<p>Each link should have an accessible name. This tells users where they will go to.</p>
+<p>Normally, the accessible name is the link’s text content. We don’t have text content in this case so create the accessible name with the title attribute.</p>
+<pre><code class="language-html">&lt;li class=&quot;carousel__slide is-selected&quot;&gt;
+  &lt;a href=&quot;...&quot; title=&quot;One&quot;&gt; ... &lt;/a&gt;
+&lt;/li&gt;
+&lt;li class=&quot;carousel__slide&quot;&gt;
+  &lt;a href=&quot;...&quot; tabindex=&quot;-1&quot; title=&quot;Universe&quot;&gt; ... &lt;/a&gt;
+&lt;/li&gt;
+&lt;li class=&quot;carousel__slide&quot;&gt;
+  &lt;a href=&quot;...&quot; tabindex=&quot;-1&quot; title=&quot;Learn JavaScript&quot;&gt; ... &lt;/a&gt;
+&lt;/li&gt;
+</code></pre>
+<video controls>
+  <source src="../../images/components/carousel/accessible/link.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/carousel/accessible/link.mp4"> here </a> instead.
+</video>
+<h3 id="images">Images</h3>
+<p>There are two kinds of images:</p>
+<ol>
+<li>Images that are meant to convey a message</li>
+<li>Decorative images</li>
+</ol>
+<p>If you have an image that conveys a message, you need to write an <code>alt</code> text for the image.</p>
+<p>If you have decorative images (no meaning to convey), you need to have an empty <code>alt</code> text.</p>
+<p>For this carousel, the images decorative images. That’s why I chose to leave the <code>alt</code> text empty.</p>
+<p>That’s it!</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../tabby-accessible-refactor/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Tabby: Refactor</span>
+            </a>
+          <a href="../roles-forms-and-application-mode/index.html" data-link-to="next-lesson">
+              <span>Roles that trigger Forms and Application modes</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /carousel-accessible/  Mon, 24 Jan 2022 10:06:11 GMT -->
+</html>

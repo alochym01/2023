@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /google-map-stopovers/  Mon, 24 Jan 2022 10:04:25 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Google Maps Clone: Adding stopovers | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Google Maps Clone: Adding stopovers</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Google Maps Clone: Adding stopovers</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/google-map/07.stopovers.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>Let’s say you want to travel to three places in Singapore. And you want to plot a route to all three places in the Google Maps clone.</p>
+<p>The three places we’re going to use are:</p>
+<ol>
+<li>The Singapore Zoo</li>
+<li>Gardens by the bay</li>
+<li>Sentosa</li>
+</ol>
+<p>To travel to three places, you use a feature in Google Maps called waypoints.</p>
+<h2 id="waypoints">Waypoints</h2>
+<p>A waypoint is an intermediate point between the start and end of a journey. Using our three locations as an example, the points are:</p>
+<ol>
+<li>Startpoint: Singapore Zoo</li>
+<li>Waypoint: Gardens by the bay</li>
+<li>Endpoint: Sentosa</li>
+</ol>
+<p>Google’s directions service lets you plot waypoints if you include a waypoints array. You can have up to 8 waypoints.</p>
+<pre><code class="language-js">const request = {
+  origin: '...',
+  destination: '...',
+  waypoints: [{/*...*/}],
+  travelMode: 'DRIVING'
+}
+</code></pre>
+<p>Each waypoint is an object that contains two properties:</p>
+<ol>
+<li><code>location</code>: The address of the place</li>
+<li><code>stopover</code>: This is a Boolean. If set to <code>true</code>, Google creates an intermediate point on the map. If set to <code>false</code>, Google plots a route that passes through this point.</li>
+</ol>
+<p>The request we need to travel to the three places I mentioned is:</p>
+<pre><code class="language-js">const request = {
+  origin: 'The Singapore Zoo',
+  destination: 'Sentosa',
+  waypoints: [{
+    location: 'Gardens by the bay',
+    stopover: true
+  }],
+  travelMode: 'DRIVING'
+}
+
+// Draw the directions
+getDirections(request)
+  .then(/*...*/)
+  .catch(/*...*/)
+</code></pre>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/waypoints.png" alt="Three points on the map"></figure>
+<p>Next, we want to add search boxes so users can search for directions with waypoints.</p>
+<h2 id="adding-search-boxes">Adding search boxes</h2>
+<p>We want to let users decide whether they want to travel to more locations. To do this, we’ll add a <code>&lt;button&gt;</code> that says “Add new endpoint” in the search panel.</p>
+<pre><code class="language-html">&lt;div class=&quot;search-panel__body&quot;&gt;
+  &lt;!-- ... --&gt;
+  &lt;div class=&quot;search-panel__actions&quot;&gt;
+    &lt;!-- ... --&gt;
+    &lt;button type=&quot;button&quot; class=&quot;secondary&quot; data-js=&quot;add-searchbox&quot;&gt;
+      + Add new endpoint
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/new-endpoint-button.png" alt="Button for adding a new endpoint."></figure>
+<p>When a user clicks on “add new endpoint”, we want to add a search box to the search panel. To do this, we add an event listener to the “add new endpoint” button.</p>
+<pre><code class="language-js">function initGoogleMap () {
+  // ...
+  const addSearchboxButton = searchPanel.querySelector('[data-js=&quot;add-searchbox&quot;]')
+
+  addSearchboxButton.addEventListener('click', event =&gt; {
+    // ...
+  })
+}
+</code></pre>
+<p>One way to add a search box is to write the HTML in JavaScript. You already know how to do this from the previous components, so we’re going to do something different.</p>
+<p>We’re going to clone a search box since there are already two of them in the HTML.</p>
+<p>To clone an element, we first need to find the element from the HTML. We can use any search box (but we’ll use the last one because it’s more convenient).</p>
+<pre><code class="language-js">addSearchboxButton.addEventListener('click', event =&gt; {
+  const searchBoxes = [...searchPanel.querySelectorAll('.search-box')]
+  const lastSearchBox = searchBoxes[searchBoxes.length - 1]
+})
+</code></pre>
+<p>We can clone an element with <code>cloneNode</code>. If we want to clone the entire element (with its contents), we need to pass <code>true</code> into <code>cloneNode</code>.</p>
+<pre><code class="language-js">addSearchboxButton.addEventListener('click', event =&gt; {
+  // ...
+  const clone = lastSearchBox.cloneNode(true)
+  console.log(clone)
+})
+</code></pre>
+<p>The cloned element has the same HTML as the original element.</p>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/cloned-element.png" alt="The cloned element"></figure>
+<p>We can add the cloned element into the DOM with <code>insertAdjacentElement</code>. <code>insertAdjacentElement</code> takes two arguments.</p>
+<pre><code class="language-js">element.insertAdjacentElement(location, elementToInsert)
+</code></pre>
+<p><code>location</code> can take four possible values:</p>
+<ul>
+<li><code>beforebegin</code></li>
+<li><code>afterbegin</code></li>
+<li><code>beforeend</code></li>
+<li><code>afterend</code></li>
+</ul>
+<pre><code class="language-html">&lt;!-- beforebegin --&gt;
+&lt;p&gt;
+  &lt;!-- afterbegin --&gt;
+  The quick brown fox jumps over the lazy dog
+  &lt;!-- beforeend --&gt;
+&lt;/p&gt;
+&lt;!-- afterend --&gt;
+</code></pre>
+<p>This is how we can use <code>insertAdjacentElement</code>:</p>
+<pre><code class="language-js">addSearchboxButton.addEventListener('click', event =&gt; {
+  // ...
+  lastSearchBox.insertAdjacentElement('afterend', clone)
+})
+</code></pre>
+<p>(If we don’t use <code>insertAdjacentElement</code>, we need to use <code>insertBefore</code>, which takes more work).</p>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/add-search-box.gif" alt="The cloned element"></figure>
+<h3 id="resetting-the-value">Resetting the value</h3>
+<p>If the user wrote some text into the last search box before clicking “Add new endpoint”, the search box we add will contain that text.</p>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/contains-text.gif" alt="Inserted search box has the same text as the previous search box"></figure>
+<p>This happens because <code>cloneNode(true)</code> clones everything, even the <code>value</code> inside the input.</p>
+<p>We need to reset any relevant details after cloning. In this case, we only need to reset the input value.</p>
+<pre><code class="language-js">addSearchboxButton.addEventListener('click', event =&gt; {
+  // ...
+  const input = clone.querySelector('input')
+  input.value = ''
+  // ...
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/no-more-text.gif" alt="Inserted search box is now empty."></figure>
+<h3 id="adding-google-autocomplete">Adding Google Autocomplete</h3>
+<p>Our new search box doesn’t trigger Google’s Autocomplete.</p>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/no-autocomplete.gif" alt="Search box doesn't trigger Google's Autocomplete."></figure>
+<p>It doesn’t trigger Google’s Autocomplete because we have not initialised an Autocomplete with the new search box.</p>
+<p>Let’s fix this by initializing the Autocomplete before we put the search box into the DOM.</p>
+<pre><code class="language-js">addSearchboxButton.addEventListener('click', event =&gt; {
+  // ...
+  const input = clone.querySelector('input')
+  const autocomplete = new google.maps.places.Autocomplete(input)
+  autocomplete.bindTo('bounds', map)
+
+  lastSearchBox.insertAdjacentElement('afterend', clone)
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/has-autocomplete.gif" alt="Inserted search box triggers Google's Autocomplete widget"></figure>
+<h3 id="maximum-number-of-search-boxes">Maximum number of search boxes</h3>
+<p>Google Maps lets you join up to 10 locations:</p>
+<ol>
+<li>1 startpoint</li>
+<li>8 waypoints</li>
+<li>1 endpoint</li>
+</ol>
+<p>We want to limit the number of search boxes so we don’t hit the <code>WAYPOINT LIMIT EXCEEDED</code> error. Here, we’ll limit search boxes to 10.</p>
+<p>To do this, we stop the user from creating extra search boxes once there are 10 search boxes in the DOM.</p>
+<pre><code class="language-js">addSearchboxButton.addEventListener('click', event =&gt; {
+  let searchBoxes = [...searchPanel.querySelectorAll('.search-box')]
+  if (searchBoxes.length &gt;= 10) return
+  // ...
+})
+</code></pre>
+<h2 id="deleting-search-boxes">Deleting search boxes</h2>
+<p>Users may want to reduce the number of waypoints, so we need to give them a way to delete search boxes. To let them delete search boxes, we need to add a delete button to each search box.</p>
+<pre><code class="language-html">&lt;div class=&quot;search-box&quot;&gt;
+  &lt;span class=&quot;search-box__stopover-icon&quot;&gt;&lt;/span&gt;
+  &lt;input type=&quot;search&quot; placeholder=&quot;Starting point&quot; /&gt;
+  &lt;button hidden type=&quot;button&quot; class=&quot;search-box__delete-icon&quot;&gt;
+    &lt;svg viewBox=&quot;0 0 20 20&quot;&gt;
+      &lt;use href=&quot;images/sprite.svg#delete&quot;&gt;&lt;/use&gt;
+    &lt;/svg&gt;
+  &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<p>We have two search boxes when the page loads. One for the origin, one for the destination. These search boxes are compulsory.</p>
+<p>We don’t want to let users delete any search boxes when there are only two search boxes left, so we’ll add a <code>hidden</code> attribute to the delete buttons.</p>
+<pre><code class="language-html">&lt;div class=&quot;search-box&quot;&gt;
+  &lt;!-- ... --&gt;
+  &lt;button hidden ... &gt; ... &lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+<h3 id="letting-users-delete-search-boxes">Letting users delete search boxes</h3>
+<p>There are more than 2 search boxes once we add a search box. When this happens, we want to let users delete search boxes.</p>
+<p>We can do this by removing the <code>hidden</code> attribute of all delete buttons.</p>
+<p>Note: After adding a search box into the DOM, we have to use <code>querySelectorAll</code> again to get the search boxes (because the DOM has changed). <code>querySelectorAll</code> doesn’t update automatically.</p>
+<pre><code class="language-js">// Adds new searchboxes
+addSearchboxButton.addEventListener('click', event =&gt; {
+  let searchBoxes = [...searchPanel.querySelectorAll('.search-box')]
+  // ...
+
+  // Lets users delete search box.
+  searchBoxes = [...searchPanel.querySelectorAll('.search-box')]
+  searchBoxes.forEach(searchBox =&gt; {
+    const deleteButton = searchBox.querySelector('button')
+    deleteButton.removeAttribute('hidden')
+  })
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/show-delete-button.gif" alt="Shows delete button when hovering over the search box."></figure>
+<h3 id="deleting-a-search-box">Deleting a search box</h3>
+<p>To delete a search box, we remove the search box from the DOM. Here, we can add an event listener to the search panel. (Using the event delegation pattern).</p>
+<pre><code class="language-js">searchPanel.addEventListener('click', event =&gt; {
+  // ...
+})
+</code></pre>
+<p>First, we want to check if the user clicked a delete button. If they did not click a delete button, we bail from the function.</p>
+<pre><code class="language-js">searchPanel.addEventListener('click', event =&gt; {
+  const deleteButton = event.target.closest('.search-box__delete-icon')
+  if (!deleteButton) return
+})
+</code></pre>
+<p>To remove the search box, we need to find the search box. We can find it with <code>parentElement</code>. Then, we can delete the search box with <code>removeChild</code>.</p>
+<pre><code class="language-js">searchPanel.addEventListener('click', event =&gt; {
+  // ...
+  const searchBox = deleteButton.parentElement
+  const searchBoxParent = searchBox.parentElement
+
+  searchBoxParent.removeChild(searchBox)
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/delete-search-box.gif" alt="Deletes the third search box."></figure>
+<h3 id="deleting-google-autocomplete-predictions">Deleting Google Autocomplete predictions</h3>
+<p>Each <code>input</code> element comes with their own Google Autocomplete predictions. As you can see in this GIF below, when you add a search box, the number of <code>.pac-container</code> increases by one.</p>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/pac-container-1.gif" alt="Google Autocomplete creates a .pac-container div when you initialize the Autocomplete."></figure>
+<ul>
+<li>The first <code>.pac-container</code> is for the first search box</li>
+<li>The second <code>.pac-container</code> is for the second search box</li>
+<li>And so on</li>
+</ul>
+<p>We can remove the <code>.pac-container</code> if we know the <code>index</code> of the search box.</p>
+<pre><code class="language-js">searchPanel.addEventListener('click', event =&gt; {
+  // ...
+  const searchBox = deleteButton.parentElement
+  const searchBoxParent = searchBox.parentElement
+  const searchBoxes = [...searchPanel.querySelectorAll('.search-box')]
+  const index = searchBoxes.findIndex(sb =&gt; sb === searchBox)
+  const googleAutocomplete = document.querySelectorAll('.pac-container')[index]
+
+  searchBoxParent.removeChild(searchBox)
+  document.body.removeChild(googleAutocomplete)
+  // ...
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/delete-autocomplete.gif" alt="Deletes the Google autocomplete that's bound to the search box."></figure>
+<h3 id="correcting-placeholders">Correcting placeholders</h3>
+<p>If you delete the first search box, you’ll end up with two endpoints. This isn’t ideal.</p>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/remove-searchbox-placeholder.gif" alt="Two search boxes with 'Ending Point' placeholders."></figure>
+<p>We always want the first search box to be “Starting Point”. And the last search box to be “Ending Point”. Here we have to use <code>querySelectorAll</code> to get the search boxes again since the DOM was changed.</p>
+<pre><code class="language-js">searchBoxes = [...searchPanel.querySelectorAll('.search-box')]
+searchBoxes[0].querySelector('input').placeholder = 'Starting point'
+</code></pre>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/remove-searchbox-placeholder-fixed.gif" alt="First search box always says 'Starting Poing'."></figure>
+<p>If you want to, try making the middle search boxes say “Waypoints” as an exercise.</p>
+<h3 id="ensuring-there-are-two-search-boxes.">Ensuring there are two search boxes.</h3>
+<p>We need to have two search boxes for the Google Maps clone. We don’t want to let users delete search boxes if there are only two in the search panel.</p>
+<p>We’ll hide the delete buttons if there are only two search boxes left.</p>
+<pre><code class="language-js">searchPanel.addEventListener('click', event =&gt; {
+  // ...
+  if (searchBoxes.length &lt;= 2) {
+    searchBoxes.forEach(searchBox =&gt; {
+      const deleteButton = searchBox.querySelector('button')
+      deleteButton.setAttribute('hidden', true)
+    })
+  }
+})
+</code></pre>
+<h2 id="drawing-the-route">Drawing the route</h2>
+<p>The UI work is done. What’s left is to:</p>
+<ol>
+<li>Get information from the search panel</li>
+<li>Change the information to what Google’s Directions Service needs</li>
+<li>Send the request</li>
+</ol>
+<p>Here, we need to get the address from each search box. We’ll first get all the search boxes.</p>
+<pre><code class="language-js">searchPanel.addEventListener('submit', event =&gt; {
+  event.preventDefault()
+  const searchBoxes = [...searchPanel.querySelectorAll('.search-box')]
+})
+</code></pre>
+<p>We know this:</p>
+<ol>
+<li>The first search box is the origin</li>
+<li>The last search box is the destination</li>
+</ol>
+<p>We can create a <code>request</code> object from these two search boxes first.</p>
+<pre><code class="language-js">searchPanel.addEventListener('submit', event =&gt; {
+  // ...
+  const request = {
+    origin: searchBoxes[0].querySelector('input').value.trim(),
+    destination: searchBoxes[searchBoxes.length - 1].querySelector('input').value.trim(),
+    travelMode: 'DRIVING'
+  }
+})
+</code></pre>
+<p>If there are more than two search boxes, we know there are waypoints. We need to add a <code>waypoints</code> property into the <code>request</code> object.</p>
+<pre><code class="language-js">searchPanel.addEventListener('submit', event =&gt; {
+  // ...
+  if (searchBoxes.length &gt; 2) {
+    // Add waypoints property to request object
+  }
+})
+</code></pre>
+<p>Here we know the search boxes in the middle are all waypoints. We can use <code>slice</code> to grab these search boxes.</p>
+<pre><code class="language-js">searchPanel.addEventListener('submit', event =&gt; {
+  // ...
+  if (searchBoxes.length &gt; 2) {
+    const waypoints = searchBoxes.slice(1, searchBoxes.length - 1)
+  }
+})
+</code></pre>
+<p>We need to change each <code>waypoint</code> to be an object with two properties: <code>location</code> and <code>stopover</code>. We can use <code>map</code> to construct the object.</p>
+<pre><code class="language-js">searchPanel.addEventListener('submit', event =&gt; {
+  // ...
+  if (searchBoxes.length &gt; 2) {
+    const waypoints = searchBoxes.slice(1, searchBoxes.length - 1)
+      .map(waypoint =&gt; {
+        return {
+          location: waypoint.querySelector('input').value.trim(),
+          stopover: true
+        }
+      })
+  }
+})
+</code></pre>
+<p>Then, we add waypoints to the request object.</p>
+<pre><code class="language-js">searchPanel.addEventListener('submit', event =&gt; {
+  // ...
+  if (searchBoxes.length &gt; 2) {
+    // ...
+    request.waypoints = waypoints
+  }
+})
+</code></pre>
+<p>After creating the waypoints, we’ll draw directions.</p>
+<pre><code class="language-js">searchPanel.addEventListener('submit', event =&gt; {
+  // ...
+  getDirections(request)
+    .then(/*...*/)
+    .catch(/*...*/)
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/google-map/waypoints/drawn.png" alt="Directions drawn."></figure>
+<p>That’s it!</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../google-map-handle-errors/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Google Maps Clone: Handling errors</span>
+            </a>
+          <a href="../google-map-refactor/index.html" data-link-to="next-lesson">
+              <span>🛠️ Google Maps Clone: Refactor</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /google-map-stopovers/  Mon, 24 Jan 2022 10:04:29 GMT -->
+</html>

@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /accordion-animation/  Mon, 24 Jan 2022 10:02:15 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠 Accordion: Animations | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="starter"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠 Accordion: Animations</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠 Accordion: Animations</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/accordion/04.animation.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>Here’s what you’ll get by the end of this lesson:</p>
+<figure role="figure"><img src="../../images/components/accordion/animation/animated.gif" alt="Animated accordion."></figure>
+<p>Let’s start with the most important lesson of all.</p>
+<h2 id="don%E2%80%99t-use-display-none">Don’t use display none</h2>
+<p><strong>You cannot animate an element if you hide it with <code>display: none</code>.</strong> The <code>display</code> property cannot be animated. Since <code>display</code> cannot be animated, <strong>we need a different way to hide the content.</strong></p>
+<p>First, we’ll remove <code>display: none</code> from the CSS code.</p>
+<pre><code class="language-css">/* remove these properties */
+.accordion__content {
+  display: none;
+}
+
+.accordion.is-open .accordion__content {
+  display: grid;
+}
+</code></pre>
+<p>There are many ways to hide content. For example you can:</p>
+<ul>
+<li>Push it off the screen (like Off-canvas menu)</li>
+<li>Make it invisible (like Modal)</li>
+</ul>
+<p>In this case, <strong>we will animate the <code>height</code> property.</strong> Animating <code>height</code> causes jank, but there are no other methods for animating an accordion.</p>
+<p>First, we need to set <code>height</code> to zero.</p>
+<pre><code class="language-css">.accordion__content {
+  height: 0;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/spill.png" alt="Accordion spills over when height is set to zero."></figure>
+<p>And we have a problem. What we have looks broken:</p>
+<ol>
+<li>We can see a bit of the contents when the accordion is closed.</li>
+<li>The contents spill out of the accordion for “Beef”.</li>
+</ol>
+<p>Contents actually spill out of every accordion. You only see contents spill out of “Beef” because I set <code>position: relative</code> to <code>.accordion</code>. If you remove the <code>position: relative</code> from <code>.accordion</code>, here’s what you’ll see.</p>
+<figure role="figure"><img src="../../images/components/accordion/animation/spill-2.png" alt="Every accordion has contents that spill out of their  containers."></figure>
+<p>To understand why this happens, we need to take a detour into CSS.</p>
+<h2 id="calculating-height-(and-width)">Calculating Height (and Width)</h2>
+<p>In CSS, every element is drawn with the CSS Box Model. The Box Model contains four things:</p>
+<ol>
+<li>The content itself</li>
+<li>Padding</li>
+<li>Border</li>
+<li>Margin</li>
+</ol>
+<figure role="figure"><img src="../../images/components/accordion/animation/box-model.png" alt="The box model"></figure>
+<p>Normally, <strong><code>height</code> values are calculated based on the <code>box-sizing</code> property</strong>:</p>
+<ul>
+<li>If you set <code>box-sizing</code> to <code>content-box</code> (it’s a default value), <code>height</code> is the height of the content only</li>
+<li>If you set <code>box-sizing</code> to <code>border-box</code>, <code>height</code> is the height of the content + any paddings and borders you have</li>
+</ul>
+<p>To make things simpler, I’m going to explain the problem with <code>height</code> in terms of <code>box-sizing: border-box</code> from this point onwards.</p>
+<figure role="figure"><img src="../../images/components/accordion/animation/border-box-sizing.png" alt="Border box sizing."></figure>
+<p><strong>Calculations for <code>height</code> change if you set <code>height</code> explicitly</strong>:</p>
+<ol>
+<li>If <code>height</code> is more than padding + border, <code>height</code> will be the value you set.</li>
+<li>If <code>height</code> is less than padding + border, browsers will set <code>height</code> to padding + border.</li>
+</ol>
+<p>This makes more sense if we explain with an example. Let’s say you have the following HTML.</p>
+<pre><code class="language-html">&lt;div class=&quot;box&quot;&gt;
+  &lt;p&gt;The quick brown fox jumps over the lazy dog&lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+<p>You set the <code>box-sizing</code> property to <code>border-box</code>. You also add a <code>background-color</code> to the box.</p>
+<pre><code class="language-css">.box {
+  box-sizing: border-box;
+  background-color: orange;
+}
+</code></pre>
+<p>This is what you will see. In this case, the total <code>height</code> is the height of the content (118px).</p>
+<figure role="figure"><img src="../../images/components/accordion/animation/height-content.png" alt="Height of the content."></figure>
+<p>Let’s add a padding of 50px and border of 50px to the box. <code>height</code> of the box will be 318px. (50px + 50px + 118px + 50px + 50px).</p>
+<pre><code class="language-css">.box {
+  box-sizing: border-box;
+  background-color: orange;
+  padding: 50px;
+  border: 50px solid brown;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/height-padding-border.png" alt="Height of the box with padding and border."></figure>
+<p>If you set <code>height</code> to a value larger than padding + border, <code>height</code> will be the actual value you set.</p>
+<p>In this case, I set <code>height</code> to 500px. Content expands to 300px so height of content + padding + border equals to 500px.</p>
+<pre><code class="language-css">.box {
+  box-sizing: border-box;
+  background-color: orange;
+  padding: 50px;
+  border: 50px solid brown;
+  height: 500px;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/height-extra.png" alt="Content expands to fill up extra height."></figure>
+<p>If you set <code>height</code> to a value smaller than padding + border, <code>height</code> will be padding + border.</p>
+<p>In this case, I set <code>height</code> to 100px. But the computed <code>height</code> of the box is actually 200px.</p>
+<pre><code class="language-css">.box {
+  box-sizing: border-box;
+  background-color: orange;
+  padding: 50px;
+  border: 50px solid brown;
+  height: 100px;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/height-smaller.png" alt="Stated height is lesser than computed height."></figure>
+<p>Here, content does not have any height at all. It is 0px tall.</p>
+<p>You can still see the content because browsers set <code>overflow</code> to <code>visible</code> by default. This means: when content is smaller than it’s allocated amount, allow content to flow <em>outside</em> of the box and be <em>visible</em>.</p>
+<p>You can see the content even if you set height, padding and border to 0.</p>
+<pre><code class="language-css">.box {
+  box-sizing: border-box;
+  background-color: orange;
+  padding: 0;
+  border: none;
+  height: 0;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/all-zero.png" alt="Content shows up even though height, padding and border are set to zero."></figure>
+<p>If you want to hide content that flows outside the box, you need to set <code>overflow</code> to <code>hidden</code>.</p>
+<pre><code class="language-css">.box {
+  box-sizing: border-box;
+  background-color: orange;
+  padding: 0;
+  border: none;
+  height: 0;
+  overflow: hidden;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/all-zero-hidden.png" alt="Content outside of the box gets hidden with overflow: hidden."></figure>
+<p>But here’s a strange thing with <code>padding</code>. If the box has padding, any content within the padding area is  considered to be part of the box. <code>overflow: hidden</code> does not hide this part.</p>
+<pre><code class="language-css">.box {
+  box-sizing: border-box;
+  background-color: orange;
+  padding: 50px;
+  border: none;
+  height: 0;
+  overflow: hidden
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/overflow-padding.png" alt="Overflow: hidden does not hide the part inside padding."></figure>
+<p>In case you were wondering, <code>overflow: hidden</code> hides the part inside <code>border</code>.</p>
+<pre><code class="language-css">.box {
+  box-sizing: border-box;
+  background-color: orange;
+  padding: 0px;
+  border: 50px solid brown;
+  height: 0;
+  overflow: hidden
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/overflow-border.png" alt="Overflow: hidden hides the part inside border."></figure>
+<h2 id="fixing-the-height-issue">Fixing the height issue</h2>
+<p>If you want to hide contents with <code>height</code>, you need to set <code>height</code>, <code>padding</code>, and <code>border</code> to zero. You also need to set <code>overflow</code> to <code>hidden</code>.</p>
+<p>In this case, we don’t have border, so we only need to set <code>height</code> and <code>padding</code> to zero.</p>
+<pre><code class="language-css">.accordion__content {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.accordion.is-open .accordion__content {
+  height: auto;
+  padding-right: 3em;
+  padding-bottom: 1.5em;
+  padding-left: 3em;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/closed.png" alt="No more spillage!"></figure>
+<p>But this solution is undesirable.</p>
+<p>Why?</p>
+<p>If you animate the accordion with this solution, you need to animate both <code>height</code> and <code>padding</code> properties. Both <code>height</code> and <code>padding</code> cause jank. Animating one of them is bad enough. Animating both of them at the same time will make the animation lag.</p>
+<p>We want to reduce jank as much as we can. The ideal solution here is to animate <code>height</code> only.</p>
+<p>If we want to animate only <code>height</code>, we need to adjust the HTML. Here, we can wrap the contents inside another <code>&lt;div&gt;</code>. We can put <code>padding</code> inside this <code>&lt;div&gt;</code>, so <code>.accordion__content</code> does not contain any more padding.</p>
+<pre><code class="language-html">&lt;div class=&quot;accordion__content&quot;&gt;
+  &lt;div class=&quot;accordion__inner&quot;&gt;
+    &lt;!-- The contents --&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Here are the required CSS changes:</p>
+<pre><code class="language-css">/* Remove this */
+.accordion__content {
+  display: grid;
+  grid-template-columns: 7.5em 1fr;
+  grid-column-gap: 1.5em;
+  align-items: center;
+  padding-right: 3em;
+  padding-bottom: 1.5em;
+  padding-left: 3em;
+}
+
+.accordion.is-open .accordion__content {
+  height: auto;
+}
+</code></pre>
+<pre><code class="language-css">/* Replace with this */
+.accordion__content {
+  height: 0;
+  overflow: hidden;
+}
+
+.accordion.is-open .accordion__content {
+  height: auto;
+}
+
+.accordion__inner {
+  display: grid;
+  grid-template-columns: 7.5em 1fr;
+  grid-column-gap: 1.5em;
+  align-items: center;
+  padding-right: 3em;
+  padding-bottom: 1.5em;
+  padding-left: 3em;
+}
+</code></pre>
+<p><strong>Quick Tip:</strong> You often need to rewrite the HTML to create animations. I wanted to show you this process so you don’t beat yourself up when you encounter the same problem!</p>
+<h2 id="animating-height">Animating height</h2>
+<p><code>height</code> can be animated, but you cannot animate <code>height</code> property to <code>auto</code>.</p>
+<pre><code class="language-css">.accordion__content {
+  transition: height 0.3s ease-out;
+}
+
+.accordion.is-open .accordion__content {
+  height: auto;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/open-no-animate.gif" alt="No animation occurs."></figure>
+<p>You can only animate <code>height</code> if you set a specific value:</p>
+<pre><code class="language-css">.accordion.is-open .accordion__content {
+  height: 200px;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/transition-inaccurate.gif" alt="Animating height from 0px to 200px"></figure>
+<p>If you want to animate height, you need to use JavaScript to find (and set) the correct height for each accordion.</p>
+<h2 id="getting-the-correct-height">Getting the correct height</h2>
+<p>We can get the <code>height</code> of an element with <code>getBoundingClientRect</code>, but we need to know which element to get the height from.</p>
+<p>In this case, we want to get <code>height</code> from <code>.accordion__inner</code>. The <code>height</code> remains accurate even if we set <code>height</code> on <code>.accordion__content</code> to zero.</p>
+<pre><code class="language-css">.accordion__content {
+  height: 0;
+}
+
+.accordion.is-open .accordion__content {
+   /* Don't set any height property here yet  */
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/size.gif" alt="The difference in height between accordion__content and accordion__inner."></figure>
+<p>To get the <code>height</code> from <code>.accordion__inner</code>, you need to traverse the DOM to find <code>.accordion__inner</code>.</p>
+<p>Here, we know <code>.accordion__content</code> is the next element from <code>.accordion__header</code>. We also know  <code>.accordion__inner</code> is the first element inside  <code>.accordion__content</code>.</p>
+<pre><code class="language-js">accordionContainer.addEventListener('click', event =&gt; {
+  const accordionHeader = event.target.closest('.accordion__header')
+  if (accordionHeader) {
+    // ...
+    const accordionContent = accordionHeader.nextElementSibling
+    const accordionInner = accordionContent.children[0]
+  }
+})
+</code></pre>
+<p>We can get the height with <code>getBoundingClientRect</code>.</p>
+<pre><code class="language-js">accordionContainer.addEventListener('click', event =&gt; {
+  const accordionHeader = event.target.closest('.accordion__header')
+  if (accordionHeader) {
+    // ...
+    const accordionContent = accordionHeader.nextElementSibling
+    const accordionInner = accordionContent.children[0]
+    const height = accordionInner.getBoundingClientRect().height
+  }
+})
+</code></pre>
+<h2 id="setting-the-correct-height">Setting the correct height</h2>
+<p>You can change <code>height</code> by setting the <code>height</code> property with JavaScript. Remember to add <code>px</code> because JavaScript <code>height</code> from <code>getBoundingClientRect</code> is a pixel value.</p>
+<pre><code class="language-js">accordionContainer.addEventListener('click', event =&gt; {
+  const accordionHeader = event.target.closest('.accordion__header')
+  if (accordionHeader) {
+    // ...
+
+    const accordionContent = accordionHeader.nextElementSibling
+    const accordionInner = accordionContent.children[0]
+    const height = accordionInner.getBoundingClientRect().height
+
+    accordionContent.style.height = height + 'px'
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/opening.gif" alt="Opening the accordion with animation."></figure>
+<h2 id="closing-the-accordion">Closing the accordion</h2>
+<p>To close the accordion, you need to set <code>height</code> back to zero. You need to do this because styles set by JavaScript are inline-styles. And inline styles have a higher specificity compared to a class in CSS.</p>
+<p>Here, you use an <code>if</code> statement to check whether the accordion is currently open.</p>
+<ul>
+<li>If the accordion is open, you need to close the accordion, so you set <code>height</code> to 0</li>
+<li>If the accordion is closed, you need to open the accordion, so you set <code>height</code> to the value you got from <code>getBoundingClientRect</code></li>
+</ul>
+<pre><code class="language-js">accordionContainer.addEventListener('click', event =&gt; {
+  const accordionHeader = event.target.closest('.accordion__header')
+  if (accordionHeader) {
+	  // ...
+
+    if (accordion.classList.contains('is-open')) {
+      accordionContent.style.height = height + 'px'
+    } else {
+      accordionContent.style.height = 0
+    }
+  }
+})
+</code></pre>
+<p><strong>Important note:</strong> The code above works only if <code>classList.toggle</code> comes after it.</p>
+<pre><code class="language-js">// This works
+if (accordion.classList.contains('is-open')) {
+  accordionContent.style.height = 0
+  } else {
+  accordionContent.style.height = height + 'px'
+}
+
+accordion.classList.toggle('is-open')
+</code></pre>
+<pre><code class="language-js">// This does not work
+accordion.classList.toggle('is-open')
+
+if (accordion.classList.contains('is-open')) {
+  accordionContent.style.height = 0
+  } else {
+  accordionContent.style.height = height + 'px'
+}
+</code></pre>
+<p>Why? Because <code>classList.toggle</code> changes the HTML when you use it.</p>
+<pre><code class="language-js">// Let's say accordion has `is-open` now
+
+accordion.classList.toggle('is-open')
+
+// aaccordion does not have `is-open` anymore. It was removed by classList.toggle.
+</code></pre>
+<p>To make the code clearer, you can calculate <code>height</code> upfront first.</p>
+<pre><code class="language-js">let height
+
+if (accordion.classList.contains('is-open')) {
+  height = 0
+} else {
+  height = accordionInner.getBoundingClientRect().height
+}
+
+accordion.classList.toggle('is-open')
+accordionContent.style.height = height + 'px'
+</code></pre>
+<figure role="figure"><img src="../../images/components/accordion/animation/closing.gif" alt="Closing the accordion with animation."></figure>
+<p>In short, <strong>follow this general rule of thumb: Change the DOM only at the end</strong> (after you calculated everything you need).</p>
+<h2 id="a-little-aside">A little aside</h2>
+<p>Remember to remove <code>is-open</code> from the HTML. We should start with the accordion closed.</p>
+<pre><code class="language-html">&lt;div class=&quot;accordion is-open&quot;&gt; ... &lt;/div&gt;
+&lt;div class=&quot;accordion&quot;&gt; ... &lt;/div&gt;
+&lt;div class=&quot;accordion&quot;&gt; ... &lt;/div&gt;
+&lt;div class=&quot;accordion&quot;&gt; ... &lt;/div&gt;
+</code></pre>
+<p>Note: If you want to start with accordions opened, you need to calculate <code>height</code> when the page loads.</p>
+<h2 id="wrapping-up">Wrapping up</h2>
+<p>Three things:</p>
+<ol>
+<li><strong>When you animate height, you create Jank</strong>. Sometimes there’s no choice. Either you animate or you don’t.</li>
+<li><strong>Animate 1 property if you can</strong>. Don’t animate 2 (or more) properties that cause Jank.</li>
+<li><strong>You might need to change the HTML to create smooth animations</strong>. If this is required, go for it.</li>
+</ol>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../modal-with-gsap/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠 Modal: Wave hand animation with JavaScript (using GSAP)</span>
+            </a>
+          <a href="../carousel-animation/index.html" data-link-to="next-lesson">
+              <span>🛠 Carousel: Animations</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /accordion-animation/  Mon, 24 Jan 2022 10:02:20 GMT -->
+</html>

@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /dom-traversals/  Mon, 24 Jan 2022 10:01:33 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>DOM Traversals | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="starter"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>DOM Traversals</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>DOM Traversals</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>Let’s say you want to go to your neighbor’s house. What’s the fastest and most efficient way to get there?</p>
+<ol>
+<li>Move from your house to their house (since you already know their address)</li>
+<li>Lookup their address on Google maps, then walk according to the directions Google gives you</li>
+</ol>
+<p>If you move directly from your house to their house, you’re doing the equivalent of traversing the DOM—selecting one element from a neighboring element.</p>
+<p>If you lookup their address on Google, you’re doing the equivalent of <code>document.querySelector</code> to find elements.</p>
+<p>Can you guess which method is more efficient?</p>
+<pre><code class="language-html">&lt;div class=&quot;neighborhood&quot;&gt;
+  &lt;div class=&quot;your-house&quot;&gt;😎&lt;/div&gt;
+  &lt;div class=&quot;neighbor-house&quot;&gt;🎉&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>You probably know the answer—it’s always easier to move from an element to another (compared do doing a full search). That’s why we traverse the DOM.</p>
+<p>You can traverse in three directions:</p>
+<ol>
+<li>Downwards</li>
+<li>Sideways</li>
+<li>Upwards</li>
+</ol>
+<h2 id="traversing-downwards">Traversing downwards</h2>
+<p>There are three ways to traverse downwards:</p>
+<ol>
+<li><code>querySelector</code> or <code>querySelectorAll</code></li>
+<li><code>children</code></li>
+<li><code>firstElementChild</code></li>
+</ol>
+<h3 id="queryselector-or-queryselectorall">querySelector or querySelectorAll</h3>
+<p>To traverse downwards from a specific element, you can use <code>element.querySelector</code> or <code>element.querySelectorAll</code>. You already know this.</p>
+<p>If we put <code>element.querySelector</code> into the house analogy, we search for a specific room in your house. It’s faster than searching for the same room from outer space (the document).</p>
+<pre><code class="language-html">&lt;div class=&quot;component&quot;&gt;
+  &lt;h2 class=&quot;component__title&quot;&gt;Component title&lt;/h2&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-js">const component = document.querySelector('.component')
+const title = component.querySelector('.component__title')
+
+console.log(title) // &lt;h2 class=&quot;component__title&quot;&gt; ... &lt;/h2&gt;
+</code></pre>
+<h3 id="children">children</h3>
+<p><code>children</code> is a property that lets you select direct descendants (elements that are immediately nested in another element). It returns a HTML Collection that updates when children elements are changed.</p>
+<p>Note: HTML Collections are <a href="../selecting-multiple-elements/index.html#live-vs-non-live-collections">live collections</a></p>
+<pre><code class="language-html">&lt;ul class=&quot;list&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="language-js">const list = document.querySelector('.list')
+const listItems = list.children
+
+console.log(listItems)
+</code></pre>
+<figure>
+  <img src="../../images/dom-basics/traversal/children.png" alt="Selecting all list items with the children property">
+  <figcaption>Selecting all list items with the children property</figcaption>
+</figure>
+<p>A HTML Collection is a list of HTML Elements. A NodeList is a list of nodes. You can say that a HTML Collection is a subset of a NodeList.</p>
+<p>Functions wise, HTML Collections don’t have the <code>forEach</code> method. If you want to loop over a HTML Collection with <code>forEach</code>, you need to convert it into an array with <code>Array.from</code>.</p>
+<pre><code class="language-js">const array = Array.from(HTMLCollection)
+array.forEach(el =&gt; { /* do whatever you want */})
+</code></pre>
+<h3 id="selecting-a-specific-child">Selecting a specific child</h3>
+<p>You can select the nth-item in the list from both NodeLists (result from <code>querySelectorAll</code>) and HTML Collections (result from <code>children</code>). To do so, you use the index of the element, just like how you select a specific item from an Array.</p>
+<pre><code class="language-html">&lt;ul class=&quot;list&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="language-js">const listItems = document.querySelectorAll('li')
+
+const firstItem = listItems[0]
+const secondItem = listItems[1]
+const thirdItem = listItems[2]
+const fourthItem = listItems[3]
+const fifthItem = listItems[4]
+
+console.log(firstItem)
+console.log(secondItem)
+console.log(thirdItem)
+console.log(fourthItem)
+console.log(fifthItem)
+</code></pre>
+<figure>
+  <img src="../../images/dom-basics/traversal/specific-child.png" alt="Select a specific child with [index]">
+  <figcaption>Select a specific child with [index]</figcaption>
+</figure>
+<p>Try the above code with a HTML Collection. You’ll get the same result.</p>
+<h3 id="firstelementchild">firstElementChild</h3>
+<p>You can select the first element with <code>children</code> like this:</p>
+<pre><code class="language-html">&lt;ul class=&quot;list&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="language-js">const list = document.querySelectorAll('li')
+const firstItem = list[0]
+</code></pre>
+<p>You can also select the first element with <code>firstElementChild</code>.</p>
+<pre><code class="language-js">const list = document.querySelector('.list')
+const firstItem = list.firstElementChild
+</code></pre>
+<h2 id="traversing-upwards">Traversing upwards</h2>
+<p>There are two ways to traverse upwards:</p>
+<ol>
+<li><code>parentElement</code></li>
+<li><code>closest</code></li>
+</ol>
+<h3 id="parentelement">parentElement</h3>
+<p><code>parentElement</code> is a property that lets you select the parent element. The parent element is the element that encloses the current element.</p>
+<p>In the following HTML, <code>.list</code> is the parent element of all <code>&lt;li&gt;</code>. Each <code>&lt;li&gt;</code> is the parent element of their respective <code>&lt;a&gt;</code>.</p>
+<pre><code class="language-html">&lt;ul class=&quot;list&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="language-js">const firstListItem = document.querySelector('li')
+const list = firstListItem.parentElement
+
+console.log(list)
+// &lt;ul class=&quot;list&quot;&gt;...&lt;/ul&gt;
+</code></pre>
+<h3 id="closest">closest</h3>
+<p><code>parentElement</code> is great for selecting one level upwards. To find an element that can be multiple levels above the current element, you use the <code>closest</code> method.</p>
+<p><code>closest</code> lets you select the closest ancestor element that matches a selector. Here’s the syntax:</p>
+<pre><code class="language-js">const closestAncestor = Element.closest(selector)
+</code></pre>
+<p>As you may suspect, <code>selector</code> is the same <code>selector</code> you pass to <code>querySelector</code> and <code>querySelectorAll</code>.</p>
+<p>In the following HTML, you can select <code>.list</code> from the <code>&lt;a&gt;</code> effortlessly with <code>Element.closest</code>:</p>
+<pre><code class="language-html">&lt;ul class=&quot;list&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="language-js">const firstLink = document.querySelector('a')
+const list = firstLink.closest('.list')
+
+console.log(list)
+// &lt;ul class=&quot;list&quot;&gt; ... &lt;/ul&gt;
+</code></pre>
+<p>Note: <code>closest</code> <strong>starts searching from the current element</strong>, then proceeds upwards until it reaches the <code>document</code>. It stops and returns the first element it finds.</p>
+<pre><code class="language-js">const firstLink = document.querySelector('a')
+const firstLinkThroughClosest = firstLink.closest('a')
+
+console.log(firstLinkThroughClosest)
+// &lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;
+</code></pre>
+<p><code>closest</code> is pretty new. It doesn’t work on IE Edge 14 and below. It doesn’t work on Opera mini too. If you need to support older browsers, you may want to use a <a href="https://github.com/jonathantneal/closest">polyfill</a>.</p>
+<h2 id="traversing-sideways">Traversing sideways</h2>
+<p>There are three ways to traverse sideways:</p>
+<ol>
+<li><code>nextElementSibling</code></li>
+<li><code>previousElementSibling</code></li>
+<li>Combining <code>parentElement</code>, <code>children</code>, and <code>index</code></li>
+</ol>
+<h3 id="nextelementsibling">nextElementSibling</h3>
+<p>You can select the next element with <code>nextElementSibling</code>.</p>
+<pre><code class="language-js">const nextElem = Node.nextElementSibling
+</code></pre>
+<pre><code class="language-html">&lt;ul class=&quot;list&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="language-js">const firstListItem = document.querySelector('li')
+const secondListItem = firstListItem.nextElementSibling
+
+console.log(secondListItem)
+// &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+<h3 id="previouselementsibling">previousElementSibling</h3>
+<p>Likewise, you can select the previous element with <code>previousElementSibling</code>.</p>
+<pre><code class="language-html">&lt;ul class=&quot;list&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<pre><code class="language-js">const secondListItem = document.querySelectorAll('li')[1]
+const firstListItem = secondListItem.previousElementSibling
+
+console.log(firstListItem)
+// &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+<h3 id="combining-parentelement%2C-children%2C-and-index">Combining parentElement, children, and index</h3>
+<p>This method lets you select a specific sibling. It’s easier to explain how it works with an example, so let’s do that. Say you want to select the fourth item from the first item in this HTML.</p>
+<pre><code class="language-html">&lt;ul class=&quot;list&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 5&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>You already have the first item:</p>
+<pre><code class="language-js">const firstItem = document.querySelector('li')
+</code></pre>
+<p>To select the fourth item, you can use <code>firstItem.parentElement</code> to get the list, then <code>list.children</code> to get a HTML Collection. Once you have the HTML Collection, you can find the fourth item by using a index of 3. (Remember, zero-based index!).</p>
+<pre><code class="language-js">const firstItem = document.querySelector('li')
+const list = firstItem.parentElement
+const allItems = list.children
+const fourthItem = allItems[3]
+
+console.log(fourthItem)
+// &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+<p>Putting everything together in one step:</p>
+<pre><code class="language-js">const firstITem = document.querySelector('li')
+const fourthItem = firstITem.parentElement.children[3]
+
+console.log(fourthItem)
+// &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Link 4&lt;/a&gt;&lt;/li&gt;
+</code></pre>
+<h2 id="wrapping-up">Wrapping up</h2>
+<p>You learned how to traverse the DOM in three directions—downwards, upwards, and sideways—in this lesson. Here’s a quick bullet point to summarize the methods you learned:</p>
+<ol>
+<li>Traversing downwards
+<ol>
+<li><code>element.querySelector</code></li>
+<li><code>element.querySelectorAll</code></li>
+<li><code>element.children</code></li>
+</ol>
+</li>
+<li>Traversing upwards
+<ol>
+<li><code>element.parentElement</code></li>
+<li><code>element.closest</code></li>
+</ol>
+</li>
+<li>Traversing sideways
+<ol>
+<li><code>element.nextElementSibling</code></li>
+<li><code>element.previousElementSibling</code></li>
+<li>Combine <code>parentElement</code>, <code>children</code>, and <code>index</code></li>
+</ol>
+</li>
+</ol>
+<h2 id="exercise">Exercise</h2>
+<p>Practice traversing the DOM with the methods taught in this lesson. With the HTML given below, do these tasks:</p>
+<ol>
+<li>Select <code>.characters</code> with <code>document.querySelector</code></li>
+<li>Select <code>.humans</code> from <code>.characters</code></li>
+<li>Select all humans with <code>querySelectorAll</code>, starting from <code>.humans</code></li>
+<li>Select all hobbits with <code>children</code></li>
+<li>Select the Merry (the hobbit)</li>
+<li>Select <code>.elves</code> from Merry</li>
+<li>Select Glorfindel from <code>.elves</code></li>
+<li>Select Elrond from Glorfindel</li>
+<li>Select Legolas from Glorfindel</li>
+<li>Select the <code>.characters</code> div from Nazgûl</li>
+</ol>
+<pre><code class="language-html">&lt;div class=&quot;characters&quot;&gt;
+  &lt;ul class=&quot;hobbits&quot;&gt;
+    &lt;li&gt;Frodo Baggins&lt;/li&gt;
+    &lt;li&gt;Samwise &quot;Sam&quot; Gamgee&lt;/li&gt;
+    &lt;li&gt;Meriadoc &quot;Merry&quot; Brandybuck&lt;/li&gt;
+    &lt;li&gt;Peregrin &quot;Pippin&quot; Took&lt;/li&gt;
+    &lt;li&gt;Bilbo Baggins&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class=&quot;humans&quot;&gt;
+    &lt;li&gt;Gandalf&lt;/li&gt;
+    &lt;li&gt;Saruman&lt;/li&gt;
+    &lt;li&gt;Aragorn&lt;/li&gt;
+    &lt;li&gt;Boromir&lt;/li&gt;
+    &lt;li&gt;Faramir&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class=&quot;elves&quot;&gt;
+    &lt;li&gt;Legolas&lt;/li&gt;
+    &lt;li&gt;Glorfindel&lt;/li&gt;
+    &lt;li&gt;Elrond&lt;/li&gt;
+    &lt;li&gt;Arwen Evenstar&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;ul class=&quot;enemies&quot;&gt;
+    &lt;li&gt;Sauron&lt;/li&gt;
+    &lt;li&gt;Nazgûl&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre>
+</article>
+  </div>
+
+
+    <section class="longform" data-js="answers">
+      <p></p>
+      <button data-type="primary">Show answers</button>
+      <div>
+        <h2 id="answers">Answers</h2>
+<ul>
+<li>Select <code>.characters</code> with <code>document.querySelector</code></li>
+</ul>
+<pre><code class="language-javascript">const characters = document.querySelector('.characters')
+</code></pre>
+<ul>
+<li>Select <code>.humans</code> from <code>.characters</code></li>
+</ul>
+<pre><code class="language-javascript">const humansList = characters.querySelector('.humans')
+</code></pre>
+<ul>
+<li>Select all humans with <code>querySelectorAll</code>, starting from <code>.humans</code></li>
+</ul>
+<pre><code class="language-javascript">const humans = humansList.querySelectorAll('li')
+</code></pre>
+<ul>
+<li>Select all hobbits with <code>children</code></li>
+<li>Select the Merry (the hobbit)</li>
+</ul>
+<pre><code class="language-javascript">const hobbitsList = characters.querySelector('.hobbits')
+const hobbits = hobbitsList.children
+const merry = hobbits[2]
+</code></pre>
+<ul>
+<li>Select <code>.elves</code> from Merry</li>
+</ul>
+<pre><code class="language-javascript">const elvesList = merry.parentElement.nextElementSibling.nextElementSibling
+</code></pre>
+<ul>
+<li>Select Glorfindel from <code>.elves</code></li>
+</ul>
+<pre><code class="language-javascript">const glorfindel = elvesList.children[1]
+</code></pre>
+<ul>
+<li>Select Elrond from Glorfindel</li>
+</ul>
+<pre><code class="language-javascript">const elrond = glorfindel.nextElementSibling
+</code></pre>
+<ul>
+<li>Select Legolas from Glorfindel</li>
+</ul>
+<pre><code class="language-javascript">const legolas = glorfindel.previousElementSibling
+</code></pre>
+<ul>
+<li>Select the <code>.characters</code> div from Nazgûl</li>
+</ul>
+<pre><code class="language-javascript">const nazgul = document.querySelector('.enemies').chlidren[1]
+const characters = nazgul.closest('.characters')
+</code></pre>
+
+      </div>
+    </section>
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../element-size-and-position/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Finding an element&#39;s size and position</span>
+            </a>
+          <a href="../building-tabby/index.html" data-link-to="next-lesson">
+              <span>🛠 Tabby: Building Tabby (A Tabbed component)</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /dom-traversals/  Mon, 24 Jan 2022 10:01:34 GMT -->
+</html>

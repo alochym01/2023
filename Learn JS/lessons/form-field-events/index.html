@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /form-field-events/  Mon, 24 Jan 2022 10:03:10 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Form fields and their events | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>Form fields and their events</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>Form fields and their events</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>Three types of fields are commonly used to build websites and web applications. We’ll be covering the first two in this lesson. They are:</p>
+<ol>
+<li>Input</li>
+<li>Textarea</li>
+<li>Select</li>
+</ol>
+<h2 id="input">Input</h2>
+<p>Input fields are the most versatile amongst the three types. They can be used to collect all sorts of information.</p>
+<p>If you want to collect text information, you’ll set the input’s type to <code>text</code>.</p>
+<pre><code class="language-html">&lt;label for=&quot;username&quot;&gt;Username&lt;/label&gt;
+&lt;input type=&quot;text&quot; name=&quot;username&quot; id=&quot;username&quot; /&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/input.png" alt="Example of a text input">
+  <figcaption aria-hidden>Example of a text input</figcaption>
+</figure>
+<p>Other types of text-related input types that are well supported across browsers include:</p>
+<ol>
+<li>Email</li>
+<li>Number</li>
+<li>Password</li>
+<li>Tel</li>
+<li>Search</li>
+<li>Url</li>
+</ol>
+<p>Different types of input gives you different effects. For example, if you set <code>type=&quot;password&quot;</code>, browsers will automatically hide the text entered by users:</p>
+<pre><code class="language-html">&lt;label for=&quot;password&quot;&gt;Password &lt;/label&gt;
+&lt;input type=&quot;password&quot; name=&quot;password&quot; id=&quot;password&quot;&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/input-password.png" alt="A password field with text masked as dots">
+  <figcaption>Browsers mask password values automatically</figcaption>
+</figure>
+<p>If you set <code>type=&quot;tel&quot;</code>, browsers will launch a keypad instead of the standard keyboard on most mobile phones:</p>
+<pre><code class="language-html">&lt;label for=&quot;phone-number&quot;&gt;Phone number: &lt;/label&gt;
+&lt;input type=&quot;tel&quot; name=&quot;phone-number&quot; id=&quot;phone-number&quot;&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/input-tel.jpg" alt="Mobile browsers show a keypad when you set type to tel">
+  <figcaption aria-hidden>Mobile browsers show a keypad when you set type to tel</figcaption>
+</figure>
+<p>If you set <code>type=&quot;email&quot;</code> or <code>type=&quot;url&quot;</code>, browsers will automatically check if the entered values are valid email or url strings.</p>
+<pre><code class="language-html">&lt;label for=&quot;email&quot;&gt;Email address: &lt;/label&gt;
+&lt;input type=&quot;email&quot; name=&quot;email&quot; id=&quot;email&quot;&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/input-email.png" alt="Text entered in field is 123123, a popup box shows up and tells the user to enter a valid email address">
+  <figcaption>Browsers validate email addresses if type is set to email</figcaption>
+</figure>
+<pre><code class="language-html">&lt;label for=&quot;url&quot;&gt;Website: &lt;/label&gt;
+&lt;input id=&quot;url&quot; name=&quot;url&quot; type=&quot;url&quot;&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/input-url.png" alt="Text entered in field is 123123, a popup box shows up and tells the user to enter a valid url">
+  <figcaption>Browsers validate urls automatically if type is set to url</figcaption>
+</figure>
+<p>You can safely use most input types to collect textual information. If a browser does not support the type you specified, it will revert to <code>type=&quot;text&quot;</code> automatically.</p>
+<p>(Note: For a list of all available input types, visit <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input">MDN’s input reference</a>)</p>
+<h3 id="getting-values-from-textual-input-elements">Getting values from textual input elements</h3>
+<p>To get the value from an <code>&lt;input&gt;</code>, you can use the <code>value</code> property.</p>
+<pre><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;text&quot; value=&quot;Hello world!&quot;&gt;
+</code></pre>
+<pre><code class="language-js">const input = document.querySelector('input')
+console.log(input.value) // Hello world!
+</code></pre>
+<p>You want to remove unnecessary whitespace from the start and end of the any value you obtain from a text field. To do so, you use the <code>trim</code> method that’s available for all strings.</p>
+<pre><code class="language-html">&lt;input type=&quot;text&quot; name=&quot;text&quot; value=&quot;    Hello world!     &quot;&gt;
+</code></pre>
+<pre><code class="language-js">console.log(input.value) // &quot;    Hello world!    &quot;
+console.log(input.value.trim()) // &quot;Hello world!&quot;
+</code></pre>
+<h3 id="input-events">Input events</h3>
+<p>You can listen to four types of events for input fields:</p>
+<ol>
+<li><code>input</code></li>
+<li><code>focus</code> or <code>focusin</code></li>
+<li><code>blur</code> or <code>focusout</code></li>
+<li><code>change</code></li>
+</ol>
+<p><code>input</code> fires whenever a user types information into the field.</p>
+<pre><code class="language-js">input.addEventListener('input', e =&gt; {
+  console.log(e.target.value)
+})
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/input-event-input.gif" alt="GIF that logs the input value">
+  <figcaption>`input` fires whenever a user types information into the field</figcaption>
+</figure>
+<p><code>focus</code> and <code>focusin</code> fires whenever a user activates a field, either by tabbing into it or by clicking on it. The difference between these two events is: <code>focusin</code> bubbles but <code>focus</code> doesn’t.</p>
+<pre><code class="language-js">input.addEventListener('focus', e =&gt; {
+  console.log(`Focus on! Value is: ${e.target.value}`)
+})
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/input-event-focus.gif" alt="GIF that logs the input value on focus">
+  <figcaption>`focus` fires whenever a user activates a field</figcaption>
+</figure>
+<p><code>focusout</code> and <code>blur</code> activate when a field loses focus. The difference between these two events is: <code>focusout</code> bubbles but <code>blur</code> doesn’t.</p>
+<pre><code class="language-js">input.addEventListener('blur', e =&gt; {
+  console.log(`Focus off! Value is: ${e.target.value}`)
+})
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/input-event-blur.gif" alt="GIF that logs the input value on blur">
+  <figcaption>`blur` fires whenever a user leaves a field</figcaption>
+</figure>
+<p><code>change</code> fires whenever a value is committed by a user. They’re often used for other types of form fields, like checkboxes, radio buttons and select elements. For a text field, <code>change</code> acts the same way as <code>focusout</code> or <code>blur</code>.</p>
+<h2 id="checkboxes">Checkboxes</h2>
+<p>You use checkboxes if you want to let users toggle between on and off states. To create a checkbox, you use an input element with <code>type</code> set to <code>checkbox</code>.</p>
+<pre><code class="language-html">&lt;input type=&quot;checkbox&quot;&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/checkbox.png" alt="Example of a checkbox">
+  <figcaption aria-hidden>Example of a checkbox</figcaption>
+</figure>
+<p>Checkboxes require labels, or they wouldn’t make sense.</p>
+<pre><code class="language-html">&lt;input type=&quot;checkbox&quot; name=&quot;checkbox&quot; id=&quot;checkbox&quot;&gt;
+&lt;label for=&quot;checkbox&quot;&gt;Label for the checkbox&lt;/label&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/checkbox-label.png" alt="A label next to a checkbox">
+  <figcaption>You tell a user what the checkbox is for through a label</figcaption>
+</figure>
+<p>Checkboxes are often used in tandem with other checkboxes. When you use them this way, make sure you use different <code>name</code> attributes for each checkbox.</p>
+<pre><code class="language-html">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+  &lt;p&gt;Do you like these fruits?&lt;/p&gt;
+
+  &lt;div class=&quot;checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;apple&quot; id=&quot;apple&quot;&gt;
+    &lt;label for=&quot;apple&quot;&gt;🍎 Apples&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;grape&quot; id=&quot;grape&quot;&gt;
+    &lt;label for=&quot;grape&quot;&gt;🍇 Grapes&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;checkbox&quot;&gt;
+    &lt;input type=&quot;checkbox&quot; name=&quot;lemon&quot; id=&quot;lemon&quot;&gt;
+    &lt;label for=&quot;lemon&quot;&gt;🍋 Lemons&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/checkbox-multiple.png" alt="Three checkboxes in a column, first two are checked">
+  <figcaption>Checkboxes are often used together</figcaption>
+</figure>
+<h3 id="getting-values-from-checkboxes">Getting values from checkboxes</h3>
+<p>You can get the value of a checkbox with the <code>value</code> property.</p>
+<pre><code class="language-html">&lt;input type=&quot;checkbox&quot; name=&quot;checkbox&quot; id=&quot;checkbox&quot; value=&quot;Have I been checked?&quot;&gt;
+&lt;label for=&quot;checkbox&quot;&gt;Label for the checkbox&lt;/label&gt;
+</code></pre>
+<pre><code class="language-js">const checkbox = document.querySelector('input')
+console.log(checkbox.value) // Have I been checked?
+</code></pre>
+<p>If <code>value</code> is not set, <code>value</code> will default to <code>on</code>.</p>
+<pre><code class="language-html">&lt;input type=&quot;checkbox&quot; name=&quot;checkbox&quot; id=&quot;checkbox&quot;&gt;
+&lt;label for=&quot;checkbox&quot;&gt;Label for the checkbox&lt;/label&gt;
+</code></pre>
+<pre><code class="language-js">const checkbox = document.querySelector('input')
+console.log(checkbox.value) // on
+</code></pre>
+<h3 id="selecting-checked-checkboxes">Selecting checked checkboxes</h3>
+<p>Checkboxes that are selected will have the <code>checked</code> attribute. You can select them through <code>querySelector</code> with the <code>:checked</code> pseudo class, through the <code>checked</code> property, or through the <code>hasAttribute</code> method.</p>
+<figure>
+  <img src="../../images/forms/types/checkbox-multiple-select.png" alt="Three checkboxes in a column, first two are checked">
+  <figcaption>Let's say you have two items checked</figcaption>
+</figure>
+<pre><code class="language-js">// Selecting checked checkboxes through querySelector
+const checkedCheckboxes = document.querySelectorAll('input:checked')
+
+console.log(checkedCheckboxes) // NodeList(2) [input#apple, input#grape]
+</code></pre>
+<pre><code class="language-js">// Selecting checked checkboxes through the checked property
+const checkboxes = Array.from(document.querySelectorAll('input'))
+const checkedCheckboxes = checkboxes.filter(checkbox =&gt; checkbox.checked)
+
+console.log(checkedCheckboxes) // [input#apple, input#grape]
+</code></pre>
+<pre><code class="language-js">// Selecting checked checkboxes through hasAttribute
+const checkboxes = Array.from(document.querySelectorAll('input'))
+const checkedCheckboxes = checkboxes.filter(checkbox =&gt; checkbox.hasAttribute('checked'))
+
+console.log(checkedCheckboxes) // [input#apple, input#grape]
+</code></pre>
+<h3 id="checkbox-events">Checkbox events</h3>
+<p>You can listen to one event on checkboxes—<code>change</code>. <code>change</code> fires whenever a checkbox gets checked or unchecked. Note: you can use an event delegation pattern since <code>change</code> bubbles.</p>
+<pre><code class="language-js">form.addEventListener('change', e =&gt; {
+  const checkbox = e.target
+  console.log(checkbox.checked)
+})
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/checkbox-event-change.gif" alt="GIF that logs the checked attribute of three checkboxes when they are checked or unchecked">
+  <figcaption>`change` fires when a checkbox gets checked or unchecked</figcaption>
+</figure>
+<h2 id="radio-buttons">Radio buttons</h2>
+<p>Radio buttons are used when you want a user to select one option from many options. To create a radio button, you use an <code>&lt;input&gt;</code> element with <code>type=&quot;radio&quot;</code>.</p>
+<pre><code class="language-html">&lt;input type=&quot;radio&quot;&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/radio.png" alt="A radio button without labels">
+  <figcaption aria-hidden>A radio button</figcaption>
+</figure>
+<p>Like checkboxes, radio buttons require labels or they wouldn’t make sense.</p>
+<pre><code class="language-html">&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;radio&quot;&gt;
+&lt;label for=&quot;radio&quot;&gt;Label for the radio&lt;/label&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/radio-labelled.png" alt="A radio button with a label">
+  <figcaption aria-hidden>A radio button with a label</figcaption>
+</figure>
+<p>Radio buttons are always used together with other radio buttons. A single radio button doesn’t make sense. When you use multiple radio buttons, make sure all radio buttons have the same <code>name</code> property.</p>
+<p>You will need a <code>value</code> attribute for every radio button if you want to pass the selected radio value to the backend.</p>
+<pre><code class="language-html">&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+  &lt;p&gt;Select your favorite fruit&lt;/p&gt;
+
+  &lt;div class=&quot;radio&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;fav-fruit&quot; id=&quot;apple&quot; value=&quot;apple&quot;&gt;
+    &lt;label for=&quot;apple&quot;&gt;🍎 Apple&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;radio&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;fav-fruit&quot; id=&quot;grape&quot; value=&quot;grape&quot;&gt;
+    &lt;label for=&quot;grape&quot;&gt;🍇 Grape&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;radio&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;fav-fruit&quot; id=&quot;lemon&quot; value=&quot;lemon&quot;&gt;
+    &lt;label for=&quot;lemon&quot;&gt;🍋 Lemon&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;radio&quot;&gt;
+    &lt;input type=&quot;radio&quot; name=&quot;fav-fruit&quot; id=&quot;none&quot; value=&quot;none&quot;&gt;
+    &lt;label for=&quot;none&quot;&gt;😝 None of the above&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/radio-multiple.png" alt="four radio buttons">
+  <figcaption>Radio buttons come as a group</figcaption>
+</figure>
+<h3 id="getting-values-from-radio-buttons">Getting values from radio buttons</h3>
+<p>You can get the value of a radio button with the <code>value</code> property. Note: You can use an event delegation pattern since <code>change</code> bubbles.</p>
+<pre><code class="language-html">&lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;radio&quot; value=&quot;The best (only) radio channel in the world&quot;&gt;
+&lt;label for=&quot;radio&quot;&gt;Label for the radio&lt;/label&gt;
+</code></pre>
+<pre><code class="language-js">const radio = document.querySelector('input')
+console.log(radio.value) // The best (only) radio channel in the world
+</code></pre>
+<h3 id="the-selected-radio">The selected radio</h3>
+<p>The selected radio button will have the <code>checked</code> attribute. You can select it through <code>querySelector</code> with the <code>:checked</code> pseudo class, through the <code>checked</code> property or through the <code>hasAttribute</code> method.</p>
+<figure>
+  <img src="../../images/forms/types/radio-selected.png" alt="Four radio buttons, grape is selected">
+  <figcaption>Grape is selected</figcaption>
+</figure>
+<pre><code class="language-js">// Selecting checked radio through querySelector
+const checkedRadios = document.querySelector('input:checked')
+console.log(checkedRadios) // &lt;input id=&quot;grape&quot; name=&quot;grape&quot; ... &gt;
+</code></pre>
+<pre><code class="language-js">// Selecting checked radios through the checked property
+const radios = Array.from(document.querySelectorAll('input'))
+const radio = radios.find(radio =&gt; radio.checked)
+
+console.log(radio) // &lt;input id=&quot;grape&quot; name=&quot;grape&quot; ... &gt;
+</code></pre>
+<pre><code class="language-js">// Selecting checked radios through `hasAttribute`
+const radios = Array.from(document.querySelectorAll('input'))
+const radio = radios.find(radio =&gt; radio.hasAttribute('checked'))
+
+console.log(radio) // &lt;input id=&quot;grape&quot; name=&quot;grape&quot; ... &gt;
+</code></pre>
+<h3 id="radio-events">Radio events</h3>
+<p>You can listen to one event on radio buttons—<code>change</code>. <code>change</code> fires whenever a radio button gets selected.</p>
+<pre><code class="language-js">const radios = document.querySelectorAll('input')
+
+radios.addEventListener('change', e =&gt; {
+  if (e.target.checked) {
+    console.log(e.target.value)
+  }
+})
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/radio-event-change.gif" alt="Radios get selected one after another, console logs the value of the select radio">
+  <figcaption>`change` fires when a radio button gets selected</figcaption>
+</figure>
+<h2 id="textarea">Textarea</h2>
+<p>Textareas are used to gather large amounts of textual information. They look like this:</p>
+<pre><code class="language-html">&lt;label for=&quot;long-text&quot;&gt;Enter some text: &lt;/label&gt;
+&lt;textarea name=&quot;long-text&quot; id=&quot;long-text&quot;&gt;&lt;/textarea&gt;
+</code></pre>
+<figure>
+  <img src="../../images/forms/types/textarea.png" alt="Example of a textarea">
+  <figcaption aria-hidden>Example of a textarea</figcaption>
+</figure>
+<h3 id="getting-values-from-textarea">Getting values from textarea</h3>
+<p>You can get the value of a <code>&lt;textarea&gt;</code> through the <code>value</code> property. When you do so, make sure you run <code>trim</code> on the value.</p>
+<pre><code class="language-html">&lt;label for=&quot;long-text&quot;&gt;Enter some text: &lt;/label&gt;
+&lt;textarea name=&quot;long-text&quot; id=&quot;long-text&quot; value=&quot;    something goes here     &quot;&gt;&lt;/textarea&gt;
+</code></pre>
+<pre><code class="language-js">const textarea = document.querySelector('textarea')
+console.log(textarea.value.trim()) // something goes here
+</code></pre>
+<h3 id="textarea-events">Textarea events</h3>
+<p>You can listen to the event as text-based input elements. They are</p>
+<ol>
+<li><code>input</code></li>
+<li><code>focus</code></li>
+<li><code>focusout</code></li>
+<li><code>blur</code></li>
+<li><code>change</code></li>
+</ol>
+<p>Refer to the <a href="#input-events">input events section</a> for an explanation for what each event does.</p>
+<h2 id="wrapping-up">Wrapping up</h2>
+<p>Three types of fields are commonly used to build websites. They are:</p>
+<ol>
+<li>Input</li>
+<li>Textarea</li>
+<li>Select menu</li>
+</ol>
+<p>When you work with <code>&lt;input&gt;</code> elements, make sure to use the correct <code>type</code> attribute.</p>
+<h2 id="exercise">Exercise</h2>
+<ol>
+<li>Create a text field
+<ol>
+<li>Get the value of the field when the <code>input</code> event occurs</li>
+<li>Get the value of the field when the <code>focus</code> event occurs</li>
+<li>Get the value of the field when <code>focusout</code> or <code>blur</code> events occur</li>
+</ol>
+</li>
+<li>Create five checkboxes
+<ol>
+<li>Check three of the five checkboxes</li>
+<li>Get checked checkboxes with JavaScript</li>
+<li>Get checked checkboxes when the <code>change</code> event fires</li>
+</ol>
+</li>
+<li>Create five radio buttons
+<ol>
+<li>Select a radio button</li>
+<li>Get the value of the selected radio</li>
+<li>Get the value of the selected radio when the <code>change</code> event fires</li>
+</ol>
+</li>
+<li>Create a textarea
+<ol>
+<li>Get the value of the textarea when the <code>input</code> event occurs</li>
+<li>Get the value of the textarea when the <code>focus</code> event occurs</li>
+<li>Get the value of the textarea when <code>focusout</code> or <code>blur</code> events occur</li>
+</ol>
+</li>
+</ol>
+</article>
+  </div>
+
+
+    <section class="longform" data-js="answers">
+      <p></p>
+      <button data-type="primary">Show answers</button>
+      <div>
+        <h2 id="answers">Answers</h2>
+<ul>
+<li>Create a text field
+<ol>
+<li>Get the value of the field when the <code>input</code> event occurs</li>
+<li>Get the value of the field when the <code>focus</code> event occurs</li>
+<li>Get the value of the field when <code>focusout</code> or <code>blur</code> events occur</li>
+</ol>
+</li>
+</ul>
+<pre><code class="language-html">&lt;input type=&quot;text&quot; /&gt;
+</code></pre>
+<pre><code class="language-javascript">const input = document.querySelector('input')
+input.addEventListener('input', ev =&gt; {
+  console.log(ev.target.value)
+})
+
+input.addEventListener('focus', ev =&gt; {
+  console.log(ev.target.value)
+})
+
+input.addEventListener('blur', ev =&gt; {
+  console.log(ev.target.value)
+})
+</code></pre>
+<ul>
+<li>
+<p>Create five checkboxes</p>
+<ol>
+<li>Check three of the five checkboxes</li>
+<li>Get checked checkboxes with JavaScript</li>
+<li>Get checked checkboxes when the <code>change</code> event fires</li>
+</ol>
+</li>
+</ul>
+<pre><code class="language-html">&lt;input type=&quot;checkbox&quot; name=&quot;checkbox1&quot; value=&quot;1&quot; checked /&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;checkbox2&quot; value=&quot;2&quot; /&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;checkbox3&quot; value=&quot;3&quot; /&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;checkbox4&quot; value=&quot;4&quot; checked /&gt;
+&lt;input type=&quot;checkbox&quot; name=&quot;checkbox5&quot; value=&quot;5&quot; checked /&gt;
+</code></pre>
+<pre><code class="language-javascript">// Getting checked checkboxes
+const checkboxes = [...document.querySelectorAll('input')]
+const checkedCheckboxes = checkboxes.filter(checkbox =&gt; checkbox.checked)
+console.log(checkedCheckboxes)
+</code></pre>
+<pre><code class="language-javascript">// Get all checked checkbox when change fires
+document.addEventListener('change', ev =&gt; {
+  const checkboxes = [...document.querySelectorAll('input')]
+  const checkedCheckboxes = checkboxes.filter(checkbox =&gt; checkbox.checked)
+  console.log(checkedCheckboxes)
+})
+</code></pre>
+<ul>
+<li>Create five radio buttons
+<ol>
+<li>Select a radio button</li>
+<li>Get the value of the selected radio</li>
+<li>Get the value of the selected radio when the <code>change</code> event fires</li>
+</ol>
+</li>
+</ul>
+<pre><code class="language-html">&lt;div class=&quot;radio&quot;&gt;
+  &lt;label for=&quot;r1&quot;&gt;Radio 1&lt;/label&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;r1&quot; value=&quot;r1&quot; checked /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio&quot;&gt;
+  &lt;label for=&quot;r2&quot;&gt;Radio 2&lt;/label&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;r2&quot; value=&quot;r2&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio&quot;&gt;
+  &lt;label for=&quot;r3&quot;&gt;Radio 3&lt;/label&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;r3&quot; value=&quot;r3&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio&quot;&gt;
+  &lt;label for=&quot;r4&quot;&gt;Radio 4&lt;/label&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;r4&quot; value=&quot;r4&quot; /&gt;
+&lt;/div&gt;
+&lt;div class=&quot;radio&quot;&gt;
+  &lt;label for=&quot;r5&quot;&gt;Radio 5&lt;/label&gt;
+  &lt;input type=&quot;radio&quot; name=&quot;radio&quot; id=&quot;r5&quot; value=&quot;r5&quot; /&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">// Getting the value of the seleced radio
+const checkedRadio = document.querySelector('input[checked]')
+const value = checkedRadio.value
+console.log(value) // r1
+</code></pre>
+<pre><code class="language-javascript">// Get the value of the selected radio when the `change` event fires
+document.addEventListener('change', ev =&gt; {
+  const checkedRadio = document.querySelector('input[checked]')
+  const value = checkedRadio.value
+  console.log(value)
+})
+</code></pre>
+<ul>
+<li>Create a textarea
+<ol>
+<li>Get the value of the textarea when the <code>input</code> event occurs</li>
+<li>Get the value of the textarea when the <code>focus</code> event occurs</li>
+<li>Get the value of the textarea when <code>focusout</code> or <code>blur</code> events occur</li>
+</ol>
+</li>
+</ul>
+<pre><code class="language-html">&lt;textarea&gt; &lt;/textarea&gt;
+</code></pre>
+<pre><code class="language-javascript">const textarea = document.querySelector('textarea')
+textarea.addEventListener('input', ev =&gt; {
+  console.log(ev.target.value)
+})
+
+textarea.addEventListener('focus', ev =&gt; {
+  console.log(ev.target.value)
+})
+
+textarea.addEventListener('blur', ev =&gt; {
+  console.log(ev.target.value)
+})
+</code></pre>
+
+      </div>
+    </section>
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../get-form-fields/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Selecting form fields with JavaScript</span>
+            </a>
+          <a href="../sanitize-output/index.html" data-link-to="next-lesson">
+              <span>Sanitize your output</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /form-field-events/  Mon, 24 Jan 2022 10:03:15 GMT -->
+</html>

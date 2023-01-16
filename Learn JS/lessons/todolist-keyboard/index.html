@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /todolist-keyboard/  Mon, 24 Jan 2022 10:05:25 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Todolist: Keyboard | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Todolist: Keyboard</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Todolist: Keyboard</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/todolist/15.keyboard.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>We can create a few keyboard shortcuts for the Todolist. Here’s what we’re going to do:</p>
+<ol>
+<li>Allow users to select a task with <code>↑</code> and <code>↓</code> keys</li>
+<li>Press <code>Super</code> + <code>Enter</code> to check a task</li>
+<li>Press <code>Super</code> + <code>Backspace</code> to delete a task</li>
+<li>Press <code>Delete</code> to delete a task</li>
+<li>Press <code>n</code> to focus on the new task field</li>
+</ol>
+<h2 id="selecting-a-task-with-%E2%86%91-and-%E2%86%93-keys">Selecting a task with ↑ and ↓ keys</h2>
+<p>Let’s assume the Todolist is the only app on the webpage. If this is the case, we can create two global keyboard shortcuts:</p>
+<ol>
+<li>User press <code>↓</code>: Selects first task (if no tasks were selected)</li>
+<li>User press <code>↑</code>: Selects last task (if no tasks were selected)</li>
+</ol>
+<p>We need to use the <code>focus</code> method to select a task. Here, we need to add the <code>tabindex</code> attribute to each task.</p>
+<pre><code class="language-js">const makeTaskElement = ({ id, name, done, state = 'loaded' }) =&gt; {
+  // ...
+  const taskElement = document.createElement('li')
+  taskElement.classList.add('task')
+  // Adds tabindex attribute
+  taskElement.setAttribute('tabindex', -1)
+  // ...
+})
+</code></pre>
+<p>Since we’re creating global keyboard shortcuts, we should listen to the <code>document.</code></p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+})
+</code></pre>
+<p>We only want to act if the user press on Up or Down arrow keys.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  const { key } = event
+  if (key === 'ArrowUp' || key === 'ArrowDown') {
+    // ...
+  }
+})
+</code></pre>
+<p>If a user does not have focus on a task, and they press down, we want to select the first task.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (key === 'ArrowUp' || key === 'ArrowDown') {
+    const tasks = [...taskList.children]
+    const firstTask = tasks[0]
+
+    if (!event.target.closest('.task')) {
+      if (key === 'ArrowDown') {
+        firstTask.focus()
+      }
+    }
+  }
+})
+</code></pre>
+<p>We can bail from the callback once we focus on the first task. Here, we can use an early return to prevent code from executing further.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (key === 'ArrowUp' || key === 'ArrowDown') {
+    // ...
+    if (!event.target.closest('.task')) {
+      if (key === 'ArrowDown') return firstTask.focus()
+    }
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/down-global.gif" alt="Presses down. Selects first task."></figure>
+<p>Likewise, if the user does not have focus on a task, and they press up, we want to select the last task.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (key === 'ArrowUp' || key === 'ArrowDown') {
+    // ...
+    const lastTask = tasks[tasks.length - 1]
+    if (!event.target.closest('.task')) {
+      // ...
+      if (key === 'ArrowUp') return lastTask.focus()
+    }
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/up-global.gif" alt="Presses up. Selects last task."></figure>
+<h3 id="selecting-the-previous%2Fnext-task">Selecting the previous/next task</h3>
+<p>If the user has their focus on a task, we want to let them select the previous or next task with up and down arrow keys.</p>
+<p>Here’s what we want to do:</p>
+<ol>
+<li>User press Up: Selects previous task</li>
+<li>User press Down: Selects next task</li>
+<li>User press Up on first task: Selects last task</li>
+<li>User press Down on last task: Selects first task</li>
+</ol>
+<p>First, we need to find the selected task.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (key === 'ArrowUp' &amp;&amp; key === 'ArrowDown') {
+    // ...
+    if (event.target.closest('.task')) {
+      const currentTaskElement = event.target.closest('.task')
+    }
+  }
+})
+</code></pre>
+<p>If they pressed Up, we want to select the previous task. We can find the previous task with <code>previousElementSibling</code>.</p>
+<p>If they pressed Down, we want to select the next task. We can find the next task with <code>nextElementSibling</code>.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (key === 'ArrowUp' &amp;&amp; key === 'ArrowDown') {
+    // ...
+    if (event.target.closest('.task')) {
+      // ...
+      if (key === 'ArrowUp') return currentTaskElement.previousElementSibling.focus()
+      if (key === 'ArrowDown') return currentTaskElement.nextElementSibling.focus()
+    }
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/arrows.gif" alt="Press down, selects next task. Press up, selects previous task. "></figure>
+<p>If the user presses Up on the first task, we want to select the last task. Here, we can check if the <code>currentTaskElement</code> is the first task.</p>
+<p>You might add the condition like this:</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (key === 'ArrowUp' &amp;&amp; key === 'ArrowDown') {
+    // ...
+    if (event.target.closest('.task')) {
+      // ...
+      if (key === 'ArrowUp') return currentTaskElement.previousElementSibling.focus()
+      if (key === 'ArrowDown') return currentTaskElement.nextElementSibling.focus()
+
+      if (currentTaskElement === firstTask &amp;&amp; key === 'ArrowUp') return lastTask.focus()
+    }
+  }
+})
+</code></pre>
+<p>Our latest condition wouldn’t work. Why? Because the <code>key === 'ArrowUp'</code> would be fulfilled first. For the latest condition to work, we need to put it before <code>key === 'ArrowUp'</code>.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (key === 'ArrowUp' &amp;&amp; key === 'ArrowDown') {
+    // ...
+    if (event.target.closest('.task')) {
+      // ...
+      if (currentTaskElement === firstTask &amp;&amp; key === 'ArrowUp') return lastTask.focus()
+      if (key === 'ArrowUp') return currentTaskElement.previousElementSibling.focus()
+      if (key === 'ArrowDown') return currentTaskElement.nextElementSibling.focus()
+    }
+  }
+})
+</code></pre>
+<p>If the user presses Down on the last task, we want to select the first task. Here’s how you do it:</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+  if (key === 'ArrowUp' &amp;&amp; key === 'ArrowDown') {
+    // ...
+    if (event.target.closest('.task')) {
+      // ...
+      if (currentTaskElement === firstTask &amp;&amp; key === 'ArrowUp') return lastTask.focus()
+      if (currentTaskElement === lastTask &amp;&amp; key === 'ArrowDown') return firstTask.focus()
+      // ...
+    }
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/arrow-round-robin.gif" alt="Press up on first task, selects last task. Press down on last task, selects first task. "></figure>
+<h3 id="improving-the-focus">Improving the focus</h3>
+<p>There’s a white background when we hover on a task. We want to add this white background on focus as well. We can also accentuate the focus by styling it differently from the default.</p>
+<pre><code class="language-css">.task:focus {
+  background-color: #fff;
+  outline: 4px solid lightskyblue;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/style.gif" alt="Changes focus style."></figure>
+<p>We want to keep the white background if the user focuses on an element inside the task. We can do this with <code>focus-within</code>.</p>
+<pre><code class="language-css">.task:focus-within {
+  background-color: #fff;
+}
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/focus-within.gif" alt="Task maintains focus style when focusing on elements within the task. "></figure>
+<h2 id="completing-a-task">Completing a task</h2>
+<p>Most (real) Todolist applications let users complete a task with a keyboard shortcut. This shortcut is usually <code>Command</code> + <code>Enter</code> on Mac (or <code>Control</code> + <code>Enter</code> on Windows).</p>
+<p>We can allow users to complete tasks with the same keyboard shortcut. To do this, we need to check for the <code>Super</code> key.</p>
+<pre><code class="language-js">const isSuperKey = event =&gt; {
+  const os = navigator.userAgent.includes('Mac OS X') !== -1
+    ? 'mac'
+    : 'windows'
+  if (os === 'mac' &amp;&amp; event.metaKey) return true
+  if (os === 'windows' &amp;&amp; event.ctrlKey) return true
+}
+</code></pre>
+<p>Since we’re listening to <code>Super</code> + <code>Enter</code> on tasks, we’ll use the event delegation pattern.</p>
+<pre><code class="language-js">taskList.addEventListener('keydown', event =&gt; {
+  // ...
+})
+</code></pre>
+<p>We only want to do something if the user presses <code>Super</code> + <code>Enter</code> at the same time.</p>
+<pre><code class="language-js">taskList.addEventListener('keydown', event =&gt; {
+  // ...
+  if (event.key === 'Enter' &amp;&amp; isSuperKey(event)) {
+    // ...
+  }
+})
+</code></pre>
+<p>If the user presses <code>Super</code> + <code>Enter</code>, we need to complete a task.
+To complete a task, we need to find the task first.</p>
+<p>We can use <code>closest</code> to find the task because <code>closest</code> covers both of these cases:</p>
+<ol>
+<li>The active element is the task</li>
+<li>The active element is inside the task</li>
+</ol>
+<pre><code class="language-js">taskList.addEventListener('keydown', event =&gt; {
+  // ...
+  if (event.key === 'Enter' &amp;&amp; isSuperKey(event)) {
+    const task = event.target.closest('.task')
+  }
+})
+</code></pre>
+<p>Once we have the task, we can find the checkbox. And once we have the checkbox, we can “click” the checkbox. The rest will be done by the <code>click</code> event listener.</p>
+<pre><code class="language-js">taskList.addEventListener('keydown', event =&gt; {
+  // ...
+  if (event.key === 'Enter' &amp;&amp; isSuperKey(event)) {
+    const task = event.target.closest('.task')
+    const checkbox = task.querySelector('input[type=&quot;checkbox&quot;]')
+    checkbox.click()
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/complete-task.gif" alt="Completes a task with Super + Enter."></figure>
+<h2 id="deleting-a-task-with-super-and-backspace">Deleting a task with Super and Backspace</h2>
+<p>We also can provide a keyboard shortcut for users to delete tasks. To delete tasks, we check for the <code>Backspace</code> key.</p>
+<pre><code class="language-js">taskList.addEventListener('keydown', event =&gt; {
+  if (event.key === 'Backspace') {
+    // ...
+  }
+})
+</code></pre>
+<p>Users might press the <code>Backspace</code> key by accident (especially since Backspace is used to delete a character inside an input). It can be frustrating for users if they delete things accidentally and they can’t undo it.</p>
+<p>The simplest way to prevent accidental deletions is to make the keyboard shortcut slightly harder to use. This is why I choose to use <code>Super</code> + <code>Backspace</code> to delete a task.</p>
+<pre><code class="language-js">taskList.addEventListener('keydown', event =&gt; {
+  if (event.key === 'Backspace' &amp;&amp; isSuperKey(event)) {
+    // ...
+  }
+})
+</code></pre>
+<p>To delete a task, we need to find the task to delete. Here, we’ll use <code>closest</code> (same reason as above when checking a task).</p>
+<pre><code class="language-js">taskList.addEventListener('keydown', event =&gt; {
+  if (event.key === 'Backspace' &amp;&amp; isSuperKey(event)) {
+    const task = event.target.closest('.task')
+  }
+})
+</code></pre>
+<p>Then we need to find and click the delete button.</p>
+<pre><code class="language-js">taskList.addEventListener('keydown', event =&gt; {
+  if (event.key === 'Backspace' &amp;&amp; isSuperKey(event)) {
+    // ...
+    const deleteButton = task.querySelector('.task__delete-button')
+    deleteButton.click()
+  }
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/delete-task.gif" alt="Deletes a task with Super + Backspace"></figure>
+<h3 id="deleting-a-task-with-delete">Deleting a task with Delete</h3>
+<p>Users who use an extended keyboard (with the number pad and stuff) have the <code>Delete</code> key on their keyboard. This key is rarely used. If a user presses the <code>Delete</code> key, we can be sure they want to delete something.</p>
+<p>We can also allow users to delete a task with the Delete key.</p>
+<pre><code class="language-js">taskList.addEventListener('keydown', event =&gt; {
+  if (event.key === 'Delete') {
+    const task = event.target.closest('.task')
+    const deleteButton = task.querySelector('.task__delete-button')
+    deleteButton.click()
+  }
+})
+</code></pre>
+<h3 id="a-tiny-refactor">A tiny refactor</h3>
+<p>We can group these two event listeners into one because they do the same thing.</p>
+<pre><code class="language-js">taskList.addEventListener('keydown', event =&gt; {
+  if (event.key === 'Backspace' &amp;&amp; isSuperKey(event)) {/* ...*/}
+  if (event.key === 'Delete') { /* ...*/ }
+})
+</code></pre>
+<p>We’ll create a <code>deleteTask</code> function for finding and clicking the delete button. If we do this, we can use it for both conditions.</p>
+<pre><code class="language-js">taskList.addEventListener('keydown', event =&gt; {
+  const deleteTask = event =&gt; {
+    const task = event.target.closest('.task')
+    const deleteButton = task.querySelector('.task__delete-button')
+    deleteButton.click()
+  }
+
+  if (event.key === 'Backspace' &amp;&amp; isSuperKey(event)) return deleteTask(event)
+  if (event.key === 'Delete') return deleteTask(event)
+})
+</code></pre>
+<h2 id="press-n-to-focus-on-the-new-task-field">Press n to focus on the new task field</h2>
+<p>One of the most important things for Todolist is speed (because speed leads to productivity). This is why we create keyboard shortcuts for Todolist applications.</p>
+<p>The most important thing a user can do in a Todolist is create new tasks. We want to make a keyboard shortcut for users to create tasks easily.</p>
+<p>In this, I chose to use the <code>n</code> key to create focus on the new task field, so they can begin writing their task.</p>
+<p>It doesn’t matter where the user presses <code>n</code>. We always want <code>n</code> to focus on the new task field, which is why we listen to <code>keydown</code> on the document.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  // ...
+})
+</code></pre>
+<p>We’ll not do anything unless they press <code>n</code>.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  if (event.key !== 'n') return
+})
+</code></pre>
+<p>There’s a possibility that users have their Capslock turned on. If they press <code>n</code> with their Capslock turned on, we still want to focus on the new task field. (Our keyboard shortcut should be case -insensitive).</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  const key = event.key.toLowerCase()
+  if (key !== 'n') return
+})
+</code></pre>
+<p>To focus, on the new task field, we need to find the new task field. Then, we focus on it.</p>
+<pre><code class="language-js">// Press n to focus on task
+document.addEventListener('keydown', event =&gt; {
+  // ...
+  const newTaskField = todolist.querySelector('input')
+  newTaskField.focus()
+})
+</code></pre>
+<p>The focus works. But unfortunately, it enters <code>n</code> into the new task field as well.</p>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/n.gif" alt="Focuses on the new task field, but types 'n' into it."></figure>
+<p>This happens because the <code>keydown</code> event is followed by the <code>input</code> event.</p>
+<pre><code class="language-js">// Press n to focus on task
+document.addEventListener('keydown', event =&gt; {
+  // ...
+  newTaskField.focus()
+  console.log(event.type)
+})
+
+document.addEventListener('input', event =&gt; {
+  console.log(event.type)
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/event-sequence.png" alt="Input comes after keydown."></figure>
+<p>To prevent <code>n</code> from showing up, we can prevent the <code>keydown</code> event from creating an <code>input</code> event</p>
+<pre><code class="language-js">// Press n to focus on task
+document.addEventListener('keydown', event =&gt; {
+  // ...
+  event.prevenDefault()
+  const newTaskField = todolist.querySelector('input')
+  newTaskField.focus()
+})
+</code></pre>
+<p>However, since we used <code>preventDefault</code>, we can’t type <code>n</code> in the new task field.</p>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/n-no-show.gif" alt="Types n, but n doesn't show up in the new task field"></figure>
+<p>To allow users to type normally in the new task field, we need to bail if the event originates there.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  if (event.key !== 'n') return
+  if (event.target.matches('#new-task')) return
+  // ...
+})
+</code></pre>
+<p>But we also want to let users type normally if they’re editing a task. So, instead of checking if they’re focusing on <code>#new-task</code>, we check if they focus on a text input field.</p>
+<pre><code class="language-js">document.addEventListener('keydown', event =&gt; {
+  if (event.key !== 'n') return
+  if (event.target.matches('input[type=&quot;text&quot;]')) return
+  // ...
+})
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/keyboard/n-show.gif" alt="Presses n, focus on new task field. Types drink water to show that 'n' shows up in the input field."></figure>
+<p>That’s it!</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../shortcut-command-control/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Keyboard shortcuts with Command and Control modifiers</span>
+            </a>
+          <a href="../typeahead-keyboard/index.html" data-link-to="next-lesson">
+              <span>🛠️ Typeahead: Keyboard</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /todolist-keyboard/  Mon, 24 Jan 2022 10:05:28 GMT -->
+</html>

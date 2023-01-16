@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /todolist-ajax-update-tasks/  Mon, 24 Jan 2022 10:04:05 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Todolist: Editing tasks | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Todolist: Editing tasks</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Todolist: Editing tasks</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/todolist/07.ajax-update-tasks.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>We want to allow users to edit two things:</p>
+<ol>
+<li>Check/uncheck the task</li>
+<li>Change the task name</li>
+</ol>
+<p>Once again, anything with Ajax creates a set of interesting challenges. (You’ll see).</p>
+<h2 id="checking%2Funchecking-a-task">Checking/unchecking a task</h2>
+<p>When a user clicks on a checkbox, we want to check the checkbox. This completes the task. We also want to save the completed task to the server.</p>
+<p>When the checkbox is checked (or unchecked), it fires a <code>change</code> event. We can listen for this <code>change</code> event to know if the user checks a checkbox. Since there are many checkboxes, we can use an event delegation pattern.</p>
+<pre><code class="language-js">taskList.addEventListener('change', event =&gt; {
+  if (!event.target.matches('input[type=&quot;checkbox&quot;]')) return
+  const checkbox = event.target
+  console.log(checkbox)
+})
+</code></pre>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/changed-checkbox.png" alt="checkbox element logged into the console"></figure>
+<p>The API lets us edit a task by sending a PUT request to <code>/tasks/:id</code>. This means we need to know the task <code>id</code> before we can  send a request.</p>
+<p>We can get the task <code>id</code> from the checkbox’s <code>id</code> attribute.</p>
+<pre><code class="language-js">taskList.addEventListener('change', event =&gt; {
+  // ...
+  const checkbox = event.target
+  const id = checkbox.id
+  console.log(id)
+})
+</code></pre>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/checkbox-id.png" alt="ID of checkbox logged into the console."></figure>
+<p>We also need to know whether the task is done. If the task is done, the checkbox is checked. If the task is not done, the checkbox is unchecked.</p>
+<pre><code class="language-js">taskList.addEventListener('change', event =&gt; {
+  // ...
+  const done = checkbox.checked
+  console.log(checked)
+})
+</code></pre>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/checkbox-checked-state.png" alt="If the checkbox is checked, console logs true. Otherwise, console logs false."></figure>
+<p>We’ve fulfilled the requirements to send the PUT request. Let’s send it now.</p>
+<pre><code class="language-js">taskList.addEventListener('change', event =&gt; {
+  // ...
+  const checkbox = event.target
+  const id = checkbox.id
+  const done = checkbox.checked
+
+  zlFetch.put(`${rootendpoint}/tasks/${id}`, {
+    auth,
+    body: {
+      done
+    }
+  })
+    .then(response =&gt; {
+      console.log(response.body)
+    })
+    .catch(error =&gt; console.error(error))
+})
+</code></pre>
+<p>If the PUT request is successful, we should get a response from the server that contains the updated task.</p>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/put-response.png" alt="Response from server contains updated task. It has the 'id', 'name' and 'done' properties."></figure>
+<h2 id="fetching-done-tasks">Fetching done tasks</h2>
+<p>If you refresh the Todolist, you’ll notice the task you completed remains unchecked.</p>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/task-remains-unchecked.gif" alt="Check first task. Refresh page. First task remains unchecked."></figure>
+<p>This happens because we did not use the <code>done</code> property from the fetched tasks when we make task elements.</p>
+<p>To ensure the completed task remains checked, we need to use the <code>done</code>. If <code>done</code> is true, we set the checkbox to <code>checked</code>.</p>
+<pre><code class="language-js">const makeTaskElement = ({ id, name, done }) =&gt; {
+  taskElement.innerHTML = DOMPurify.sanitize(`
+    &lt;input
+      type=&quot;checkbox&quot;
+      id=&quot;${id}&quot;
+      ${done ? 'checked' : ''}
+    /&gt;
+    ...
+  `)
+}
+</code></pre>
+<p>The checkbox should remain checked now.</p>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/task-is-checked.gif" alt="Check task. Refresh page. Task remains checked."></figure>
+<p>And if you uncheck the checkbox and refresh the page, the task should be unchecked.</p>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/task-is-unchecked.gif" alt="Uncheck task. Refresh page. Task remains unchecked."></figure>
+<h2 id="editing-the-task-name">Editing the task name</h2>
+<p>The Todolist API lets us change the name of the task as well. If we want to allow users to change the name of the task, we need to let them edit the task in the UI first.</p>
+<h3 id="allowing-users-to-edit-the-task-name">Allowing users to edit the task name</h3>
+<p>We can do this by <strong>changing the <code>.task__name</code> from a <code>&lt;span&gt;</code> element to an <code>&lt;input&gt;</code> element.</strong> (You have to style the <code>&lt;span&gt;</code> and <code>&lt;input&gt;</code> elements accordingly, but I did it for you already).</p>
+<pre><code class="language-js">// Change this
+const makeTaskElement = ({ id, name, done }) =&gt; {
+  task.innerHTML = DOMPurify.sanitize(`
+    ...
+    &lt;span class=&quot;task__name&quot;&gt;${name}&lt;/span&gt;
+    ...
+  `)
+})
+
+// To this
+const makeTaskElement = ({ id, name, done }) =&gt; {
+  // ...
+  task.innerHTML = DOMPurify.sanitize(`
+    ...
+    &lt;input class=&quot;task__name&quot; value=&quot;${name}&quot; /&gt;
+    ...
+  `)
+})
+</code></pre>
+<p>With this change, users should be able to edit a task.</p>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/edit-task-name.gif" alt="Click on task name. Task becomes editable."></figure>
+<h3 id="choosing-an-event-to-listen-to">Choosing an event to listen to</h3>
+<p>We have two options here. We can either update the database when</p>
+<ol>
+<li>The user types into the input field</li>
+<li>The user removes focus from the input field</li>
+</ol>
+<p>The option you choose determines the event you’ll listen for:</p>
+<ol>
+<li>Option 1: listen for <code>input</code> event</li>
+<li>Option 2: listen for <code>blur</code> event</li>
+</ol>
+<p>Both options have their pros and cons.</p>
+<p>If you <strong>choose option 1</strong>, you might <strong>send too many requests</strong> to the server. (Because you’ll trigger a PUT request whenever a user types into the input field).</p>
+<p>If you <strong>choose option 2</strong>, there’s <strong>a chance you don’t send anything</strong> to the server. (If the user types into the input field, but closes the tab immediately, the input field doesn’t lose focus, and the request doesn’t get sent).</p>
+<p>Which should you choose?</p>
+<p>Here, we’ll <strong>choose option 1</strong> because <strong>sending too many requests beats not updating the database</strong> according to our users’ actions. (Also, because there’s a way to reduce the number of requests we send).</p>
+<h3 id="saving-the-task-name-to-the-database">Saving the task name to the database</h3>
+<p>As before, because there are many tasks in the DOM, the best way is to use an event delegation pattern.</p>
+<pre><code class="language-js">taskList.addEventListener('input', event =&gt; {
+  if (!event.target.matches('.task__name')) return
+  // Do something
+})
+</code></pre>
+<p>First, we need to find the input value:</p>
+<pre><code class="language-js">taskList.addEventListener('input', event =&gt; {
+  if (!event.target.matches('.task__name')) return
+  const input = event.target
+  const inputValue = DOMPurify.sanitize(input.value.trim())
+  console.log(inputValue)
+})
+</code></pre>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/edit-task-name-logged.gif" alt="Editing task. Console shows task name on each keystroke"></figure>
+<p>To update the Todolist API, we need to know the <code>id</code> of the task. We can find the <code>id</code> from the checkbox. And we can find the checkbox by traversing upwards to the task.</p>
+<pre><code class="language-js">taskList.addEventListener('input', event =&gt; {
+  // ...
+  const taskElement = input.parentElement
+  const checkbox = taskElement.querySelector('input[type=&quot;checkbox&quot;]')
+  const id = checkbox.id
+  console.log(id)
+})
+</code></pre>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/checkbox-id.png" alt="id from the checkbox of the edited task."></figure>
+<p>Once we know the checkbox’s <code>id</code>, we can update the task.</p>
+<pre><code class="language-js">taskList.addEventListener('input', event =&gt; {
+  if (!event.target.matches('.task__name')) return
+  // ...
+
+  zlFetch.put(`${rootendpoint}/tasks/${id}`, {
+    auth,
+    body: {
+      name: inputValue
+    }
+  })
+    .then(response =&gt; {
+      console.log(response.body)
+    })
+    .catch(error =&gt; console.error(error))
+})
+</code></pre>
+<p>The task should remain updated if you refresh the DOM.</p>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/task-remains-updated.gif" alt="Edited task remains updated after a refresh."></figure>
+<h2 id="updating-task-name-and-done-at-the-same-time">Updating task name and done at the same time</h2>
+<p>Did you know the <code>input</code> event fires whenever the checkbox <code>checked</code> state changes?</p>
+<pre><code class="language-js">taskList.addEventListener('input', event =&gt; {
+  console.log(event.target)
+
+  // ...
+})
+</code></pre>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/input-event.gif" alt="Clicking on checkbox triggers a input event."></figure>
+<p>This means we can update <code>done</code> and <code>name</code> at the same time—with the <code>input</code> event. We don’t need two event listeners. (Less code, easier to read!).</p>
+<p>We’ll work on this.</p>
+<p>You can comment out (or delete) the <code>change</code> event listener now.</p>
+<h3 id="updating-the-input-event-listener">Updating the <code>input</code> event listener</h3>
+<p>First, we need to know we’re listening for two elements:</p>
+<ol>
+<li>A change in the checkbox’s checked state</li>
+<li>A change in the text value</li>
+</ol>
+<p>This means <code>event.target</code> can either be the checkbox or the text field.</p>
+<p>We need to find BOTH the checkbox and the text field with each event. The best way is to traverse up to the task element.</p>
+<pre><code class="language-js">taskList.addEventListener('input', event =&gt; {
+  const taskElement = event.target.parentElement
+  const checkbox = taskElement.querySelector('input[type=&quot;checkbox&quot;]')
+  const taskInput = taskElement.querySelector('.task__name')
+
+  console.log(checkbox)
+  console.log(taskInput)
+})
+</code></pre>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/retrieve-inputs.gif" alt="Doesn't matter whether the user clicks the checkbox or edits the task. We get the checkbox and the text field for both events."></figure>
+<p>To update the task, we need three things—the checked state, the id, and the task name.</p>
+<pre><code class="language-js">taskList.addEventListener('input', event =&gt; {
+  // ...
+
+  const id = checkbox.id
+  const done = checkbox.checked
+  const name = DOMPurify.sanitize(taskInput.value.trim())
+})
+</code></pre>
+<p>Once we know these three values, we can send a PUT request to update the task.</p>
+<pre><code class="language-js">taskList.addEventListener('input', event =&gt; {
+  // ...
+  zlFetch.put(`${rootendpoint}/tasks/${id}`, {
+    auth,
+    body: {
+      name,
+      done
+    }
+  })
+    .then(response =&gt; {
+      console.log(response.body)
+    })
+    .catch(error =&gt; console.error(error))
+})
+</code></pre>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/both-updated.gif" alt="Both checkbox and task name are updated on refresh."></figure>
+<h2 id="sending-fewer-requests">Sending fewer requests</h2>
+<p>Since we used the <code>input</code> event, we send one request every time a user edits a task. That’s a lot of requests!</p>
+<figure><img src="../../images/components/todolist/ajax-update-tasks/lots-of-requests.gif" alt="Sends one PUT request per input key"></figure>
+<p>We want to reduce the number of requests we send because of <strong>two reasons</strong>.</p>
+<p>First, <strong>each request cost money</strong> for the user. Requests and responses require data. More usage of data means we make users spend more money (especially if they don’t have an unlimited data plan).</p>
+<p>Second, <strong>each request means work for the server</strong>. If we reduce requests, servers do less work. This is why many APIs have rate-limits.</p>
+<h3 id="how-to-send-fewer-requests">How to send fewer requests</h3>
+<p>Did you notice that requests that are sent earlier get overwritten by requests that are sent later?</p>
+<p>Since requests that are sent earlier get overwritten, it means <strong>we only need to send out the final request</strong>. (The request when a user finished editing the task).</p>
+<p>We know the user finished editing the task when they <strong>stop typing</strong>. The best way to tell when they stop typing is <strong>use the amount of time between keystrokes as a proxy</strong>. If the user does not type anything for an amount of time, we can assume they have stopped typing.</p>
+<p>In code, here’s what we’ll do:</p>
+<ol>
+<li>Set a timeout when a user begins typing. Let’s say we set the timeout for 1 second (1000ms).</li>
+<li>If the user types something in the next second, we restart the timeout for another second.</li>
+<li>If the user doesn’t type anything in the next second, we assume they stopped typing. At this point, we send the request.</li>
+</ol>
+<p>The actual implementation of this timeout function is called <code>debounce</code>. It looks like this:</p>
+<pre><code class="language-js">function debounce(callback, wait, immediate) {
+  let timeout
+  return function () {
+    const context = this
+    const args = arguments
+    const later = function () {
+      timeout = null
+      if (!immediate) callback.apply(context, args)
+    }
+    const callNow = immediate &amp;&amp; !timeout
+    clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+    if (callNow) callback.apply(context, args)
+  }
+}
+</code></pre>
+<p>Basically, <code>debounce</code> lets you:</p>
+<ol>
+<li>Set a timer for X milliseconds.</li>
+<li>If the debounced function gets called again within X milliseconds, restart the timer.</li>
+<li>If X milliseconds passed and debounced function did not get called, trigger the callback.</li>
+</ol>
+<p>(I won’t be explaining how to build debounce in this course. You  will be able to figure it out after learning about <code>apply</code> and other advanced JavaScript features later).</p>
+<p>Here’s how you use <code>debounce</code>:</p>
+<pre><code class="language-js">const debouncedFunction = debounce(callback, wait)
+</code></pre>
+<p>If you want to wait for 1 second (1000ms), you set <code>wait</code> to 1000.</p>
+<pre><code class="language-js">const debouncedFunction = debounce(callback, 1000)
+</code></pre>
+<p><code>callback</code> is the function we want to call. In this case, it’s the callback for the event listener.</p>
+<pre><code class="language-js">const debouncedFunction = debounce(event =&gt; {
+  const taskElement = event.target.parentElement
+  const checkbox = taskElement.querySelector('input[type=&quot;checkbox&quot;]')
+  const taskInput = taskElement.querySelector('.task__name')
+
+  const id = checkbox.id
+  const done = checkbox.checked
+  const name = DOMPurify.sanitize(taskInput.value.trim())
+
+  zlFetch.put(`${rootendpoint}/tasks/${id}`, {
+    auth,
+    body: {
+      name,
+      done
+    }
+  })
+    .then(response =&gt; {
+      console.log(response.body)
+    })
+    .catch(error =&gt; console.error(error))
+}, 1000)
+</code></pre>
+<p>Finally, we want to trigger <code>debouncedFunction</code> when the user edits a task.</p>
+<pre><code class="language-js">taskList.addEventListener('input', debouncedFunction)
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/ajax-update-tasks/debounced.gif" alt="Task debounced for one second."></figure>
+<p>Putting it together in one step:</p>
+<pre><code class="language-js">taskList.addEventListener('input', debounce(event =&gt; {
+  const taskElement = event.target.parentElement
+  const checkbox = taskElement.querySelector('input[type=&quot;checkbox&quot;]')
+  const taskInput = taskElement.querySelector('.task__name')
+
+  const id = checkbox.id
+  const done = checkbox.checked
+  const name = DOMPurify.sanitize(taskInput.value.trim())
+
+  zlFetch.put(`${rootendpoint}/tasks/${id}`, {
+    auth,
+    body: {
+      name,
+      done
+    }
+  })
+    .then(response =&gt; {
+      console.log(response.body)
+    })
+    .catch(error =&gt; console.error(error))
+}, 1000))
+</code></pre>
+<h3 id="don%E2%80%99t-wait-for-too-long">Don’t wait for too long</h3>
+<p>Debounce can introduce a problem if you wait too long. In the example below, one request was sent even though three tasks were changed.</p>
+<figure role="figure" aria-label="Task 1 and task 2 did not get saved. Task 3 did."><img src="../../images/components/todolist/ajax-update-tasks/debounce-problem.gif" alt="Changed three tasks quickly. Some tasks were not saved."><figcaption>Task 1 and task 2 did not get saved. Task 3 did.</figcaption></figure>
+<p>This happened because we debounced all <code>input</code> events on <code>&lt;ul&gt;</code>.</p>
+<p>One way to fix the problem is to listen (and debounce) <code>input</code> events for each task (which means we don’t use the event delegation pattern). The downside to this approach is we have lots of event listeners.</p>
+<p>Another way to fix the debounce problem is simply to reduce the debounce duration. In this example, I reduced the debounced duration to 250ms and all three tasks got saved.</p>
+<pre><code class="language-js">taskList.addEventListener('input', debounce(/*...*/, 250))
+</code></pre>
+<figure role="figure"><img src="../../images/components/todolist/ajax-update-tasks/debounce-solved.gif" alt="Changed three tasks quickly. All tasks were saved."></figure>
+<p>What you choose depends on your situation. In this case, I’d say setting a debounce to 250ms works.</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../todolist-ajax-create-tasks/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Todolist: Creating tasks</span>
+            </a>
+          <a href="../todolist-ajax-delete-tasks/index.html" data-link-to="next-lesson">
+              <span>🛠️ Todolist: Deleting tasks</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /todolist-ajax-update-tasks/  Mon, 24 Jan 2022 10:04:09 GMT -->
+</html>

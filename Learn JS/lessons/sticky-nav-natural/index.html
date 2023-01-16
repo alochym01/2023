@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /sticky-nav-natural/  Mon, 24 Jan 2022 10:06:17 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Auto-hiding Sticky-nav: Natural reveal | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Auto-hiding Sticky-nav: Natural reveal</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Auto-hiding Sticky-nav: Natural reveal</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/sticky-nav/04.natural.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>The sticky-nav we built in the last lesson works. But it doesn’t feel natural. It doesn’t feel natural because we don’t show (or hide) the amount that was scrolled.</p>
+<figure role="figure">
+  <img src="../../images/components/sticky-nav/javascript/animated.gif" alt="Auto-hiding sticky nav.">
+</figure>
+<p>We want to make the sticky nav feel more natural by adjusting the number of hidden pixels according to the scrolled amount.</p>
+<h2 id="removing-the-animation">Removing the animation</h2>
+<p>If we want to show the sticky nav according to the scrolled amount, we need to remove the animation we added.</p>
+<pre><code class="language-css">/* Remove this */
+nav {
+  transition: top 0.15s ease-out;
+}
+</code></pre>
+<h2 id="the-scrolled-amount">The scrolled amount</h2>
+<p>The scrolled amount is the difference between <code>scrollPos</code> and <code>prevScrollPos</code></p>
+<pre><code class="language-js">window.addEventListener('scroll', event =&gt; {
+  const scrollPos = window.scrollY
+  const difference = scrollPos - prevScrollPos
+  console.log('difference:', difference)
+
+  // ...
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/sticky-nav/natural/difference.gif" alt="">
+</figure>
+<p>We can see this:</p>
+<ol>
+<li><code>difference</code> is positive when scrolling down</li>
+<li><code>difference</code> is negative when scrolling up</li>
+<li><code>difference</code> is NOT 1px every time. It can be any amount depending on how fast you scroll</li>
+</ol>
+<p>These observations matter. We’ll need to use them later.</p>
+<h2 id="hiding-the-nav-when-scrolling-down">Hiding the nav when scrolling down</h2>
+<p>When we scroll down, we want to hide the <code>&lt;nav&gt;</code> element. To hide the <code>nav</code> element, we need to subtract the navigation’s <code>top</code> value by the scrolled amount.</p>
+<p>Before we can subtract the current navigation’s <code>top</code> value, we need to know what this value is.</p>
+<h3 id="finding-the-navigation%E2%80%99s-top-value">Finding the navigation’s <code>top</code> value</h3>
+<pre><code class="language-js">window.addEventListener('scroll', event =&gt; {
+  const scrollPos = window.scrollY
+  const difference = scrollPos - prevScrollPos
+  const currentNavTop = nav.style.top
+  console.log('currentNavTop:', currentNavTop)
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/sticky-nav/natural/current-nav-top.gif" alt="nav.style.top value">
+</figure>
+<p>Notice the <code>currentNavTop</code> is a <code>String</code>? We need to convert it into a Number. We can do this with <code>parseInt</code> or <code>parseFloat</code>. We’ll use <code>parseFloat</code> here since there’s a chance that <code>top</code> has decimal values.</p>
+<pre><code class="language-js">window.addEventListener('scroll', event =&gt; {
+  // ...
+  const currentNavTop = parseFloat(nav.style.top)
+  console.log('currentNavTop:', currentNavTop)
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/sticky-nav/natural/currrent-nav-top-float.gif" alt="currentNavTop is a number now.">
+</figure>
+<p>Why does <code>currentNavTop</code> show <code>NaN</code> at first?</p>
+<p>It showed <code>NaN</code> for the first time because <code>nav.style.top</code> is an empty string. We can’t use <code>parseFloat</code> to convert an empty string into a Number.</p>
+<p>But why is it empty and not 0?</p>
+<p>Remember we set <code>top: 0;</code> in CSS? If we want to get a value from CSS, we need to use <code>getComputedStyle</code> instead of the <code>style</code> property. The <code>style</code> property can only get inline styles.</p>
+<pre><code class="language-js">window.addEventListener('scroll', event =&gt; {
+  // ...
+  const currentNavTop = parseFloat(getComputedStyle(nav).top)
+  console.log('currentNavTop:', currentNavTop)
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/sticky-nav/natural/current-nav-top-fixed.gif" alt="Prevents currentNavTop from being NaN.">
+</figure>
+<h3 id="scrolling-down">Scrolling down</h3>
+<p>When scrolling downwards, we want to subtract <code>difference</code> from <code>currentNavTop</code> until it gets to <code>-61px</code>. (Because <code>61px</code> is the navigation’s <code>height</code>).</p>
+<pre><code class="language-js">window.addEventListener('scroll', event =&gt; {
+  // ..
+  if (scrollPos &gt; prevScrollPos) {
+    nav.style.top = `${currentNavTop - difference}px`
+  } else {
+    // ...
+  }
+
+  // ...
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/sticky-nav/natural/scroll-down.gif" alt="Scrolling downwards.">
+</figure>
+<p>Whoa! The <code>top</code> value can go all the way up to negative Infinity! We can’t allow this. If <code>top</code> is larger than <code>61px</code>, we won’t be able to show the navigation straight away when the user scrolls up.</p>
+<p>We need <code>top</code> to be a maximum of <code>-61px</code>.</p>
+<p>To do this, we create a variable that stores the new <code>top</code> value. We’ll call this <code>navTopValue</code>. Then, we check whether <code>navTopValue</code> is smaller than <code>-61px</code>.</p>
+<p>If <code>navTopValue</code> is smaller than <code>-61px</code>, we set <code>nav.style.top</code> to <code>61px</code>.</p>
+<pre><code class="language-js">window.addEventListener('scroll', event =&gt; {
+  // ...
+  if (scrollPos &gt; prevScrollPos) {
+    const navTopValue = currentNavTop - difference
+    if (navTopValue &lt;= navHeight) {
+      nav.style.top = `-${navHeight}px`
+    } else {
+      nav.style.top = `${navTopValue}px`
+    }
+  } else {
+    // ...
+  }
+
+  // ...
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/sticky-nav/natural/scroll-down-limited.gif" alt="Top value is max -61px">
+</figure>
+<p>I don’t like to work with negative values. It screws with my head.</p>
+<p>I like to convert <code>currentNavTop</code> into a positive number. We can do this with <code>Math.abs</code>. It returns the absolute value of a number.</p>
+<pre><code class="language-js">const value = Math.abs(-50)
+console.log(value) // 50
+</code></pre>
+<p>With <code>Math.abs</code>, we can check for the magnitude of the value without caring for <code>+</code> or <code>-</code> signs.</p>
+<pre><code class="language-js">// Converts navTopValue to a positive number
+const navTopValue = Math.abs(currentNavTop - difference)
+
+// Checks if navTopValue is larger than navHeight
+if (navTopValue &gt; navHeight) {
+  nav.style.top = `-${navHeight}px`
+} else {
+  nav.style.top = `-${navTopValue}px`
+}
+</code></pre>
+<h2 id="showing-the-nav-when-scrolling-back-up">Showing the nav when scrolling back up</h2>
+<p>We want to show the navigation when scrolling back up. This means <code>top</code> should gradually get <em>larger</em> until it reaches 0.</p>
+<p>We can do this by subtracting the <code>difference</code> from <code>currentNavTop</code>.</p>
+<pre><code class="language-js">window.addEventListener('scroll', event =&gt; {
+  // ...
+  if (scrollPos &gt; prevScrollPos) {
+    // ...
+  } else {
+    const navTopValue = currentNavTop - difference
+    nav.style.top = `${navTopValue}px`
+    // ...
+  }
+  // ...
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/sticky-nav/natural/scroll-up.gif" alt="Scrolls upwards. But navTopValue can become larger than 0">
+</figure>
+<p>At first, the upwards scroll feels natural. We reveal the navigation by the amount we scrolled. But the navigation stays at that same spot afterward because <code>navTopValue</code> became larger than 0.</p>
+<p>We need to make sure the maximum value of <code>navTopValue</code> is <code>0</code>.</p>
+<pre><code class="language-js">window.addEventListener('scroll', event =&gt; {
+  // ...
+  if (scrollPos &gt; prevScrollPos) {
+    // ...
+  } else {
+    const navTopValue = currentNavTop - difference
+
+    if (navTopValue &gt; 0) {
+      nav.style.top = '0px'
+    } else {
+      nav.style.top = `${navTopValue}px`
+    }
+    // ...
+  }
+  // ...
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/sticky-nav/natural/scroll-up-fixed.gif" alt="Set top to a maximum of 0px.">
+</figure>
+<p>This works now!</p>
+<h3 id="using-positive-numbers%3F">Using positive numbers?</h3>
+<p>We can’t use <code>Math.abs</code> to convert <code>currentNavTop</code> to a positive value this time. (Go ahead, try it!).</p>
+<p>This is because we’re checking against <code>0</code>. <code>-1</code> and <code>+1</code> are two different values. If we use <code>Math.abs</code>, both <code>-1</code> and <code>+1</code> become the same value (<code>+1</code>).</p>
+<h2 id="what-about-performance%3F">What about performance?</h2>
+<p>There are two potential problems with performance:</p>
+<ol>
+<li>We changed the DOM inside the <code>scroll</code> listener. This is expensive.</li>
+<li>We changed <code>top</code> instead of <code>transform</code>. This is also expensive.</li>
+</ol>
+<p>Fortunately, the code we wrote for the Auto-hiding Sticky-nav doesn’t create jank. I checked its performance while slowing down my CPU 6x.</p>
+<figure role="figure">
+  <img src="../../images/components/sticky-nav/natural/performance.gif" alt="No performance issues.">
+</figure>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../sticky-nav-javascript/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Auto-hiding Sticky-nav: JavaScript</span>
+            </a>
+          <a href="../intersection-observer/index.html" data-link-to="next-lesson">
+              <span>Intersection Observer API</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /sticky-nav-natural/  Mon, 24 Jan 2022 10:06:19 GMT -->
+</html>

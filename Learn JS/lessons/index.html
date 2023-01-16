@@ -1,0 +1,3966 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- 3.x [XR&CO'2014], Mon, 24 Jan 2022 09:59:51 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Table of contents | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript lessons"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicons/favicon-16x16.png">
+<link rel="manifest" href="../favicons/site.webmanifest">
+<link rel="mask-icon" href="../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="contentPage">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="index.html">Contents</a>
+          <a href="../components/index.html">Components</a>
+          <a href="../community/index.html">Community</a>
+          <a href="../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<h1>Table of contents</h1>
+<div class="table-of-contents">
+  <ol>
+    <li>
+        <span>Javascript and its ecosystem</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="welcome/index.html">
+                  Welcome to Learn JavaScript!
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="what-is-javascript/index.html">
+                  What is JavaScript used for?
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="javascript-ecosystem/index.html">
+                  The JavaScript ecosystem
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="javascript-versions/index.html">
+                  Varying versions of JavaScript
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Js basics</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="linking-javascript-file/index.html">
+                  Linking your JavaScript file
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="preparing-text-editor/index.html">
+                  Preparing your text editor
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="console/index.html">
+                  The Console
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="comments/index.html">
+                  Comments
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="semicolons/index.html">
+                  You don&#39;t need semicolon
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="data-types/index.html">
+                  Strings, numbers and booleans
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="variables/index.html">
+                  Declaring variables
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="functions/index.html">
+                  Functions
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="arrow-functions/index.html">
+                  Arrow functions
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="objects-intro/index.html">
+                  Intro to objects
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="if-else/index.html">
+                  If/else statements
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="not-operator/index.html">
+                  The NOT operator
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="null-and-undefined/index.html">
+                  Null and Undefined
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="bom-and-dom/index.html">
+                  The BOM and the DOM
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="selecting-element/index.html">
+                  Selecting an Element
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="changing-classes/index.html">
+                  Changing Classes
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="listening-events/index.html">
+                  Listening to events
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="callbacks/index.html">
+                  Callbacks
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Building simple components</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="think-like-developer/index.html">
+                  How to think like a developer
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="starter-template/index.html">
+                  Starter files and Source codes
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="do-this/index.html">
+                  Do this for every component
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="building-off-canvas/index.html">
+                  🛠 Off-canvas menu: Building an off-canvas menu
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="building-modal/index.html">
+                  🛠 Modal: Building a Modal
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="building-lessons/index.html">
+                  Lessons from the building process
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="debugging-errors/index.html">
+                  Debugging errors
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="welcome"
+                data-auth-state="failure"
+              >
+                <a href="linter/index.html">
+                  How to use a linter
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Arrays and loops</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="arrays-intro/index.html">
+                  Introduction to Arrays
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="arrays-methods/index.html">
+                  Array methods
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="for-loop/index.html">
+                  For loops
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="foreach-loop/index.html">
+                  The forEach loop
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="selecting-multiple-elements/index.html">
+                  Selecting multiple elements
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="nodes-vs-elements/index.html">
+                  Nodes vs Elements
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="building-accordion/index.html">
+                  🛠 Accordion: Building an accordion
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Dom basics</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="id-class-attribute-tag/index.html">
+                  Id, classes, attributes, and tags
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="changing-css/index.html">
+                  Changing CSS with JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="getting-css/index.html">
+                  Getting CSS with JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="changing-attributes/index.html">
+                  Changing Attributes
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="element-size-and-position/index.html">
+                  Finding an element&#39;s size and position
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="dom-traversals/index.html">
+                  DOM Traversals
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="building-tabby/index.html">
+                  🛠 Tabby: Building Tabby (A Tabbed component)
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="building-carousel-1/index.html">
+                  🛠 Carousel: HTML and CSS
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="carousel-switch-slides/index.html">
+                  🛠 Carousel: Switching slides with JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="carousel-dots/index.html">
+                  🛠 Carousel: Working the dots
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="carousel-position-slides/index.html">
+                  🛠 Carousel: Positioning slides with JavaScript
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Events deep dive</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="listening-element/index.html">
+                  The listening element
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="default-behaviors/index.html">
+                  Default Behaviors
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="event-propagation/index.html">
+                  Event propagation
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="event-delegation/index.html">
+                  Event delegation
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="removing-listeners/index.html">
+                  Removing Event Listeners
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="modal-closing/index.html">
+                  🛠 Modal: Closing the modal
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="accordion-event-delegation/index.html">
+                  🛠 Accordion: Event delegation
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="tabby-event-delegation/index.html">
+                  🛠 Tabby: Event delegation
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="carousel-event-delegation/index.html">
+                  🛠 Carousel: Event delegation
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Animations and transitions</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="css-transitions/index.html">
+                  CSS Transitions
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="css-animations/index.html">
+                  CSS Animations
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="jank-free-animations/index.html">
+                  Silky-smooth animations
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="transitions-and-animations-in-js/index.html">
+                  Integrating CSS transitions and animations with JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="javascript-animations/index.html">
+                  JavaScript animations
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="gsap/index.html">
+                  GreenSock Animation API (GSAP)
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="off-canvas-animation/index.html">
+                  🛠 Off-canvas menu: Animations
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="modal-animation/index.html">
+                  🛠 Modal: Animating the modal
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="modal-pointing-hand/index.html">
+                  🛠 Modal: Animating the pointing hand
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="modal-waving-hand/index.html">
+                  🛠 Modal: Animating the waving hand
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="modal-with-gsap/index.html">
+                  🛠 Modal: Wave hand animation with JavaScript (using GSAP)
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="accordion-animation/index.html">
+                  🛠 Accordion: Animations
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="starter"
+                data-auth-state="failure"
+              >
+                <a href="carousel-animation/index.html">
+                  🛠 Carousel: Animations
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Useful javascript features</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="ternary-operators/index.html">
+                  Ternary operators
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="and-and-or-operators/index.html">
+                  AND and OR operators
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="early-returns/index.html">
+                  Early returns
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="template-literals/index.html">
+                  Template Literals
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="destructuring/index.html">
+                  Destructuring
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="default-parameters/index.html">
+                  Default parameters
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="enhanced-object-literals/index.html">
+                  Enhanced Object Literals
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="rest-and-spread/index.html">
+                  Rest and Spread
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="useful-array-methods/index.html">
+                  Useful array methods
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="reduce/index.html">
+                  Reduce
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="looping-through-objects/index.html">
+                  Looping through objects
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="implicit-return-objects/index.html">
+                  Returning objects with implicit return
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="accordion-useful-js-features/index.html">
+                  🛠 Accordion: Using useful JavaScript features
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tabby-useful-js-features/index.html">
+                  🛠 Tabby: Using useful JavaScript features
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="carousel-improvement/index.html">
+                  🛠 Carousel: Useful JavaScript features
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Javascript best practices</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="declarative-code/index.html">
+                  Write declarative code
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="one-purpose/index.html">
+                  Functions with a purpose
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="scope/index.html">
+                  Manage scope
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="reduce-state-changes/index.html">
+                  Reduce state changes
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dont-reassign/index.html">
+                  Don&#39;t reassign
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dont-mutate/index.html">
+                  Don&#39;t mutate
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="prevent-objects-mutation/index.html">
+                  Preventing Objects from mutating
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="prevent-arrays-mutation/index.html">
+                  Preventing Arrays from mutating
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="pure-functions/index.html">
+                  Write pure functions
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="accordion-refactor/index.html">
+                  🛠 Accordion: Refactor
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="carousel-refactor-1/index.html">
+                  🛠 Carousel: First refactor
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="carousel-refactor-dots/index.html">
+                  🛠 Carousel: Refactoring the dots part
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="carousel-refactor-previous-next-buttons/index.html">
+                  🛠 Carousel: Previous and next buttons
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="carousel-refactor-second-pass/index.html">
+                  🛠 Carousel: Second refactor
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Text and content</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="change-text-and-html/index.html">
+                  Changing Text and HTML
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="create-html-elements/index.html">
+                  Creating HTML Elements
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="add-multiple-elements/index.html">
+                  Adding multiple elements to the DOM
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="remove-elements/index.html">
+                  Removing Elements from the DOM
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="carousel-automatic-dots/index.html">
+                  🛠 Carousel: Creating dots with JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-html-css/index.html">
+                  🛠️ Calculator: HTML and CSS
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-happy-path/index.html">
+                  🛠️ Calculator: Happy Path
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-test-happy-path/index.html">
+                  🛠️ Calculator: Testing the Happy Path
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-easy-edge-cases/index.html">
+                  🛠️ Calculator: Easy Edge Cases
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-difficult-edge-cases/index.html">
+                  🛠️ Calculator: Difficult Edge Cases
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-refactor/index.html">
+                  🛠️ Calculator: Refactoring
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="switch-statement/index.html">
+                  The switch statement
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-refactor-part-2/index.html">
+                  🛠️ Calculator: Refactoring (Part 2)
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="popover-one-popover/index.html">
+                  🛠️ Popover: Making one popover
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="popover-four-popovers/index.html">
+                  🛠️ Popover: Making four popovers
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="popover-build-with-javascript/index.html">
+                  🛠️ Popover: Making popovers with JavaScript
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Forms</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="forms/index.html">
+                  Intro to forms
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="get-form-fields/index.html">
+                  Selecting form fields with JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="form-field-events/index.html">
+                  Form fields and their events
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="sanitize-output/index.html">
+                  Sanitize your output
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="generate-unique-ids/index.html">
+                  Generating unique IDs
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="popover-dynamic-id/index.html">
+                  🛠️ Popover: Dynamic ID
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-html-css/index.html">
+                  🛠️ Todolist: The HTML and CSS
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-create-tasks/index.html">
+                  🛠️ Todolist: Creating tasks with JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-delete-tasks/index.html">
+                  🛠️ Todolist: Deleting tasks with JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="typeahead-html-css/index.html">
+                  🛠️ Typeahead: The HTML and CSS
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="typeahead-js/index.html">
+                  🛠️ Typeahead: Displaying predictions
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="typeahead-select-prediction/index.html">
+                  🛠️ Typeahead: Selecting a prediction
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="typeahead-search-terms/index.html">
+                  🛠️ Typeahead: Bolding search terms
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Dates</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="date-object/index.html">
+                  The Date object
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="get-formatted-date/index.html">
+                  Getting a formatted date
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="get-time/index.html">
+                  Getting the time
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="timezones/index.html">
+                  Local time and UTC Time
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="set-date/index.html">
+                  Setting a specific date
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="set-date-methods/index.html">
+                  Setting a date with Date methods
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="add-and-subtract-date/index.html">
+                  Adding (or subtracting) date and time
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="compare-date-and-time/index.html">
+                  Comparing Dates and times
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="datepicker-html-css/index.html">
+                  🛠️ Datepicker: HTML and CSS
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="datepicker-calendar/index.html">
+                  🛠️ Datepicker: Building the calendar
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="datepicker-build-with-javascript/index.html">
+                  🛠️ Datepicker: Building the datepicker with JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="datepicker-prev-next-buttons/index.html">
+                  🛠️ Datepicker: Previous and Next buttons
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="datepicker-select-date/index.html">
+                  🛠️ Datepicker: Selecting a date
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="datepicker-position/index.html">
+                  🛠️ Datepicker: Positioning the datepicker
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="datepicker-show-hide/index.html">
+                  🛠️ Datepicker: Showing and hiding
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tolocalestring/index.html">
+                  Formatting a date with toLocaleString
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="settimeout/index.html">
+                  setTimeout
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="setinterval/index.html">
+                  setInterval
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="building-countdown/index.html">
+                  🛠️ Countdown timer: HTML and CSS
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="countdown-js/index.html">
+                  🛠️ Countdown timer: JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="countdown-months/index.html">
+                  🛠️ Countdown timer: Counting Months
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="countdown-daylight-time/index.html">
+                  🛠️ Countdown timer: Daylight Saving Time
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="countdown-years/index.html">
+                  🛠️ Countdown timer: Counting Years
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Asynchronous javascript</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="ajax-intro/index.html">
+                  Introduction to Ajax
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="json/index.html">
+                  Understanding JSON
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="fetch-api/index.html">
+                  The Fetch API
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="response-data-types/index.html">
+                  Possible data types
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="promises/index.html">
+                  JavaScript Promises
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="request-response/index.html">
+                  Requests and responses
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="post-request/index.html">
+                  Sending a POST request
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="authentication/index.html">
+                  Authentication
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="handling-errors/index.html">
+                  Handling errors
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="response-headers/index.html">
+                  Viewing response headers
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="cors-and-jsonp/index.html">
+                  CORS and JSONP
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="xhr-or-fetch/index.html">
+                  XHR vs Fetch
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="ajax-library/index.html">
+                  Using an Ajax library
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="api-docs/index.html">
+                  Reading API documentation
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="curl/index.html">
+                  Understanding curl
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-api/index.html">
+                  🛠️ Todolist: The Todolist API
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-fetch-tasks/index.html">
+                  🛠️ Todolist: Fetching tasks
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-ajax-create-tasks/index.html">
+                  🛠️ Todolist: Creating tasks
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-ajax-update-tasks/index.html">
+                  🛠️ Todolist: Editing tasks
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-ajax-delete-tasks/index.html">
+                  🛠️ Todolist: Deleting tasks
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-optimistic-ui-create-tasks/index.html">
+                  🛠️ Todolist: Creating tasks with Optimistic UI
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-optimistic-ui-error/index.html">
+                  🛠️ Todolist: Handling Optimistic UI errors
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-optimistic-ui-update-tasks/index.html">
+                  🛠️ Todolist: Editing tasks with Optimistic UI
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-optimistic-ui-delete-tasks/index.html">
+                  🛠️ Todolist: Deleting tasks with Optimistic UI
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-refactor/index.html">
+                  🛠️ Todolist: Refactor
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="typeahead-how-to-ajax/index.html">
+                  🛠️ Typeahead: How to add Ajax
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="typeahead-ajax/index.html">
+                  🛠️ Typeahead: Adding Ajax
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="typeahead-errors/index.html">
+                  🛠️ Typeahead: Handling errors
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="google-map-create-map/index.html">
+                  🛠️ Google Maps Clone: Creating your first Google Map
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="google-map-jsonp/index.html">
+                  🛠️ Google Maps Clone: Fetching JSONP via JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="google-map-draw-directions/index.html">
+                  🛠️ Google Maps Clone: Drawing directions
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="google-map-driving-directions/index.html">
+                  🛠️ Google Maps Clone: Driving directions
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="google-map-handle-errors/index.html">
+                  🛠️ Google Maps Clone: Handling errors
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="google-map-stopovers/index.html">
+                  🛠️ Google Maps Clone: Adding stopovers
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="google-map-refactor/index.html">
+                  🛠️ Google Maps Clone: Refactor
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Advanced asynchronous javascript</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="request-many-resources/index.html">
+                  Requesting many resources at once
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="async-await/index.html">
+                  Asynchronous functions
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="multiple-await/index.html">
+                  Handling multiple awaits
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="async-loops/index.html">
+                  Asynchronous loops
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-list-heroes/index.html">
+                  🛠️ Dota Heroes: Listing heroes
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-filter-1/index.html">
+                  🛠️ Dota Heroes: Filtering heroes (Part 1)
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-filter-2/index.html">
+                  🛠️ Dota Heroes: Filtering heroes (Part 2)
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-refactor/index.html">
+                  🛠️ Dota Heroes: Refactoring
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-hero-page/index.html">
+                  🛠️ Dota Heroes: Hero Page
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-hero-page-robust/index.html">
+                  🛠️ Dota Heroes: Making the hero page robust
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-hero-page-refactor/index.html">
+                  🛠️ Dota Heroes: Heroes page refactor
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Keyboard</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="keyboard-users/index.html">
+                  Keyboard users
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="common-keys/index.html">
+                  Handling commonly used keys
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="keyboard-events/index.html">
+                  Keyboard events
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tabindex/index.html">
+                  Understanding Tabindex
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="focused-element/index.html">
+                  Detecting the focused element
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="directing-focus/index.html">
+                  Directing focus
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="prevent-tabbing/index.html">
+                  Preventing people from tabbing into elements
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="choose-shortcuts/index.html">
+                  How to choose keyboard shortcuts
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="single-key-shortcuts/index.html">
+                  Creating single-key shortcuts
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="off-canvas-keyboard/index.html">
+                  🛠️ Off-canvas: Adding keyboard interaction
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="modal-keyboard/index.html">
+                  🛠️ Modal: Adding keyboard interaction
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="accordion-keyboard/index.html">
+                  🛠️ Accordion: Adding keyboard interaction
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tabby-keyboard/index.html">
+                  🛠️ Tabby: Adding keyboard interaction
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tabby-keyboard-refactor/index.html">
+                  🛠️ Tabby: Refactoring
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="carousel-keyboard/index.html">
+                  🛠️ Carousel: Adding keyboard interaction
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="carousel-keyboard-help-text/index.html">
+                  🛠️ Carousel: Displaying help text
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-keyboard/index.html">
+                  🛠️ Calculator: Adding keyboard interaction
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="popover-keyboard/index.html">
+                  🛠️ Popover: Keyboard
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="popover-keyboard-refactor/index.html">
+                  🛠️ Popover: Refactor
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="shortcut-command-control/index.html">
+                  Keyboard shortcuts with Command and Control modifiers
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="todolist-keyboard/index.html">
+                  🛠️ Todolist: Keyboard
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="typeahead-keyboard/index.html">
+                  🛠️ Typeahead: Keyboard
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="typeahead-keyboard-select-prediction/index.html">
+                  🛠️ Typeahead: Selecting a prediction with the keyboard
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="google-map-keyboard/index.html">
+                  🛠️ Google Maps Clone: Keyboard
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-keyboard/index.html">
+                  🛠️ Dota Heroes: Keyboard
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="datepicker-tab-in-out/index.html">
+                  🛠️ Datepicker: Tabbing in and out
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="datepicker-keyboard-shortcuts/index.html">
+                  🛠️ Datepicker: Keyboard shortcuts
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Accessibility</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="accessibility/index.html">
+                  What is accessibility?
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="how-to-use-screen-reader/index.html">
+                  How to use a screen reader
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="using-nvda/index.html">
+                  Using NVDA
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="using-voiceover/index.html">
+                  Using Voiceover
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="aria-roles/index.html">
+                  Aria roles
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="landmark-roles/index.html">
+                  Landmark roles
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="document-structure-roles/index.html">
+                  Document structure roles
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="live-region-roles/index.html">
+                  Live region roles
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="widget-roles/index.html">
+                  Widget roles
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="window-and-abstract-roles/index.html">
+                  Window and Abstract roles
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="accessible-names-and-descriptions/index.html">
+                  Accessible names and descriptions
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="hiding-content/index.html">
+                  Hiding content
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="aria-properties-and-states/index.html">
+                  ARIA properties and ARIA states
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="aria-for-expandable-widgets/index.html">
+                  ARIA for expandable widgets
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="off-canvas-accessible/index.html">
+                  🛠️ Off-canvas: Accessibility
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="aria-modal-dialogs/index.html">
+                  ARIA for modal dialogs
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="modal-accessible/index.html">
+                  🛠️ Modal: Screen reader accessibility
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="accordion-accessible/index.html">
+                  🛠️ Accordion: Screen reader accessibility
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="aria-for-tabs/index.html">
+                  ARIA for Tabbed components
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tabby-accessible/index.html">
+                  🛠️ Tabby: Screen reader accessibility
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tabby-accessible-refactor/index.html">
+                  🛠️ Tabby: Refactor
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="carousel-accessible/index.html">
+                  🛠️ Carousel: Screen reader accessibility
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="roles-forms-and-application-mode/index.html">
+                  Roles that trigger Forms and Application modes
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="next-for-accessibility/index.html">
+                  What&#39;s next for accessibility?
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Handling scroll</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="scroll/index.html">
+                  The Scroll event
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="sticky-nav/index.html">
+                  🛠️ Auto-hiding Sticky-nav: HTML and CSS
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="sticky-nav-javascript/index.html">
+                  🛠️ Auto-hiding Sticky-nav: JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="sticky-nav-natural/index.html">
+                  🛠️ Auto-hiding Sticky-nav: Natural reveal
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="intersection-observer/index.html">
+                  Intersection Observer API
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="intersection-observer-options/index.html">
+                  Intersection Observer Options
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="slide-reveal/index.html">
+                  🛠️ Slide &amp; Reveal
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="slide-reveal-always-reveal/index.html">
+                  🛠️ Slide &amp; Reveal: Always fade-in when you scroll down
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="slide-reveal-fine-tune/index.html">
+                  🛠️ Slide &amp; Reveal: Fine-tuning the animation
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="infinite-scroll/index.html">
+                  🛠️ Infinite Scroll: Anatomy
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="infinite-scroll-infinite-load/index.html">
+                  🛠️ Infinite Scroll: Infinite load
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="infinite-scroll-refactor/index.html">
+                  🛠️ Infinite Scroll: Refactor
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="infinite-scroll-implement/index.html">
+                  🛠️ Infinite Scroll: Implementing the Infinite Scroll
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Mouse, touch, and pointers</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="mouse-events/index.html">
+                  Mouse Events
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="spinning-pacman-html-css/index.html">
+                  🛠️ Spinning Pacman: HTML and CSS
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="spinning-pacman-javascript/index.html">
+                  🛠️ Spinning Pacman: JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="touch-events/index.html">
+                  Touch events
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="pointer-events/index.html">
+                  Pointer events
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="touch-action/index.html">
+                  Touch-action
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="spinning-pacman-touch/index.html">
+                  🛠️ Spinning Pacman: Supporting Touch
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="cloning-elements/index.html">
+                  Cloning elements
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="drag-drop-html-css/index.html">
+                  🛠️ DragDrop: HTML and CSS
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="drag-drop-javascript/index.html">
+                  🛠️ DragDrop: JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="drag-drop-preview/index.html">
+                  🛠️ DragDrop: Creating a drop preview
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="drag-drop-sortable/index.html">
+                  🛠️ DragDrop: Sortable drop preview
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="drag-drop-robust/index.html">
+                  🛠️ DragDrop: Robustness
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="drag-drop-refactor/index.html">
+                  🛠️ DragDrop: Refactor
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Object oriented programming</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="before-oop/index.html">
+                  Before we begin
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="object-oriented-programming/index.html">
+                  What is Object Oriented Programming?
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="oop-flavours/index.html">
+                  Four Flavours of Object Oriented Programming
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="inheritance/index.html">
+                  Inheritance
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="this-in-javascript/index.html">
+                  This in JavaScript
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="call-bind-apply/index.html">
+                  Call, bind, apply
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="creating-derivative-objects/index.html">
+                  Creating Derivative Objects
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="composition-vs-inheritance/index.html">
+                  Composition vs Inheritance
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="polymorphism/index.html">
+                  Polymorphism
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="encapsulation/index.html">
+                  Encapsulation
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="closures/index.html">
+                  Closures
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="encapsulation-oop/index.html">
+                  Encapsulation in Object Oriented Programming
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="getters-setters/index.html">
+                  Getters and Setters
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="what-oop-flavour/index.html">
+                  What OOP flavour to use
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="when-to-use-oop/index.html">
+                  When to use Object Oriented Programming
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Writing reusable code</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="creating-reusable-code-by-writing-libraries/index.html">
+                  Creating reusable code by writing libraries
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="two-types-of-libraries/index.html">
+                  Two Types of libraries
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="including-libraries-with-script-tags/index.html">
+                  Including libraries with Script tags
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="including-libraries-with-es6-modules/index.html">
+                  Including libraries with ES6 Modules
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dynamic-imports/index.html">
+                  Dynamic imports
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="offcanvas-library/index.html">
+                  🛠️ Off Canvas: Building a Library
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="modal-library-setup/index.html">
+                  🛠️ Modal: Library setup
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="modal-library-opening-modal/index.html">
+                  🛠️ Modal: Opening the Modal
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="modal-library-closing-modal/index.html">
+                  🛠️ Modal: Closing the modal
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="modal-library-inheritance/index.html">
+                  🛠️ Modal: Inheritance and Polymorphism
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="modal-library-resolving-differences/index.html">
+                  🛠️ Modal: Resolving differences between subclasses
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="modal-library-expose/index.html">
+                  🛠️ Modal: Exposing properties and methods
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="accordion-building-a-library/index.html">
+                  🛠️ Accordion: Building a library
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tabby-building-a-library/index.html">
+                  🛠️ Tabby: Building a library
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="carousel-building-a-library/index.html">
+                  🛠️ Carousel: Building a library
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-building-a-library/index.html">
+                  🛠️ Calculator: Library
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-building-a-library-2/index.html">
+                  🛠️ Calculator: Fixing the Clear Key
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-handling-other-keys/index.html">
+                  🛠️ Calculator: Handling other keys
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="calculator-state/index.html">
+                  🛠️ Calculator: State
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="popover-library/index.html">
+                  🛠️ Popover: Library
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="popover-library-event-listeners/index.html">
+                  🛠️ Popover: Adding event listeners
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="typeahead-library/index.html">
+                  🛠️ Typeahead: Library
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="datepicker-library/index.html">
+                  🛠️ DatePicker: Library
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>JS to frameworks</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tiny-initial/index.html">
+                  🛠️ Building a Tiny framework
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tiny-add-event-listeners/index.html">
+                  🛠️ Tiny: Add event listeners
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tiny-update-state/index.html">
+                  🛠️ Tiny: Updating state
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tiny-child-components/index.html">
+                  🛠️ Tiny: Rendering Child Components
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tiny-parent-state/index.html">
+                  🛠️ Tiny: Changing Parent State
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tiny-props/index.html">
+                  🛠️ Tiny: Passing Props
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tiny-multiple-props/index.html">
+                  🛠️ Tiny: Multiple Props
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tiny-sibling-props/index.html">
+                  🛠️ Tiny: Passing values from sibling components
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tiny-mounting/index.html">
+                  🛠️ Tiny: Mounting
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tiny-descendants/index.html">
+                  🛠️ Tiny: Passing props to descendants
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="tiny-refactor/index.html">
+                  🛠️ Tiny: A tiny refactor
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    <li>
+        <span>Single page apps</span>
+        <ol>
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="spa/index.html">
+                  What is a Single Page App?
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="css-spa/index.html">
+                  Simple SPA using only CSS
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="location/index.html">
+                  The Location Interface
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="history/index.html">
+                  The History Interface
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="minimum-viable-server-for-spa/index.html">
+                  Minimum viable server for a SPA
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-spa-intro/index.html">
+                  🛠️ Dota SPA: Introduction
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-spa-heroes-list/index.html">
+                  🛠️ Dota SPA: Building The Heroes List
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-spa-filters/index.html">
+                  🛠️ Dota SPA: Building the filters
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-spa-filtering-heroes/index.html">
+                  🛠️ Dota SPA: Filtering heroes
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-spa-display-filtered-heroes/index.html">
+                  🛠️ Dota SPA: Displaying filtered heroes
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-spa-get-ready-to-build-hero-page/index.html">
+                  🛠️ Dota SPA: Getting Ready to build the Hero Page
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-spa-hero-page/index.html">
+                  🛠️ Dota SPA: Building the hero page
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-spa-lore-and-abilities/index.html">
+                  🛠️ Dota SPA: Lore and abilities
+                </a>
+              </li>
+
+
+              <li
+                data-js="check-auth"
+                data-required-authorization="mastery"
+                data-auth-state="failure"
+              >
+                <a href="dota-spa-routing/index.html">
+                  🛠️ Dota SPA: Routing for Single-page apps
+                </a>
+              </li>
+
+          </ol>
+      </li>
+    </ol>
+</div>
+</div>
+    </main>
+
+
+
+      <script module src="../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- 3.x [XR&CO'2014], Mon, 24 Jan 2022 09:59:54 GMT -->
+</html>

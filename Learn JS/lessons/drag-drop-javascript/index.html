@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /drag-drop-javascript/  Mon, 24 Jan 2022 10:06:44 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ DragDrop: JavaScript | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ DragDrop: JavaScript</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ DragDrop: JavaScript</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/drag-drop/03.javascript.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>Since we’re building a Drag and Drop component, we should use the Drag and Drop API, right?</p>
+<p>Nope.</p>
+<p>You can build a Drag/Drop component with Drag and Drop API, but the Drag and Drop API is NOT the best technology for a Drag/Drop component.</p>
+<p>It sounds ironic, I know 😑.</p>
+<p>The Drag and Drop API is built to mimic dragging and dropping on a desktop. It produces a ghost image when you drag the component.</p>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/drag-drop-api.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/drag-drop-api.mp4"> here </a> instead.
+</video>
+<p>Styling is limited for this ghost image since it’s not an HTML Element. You can <a href="https://kryogenix.org/code/browser/custom-drag-image.html">brute-force it with lots of hacks</a>. But even if you brute force it, you still can’t change things like <code>transform</code> or <code>opacity</code>!</p>
+<p>So we cannot use the Drag and Drop API (which is unfortunate). We need some other method. (I didn’t explain the Drag and Drop API in Learn JavaScript because we’re not going to use it).</p>
+<p>Guess what? We can use Pointer events!</p>
+<h2 id="preparations-for-dragging">Preparations for Dragging</h2>
+<p>We need some way to indicate that our boxes are draggable. We cannot use the <code>draggable</code> attribute since we’re not using the Drag and Drop API.</p>
+<p>I thought using <code>data-draggable</code> would be cool, so I added that for every box.</p>
+<pre><code class="language-html">&lt;div data-pickzone&gt;
+  &lt;div class=&quot;box&quot; data-color=&quot;red&quot; data-draggable&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; data-color=&quot;orange&quot; data-draggable&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; data-color=&quot;yellow&quot; data-draggable&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; data-color=&quot;green&quot; data-draggable&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; data-color=&quot;blue&quot; data-draggable&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; data-color=&quot;indigo&quot; data-draggable&gt;&lt;/div&gt;
+  &lt;div class=&quot;box&quot; data-color=&quot;violet&quot; data-draggable&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+<p>We can get all draggable elements with <code>querySelectorAll</code> as usual.</p>
+<pre><code class="language-js">const draggables = document.querySelectorAll('[data-draggable]')
+</code></pre>
+<p>When users hover their mouse onto a box, we can change the mouse cursor to let them know the box is draggable.</p>
+<pre><code class="language-css">[data-draggable] {
+  cursor: move;
+}
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/drag-drop/javascript/hover.gif" alt="Hover over box, mouse turns to move cursor.">
+</figure>
+<p>Since we’re using Pointer Events, we also need a <code>touch-action</code> on each box. This prevents the default panning behaviour on touch devices.</p>
+<pre><code class="language-css">[data-draggable] {
+  /* ... */
+  touch-action: none;
+}
+</code></pre>
+<h2 id="anatomy-of-a-drag">Anatomy of a drag</h2>
+<p>For a user to drag an element, they need to:</p>
+<ol>
+<li>Hold down their pointer</li>
+<li>Move the element</li>
+<li>Release their pointer</li>
+</ol>
+<p>This means the dragging is split into three stages. We can detect these three stages with <code>pointerdown</code>, <code>pointermove</code>, and <code>pointerup</code>.</p>
+<p>We’ll start by working on <code>pointerdown</code>.</p>
+<pre><code class="language-js">const draggable = draggables[0]
+
+draggable.addEventListener('pointerdown', event =&gt; {
+  // ...
+})
+</code></pre>
+<p><strong>TIP:</strong> When you build components with many children elements, always work with ONE element first. It will make your life so much easier.</p>
+<h2 id="preparing-to-drag">Preparing to drag</h2>
+<p>We need to be able to position an element at will if we want to drag it.</p>
+<p>We can only position an element at will if we set its <code>position</code> to <code>absolute</code>. Once <code>position</code> is <code>absolute</code>, we can change the <code>top</code> and <code>left</code> values to move the element.</p>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/absolute.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/absolute.mp4"> here </a> instead.
+</video>
+<p>We will set <code>position</code> to <code>absolute</code> when the user holds down the mouse button. This prepares the element for dragging.</p>
+<pre><code class="language-js">draggable.addEventListener('pointerdown', event =&gt; {
+  const target = event.target
+  target.style.position = 'absolute'
+  // ...
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/drag-drop/javascript/click-absolute.gif" alt="Setting position to absolute.">
+</figure>
+<p>Oops! Looks like we broke something?</p>
+<p>But we didn’t break anything. If you set an element’s <code>position</code> to <code>absolute</code>, you take it out of the natural document flow. This is expected.</p>
+<p>But we don’t want other elements to shift locations yet. Instead of dragging the actual element, we can make a clone of this element and drag that clone.</p>
+<p>We make a clone of an element with <code>cloneNode</code>.</p>
+<pre><code class="language-js">draggable.addEventListener('pointerdown', event =&gt; {
+  // ...
+
+  // Remove this
+  target.style.position = 'absolute'
+
+  // Add these
+  const clone = target.cloneNode(true)
+  clone.style.position = 'absolute'
+})
+</code></pre>
+<p>We will add this clone in the <code>&lt;body&gt;</code> element. The <code>&lt;body&gt;</code> element is the best place because:</p>
+<ol>
+<li>The element’s <code>top</code> and <code>left</code> positions will not be affected by ancestor elements with <code>position: relative</code>.</li>
+<li>The element will not get hidden by ancestor elements with <code>overflow: hidden</code> or <code>overflow: scroll</code>.</li>
+</ol>
+<pre><code class="language-js">draggable.addEventListener('pointerdown', event =&gt; {
+  // ...
+  document.body.append(clone)
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/drag-drop/javascript/cloned.gif" alt="">
+</figure>
+<p>Next, we want to position the clone on the clicked element. We can find the location by getting the clicked element’s bounding rectangle.</p>
+<pre><code class="language-js">draggable.addEventListener('pointerdown', event =&gt; {
+  // ...
+  const box = target.getBoundingClientRect()
+})
+
+</code></pre>
+<p>We only need set the clone’s <code>top</code>, <code>left</code>, <code>width</code>, and <code>height</code> to be the same values as the bounding original element.</p>
+<pre><code class="language-js">draggable.addEventListener('pointerdown', event =&gt; {
+  // ...
+
+  const box = target.getBoundingClientRect()
+  clone.style.left = `${box.left}px`
+  clone.style.top = `${box.top}px`
+  clone.style.width = `${box.width}px`
+  clone.style.height = `${box.height}px`
+})
+</code></pre>
+<p>If you clicked the first box now, it would appear as if nothing has happened.</p>
+<figure role="figure">
+  <img src="../../images/components/drag-drop/javascript/clone-positioned.gif" alt="">
+</figure>
+<p>Let’s rotate the clone slightly to give users feedback they’re dragging something.</p>
+<pre><code class="language-js">draggable.addEventListener('pointerdown', event =&gt; {
+  clone.style.transform = 'rotate(-5deg)'
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/drag-drop/javascript/rotate.gif" alt="Rotating the dragged target by -5deg.">
+</figure>
+<p>We’ll hide the original element at the same time so users won’t get confused between the original and the clone. (Ideally, users shouldn’t even know there’s a clone).</p>
+<pre><code class="language-js">draggable.addEventListener('pointerdown', event =&gt; {
+  target.style.opacity = '0'
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/drag-drop/javascript/rotate-2.gif" alt="Hid the original element.">
+</figure>
+<p>When the user releases their mouse button, we will revert the rotation so users know they’re not dragging anything.</p>
+<p>We’ll do this with a <code>pointerup</code> event. We will create this event inside the <code>pointerdown</code> event since we created the clone inside <code>pointerdown</code>.</p>
+<pre><code class="language-js">draggable.addEventListener('pointerdown', event =&gt; {
+
+  clone.addEventListener('pointerup', event =&gt; {
+    clone.style.transform = ''
+  })
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/drag-drop/javascript/rotate-3.gif" alt="Rotated the clone back.">
+</figure>
+<p>Finally, we want to reset the DOM by:</p>
+<ol>
+<li>Removing the clone</li>
+<li>Showing the original element</li>
+</ol>
+<p>Once we do this, we will be able to click the element as many times as we want. (It’s like the clone never existed at all).</p>
+<pre><code class="language-js">draggable.addEventListener('pointerdown', event =&gt; {
+
+  clone.addEventListener('pointerup', event =&gt; {
+    // ...
+    clone.remove()
+    target.style.opacity = 1
+  })
+})
+</code></pre>
+<figure role="figure">
+  <img src="../../images/components/drag-drop/javascript/reset.gif" alt="">
+</figure>
+<h2 id="dragging">Dragging</h2>
+<p>When a user moves their mouse, it creates a <code>pointermove</code> event. We can use this <code>pointermove</code> event to drag the clone.</p>
+<pre><code class="language-js">draggable.addEventListener('pointerdown', event =&gt; {
+  // ...
+
+  clone.addEventListener('pointermove', event =&gt; {
+    // ...
+  })
+})
+</code></pre>
+<p>We can detect the amount a user moved with <code>event.movementX</code> and <code>event.movementY</code>.</p>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/movement.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/movement.mp4"> here </a> instead.
+</video>
+<p>We can drag the clone by changing its <code>left</code> and <code>top</code> values.</p>
+<pre><code class="language-js">draggable.addEventListener('pointermove', event =&gt; {
+  // ...
+  const left = parseFloat(clone.style.left)
+  const top = parseFloat(clone.style.top)
+
+  clone.style.left = `${left + event.movementX}px`
+  clone.style.top = `${top + event.movementY}px`
+})
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/drag.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/drag.mp4"> here </a> instead.
+</video>
+<p>Unfortunately, the method we have is not foolproof. If the user moves too fast while dragging the element, their pointer might leave the element behind… 😰 .</p>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/drag-fast.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/drag-fast.mp4"> here </a> instead.
+</video>
+<p>To prevent this from happening, we need to capture all subsequent pointer events on the clone. We can do this with <code>setPointerCapture</code> in <code>pointerdown</code>.</p>
+<pre><code class="language-js">// Notice this is in pointerdown!
+draggable.addEventListener('pointerdown', event =&gt; {
+  // ...
+
+  clone.setPointerCapture(event.pointerId)
+  clone.addEventListener('pointermove', event =&gt; {/* ... */})
+
+  // ...
+})
+</code></pre>
+<p>Now users will not be able to fling the clone away from their pointers. You can even drag the clone outside of the screen and back. The clone will continue to follow the mouse.</p>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/drag-fling-ok.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/drag-fling-ok.mp4"> here </a> instead.
+</video>
+<p>Since we used <code>setPointerCapture</code> to capture the pointer event, we should also release the pointer with <code>releasePointerCapture</code> when the user releases their mouse button.</p>
+<p>(Technically we don’t need to do this since we deleted the clone… But take it as a good practice to clean up after yourself. We’ll need it in a later lesson).</p>
+<pre><code class="language-js">clone.addEventListener('pointerup', event =&gt; {
+  // ...
+  clone.releasePointerCapture(event.pointerId)
+})
+</code></pre>
+<h2 id="dropping">Dropping</h2>
+<p>When we release the mouse button, we want to “drop” the element in the correct position.</p>
+<p>There are two potential cases here:</p>
+<ol>
+<li>User drops clone outside the dropzone</li>
+<li>User drops clone inside the dropzone</li>
+</ol>
+<h3 id="dropping-outside-the-dropzone">Dropping outside the dropzone</h3>
+<p>When users drop an element outside the dropzone, we want to invalidate that drag. We behave as if nothing happened because the drag was an error.</p>
+<p>We have already done this with our code by removing the clone and displaying the original.</p>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/drop-invalid.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/drop-invalid.mp4"> here </a> instead.
+</video>
+<h3 id="dropping-inside-the-dropzone">Dropping inside the dropzone</h3>
+<p>If the user drops the clone inside the dropzone, we want to transfer the original from the pick zone into the dropzone.</p>
+<p>But how do we detect if the element is inside the dropzone? We can detect if the element is inside a dropzone with a method called <code>elementFromPoint</code>.</p>
+<p><code>elementFromPoint</code> gives you the closest element to the screen from the given point.</p>
+<pre><code class="language-js">const droppedArea = document.elementFromPoint(x, y)
+</code></pre>
+<p>We can pass the clone’s <code>left</code> and <code>top</code> position into <code>elementFromPoint</code> to check where it was dropped.</p>
+<pre><code class="language-js">clone.addEventListener('pointerup', event =&gt; {
+  // ...
+  const left = parseFloat(clone.style.left)
+  const top = parseFloat(clone.style.top)
+  const droppedArea = document.elementFromPoint(left, top)
+  console.log(droppedArea)
+})
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/element-from-point.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/element-from-point.mp4"> here </a> instead.
+</video>
+<p>As you can see, <code>elementFromPoint</code> gives you the closest element to the screen.</p>
+<ul>
+<li>It returns <code>&lt;div data-dropzone&gt;&lt;/div&gt;</code> if the element was dropped into the dropzone directly.</li>
+<li>But it returns <code>&lt;div class=&quot;box&quot;&gt;..&lt;/div&gt;</code> if the element was dropped onto another element.</li>
+</ul>
+<p>Fret not, we can still detect if the clone was dropped into the dropzone with <code>closest</code>.</p>
+<pre><code class="language-js">clone.addEventListener('pointerup', event =&gt; {
+  // ...
+  const left = parseFloat(clone.style.left)
+  const top = parseFloat(clone.style.top)
+  const droppedArea = document.elementFromPoint(left, top)
+  const dropzone = droppedArea.closest('[data-dropzone]')
+
+  if (dropzone) {
+    // Dropped into Dropzone
+  }
+})
+</code></pre>
+<p>If the clone was dropped into the dropzone, we <code>append</code> it to the dropzone. This automatically moves the element from its original location to the dropzone.</p>
+<pre><code class="language-js">clone.addEventListener('pointerup', event =&gt; {
+  // ...
+  if (dropzone) {
+    dropzone.append(target)
+  }
+})
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/dropped.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/dropped.mp4"> here </a> instead.
+</video>
+<h2 id="dragging-other-elements">Dragging other elements</h2>
+<p>To drag other elements, we can loop through them all and run the code we wrote.</p>
+<pre><code class="language-js">draggables.forEach(draggable =&gt; {
+  draggable.addEVentListener('pointerdown', event =&gt; {
+    // ...
+  })
+})
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/drag-all.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/drag-all.mp4"> here </a> instead.
+</video>
+<h2 id="fixing-the-problem-in-safari">Fixing the problem in Safari</h2>
+<p>You won’t be able to drag elements in Safari right now.</p>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/safari.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/safari.mp4"> here </a> instead.
+</video>
+<p>This happens because Safari doesn’t support <code>event.movementX</code> and <code>event.movementY</code> yet.</p>
+<figure role="figure">
+  <img src="../../images/components/drag-drop/javascript/movementx.png" alt="">
+</figure>
+<p>It’s funny because if you <code>console.log</code> the <code>event</code> object in Safari, you see <code>event.movementX</code> and <code>event.movementY</code> just fine! Except… they’re always <code>0</code></p>
+<pre><code class="language-js">clone.addEventListener('pointermove', event =&gt; {
+  // ...
+  console.log(movementX, movementY)
+})
+</code></pre>
+<video autoplay loop>
+  <source src="../../images/components/drag-drop/javascript/safari-log.mp4" type="video/mp4">
+  Your browser doesn't support embedded videos. Watch the video <a href="../../images/components/drag-drop/javascript/safari-log.mp4"> here </a> instead.
+</video>
+<p>So we’re left in a situation where we can’t use <code>movementX</code> and <code>movementY</code>, but we can’t tell Safari (and mobile Safari) aside from other browsers… 😑</p>
+<h3 id="fixing-movementx-and-movementy">Fixing movementX and movementY</h3>
+<p>Thankfully, this is a quick fix. <a href="https://developer.mozilla.org/en-US/docs/Web/API/MouseEvent/movementX" title="Event.movementX">MDN states</a> that <code>movementX</code> has the following calculation:</p>
+<pre><code class="language-js">currentEvent.movementX = currentEvent.screenX - previousEvent.screenX.
+</code></pre>
+<p><code>movementY</code> must also uses the same calculations:</p>
+<pre><code class="language-js">currentEvent.movementY = currentEvent.screenY - previousEvent.screenY.
+</code></pre>
+<p>Armed with this information, we can calculate the movementX and movementY values ourselves.</p>
+<h3 id="calculating-movementx-and-movementy">Calculating movementX and movementY</h3>
+<p>We need <code>screenX</code> and <code>screenY</code> values from the previous pointer event. For the very first event, we need to get the originating values from the <code>pointerdown</code> event.</p>
+<pre><code class="language-js">draggable.addEventListener('pointerdown', event =&gt; {
+  let prevScreenX = event.screenX
+  let prevScreenY = event.screenY
+  // ...
+})
+</code></pre>
+<p>When the user moves the pointer, we get <code>screenX</code> and <code>screenY</code> from the current <code>pointermove</code> event. This lets us calculate <code>movementX</code> and <code>movementY</code>.</p>
+<p>We will then update <code>prevScreenX</code> and <code>prevScreenY</code> with the current values.</p>
+<pre><code class="language-js">clone.addEventListener('pointermove', event =&gt; {
+  const { screenX, screenY } = event
+  const movementX = screenX - prevScreenX
+  const movementY = screenY - prevScreenY
+
+  prevScreenX = screenX
+  prevScreenY = screenY
+})
+</code></pre>
+<p>And we fixed the <code>movementX</code> and <code>movementY</code> problem with Safari.</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../drag-drop-html-css/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ DragDrop: HTML and CSS</span>
+            </a>
+          <a href="../drag-drop-preview/index.html" data-link-to="next-lesson">
+              <span>🛠️ DragDrop: Creating a drop preview</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /drag-drop-javascript/  Mon, 24 Jan 2022 10:06:48 GMT -->
+</html>

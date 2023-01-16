@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /inheritance/  Mon, 24 Jan 2022 10:06:58 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>Inheritance | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>Inheritance</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>Inheritance</h1>
+
+
+
+      <div class="meta source-code">
+
+
+      </div><p>Inheritance is a loaded word in Object Oriented Programming. Programmers use it to mean different things.</p>
+<p>To understand Inheritance, we need to define this word into its fundamental form.</p>
+<h2 id="what-is-inheritance%3F">What is Inheritance?</h2>
+<p>Inheritance (in real life) is about getting stuff (like money and genes) from your parents.</p>
+<p><strong>Inheritance</strong> (in JavaScript) <strong>is about getting properties</strong> (and methods) <strong>from parent objects.</strong></p>
+<p>There are two ways to inherit properties:</p>
+<ol>
+<li>Copy-Pasting</li>
+<li>Delegation through Prototypes</li>
+</ol>
+<h2 id="copy-pasting">Copy-Pasting</h2>
+<p><strong>Copy-pasting</strong> means you copy properties into the instance. When you copy-paste, <strong>each instance will have its own version of the property</strong>.</p>
+<p>Other names for copy-pasting includes:</p>
+<ul>
+<li><strong>Concatenative Inheritance</strong></li>
+<li>Cloning</li>
+<li>Mixins</li>
+</ul>
+<p>I prefer to call it copy-pasting because it’s easier to understand and remember.</p>
+<p>Example: Let’s say you want to create a <code>Human</code> constructor.</p>
+<ul>
+<li>Each <code>Human</code> has a <code>firstName</code> and <code>lastName</code>.</li>
+<li>Each <code>Human</code> should also be able to say their names with a method called <code>sayName</code>.</li>
+</ul>
+<pre><code class="language-js">function Human (firstName, lastName) {
+  // Properties
+  this.firstName = firstName
+  this.lastName = lastName
+
+  // Methods
+  this.sayName = _ =&gt; {
+    console.log(`${this.firstName} ${this.lastName}`)
+  }
+}
+</code></pre>
+<p>You can create an instance with the <code>new</code> keyword. Each instance will have its own properties. Properties are completely different from other instances.</p>
+<pre><code class="language-js">const zell = new Human('Zell', 'Liew')
+const vincy = new Human('Vincy', 'Zhang')
+
+console.log(zell)
+console.log(vincy)
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/copy-paste.png" alt="Each instance has their individuality.">
+</figure>
+<p>Properties do not reference each other. If you change <code>zell</code>'s <code>sayName</code> method, it does not affect <code>vincy</code>'s <code>sayName</code> method.</p>
+<pre><code class="language-js">zell.sayName = function () {
+  console.log('Hello World')
+}
+
+zell.sayName() // Hello World
+vincy.sayName() // Vincy Zhang
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/copy-paste-modified.png" alt="Properties do not reference each other.">
+</figure>
+<h2 id="delegation-via-prototypes">Delegation via Prototypes</h2>
+<p>When you delegate a task to another person (in real life), you ask that person to do the job for you.</p>
+<p><strong>When you delegate</strong> (in JavaScript), <strong>you ask the delegated object to call the property</strong> (or method).</p>
+<p>Other names for Delegation via Prototype include:</p>
+<ol>
+<li><strong>Prototypal Inheritance</strong></li>
+<li>Prototype Inheritance</li>
+<li><strong>Prototypal Delegation</strong></li>
+<li>Prototype Delegation</li>
+</ol>
+<p>I prefer to call it Delegation via Prototypes because this phrase describes what happens exactly. But I do use Prototypal Delegation and Delegation via Prototypes interchangeably.</p>
+<p>Example: Let’s say you want to create the same <code>Human</code> constructor that has <code>firstName</code>, <code>lastName</code>, and <code>sayName</code>.</p>
+<p>Each instance needs its own <code>firstName</code> and <code>lastName</code> properties. We’ll use the Copy-pasting method to create these two properties.</p>
+<pre><code class="language-js">function Human (firstName, lastName) {
+  this.firstName = firstName
+  this.lastName = lastName
+}
+</code></pre>
+<p><code>sayName</code> can be shared among all instances.</p>
+<p>We create it outside of the <code>Human</code> constructor, inside a <code>prototype</code> object. (All constructors have a <code>prototype</code> object).</p>
+<pre><code class="language-js">Human.prototype.sayName = function () {
+  console.log(`${firstName} ${lastName}`)
+}
+</code></pre>
+<p>You can then create instances with the <code>new</code> keyword as before:</p>
+<pre><code class="language-js">const zell = new Human('Zell', 'Liew')
+const vincy = new Human('Vincy', 'Zhang')
+
+console.log(zell)
+console.log(vincy)
+</code></pre>
+<p>Both instances don’t have a <code>sayName</code> method.</p>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/delegate-initial.png" alt="Instances don't have sayName method.">
+</figure>
+<p>But they can both say their own names.</p>
+<pre><code class="language-js">zell.sayName()
+vincy.sayName()
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/delegate-sayname.png" alt="Instances can say their names.">
+</figure>
+<p>Instances can say their names because <code>sayName</code> is declared inside the constructor’s prototype. If you expand the <code>__proto__</code> object, you will see <code>sayName</code>.</p>
+<p>Note: In Firefox, <code>__proto__</code> is <code>&lt;prototype&gt;</code></p>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/delegeta-prototype.png" alt="sayName found in the prototype.">
+</figure>
+<h3 id="the-prototype-chain">The Prototype Chain</h3>
+<p>Here’s what JavaScript does when you access a property:</p>
+<p><strong>Step 1:</strong> JavaScript checks if the property is available inside the object. If yes, JavaScript uses the property straight away.</p>
+<p><strong>Step 2:</strong> If the property is NOT inside the object, JavaScript checks if there’s a Prototype available. If there is a Prototype, repeat Step 1 (and check if the property is inside the prototype).</p>
+<p><strong>Step 3:</strong> If there are no more Prototypes left, and JavaScript cannot find the property, it does the following:</p>
+<ul>
+<li>Returns <code>undefined</code> (if you tried to access a property).</li>
+<li>Throws an error (if you tried to call a method).</li>
+</ul>
+<p>Diagrammatically, here’s how the process looks like:</p>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/prototype-chain.jpg" alt="The Prototype Chain">
+</figure>
+<h3 id="the-meaning-of-delegation">The meaning of delegation</h3>
+<p>If a property is found inside a prototype, JavaScript asks the prototype for the property.</p>
+<p>Each instance effectively <strong>hands over the job</strong> of accessing the property (or calling the method) to the prototype. In other words, they  <strong>delegate the job</strong> away to the prototype.</p>
+<p>Hence, the phrase Delegation via Prototype.</p>
+<h2 id="copy-pasting-vs-prototypal-delegation">Copy-pasting vs Prototypal Delegation</h2>
+<p>When should you copy-paste? When should you delegate?</p>
+<h3 id="performance-considerations">Performance considerations</h3>
+<p>In theory, Copy-pasting can take up more memory because each instance contains more properties. And Delegation via Prototypes can execute slower because JavaScript needs to look inside the Prototype Chain.</p>
+<p>But these are negligible performance costs in today’s browsers and computers. We don’t have to worry about using either option.</p>
+<h3 id="structure-and-style">Structure and Style</h3>
+<p>People say that JavaScript is powerful because it lets you use Prototypal Delegation. This hints that Prototypal Delegation is preferred.</p>
+<p>However, people also say you should favour composition over inheritance. Since composition uses Copy-pasting, it hints that Copy-pasting is preferred over Prototypal Delegation.</p>
+<h3 id="which-should-you-choose%3F">Which should you choose?</h3>
+<p>Don’t make a conclusive decision right now. Let’s explore further into this topic and you will find an answer.</p>
+<p>Learn how to do both for now.</p>
+<h2 id="copy-pasting-in-4-flavours">Copy-pasting in 4 flavours</h2>
+<h3 id="constructor-syntax">Constructor Syntax</h3>
+<p>You can copy-paste by writing properties inside the constructor function.</p>
+<pre><code class="language-js">function Human (firstName, lastName) {
+  this.firstName = firstName
+  this.lastName = lastName
+  this.sayName = _ =&gt; {
+    console.log(`${this.firstName} ${this.lastName}`)
+  }
+}
+</code></pre>
+<p>Creating an instance:</p>
+<pre><code class="language-js">const zell = new Human('Zell', 'Liew')
+console.log(zell)
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/copy-paste-constructor.png" alt="Copy-pasting with constructors.">
+</figure>
+<h3 id="class-syntax">Class Syntax</h3>
+<p>You can copy-paste by writing properties inside the constructor function.</p>
+<pre><code class="language-js">class Human {
+  constructor (firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.sayName = _ =&gt; {
+      console.log(`${this.firstName} ${this.lastName}`)
+    }
+  }
+}
+</code></pre>
+<p>Creating an instance:</p>
+<pre><code class="language-js">const zell = new Human('Zell', 'Liew')
+console.log(zell)
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/copy-paste-class.png" alt="Copy-paste using Classes">
+</figure>
+<h3 id="oloo-syntax">OLOO Syntax</h3>
+<p>You can copy-paste by writing properties inside the function that initialises the instance. In this case, the function is <code>init</code>.</p>
+<pre><code class="language-js">const Human = {
+  init (firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+    this.sayName = _ =&gt; {
+      console.log(`${this.firstName} ${this.lastName}`)
+    }
+    return this
+  }
+}
+</code></pre>
+<p>Creating the instance:</p>
+<pre><code class="language-js">const zell = Object.create(Human).init('Zell', 'Liew')
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/copy-paste-oloo.png" alt="Copy-paste with OLOO.">
+</figure>
+<h3 id="factory-function-syntax">Factory Function Syntax</h3>
+<p>You can copy-paste by writing properties inside the object you’ll return.</p>
+<pre><code class="language-js">function Human (firstName, lastName) {
+  return {
+    firstName: firstName,
+    lastName: lastName,
+
+    sayName () {
+      console.log(`${this.firstName} ${this.lastName}`)
+    }
+  }
+}
+</code></pre>
+<p>Creating an instance:</p>
+<pre><code class="language-js">const zell = Human('Zell', 'Liew')
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/copy-paste-factory.png" alt="Copy-pasting with Factory Functions.">
+</figure>
+<h2 id="prototypal-delegation-in-4-flavours">Prototypal Delegation in 4 flavours</h2>
+<h3 id="constructor-syntax-2">Constructor Syntax</h3>
+<p>You delegate via prototypes by writing properties inside a <code>prototype</code> object.</p>
+<pre><code class="language-js">function Human (firstName, lastName) {
+  this.firstName = firstName
+  this.lastName = lastName
+}
+
+Human.prototype.sayName = function () {
+  console.log(`${firstName} ${lastName}`)
+}
+</code></pre>
+<p>Creating an instance</p>
+<pre><code class="language-js">const zell = new Human('Zell', 'Liew')
+console.log(zell)
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/delegate-constructor.png" alt="Prototypal Delegation with Constructors. ">
+</figure>
+<h3 id="class-syntax-2">Class Syntax</h3>
+<p>Prototypal Delegation is easier in Classes compared to constructors. You can write the property directly inside the class.</p>
+<pre><code class="language-js">class Human {
+  constructor (firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+  }
+
+  // This method uses prototype delegation
+  sayName () {
+    console.log(`${this.firstName} ${this.lastName}`)
+  }
+}
+</code></pre>
+<p>Pay attention to the difference in syntax between classes and objects. This is one common mistake for developers who’re new to the <code>class</code> syntax.</p>
+<ul>
+<li>Properties in classes are NOT separated with <code>,</code>.</li>
+<li>Properties in objects are separated with <code>,</code></li>
+</ul>
+<p>Creating an instance:</p>
+<pre><code class="language-js">const zell = new Human('Zell', 'Liew')
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/delegate-class.png" alt="Prototypal delegation with Classes.">
+</figure>
+<h3 id="oloo-syntax-2">OLOO Syntax</h3>
+<p>You can write properties directly inside the constructor object.</p>
+<pre><code class="language-js">const Human = {
+  init (firstName, lastName) {
+    this.firstName = firstName
+    this.lastName = lastName
+    return this
+  },
+
+  sayName() {
+    console.log(`${this.firstName} ${this.lastName}`)
+  }
+}
+</code></pre>
+<p>Creating the instance:</p>
+<pre><code class="language-js">const zell = Object.create(Human).init('Zell', 'Liew')
+</code></pre>
+<figure role="figure">
+  <img src="../../images/oop/inheritance/delegate-oloo.png" alt="Prototypal Delegation in OLOO.">
+</figure>
+<h3 id="factory-function-syntax-2">Factory Function Syntax</h3>
+<p>Factory Functions are different from the other three flavours. <strong>They cannot use Prototypal Delegation by themselves</strong>.</p>
+<p>You need to use one of the above three flavours to achieve Prototypal Delegation with Factory Functions.</p>
+<p>This means wrapping one of the above flavours inside a function.</p>
+<p>Example: Prototypal Delegation with a class:</p>
+<pre><code class="language-js">function createHuman (...args) {
+  return new Human(...args)
+}
+</code></pre>
+<p>Example: Prototypal Delegation with OLOO:</p>
+<pre><code class="language-js">function createHuman (...args) {
+  return Object.create(Human).init(...args)
+}
+</code></pre>
+<p>Although it is possible, we don’t normally use Prototypal Delegation with Factory Functions. We Copy-paste properties instead. I’ll share more about this topic in Composition vs Inheritance.</p>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../oop-flavours/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>Four Flavours of Object Oriented Programming</span>
+            </a>
+          <a href="../this-in-javascript/index.html" data-link-to="next-lesson">
+              <span>This in JavaScript</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /inheritance/  Mon, 24 Jan 2022 10:07:01 GMT -->
+</html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /datepicker-calendar/  Mon, 24 Jan 2022 10:03:33 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Datepicker: Building the calendar | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Datepicker: Building the calendar</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Datepicker: Building the calendar</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/datepicker/03.calendar.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>We need to pass a <code>Date</code> object into the Datepicker if we want the it to work with any date. Let’s start by creating a new date.</p>
+<pre><code class="language-js">const date = new Date()
+</code></pre>
+<p>You can use any date you want. For the sake of consistency, we will use 13 February 2019 for this datepicker.</p>
+<pre><code class="language-js">// Remember, month is zero-indexed. 1 means February.
+const date = new Date(2019, 1, 13)
+</code></pre>
+<p>We need to update the calendar based on the date given.</p>
+<p>Once again, there are three parts to the calendar:</p>
+<ol>
+<li>The <code>year-month</code> indicator</li>
+<li>The <code>day-of-week</code> indicator</li>
+<li>The dates in the month</li>
+</ol>
+<h2 id="the-year-month-indicator">The year-month indicator</h2>
+<p>We want to create this HTML for the year-month indicator.</p>
+<pre><code class="language-js">&lt;div class=&quot;datepicker__year-month&quot;&gt;
+  &lt;time datetime=&quot;2019-02&quot;&gt;February 2019&lt;/time&gt;
+&lt;/div&gt;
+</code></pre>
+<p>To build this, we first get the year-month indicator from the DOM with <code>querySelector</code>.</p>
+<pre><code class="language-js">const yearMonthIndicator = document.querySelector('.datepicker__year-month')
+</code></pre>
+<p>Next, we need to get <code>February</code> from the date. We can get <code>February</code> if we create an array of months.</p>
+<pre><code class="language-js">const monthsInAYear = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December'
+]
+
+const month = date.getMonth()
+const monthName = monthsInAYear[month]
+</code></pre>
+<p>Next, we want to get a 4-digit year. We can use <code>getFullYear</code>.</p>
+<pre><code class="language-js">const year = date.getFullYear()
+</code></pre>
+<p>Once we know <code>year</code> and <code>monthName</code>, we can create the HTML.</p>
+<pre><code class="language-js">yearMonthIndicator.innerHTML = `
+  &lt;time datetime=&quot;2019-02&quot;&gt;${monthName} ${year}&lt;/time&gt;
+`
+</code></pre>
+<p>For the <code>datetime</code> attribute, we want to get a value that says <code>2019-02</code>.</p>
+<p>We know these:</p>
+<ol>
+<li><code>year</code>: <code>2019</code></li>
+<li><code>month</code>: <code>1</code></li>
+</ol>
+<p>To get the correct month value, we can add <code>1</code> to <code>month</code>.</p>
+<pre><code class="language-js">const oneIndexedMonth = month + 1
+</code></pre>
+<p>To get the <code>02</code>, we can use a String method called <code>padStart</code>. This method takes in two arguments:</p>
+<pre><code class="language-js">string.padStart(targetLength, padString)
+</code></pre>
+<ol>
+<li><code>targetLength</code>: The length you want your string to be. In this case, we want 2.</li>
+<li><code>padString</code>: If the string is shorter than <code>targetLength</code>, we add the value given <code>padString</code> for each character.</li>
+</ol>
+<p>Example:</p>
+<pre><code class="language-js">'2'.padStart(2, '0') // 02
+'1001'.padStart(8, 'x') // xxxx1001
+</code></pre>
+<p>To use <code>padStart</code>, we need to convert a <code>Number</code> into a <code>String</code>. We can convert a <code>Number</code> into a String with <code>toString</code></p>
+<p>Using <code>padStart</code> for our case:</p>
+<pre><code class="language-js">const datetimeMonth = (month + 1).toString().padStart(2, '0')
+</code></pre>
+<p>The code for the year month indicator should be:</p>
+<pre><code class="language-js">yearMonthIndicator.innerHTML = `
+  &lt;time datetime=&quot;${year}-${datetimeMonth}&quot;&gt;${monthName} ${year}&lt;/time&gt;
+`
+</code></pre>
+<figure role="figure"><img src="../../images/components/datepicker/calendar/year-month-indicator.png" alt="DOM view of the year-month indicator."></figure>
+<h2 id="date-grid">Date grid</h2>
+<p>We need to know tow things to build the date grid:</p>
+<ol>
+<li>What’s the first day of the month?</li>
+<li>What’s the number of days in the month?</li>
+</ol>
+<h3 id="first-day-of-the-month">First day of the month</h3>
+<p>To get the first day of the month, we can use <code>setDate</code> and set the date to <code>1</code>. Then, we use <code>getDay</code> to know which day it is.</p>
+<pre><code class="language-js">const firstDayOfMonth = new Date(date.setDate(1)).getDay()
+console.log(firstDayOfMonth) // 5
+</code></pre>
+<h3 id="number-of-days-in-a-month">Number of days in a month</h3>
+<p>JavaScript helps you calculate the correct date if you provide a value that’s outside of a normal calendar range.</p>
+<p>So, if you set the <code>day</code> argument to 0, you’ll get the last day of the previous month.</p>
+<pre><code class="language-js">const lastDayOfJanuary = new Date(2019, 1, 0)
+console.log(lastDayOfJanuary) // Thu Jan 31 2019
+</code></pre>
+<p>To get the number of days in the previous month, we can use <code>getDate</code>.</p>
+<pre><code class="language-js">const numDaysInJanuary = lastDayOfJanuary.getDate()
+console.log(numDaysInJanuary) // 31
+</code></pre>
+<p>To get the number of days in the current month, we increase the month-number by one:</p>
+<pre><code class="language-js">const year = date.getFullYear()
+const month = date.getMonth()
+const lastDayInMonth = new Date(year, month + 1, 0)
+const daysInMonth = lastDayInMonth.getDate()
+console.log(daysInMonth) // 28
+</code></pre>
+<h3 id="building-the-date-grid">Building the date grid</h3>
+<p>Each button in the day grid has the following HTML:</p>
+<pre><code class="language-js">&lt;button&gt;
+  &lt;time datetime=&quot;2019-02-01&quot;&gt;1&lt;/time&gt;
+&lt;/button&gt;
+</code></pre>
+<p>We can use the <code>daysInMonth</code> value to create one button for each day of the month. The simplest way to do it is through a <code>for</code> loop.</p>
+<pre><code class="language-js">const dategrid = document.querySelector('.datepicker__date-grid')
+
+for (let day = 1; day &lt;= daysInMonth; day++) {
+  const button = document.createElement('button')
+  button.innerHTML = `
+    &lt;time&gt;${day}&lt;/time&gt;
+  `
+
+  dategrid.appendChild(button)
+}
+</code></pre>
+<p>We need to add the <code>datetime</code> attribute to the <code>&lt;time&gt;</code> element. Here, both <code>month</code> and <code>day</code> values need to be 2-digit.</p>
+<p>We can use <code>padStart</code> like what we did before.</p>
+<pre><code class="language-js">for (let day = 1; day &lt;= daysInMonth; day++) {
+  // ...
+  const datetimeDay = day.toString().padStart(2, '0')
+
+  button.innerHTML = `
+    &lt;time datetime=&quot;${year}-${datetimeMonth}-${datetimeDay}&quot;&gt;${day}&lt;/time&gt;
+  `
+
+  // ...
+}
+</code></pre>
+<h3 id="first-day-of-the-month-2">First day of the month</h3>
+<p>First, we want to remove the CSS that sets the first day of the month to Friday.</p>
+<pre><code class="language-css">/* Remove this CSS */
+.datepicker__dates button:first-child {
+  grid-column: 6;
+}
+</code></pre>
+<p>Next, we need to set <code>grid-column</code> to the correct value depending on the first day of the Month.</p>
+<ol>
+<li><code>grid-column</code> for Sunday should be 1</li>
+<li><code>grid-column</code> for Monday should be 2</li>
+<li><code>grid-column</code> for Tuesday should be 3</li>
+<li><code>grid-column</code> for Wednesday should be 4</li>
+<li><code>grid-column</code> for Thursday should be 5</li>
+<li><code>grid-column</code> for Friday should be 6</li>
+<li><code>grid-column</code> for Saturday should be 7</li>
+</ol>
+<p>One way to do this is set a CSS custom property on the date grid. We’ll use <code>--firstDayOfMonth</code> as the variable.</p>
+<p>Here, We know JavaScript’s <code>getDay</code> function returns the following values:</p>
+<ol>
+<li>Sunday returns 0</li>
+<li>Monday returns 1</li>
+<li>Tuesday returns 2</li>
+<li>Wednesday returns 3</li>
+<li>Thursday returns 4</li>
+<li>Friday returns 5</li>
+<li>Saturday returns 6</li>
+</ol>
+<p>This means <code>--firstDayOfMonth</code> should be <code>getDay() + 1</code>.</p>
+<pre><code class="language-js">for (let day = 1; day &lt;= daysInMonth; day++) {
+  // ...
+  if (day === 1) button.style.setProperty('--firstDayOfMonth', firstDayOfMonth + 1)
+  // ...
+
+  button.innerHTML = `
+    &lt;time datetime=&quot;${year}-${datetimeMonth}-${datetimeDay}&quot;&gt;${day}&lt;/time&gt;
+  `
+
+  // ...
+}
+</code></pre>
+<p>Then we use <code>--firstDayOfMonth</code> in the CSS like this:</p>
+<pre><code class="language-css">/* Add this CSS */
+.datepicker__date-grid button:first-child {
+  grid-column: var(--firstDayOfMonth);
+}
+</code></pre>
+<h2 id="testing-the-calendar">Testing the calendar</h2>
+<p>You can test this calendar by changing the year and month values. It should look right no matter which year or month you pass into the initial <code>date</code> value.</p>
+<figure>
+  <img src="../../images/components/datepicker/calendar/right-calendar.png" alt="Three calendars. Use this to check with your output.">
+</figure>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../datepicker-html-css/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Datepicker: HTML and CSS</span>
+            </a>
+          <a href="../datepicker-build-with-javascript/index.html" data-link-to="next-lesson">
+              <span>🛠️ Datepicker: Building the datepicker with JavaScript</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /datepicker-calendar/  Mon, 24 Jan 2022 10:03:34 GMT -->
+</html>

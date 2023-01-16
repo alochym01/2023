@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<!-- /countdown-months/  Mon, 24 Jan 2022 10:03:44 GMT -->
+<!-- Tutflix.org --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Tutflix.org -->
+<head>
+    <meta charset="UTF-8">
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+<title>🛠️ Countdown timer: Counting Months | Learn JavaScript</title>
+<meta name="description" content="Learn JavaScript student portal"/>
+<link rel="canonical" href="index.html">
+
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../../favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../../favicons/favicon-16x16.png">
+<link rel="manifest" href="../../favicons/site.webmanifest">
+<link rel="mask-icon" href="../../favicons/safari-pinned-tab.svg" color="#5bbad5">
+<link rel="shortcut icon" href="../../favicons/favicon.ico">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="../../favicons/browserconfig.xml">
+<meta name="theme-color" content="#ffffff">
+
+<!-- CSS -->
+<link rel="stylesheet" href="../../css/styles-min-afc4baccb2.css">
+
+<!-- Fonts -->
+<script>
+  (function (d) {
+    var config = {
+        kitId: 'gas0cwl',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h = d.documentElement,
+      t = setTimeout(function () {
+        h.className = h
+          .className
+          .replace(/\bwf-loading\b/g, "") + " wf-inactive";
+      }, config.scriptTimeout),
+      tk = d.createElement("script"),
+      f = false,
+      s = d.getElementsByTagName("script")[0],
+      a;
+    h.className += " wf-loading";
+    tk.src = 'https://use.typekit.net/' + config.kitId + '.js';
+    tk.async = true;
+    tk.onload = tk.onreadystatechange = function () {
+      a = this.readyState;
+      if (f || a && a != "complete" && a != "loaded")
+        return;
+      f = true;
+      clearTimeout(t);
+      try {
+        Typekit.load(config)
+      } catch (e) {}
+    };
+    s
+      .parentNode
+      .insertBefore(tk, s)
+  })(document);
+</script>
+
+<script>
+  document
+    .documentElement
+    .classList
+    .remove('no-js')
+</script>
+
+</head>
+
+  <body class="page">
+      <nav class="main-nav" data-js="menu" data-state="closed">
+        <div>
+          <a href="../index.html"><svg
+  class="logo"
+  data-size="small"
+  height="1em"
+  viewbox="0 0 273 43"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g transform="translate(-1 -10)" fill="none" fill-rule="evenodd">
+    <rect fill="#F8E201" x="31" y="11" width="217" height="42" />
+    <path
+      d="M5.21 44.261v-5.217c0-2.726-.706-4.418-3.902-5.076v-3.76c3.196-.705 3.901-2.209 3.901-4.841v-6.11c0-4.606 2.68-8.178 8.695-8.178h1.551v3.995c-3.948 0-5.546 1.645-5.546 5.264v4.23c0 3.196-.94 6.345-4.136 7.473 3.102 1.175 4.136 4.042 4.136 7.05v4.089c0 4.183 1.598 5.828 5.546 5.828v3.995h-1.55c-5.782 0-8.696-3.243-8.696-8.742zm263.967-5.217l.141 5.217c-.141 5.499-2.961 8.742-8.789 8.742h-1.551v-3.995c3.948 0 5.499-1.645 5.499-5.828v-4.089c0-3.008 1.081-5.875 4.183-7.05-3.196-1.128-4.183-4.277-4.183-7.473v-4.23c0-3.619-1.551-5.264-5.499-5.264v-3.995h1.551c5.969 0 8.648 3.572 8.648 8.178v6.11c0 2.632.705 4.136 3.901 4.841v3.76c-3.196.658-3.901 2.35-3.901 5.076z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+    <path
+      d="M29.82 52V11.5h7.74v34.56h17.46V52h-25.2zM58.2 37.78c0-8.16 3.54-16.32 13.68-16.32 8.4 0 12.18 5.1 12.18 13.62 0 .96-.06 1.92-.12 3H65.76c.06 7.44 3 9.36 6.54 9.36 2.76 0 5.52-1.2 5.52-4.2 0-.24-.06-.48-.06-.78l6 .84c.06.3.06.66.06 1.02 0 5.4-5.28 8.4-11.76 8.4-8.04 0-13.86-4.62-13.86-14.94zm13.62-11.7c-2.76 0-5.04 2.04-5.82 7.5h10.56v-1.02c0-3.48-1.38-6.48-4.74-6.48zM88.2 44.26c0-6.36 6.06-9.54 12.42-9.54 2.64 0 4.02.6 4.62.96v-4.32c0-3.42-1.32-5.1-4.44-5.1-3.66 0-4.8 2.4-3.96 5.7l-7.02-.78c-1.56-6.84 4.2-9.72 11.4-9.72 7.98 0 11.34 3.48 11.34 9.9v13.26c0 1.38.36 2.04 1.2 2.04 1.08 0 1.92-.96 1.92-.96l.42 5.22s-2.04 1.5-4.92 1.5c-2.94 0-4.98-1.5-5.46-4.62-1.56 2.94-4.56 4.92-8.46 4.92-5.16 0-9.06-3.48-9.06-8.46zm11.28 3.18c2.46 0 4.26-1.38 5.76-3.06v-5.16c-.6 0-1.38-.06-2.34-.06-4.8 0-7.44 1.44-7.44 4.62 0 2.46 1.62 3.66 4.02 3.66zM120.96 52V22.18h5.58l1.02 5.52c1.2-3.18 3.6-6.24 8.1-6.24 6.24 0 7.62 6.66 5.7 11.28l-6.3.84c.84-2.4.96-6-2.04-6-2.64 0-3.96 2.46-4.68 4.56V52h-7.38zm25.86 0V22.18h5.58l.9 4.86c2.22-3.24 4.68-5.58 9.36-5.58 5.04 0 8.88 2.82 8.88 9.18V52h-7.38V32.08c0-3.24-1.2-4.68-3.96-4.68-2.64 0-4.44 1.26-6 2.88V52h-7.38zm47.46-34.86V11.5h17.46v28.8c0 7.5-4.2 12.42-12.18 12.42-8.52 0-13.14-5.52-10.98-13.5l6.84-.72c-1.26 5.16-.06 8.4 3.96 8.4 3.06 0 4.62-1.92 4.62-5.58V17.14h-9.72zm23.94 22.62l6.9-.72c-1.08 4.26 1.2 7.98 8.1 7.98 5.46 0 7.2-2.4 7.2-5.16 0-3.66-3.3-5.04-8.04-6.66-5.76-1.98-13.44-4.38-13.44-12.84 0-7.2 5.52-11.7 14.88-11.58 11.04.12 14.94 6.42 13.74 13.32l-7.32.72c.78-5.76-1.56-8.46-6.96-8.46-4.56 0-6.54 2.04-6.54 5.04 0 4.02 3.72 5.34 8.4 6.9 6.06 1.98 13.02 4.32 13.02 12.36 0 6.84-5.1 12.06-15.24 12.06-9.48 0-16.08-4.5-14.7-12.96z"
+      fill="#000"
+      fill-rule="nonzero"
+    />
+  </g>
+</svg>
+</a>
+          <button data-type="secondary" data-js="menu-button">Menu</button>
+        </div>
+        <div>
+          <a href="../index.html">Contents</a>
+          <a href="../../components/index.html">Components</a>
+          <a href="../../community/index.html">Community</a>
+          <a href="../../extras/index.html">Extras</a>
+        </div>
+        <div>
+          <a href="../..https://tutflix.org">Account</a>
+          <button data-type="secondary" data-js="logout">TutFlix</button>
+        </div>
+      </nav>
+
+    <noscript>
+      <div class="wrap">
+        This portal uses JavaScript to check your identity. Please enable JavaScript to access the course.
+      </div>
+    </noscript>
+
+    <main>
+      <div class="wrap">
+<div
+  data-js="check-auth"
+  data-required-authorization="mastery"
+  data-auth-state="failure"
+>
+  <article class="longform" data-failed-content>
+    <h1>🛠️ Countdown timer: Counting Months</h1>
+    <p>Hey <span data-js="user-data" data-field="firstName">,</p>
+      <p>
+      I'm thrilled to help you learn JavaScript. Unfortunately, you've landed on a page where you cannot access with your current purchase.
+    </p>
+      <p>
+      Please upgrade (<a href="../../404/index.html" data-upgrade-link
+        >use this link</a
+      >) access this content.
+    </p>
+
+      <p>I'm super eager to help you learn more!</p>
+    </article>
+
+    <article class="longform" data-content>
+      <h1>🛠️ Countdown timer: Counting Months</h1>
+
+
+
+      <div class="meta source-code">
+
+
+    <a href="../../download/components/countdown/03.months.zip">
+      <svg class="icon" viewBox="0 0 20 20" height="1em">
+        <path fill="currentColor" d="M.7 9.3l4.8-4.8 1.4 1.42L2.84 10l4.07 4.07-1.41 1.42L0 10l.7-.7zm18.6 1.4l.7-.7-5.49-5.49-1.4 1.42L17.16 10l-4.07 4.07 1.41 1.42 4.78-4.78z"/>
+      </svg>
+      <span>Source</span>
+    </a>
+      </div><p>It’s easy to count days, hours, minutes, and seconds. There are:</p>
+<ul>
+<li>60 seconds in one minute</li>
+<li>60 minutes in one hour</li>
+<li>24 hours in one day</li>
+</ul>
+<p>It’s harder to count months, because there are different number of days in different months.</p>
+<ul>
+<li>March has 31 days</li>
+<li>April has 30 days</li>
+<li>May has 31 days</li>
+<li>And so on…</li>
+</ul>
+<p>You need to take care of this difference if you want an accurate count.</p>
+<h2 id="month-math">Month Math</h2>
+<p>Let’s say you have two dates:</p>
+<ol>
+<li>5 February 2019</li>
+<li>3 January 2019</li>
+</ol>
+<p>How many months are there between these two dates? This is quite easy. Feb - Jan gives one month.</p>
+<pre><code class="language-js">const date1 = new Date(2019, 1, 5)
+const date2 = new Date(2019, 0, 3)
+
+const months = date1.getMonth() - date2.getMonth()
+console.log(months) // 1
+</code></pre>
+<p>Let’s do this again. Say you have these two dates:</p>
+<ol>
+<li>1 June 2020</li>
+<li>1 September 2019</li>
+</ol>
+<p>How many months do you have between these dates? Here, we can calculate the number of months by adding 12 (the number of months in a year) to 6 (for June). This totals 18. Then, we use 18 minus 9 (for September). And we know there are 9 months between 1 June 2020 and 1 September 2020.</p>
+<pre><code class="language-js">const date1 = new Date(2020, 5, 1)
+const date2 = new Date(2019, 8, 1)
+
+const monthDiff = date1.getMonth() + 12 - date2.getMonth()
+console.log(monthDiff) // 9
+</code></pre>
+<p>What if we have these two dates?</p>
+<ol>
+<li>1 June 2021</li>
+<li>1 September 2019</li>
+</ol>
+<p>This time, we need to add 24 (2 years worth) to 6. This adds up to 30. Then, we subtract 30 by 9 (for September). And we know there are 21 months between 1 June 2021 and 1 September 2019.</p>
+<pre><code class="language-js">const date1 = new Date(2021, 5, 1)
+const date2 = new Date(2019, 8, 1)
+
+const yearDiff = date1.getFullYear() - date2.getFullYear()
+const monthDiff = date1.getMonth() + yearDiff * 12 - date2.getMonth()
+console.log(monthDiff) // 21
+</code></pre>
+<p>One more time. Let’s say you have these two dates. What’s the number of months between them?</p>
+<ol>
+<li>1 April 2019</li>
+<li>11 March 2019</li>
+</ol>
+<p>The answer is zero.</p>
+<p>There are zero months between the 11 March 2019 and 1 April 2019. But there are 21 days between the two dates.</p>
+<p>If there’s one full month between your two dates (like 1 Jan to 1 Feb, or 15 Feb to 15 March), you count the month as one month. If there’s no full month, you don’t count the month. You count the number of days in the month instead.</p>
+<p>The easiest way to check for full months is:</p>
+<ol>
+<li>Create a throwaway date with the <code>date1</code>.</li>
+<li>Subtract <code>monthDiff</code> from the throwaway date.</li>
+<li>Check if the throwaway date is later compared to <code>date2</code>.</li>
+<li>If the throwaway date is larger, there’s a full month.</li>
+<li>Otherwise, there are no full months.</li>
+</ol>
+<pre><code class="language-js">const date1 = new Date(2019, 1, 5)
+const date2 = new Date(2019, 0, 3)
+
+let monthDiff =  date1.getMonth() - date2.getMonth()
+
+// Check if there's a full month of difference
+const d = new Date(date1)
+d.setMonth(date1.getMonth() - 1)
+if (d &lt; date2) monthDiff = monthDiff - 1
+</code></pre>
+<p>Let’s put what we know into a function.</p>
+<pre><code class="language-js">const getMonthDiff = (endDate, startDate) =&gt; {
+  const yearDiff = endDate.getFullYear() - startDate.getFullYear()
+  let monthDiff = endDate.getMonth() + yearDiff * 12 - startDate.getMonth()
+
+  // Check if there's a full month of difference
+  const d = new Date(endDate)
+  d.setMonth(endDate.getMonth() - monthDiff)
+  if (d &lt; startDate) monthDiff = monthDiff - 1
+
+  return monthDiff
+}
+</code></pre>
+<h2 id="calculating-months-and-days">Calculating Months and Days</h2>
+<p>Let’s say you have these two dates:</p>
+<ol>
+<li>5 February 2019</li>
+<li>3 January 2019</li>
+</ol>
+<p>We know there are 1 month and 2 days between the dates. The timestamp between these two dates is: <code>2851200000</code></p>
+<pre><code class="language-js">const date1 = new Date(2019, 1, 5)
+const date2 = new Date(2019, 0, 3)
+
+const difference = date1 - date2
+console.log(difference) // 2851200000
+</code></pre>
+<p>To calculate the difference in months, we can use <code>getMonthDiff</code>.</p>
+<pre><code class="language-js">const monthDiff = getMonthDiff(date1, date2)
+console.log(monthDiff) // 1
+</code></pre>
+<p>To calculate the difference in days, we need to find the remaining difference in milliseconds. To find the remaining difference in milliseconds, we need to subtract the original difference by the number of days in the month.</p>
+<p>In this case, there are 31 days from 3 January to 3 February.</p>
+<pre><code class="language-js">const remainingDiff = difference - monthDiff * 31 * toMilliseconds('days'))
+console.log(remainingDiff) // 172800000
+</code></pre>
+<p>Then, to get the number of days, we divide the remaining difference by the number of milliseconds in a day.</p>
+<pre><code class="language-js">const days = Math.floor(remainingDiff / toMilliseconds('days'))
+console.log(days) // 2
+</code></pre>
+<p>Let’s pause for a moment here because we used a magic number as we calculated <code>remainingDiff</code>. We used 31. How do we get <code>31</code> programmatically?</p>
+<h3 id="getting-the-number-of-days-in-a-month">Getting the number of days in a month</h3>
+<p>First, we know there are 31 days in January. This means there are 31 days from 1 January to 1 February. It also means there are 31 days from 3 January to 3 February.</p>
+<p>To get 31, we get the number of days in January, like this:</p>
+<pre><code class="language-js">const getDaysInMonth = (date) =&gt; {
+  const year = date.getFullYear()
+  const month = date.getMonth()
+  const lastDayOfMonth = new Date(year, month + 1, 0)
+  return lastDayOfMonth.getDate()
+}
+</code></pre>
+<p>Once we get the number of days in January, the rest becomes easy.</p>
+<h2 id="2-months-and-more">2 Months and more</h2>
+<p>Let’s say you have these two dates:</p>
+<ol>
+<li>1 June 2020</li>
+<li>1 September 2019</li>
+</ol>
+<p>We know there are 9 months and 0 days between them.</p>
+<p>We can get the number of months with <code>getMonthDiff</code>.</p>
+<pre><code class="language-js">const date1 = new Date(2020, 5, 1)
+const date2 = new Date(2019, 8, 1)
+
+const monthDiff = getMonthDiff(date1, date2)
+console.log(monthDiff) // 9
+</code></pre>
+<p>To get the remaining difference, we need to calculate the number of days that have passed during these 9 months.</p>
+<ul>
+<li>September 2019: 30 days</li>
+<li>October 2019: 31 days</li>
+<li>November 2019: 30 days</li>
+<li>December 2019: 31 days</li>
+<li>January 2019: 31 days</li>
+<li>February 2019: 29 days</li>
+<li>March 2019: 31 days</li>
+<li>April 2019: 30 days</li>
+<li>May 2019: 31 days</li>
+</ul>
+<p>So there are 274 days between 1 September 2019 and 1 June 2020.</p>
+<p>In code, we can create a loop with 9 months of differences. You can use a <code>for</code> loop if you want to, but I’m going to use <code>Array.from</code> to create an array, and <code>map</code> to loop through it.</p>
+<pre><code class="language-js">const dayDiff = Array.from({ length: monthDiff })
+  .map((value, index) =&gt; {
+    // ...
+  })
+</code></pre>
+<p>We can create a new <code>Date</code> object in each iteration of the loop to get the number of days in that month.</p>
+<pre><code class="language-js">const dayDiff = Array.from({ length: monthDiff })
+  .map((v, index) =&gt; {
+    const d = new Date(startDate)
+    // ...
+  })
+</code></pre>
+<p>We’ll get the number of days from each month, starting from September. To do this, we change the date’s Month value according to the index.</p>
+<ul>
+<li>September: + 0 months</li>
+<li>October: + 1 month</li>
+<li>November: + 2 months</li>
+<li>… and so on</li>
+</ul>
+<pre><code class="language-js">const dayDiff = Array.from({ length: monthDiff })
+  .map((v, index) =&gt; {
+    const d = new Date(startDate)
+    d.setMonth(date2.getMonth() + index)
+    return getDaysInMonth(d)
+  })
+
+console.log(dayDiff)
+</code></pre>
+<figure role="figure"><img src="../../images/components/countdown/months/array.png" alt="Number of days in each month from September 2019 to May 2020"></figure>
+<p>To get the total number of days that passed during these 9 months, we sum the array up.</p>
+<pre><code class="language-js">const dayDiff = Array.from({ length: monthDiff })
+  .map(/* ... */)
+  .reduce((sum, v) =&gt; sum + v, 0)
+
+console.log(dayDiff) // 274
+</code></pre>
+<p>To count the remaining difference, we subtract the <code>difference</code> with the number of days that have passed.</p>
+<pre><code class="language-js">const difference = date1 - date2
+const remaining = difference - dayDiff * toMilliseconds('days')
+console.log(remaining) // 0
+</code></pre>
+<p>It makes sense for us to calculate this difference (for days and milliseconds passed for Month calculations) directly in <code>getMonthDiff</code>. This makes the remaining calculation much easier.</p>
+<pre><code class="language-js">const getMonthDiff = (endDate, startDate) =&gt; {
+  let monthDiff = /* ... */
+  const dayDiff = /* ... */
+
+  return {
+    months: monthDiff,
+    days: dayDiff,
+    ms: dayDiff * toMilliseconds('days')
+  }
+}
+</code></pre>
+<p>And you can use <code>getMonthDiff</code> this way:</p>
+<pre><code class="language-js">const date1 = /* ... */
+const date2 = /* ... */
+const difference = date1 - date2
+
+const monthDiff = getMonthDiff(date1, date2)
+const months = monthDiff.months
+const remaining = difference - monthDiff.ms
+
+console.log(months) // 9
+console.log(remaining) // 0
+</code></pre>
+<h2 id="updating-getcountdown">Updating getCountdown</h2>
+<p>It shouldn’t be hard to update <code>getCountdown</code>. You can put the calculations we’ve done in this lesson directly into the function.</p>
+<pre><code class="language-js">const getCountdown = (endDate, startDate) =&gt; {
+  const monthDiff = getMonthDiff(endDate, startDate)
+  const difference = endDate - startDate - monthDiff.ms
+
+  // ...
+
+  return {
+    months: monthDiff.months,
+    days,
+    minutes,
+    hours,
+    seconds
+  }
+}
+</code></pre>
+<h2 id="updating-the-dom">Updating the DOM</h2>
+<p>First, you want to include the <code>month</code>s timer box in the HTML.</p>
+<pre><code class="language-html">&lt;div class=&quot;countdown__timer&quot;&gt;
+  &lt;div class=&quot;timer__box&quot; data-unit=&quot;months&quot;&gt;
+    &lt;span class=&quot;timer__number&quot;&gt;20&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;!-- ... --&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Now, let’s say you want to countdown to the end of this year. To count to the end of this year, you can increase the <code>year</code> value by 1, set <code>month</code> to 0, and <code>day</code> to 1.</p>
+<pre><code class="language-js">const now = new Date()
+const nextYear = new Date(now.getFullYear() + 1, 0, 1)
+</code></pre>
+<p>The rest is as before.</p>
+<pre><code class="language-js">// Update countdown
+updateBoxes(nextYear)
+setInterval(updateBoxes, 1000, nextYear)
+
+// Update Countdown target
+setCountdownTarget(nextYear)
+</code></pre>
+<figure role="figure"><img src="../../images/components/countdown/months/countdown-year.gif" alt="Counting down to the end of the year."></figure>
+</article>
+  </div>
+
+
+
+  <div class="longform">
+    <nav class="lesson-nav">
+
+          <a href="../countdown-js/index.html" data-link-to="previous-lesson">
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M18.9 38l3.1-3.1L6.1 19 22 3.1 18.9 0 0 19z"
+        ></path>
+              </svg>
+              <span>🛠️ Countdown timer: JavaScript</span>
+            </a>
+          <a href="../countdown-daylight-time/index.html" data-link-to="next-lesson">
+              <span>🛠️ Countdown timer: Daylight Saving Time</span>
+              <svg height="1em" viewbox="0 0 22 38">
+                <path
+          fill="currentColor"
+          d="M3.1 0L0 3.1 15.9 19 0 34.9 3.1 38 22 19z"
+        ></path>
+              </svg>
+            </a>
+          </nav>
+  </div>
+</div>
+    </main>
+
+
+
+      <script module src="../../js/main-b9439821d7.mjs"></script>
+      <script nomodule src="../../js/main-legacy-8c54230a8f.js"></script>
+  </body>
+
+<!-- /countdown-months/  Mon, 24 Jan 2022 10:03:45 GMT -->
+</html>
